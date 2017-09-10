@@ -6,13 +6,13 @@
 //  Copyright © 2017年 hongyan. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "SPAppDelegate.h"
 
-@interface AppDelegate ()
+@interface SPAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation SPAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  SPAppDelegate.h
 //  HYSmartPlus
 //
 //  Created by information on 2017/9/7.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface SPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
