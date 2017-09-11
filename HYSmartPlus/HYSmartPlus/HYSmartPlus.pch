@@ -18,7 +18,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-    #import "SPCommon.h"
+    #import "Headers.h"
 /************__OBJC__END************/
 #endif
 

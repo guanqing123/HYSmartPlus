@@ -7,6 +7,9 @@
 //
 
 #import "SPAppDelegate.h"
+#import "SPAccountTool.h"
+#import "SPAccount.h"
+#import "SPSmartPlusTool.h"
 
 @interface SPAppDelegate ()
 
@@ -17,6 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyWindow];
+
+    // 先判断有无存储账号信息
+    SPAccount *account = [SPAccountTool account];
+    
+    if (account) {
+        [SPSmartPlusTool chooseRootController];
+    } else {
+        [SPSmartPlusTool chooseRootController];
+    }
+    
     return YES;
 }
 
