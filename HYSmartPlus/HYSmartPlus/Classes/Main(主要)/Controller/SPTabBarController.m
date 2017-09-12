@@ -38,22 +38,22 @@
 #pragma mark - 添加子控制器
 - (void)addSpChildViewController {
     NSArray *childArray = @[
-                            @{MallClassKey  : @"ViewController",
+                            @{MallClassKey  : @"SPHandPickViewController",
                               MallTitleKey  : @"首页",
                               MallImgKey    : @"tabr_01_up",
                               MallSelImgKey : @"tabr_01_down"},
                             
-                            @{MallClassKey  : @"ViewController",
+                            @{MallClassKey  : @"SPHandPickViewController",
                               MallTitleKey  : @"分类",
                               MallImgKey    : @"tabr_02_up",
                               MallSelImgKey : @"tabr_02_down"},
                             
-                            @{MallClassKey  : @"ViewController",
+                            @{MallClassKey  : @"SPHandPickViewController",
                               MallTitleKey  : @"购物车",
                               MallImgKey    : @"tabr_04_up",
                               MallSelImgKey : @"tabr_04_down"},
                             
-                            @{MallClassKey  : @"ViewController",
+                            @{MallClassKey  : @"SPHandPickViewController",
                               MallTitleKey  : @"我的",
                               MallImgKey    : @"tabr_05_up",
                               MallSelImgKey : @"tabr_05_down"},
@@ -91,8 +91,7 @@
     return tabBarButton;
 }
 #pragma mark - 点击动画
-- (void)tabBarButtonClick:(UIControl *)tabBarButton
-{
+- (void)tabBarButtonClick:(UIControl *)tabBarButton {
     for (UIView *imageView in tabBarButton.subviews) {
         if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
             //需要实现的帧动画,这里根据自己需求改动

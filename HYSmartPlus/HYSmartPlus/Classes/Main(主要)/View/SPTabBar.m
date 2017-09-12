@@ -16,7 +16,8 @@
 
 #pragma mark - Intial
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         
     }
     return self;

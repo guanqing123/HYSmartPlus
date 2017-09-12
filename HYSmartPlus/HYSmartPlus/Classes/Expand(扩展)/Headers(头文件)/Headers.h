@@ -9,6 +9,7 @@
 #ifndef Headers_h
 #define Headers_h
 
-#import "Macros.h"
+#import "SPConsts.h" // 常量
+#import "Macros.h" // 宏
 
 #endif /* Headers_h */
