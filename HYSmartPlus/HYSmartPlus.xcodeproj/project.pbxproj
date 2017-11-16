@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
+		D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61165F51F6BBCE6008A5199 /* SPBaseParam.m */; };
 		D613BE251F6193110090316D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D613BE231F6193110090316D /* Main.storyboard */; };
 		D613BE271F6193110090316D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D613BE261F6193110090316D /* Images.xcassets */; };
 		D613BE2A1F6193110090316D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D613BE281F6193110090316D /* LaunchScreen.storyboard */; };
@@ -19,13 +20,25 @@
 		D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7D41F66561800D62B89 /* SPTabBarController.m */; };
 		D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7D71F66579C00D62B89 /* SPTabBar.m */; };
 		D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */; };
+		D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */; };
+		D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */; };
 		D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
+		D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C45991F711BF7008B950A /* SPHomeTool.m */; };
+		D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C459C1F711C5D008B950A /* SPSliderParam.m */; };
+		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
+		D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63CDBCF1FBD95CD009A607C /* SPViewController.m */; };
+		D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */; };
+		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
+		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
+		D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
+		D61165F41F6BBCE6008A5199 /* SPBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseParam.h; sourceTree = "<group>"; };
+		D61165F51F6BBCE6008A5199 /* SPBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseParam.m; sourceTree = "<group>"; };
 		D613BE171F6193110090316D /* HYSmartPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYSmartPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D613BE241F6193110090316D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D613BE261F6193110090316D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -49,11 +62,31 @@
 		D613E7DD1F66663800D62B89 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		D613E7DE1F666D2D00D62B89 /* SPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationController.h; sourceTree = "<group>"; };
 		D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
+		D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExtension.h"; sourceTree = "<group>"; };
+		D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExtension.m"; sourceTree = "<group>"; };
+		D6177DCC1F714D9D00667BE1 /* SPSliderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderResult.h; sourceTree = "<group>"; };
+		D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSliderResult.m; sourceTree = "<group>"; };
 		D617DC9D1F67A7AC00DB6FEB /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
 		D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHandPickViewController.m; sourceTree = "<group>"; };
 		D617DCA11F67B81100DB6FEB /* SPConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConsts.h; sourceTree = "<group>"; };
 		D617DCA21F67B81100DB6FEB /* SPConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPConsts.m; sourceTree = "<group>"; };
 		D61884D41F657A6C0027F119 /* HYSmartPlus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSmartPlus.pch; sourceTree = "<group>"; };
+		D61C45981F711BF7008B950A /* SPHomeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHomeTool.h; sourceTree = "<group>"; };
+		D61C45991F711BF7008B950A /* SPHomeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHomeTool.m; sourceTree = "<group>"; };
+		D61C459B1F711C5D008B950A /* SPSliderParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSliderParam.h; path = ../SPSliderParam.h; sourceTree = "<group>"; };
+		D61C459C1F711C5D008B950A /* SPSliderParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSliderParam.m; path = ../SPSliderParam.m; sourceTree = "<group>"; };
+		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
+		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
+		D63CDBCE1FBD95CD009A607C /* SPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPViewController.h; sourceTree = "<group>"; };
+		D63CDBCF1FBD95CD009A607C /* SPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPViewController.m; sourceTree = "<group>"; };
+		D69B14611F67E91A00CB040A /* SPSlideshowHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSlideshowHeadView.h; sourceTree = "<group>"; };
+		D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSlideshowHeadView.m; sourceTree = "<group>"; };
+		D69B14651F67EA6400CB040A /* UIView+SPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPExtension.h"; sourceTree = "<group>"; };
+		D69B14661F67EA6400CB040A /* UIView+SPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPExtension.m"; sourceTree = "<group>"; };
+		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
+		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
+		D6F0F4611FB9832000849796 /* SPNavSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNavSearchBarView.h; sourceTree = "<group>"; };
+		D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNavSearchBarView.m; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +117,15 @@
 				3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D61165F31F6BBCC8008A5199 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D61165F41F6BBCE6008A5199 /* SPBaseParam.h */,
+				D61165F51F6BBCE6008A5199 /* SPBaseParam.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D613BE0E1F6193110090316D = {
@@ -128,8 +170,10 @@
 		D613E7B21F6621E600D62B89 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
-				D617DC9B1F67A74000DB6FEB /* Controller */,
+				D61C45971F711B9E008B950A /* Tool */,
 				D617DC9C1F67A74000DB6FEB /* Model */,
+				D69B145E1F67E8CF00CB040A /* View */,
+				D617DC9B1F67A74000DB6FEB /* Controller */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -145,6 +189,7 @@
 		D613E7B61F6621E600D62B89 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				D61165F31F6BBCC8008A5199 /* Model */,
 				D613E7CC1F6651F500D62B89 /* Tool */,
 				D613E7B71F6621E600D62B89 /* main.m */,
 				D613E7B81F6621E600D62B89 /* SPAppDelegate.h */,
@@ -202,6 +247,8 @@
 			children = (
 				D613E7CD1F66522600D62B89 /* SPSmartPlusTool.h */,
 				D613E7CE1F66522600D62B89 /* SPSmartPlusTool.m */,
+				D62943591F692BE2000287FF /* SPHttpTool.h */,
+				D629435A1F692BE2000287FF /* SPHttpTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -209,8 +256,8 @@
 		D613E7D01F66559E00D62B89 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
-				D613E7D11F6655E900D62B89 /* Controller */,
 				D613E7D21F6655E900D62B89 /* View */,
+				D613E7D11F6655E900D62B89 /* Controller */,
 			);
 			path = "Main(主要)";
 			sourceTree = "<group>";
@@ -238,9 +285,10 @@
 		D613E7D91F66649C00D62B89 /* Expand(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				D69B14641F67E9F800CB040A /* Category(分类) */,
 				D617DCA01F67B7F100DB6FEB /* Const(常量) */,
-				D613E7DC1F66661700D62B89 /* Macros(宏) */,
 				D613E7DA1F6664D300D62B89 /* Headers(头文件) */,
+				D613E7DC1F66661700D62B89 /* Macros(宏) */,
 			);
 			path = "Expand(扩展)";
 			sourceTree = "<group>";
@@ -261,11 +309,24 @@
 			path = "Macros(宏)";
 			sourceTree = "<group>";
 		};
+		D6177DCB1F714D4F00667BE1 /* HomeSliders */ = {
+			isa = PBXGroup;
+			children = (
+				D61C459B1F711C5D008B950A /* SPSliderParam.h */,
+				D61C459C1F711C5D008B950A /* SPSliderParam.m */,
+				D6177DCC1F714D9D00667BE1 /* SPSliderResult.h */,
+				D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */,
+			);
+			path = HomeSliders;
+			sourceTree = "<group>";
+		};
 		D617DC9B1F67A74000DB6FEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				D617DC9D1F67A7AC00DB6FEB /* SPHandPickViewController.h */,
 				D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */,
+				D63CDBCE1FBD95CD009A607C /* SPViewController.h */,
+				D63CDBCF1FBD95CD009A607C /* SPViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +334,7 @@
 		D617DC9C1F67A74000DB6FEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D6177DCB1F714D4F00667BE1 /* HomeSliders */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +358,55 @@
 				D613E7B61F6621E600D62B89 /* Other(其他) */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		D61C45971F711B9E008B950A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D61C45981F711BF7008B950A /* SPHomeTool.h */,
+				D61C45991F711BF7008B950A /* SPHomeTool.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		D69B145E1F67E8CF00CB040A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D69B145F1F67E8CF00CB040A /* CollectionView */,
+				D6F0F4611FB9832000849796 /* SPNavSearchBarView.h */,
+				D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D69B145F1F67E8CF00CB040A /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D69B14601F67E8CF00CB040A /* Head */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		D69B14601F67E8CF00CB040A /* Head */ = {
+			isa = PBXGroup;
+			children = (
+				D69B14611F67E91A00CB040A /* SPSlideshowHeadView.h */,
+				D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */,
+			);
+			path = Head;
+			sourceTree = "<group>";
+		};
+		D69B14641F67E9F800CB040A /* Category(分类) */ = {
+			isa = PBXGroup;
+			children = (
+				D69B14651F67EA6400CB040A /* UIView+SPExtension.h */,
+				D69B14661F67EA6400CB040A /* UIView+SPExtension.m */,
+				D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */,
+				D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */,
+				D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */,
+				D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */,
+			);
+			path = "Category(分类)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,14 +534,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */,
+				D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
+				D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */,
+				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
+				D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
 				D613E7CF1F66522600D62B89 /* SPSmartPlusTool.m in Sources */,
+				D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */,
+				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
+				D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */,
+				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
+				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
+				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D613E7C81F662F3700D62B89 /* SPAccountTool.m in Sources */,
 				D613E7C51F66229700D62B89 /* SPAccount.m in Sources */,
+				D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */,
 				D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

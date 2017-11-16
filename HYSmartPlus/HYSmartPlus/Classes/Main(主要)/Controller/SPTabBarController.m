@@ -43,17 +43,17 @@
                               MallImgKey    : @"tabr_01_up",
                               MallSelImgKey : @"tabr_01_down"},
                             
-                            @{MallClassKey  : @"SPHandPickViewController",
+                            @{MallClassKey  : @"SPViewController",
                               MallTitleKey  : @"分类",
                               MallImgKey    : @"tabr_02_up",
                               MallSelImgKey : @"tabr_02_down"},
                             
-                            @{MallClassKey  : @"SPHandPickViewController",
+                            @{MallClassKey  : @"SPViewController",
                               MallTitleKey  : @"购物车",
                               MallImgKey    : @"tabr_04_up",
                               MallSelImgKey : @"tabr_04_down"},
                             
-                            @{MallClassKey  : @"SPHandPickViewController",
+                            @{MallClassKey  : @"SPViewController",
                               MallTitleKey  : @"我的",
                               MallImgKey    : @"tabr_05_up",
                               MallSelImgKey : @"tabr_05_down"},
@@ -78,6 +78,7 @@
     //点击tabBarItem动画
     [self tabBarButtonClick:[self getTabBarButton]];
 }
+
 - (UIControl *)getTabBarButton{
     NSMutableArray *tabBarButtons = [[NSMutableArray alloc] initWithCapacity:0];
     

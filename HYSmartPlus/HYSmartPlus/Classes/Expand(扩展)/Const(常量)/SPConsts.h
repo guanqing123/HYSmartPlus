@@ -14,12 +14,12 @@
 UIKIT_EXTERN CGFloat const SPMargin;
 
 /** 导航栏高度 */
-UIKIT_EXTERN CGFloat const SPNaviH;
+//UIKIT_EXTERN CGFloat const SPNaviH;
 
 /** 底部tab高度 */
-UIKIT_EXTERN CGFloat const SPBottomTabH;
+//UIKIT_EXTERN CGFloat const SPBottomTabH;
 
 /** 顶部Nav高度+指示器 */
-UIKIT_EXTERN CGFloat const SPTopNavH;
+//UIKIT_EXTERN CGFloat const SPTopNavH;
 
 @end

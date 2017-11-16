@@ -13,6 +13,14 @@
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 /** 屏幕宽度 */
 #define ScreenW [UIScreen mainScreen].bounds.size.width
+/** 状态栏高度 */
+#define SPStatusBarH [[UIApplication sharedApplication] statusBarFrame].size.height
+/** 导航栏高度 */
+#define SPNaviH 44.0
+/** 顶部Nav高度+指示器 */
+#define SPTopNavH (SPStatusBarH + SPNaviH)
+/** 底部tab高度 */
+#define SPBottomTabH (SPStatusBarH > 20 ? 83 : 49)
 
 /******************    TabBar          *************/
 #define MallClassKey   @"rootVCClassString"
@@ -45,5 +53,11 @@
 #else   //发布阶段
 #define GQLog(...)
 #endif
+
+//鸿雁销客
+#define XKURL @"http://218.75.78.166:9101/app/api"
+
+//首页滚动条
+#define slider @"HYXK00019"
 
 #endif /* Macros_h */
