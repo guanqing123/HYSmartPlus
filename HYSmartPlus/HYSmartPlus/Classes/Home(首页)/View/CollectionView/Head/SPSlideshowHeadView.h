@@ -10,10 +10,4 @@
 
 @interface SPSlideshowHeadView : UICollectionReusableView
 
-- (void)loading;
-
-- (void)show:(NSArray *)slideImgArray;
-
-@property (nonatomic, strong)  NSArray *imageURLStringsGroup;
-
 @end

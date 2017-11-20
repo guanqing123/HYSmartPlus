@@ -5,18 +5,26 @@
 //  Created by information on 2017/9/12.
 //  Copyright © 2017年 hongyan. All rights reserved.
 //
-// UIBarButtonItem
-#import "UIBarButtonItem+SPBarButtonItem.h"
-#import "UIImage+SPExtension.h"
-// titleView
+
+/** model */
+#import "SPGridItem.h"
+/** view */
 #import "SPNavSearchBarView.h"
+
+/** cell */
+#import "SPGoodsGridCell.h" //10个选项
 
 #define MJProductCellID @"product"
 #import "SPHandPickViewController.h"
 #import "SPHomeTool.h"
 #import "SPHttpTool.h"
 
+/** vendors */
 #import "MJRefresh.h"
+#import "MJExtension.h"
+
+/** category */
+#import "UIBarButtonItem+SPBarButtonItem.h"
 
 /* head */
 #import "SPSlideshowHeadView.h"  //轮播图
@@ -24,8 +32,9 @@
 @interface SPHandPickViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 /* collectionView */
 @property (nonatomic, strong)  UICollectionView *collectionView;
-/* 头部滚动页 */
-@property (nonatomic, strong)  SPSlideshowHeadView *slideView;
+/** 10个属性 */
+@property (nonatomic, strong)  NSMutableArray<SPGridItem *> *gridItem;
+
 /* 滚回顶部按钮 */
 @property (nonatomic, strong)  UIButton *backTopButton;
 /* 下拉滚动gif */
@@ -34,8 +43,12 @@
 
 @end
 
-/* head */
+/** head */
 static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
+
+
+/** cell */
+static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
 
 @implementation SPHandPickViewController
 
@@ -43,13 +56,15 @@ static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+//        layout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator = NO;
+        
+        [_collectionView registerClass:[SPGoodsGridCell class] forCellWithReuseIdentifier:SPGoodsGridCellID];
+        
         [_collectionView registerClass:[SPSlideshowHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPSlideshowHeadViewID];
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:MJProductCellID];
         
         MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
         [header setImages:self.headerRefreshImages forState:MJRefreshStateIdle];
@@ -126,17 +141,7 @@ static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
 
 #pragma mark - setUpData
 - (void)setUpData {
-    SPSliderParam *param = [SPSliderParam param:slider];
-    [SPHomeTool homeSliderWithParam:param success:^(NSArray *sliderResult) {
-        NSMutableArray *resultArray = [NSMutableArray array];
-        [sliderResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            SPSliderResult *result = obj;
-            [resultArray addObject:result.path];
-        }];
-        self.slideView.imageURLStringsGroup = resultArray;
-    } failure:^(NSError *error) {
-        
-    }];
+    _gridItem = [SPGridItem mj_objectArrayWithFilename:@"GoodsGrid.plist"];
 }
 
 #pragma mark - 滚回顶部
@@ -170,13 +175,21 @@ static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 120;
+    if (section == 0) { //10属性
+        return _gridItem.count;
+    }
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MJProductCellID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
-    return cell;
+    UICollectionViewCell *gridCell = nil;
+    if (indexPath.section == 0) {
+        SPGoodsGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsGridCellID forIndexPath:indexPath];
+        cell.gridItem = _gridItem[indexPath.row];
+        cell.backgroundColor = [UIColor redColor];
+        gridCell = cell;
+    }
+    return gridCell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -184,11 +197,18 @@ static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
     if (kind == UICollectionElementKindSectionHeader) {
         if (indexPath.section == 0) {
             SPSlideshowHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPSlideshowHeadViewID forIndexPath:indexPath];
-            self.slideView = headerView;
             reusableView = headerView;
         }
     }
     return reusableView;
+}
+
+#pragma mark - item宽高
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (indexPath.section == 0) { //9宫格组
+        return CGSizeMake(ScreenW / 5, ScreenW / 5 + SPMargin);
+    }
+    return CGSizeZero;
 }
 
 #pragma mark - head宽高
@@ -199,6 +219,19 @@ static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
     }
     
     return CGSizeZero;
+}
+
+/**
+ 这里我用代理设置以下间距 感兴趣可以自己调整值看看差别
+ */
+#pragma mark - <UICollectionViewDelegateFlowLayout>
+#pragma mark - X间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return (section == 4) ? 4 : 0;
+}
+#pragma mark - Y间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return (section == 4) ? 4 : 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

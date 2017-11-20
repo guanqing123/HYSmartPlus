@@ -21,10 +21,11 @@
     
     NSDictionary *parameter = @{@"content" : jsonString};
     [SPHttpTool postWithURL:XKURL params:parameter success:^(id json) {
-        if (success) {
-            NSArray *dictArray = [[json objectForKey:@"data"] objectForKey:@"list"];
-            NSArray *result = [SPSliderResult mj_objectArrayWithKeyValuesArray:dictArray];
+        if ([[[json objectForKey:@"header"] objectForKey:@"succflag"] isEqualToString:@"1"]) {
+            NSArray *result = [SPSliderResult mj_objectArrayWithKeyValuesArray:[[json objectForKey:@"data"] objectForKey:@"list"]];
             success(result);
+        }else{
+            success([NSArray array]);
         }
     } failure:^(NSError *error) {
         if (failure) {

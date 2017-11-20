@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
+		D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A691C1FC298CC007BA4F6 /* SPGridItem.m */; };
+		D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */; };
+		D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */; };
 		D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61165F51F6BBCE6008A5199 /* SPBaseParam.m */; };
 		D613BE251F6193110090316D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D613BE231F6193110090316D /* Main.storyboard */; };
 		D613BE271F6193110090316D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D613BE261F6193110090316D /* Images.xcassets */; };
@@ -37,6 +40,11 @@
 /* Begin PBXFileReference section */
 		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
+		D60A691B1FC298CC007BA4F6 /* SPGridItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGridItem.h; sourceTree = "<group>"; };
+		D60A691C1FC298CC007BA4F6 /* SPGridItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGridItem.m; sourceTree = "<group>"; };
+		D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
+		D60A69241FC2B2DD007BA4F6 /* SPGoodsGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsGridCell.h; sourceTree = "<group>"; };
+		D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsGridCell.m; sourceTree = "<group>"; };
 		D61165F41F6BBCE6008A5199 /* SPBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseParam.h; sourceTree = "<group>"; };
 		D61165F51F6BBCE6008A5199 /* SPBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseParam.m; sourceTree = "<group>"; };
 		D613BE171F6193110090316D /* HYSmartPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYSmartPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +125,39 @@
 				3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D60A691E1FC2B0D5007BA4F6 /* Resource(资源) */ = {
+			isa = PBXGroup;
+			children = (
+				D60A691F1FC2B15A007BA4F6 /* Plist */,
+			);
+			path = "Resource(资源)";
+			sourceTree = "<group>";
+		};
+		D60A691F1FC2B15A007BA4F6 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				D60A69201FC2B17F007BA4F6 /* 首页Plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		D60A69201FC2B17F007BA4F6 /* 首页Plist */ = {
+			isa = PBXGroup;
+			children = (
+				D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */,
+			);
+			path = "首页Plist";
+			sourceTree = "<group>";
+		};
+		D60A69231FC2B2AA007BA4F6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D60A69241FC2B2DD007BA4F6 /* SPGoodsGridCell.h */,
+				D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D61165F31F6BBCC8008A5199 /* Model */ = {
@@ -335,6 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				D6177DCB1F714D4F00667BE1 /* HomeSliders */,
+				D60A691B1FC298CC007BA4F6 /* SPGridItem.h */,
+				D60A691C1FC298CC007BA4F6 /* SPGridItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +398,7 @@
 				D613E7B21F6621E600D62B89 /* Home(首页) */,
 				D613E7B51F6621E600D62B89 /* Me(我) */,
 				D613E7D91F66649C00D62B89 /* Expand(扩展) */,
+				D60A691E1FC2B0D5007BA4F6 /* Resource(资源) */,
 				D613E7B61F6621E600D62B89 /* Other(其他) */,
 			);
 			path = Classes;
@@ -382,6 +426,7 @@
 		D69B145F1F67E8CF00CB040A /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				D60A69231FC2B2AA007BA4F6 /* Cell */,
 				D69B14601F67E8CF00CB040A /* Head */,
 			);
 			path = CollectionView;
@@ -475,6 +520,7 @@
 				D613BE2A1F6193110090316D /* LaunchScreen.storyboard in Resources */,
 				D613BE271F6193110090316D /* Images.xcassets in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
+				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,12 +588,14 @@
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
+				D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */,
 				D613E7CF1F66522600D62B89 /* SPSmartPlusTool.m in Sources */,
 				D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
+				D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D613E7C81F662F3700D62B89 /* SPAccountTool.m in Sources */,

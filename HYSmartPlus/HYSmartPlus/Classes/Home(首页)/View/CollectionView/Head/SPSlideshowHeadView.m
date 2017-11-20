@@ -8,6 +8,7 @@
 
 #import "SPSlideshowHeadView.h"
 #import "DGActivityIndicatorView.h"
+#import "SPHomeTool.h"
 #import <SDCycleScrollView.h>
 
 @interface SPSlideshowHeadView()<SDCycleScrollViewDelegate>
@@ -26,14 +27,15 @@
 #pragma mark - Intial
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        UIColor *bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"slide_backgroud_icon"]];
-        self.backgroundColor = bgColor;
+        self.backgroundColor = RGB(230, 230, 230);
         // 1.指示器
         [self addSubview:self.indicatorView];
         // 2.滚动页
         [self addSubview:self.cycleScrollView];
         // 3.添加刷新按钮
         [self addSubview:self.refreshView];
+        // 4.加载数据
+        [self loadData];
     }
     return self;
 }
@@ -47,8 +49,8 @@
 
 - (SDCycleScrollView *)cycleScrollView {
     if (!_cycleScrollView) {
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:[UIImage imageNamed:@""]];
-//        _cycleScrollView.alpha = 0;
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:[UIImage imageNamed:@"slide_backgroud_icon"]];
+        _cycleScrollView.alpha = 0;
         _cycleScrollView.delegate = self;
         _cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleToFill;
         _cycleScrollView.autoScrollTimeInterval = 3.0;
@@ -106,9 +108,31 @@
     }];
 }
 
-- (void)setImageURLStringsGroup:(NSArray *)imageURLStringsGroup {
-    _imageURLStringsGroup = imageURLStringsGroup;
-    self.cycleScrollView.imageURLStringsGroup = imageURLStringsGroup;
+- (void)loadData {
+    self.refreshView.alpha = 0;
+    self.cycleScrollView.alpha = 0;
+    [self.indicatorView startAnimating];
+     __weak typeof(self) weakSelf = self;
+    SPSliderParam *param = [SPSliderParam param:slider];
+    [SPHomeTool homeSliderWithParam:param success:^(NSArray *sliderResult) {
+        [weakSelf.indicatorView stopAnimating];
+        NSMutableArray *resultArray = [NSMutableArray array];
+        [sliderResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            SPSliderResult *result = obj;
+            [resultArray addObject:result.path];
+        }];
+        weakSelf.cycleScrollView.imageURLStringsGroup = resultArray;
+        [UIView animateWithDuration:2.0 animations:^{
+            weakSelf.cycleScrollView.alpha = 1;
+        }];
+    } failure:^(NSError *error) {
+        [weakSelf.indicatorView stopAnimating];
+        weakSelf.refreshView.alpha = 1;
+    }];
+}
+
+- (void)refreshBtnClick {
+    [self loadData];
 }
 
 @end
