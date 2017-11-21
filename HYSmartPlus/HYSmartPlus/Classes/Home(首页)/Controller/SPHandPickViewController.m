@@ -6,28 +6,35 @@
 //  Copyright © 2017年 hongyan. All rights reserved.
 //
 
+#import "SPHandPickViewController.h"
+
 /** model */
 #import "SPGridItem.h"
+
 /** view */
 #import "SPNavSearchBarView.h"
 
 /** cell */
 #import "SPGoodsGridCell.h" //10个选项
+#import "SPGoodsCountDownCell.h" //倒计时商品
 
-#define MJProductCellID @"product"
-#import "SPHandPickViewController.h"
-#import "SPHomeTool.h"
-#import "SPHttpTool.h"
+/* head */
+#import "SPSlideshowHeadView.h"  //轮播图
+#import "SPCountDownHeadView.h"  //倒计时标语
 
-/** vendors */
+/** foot */
+#import "SPTopLineFootView.h" //头条
+
+/** vendor */
 #import "MJRefresh.h"
 #import "MJExtension.h"
 
 /** category */
 #import "UIBarButtonItem+SPBarButtonItem.h"
 
-/* head */
-#import "SPSlideshowHeadView.h"  //轮播图
+/** tool */
+#import "SPHomeTool.h"
+#import "SPHttpTool.h"
 
 @interface SPHandPickViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 /* collectionView */
@@ -43,12 +50,17 @@
 
 @end
 
-/** head */
-static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
-
-
 /** cell */
 static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
+static NSString *const SPGoodsCountDownCellID = @"SPGoodsCountDownCell";
+
+/** head */
+static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
+static NSString *const SPCountDownHeadViewID = @"SPCountDownHeadView";
+
+/** foot */
+static NSString *const SPTopLineFootViewID = @"SPTopLineFootView";
+
 
 @implementation SPHandPickViewController
 
@@ -63,8 +75,12 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
         _collectionView.showsVerticalScrollIndicator = NO;
         
         [_collectionView registerClass:[SPGoodsGridCell class] forCellWithReuseIdentifier:SPGoodsGridCellID];
+        [_collectionView registerClass:[SPGoodsCountDownCell class] forCellWithReuseIdentifier:SPGoodsCountDownCellID];
+        
+        [_collectionView registerClass:[SPTopLineFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPTopLineFootViewID];
         
         [_collectionView registerClass:[SPSlideshowHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPSlideshowHeadViewID];
+        [_collectionView registerClass:[SPCountDownHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPCountDownHeadViewID];
         
         MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
         [header setImages:self.headerRefreshImages forState:MJRefreshStateIdle];
@@ -171,22 +187,29 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
 
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (section == 0) { //10属性
         return _gridItem.count;
     }
+    if (section == 1) {
+        return 1;
+    }
     return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *gridCell = nil;
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0) { // 10个属性
         SPGoodsGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsGridCellID forIndexPath:indexPath];
         cell.gridItem = _gridItem[indexPath.row];
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = [UIColor whiteColor];
+        gridCell = cell;
+    }else if(indexPath.section == 1) { // 倒计时
+        SPGoodsCountDownCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsCountDownCellID forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor blueColor];
         gridCell = cell;
     }
     return gridCell;
@@ -198,8 +221,19 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
         if (indexPath.section == 0) {
             SPSlideshowHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPSlideshowHeadViewID forIndexPath:indexPath];
             reusableView = headerView;
+        }else if(indexPath.section == 1) {
+            SPCountDownHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPCountDownHeadViewID forIndexPath:indexPath];
+            reusableView = headerView;
         }
     }
+    
+    if (kind == UICollectionElementKindSectionFooter) {
+        if (indexPath.section == 0) {
+            SPTopLineFootView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPTopLineFootViewID forIndexPath:indexPath];
+            reusableView = footerView;
+        }
+    }
+    
     return reusableView;
 }
 
@@ -207,6 +241,9 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (indexPath.section == 0) { //9宫格组
         return CGSizeMake(ScreenW / 5, ScreenW / 5 + SPMargin);
+    }
+    if (indexPath.section == 1) { //计时
+        return CGSizeMake(ScreenW, 150);
     }
     return CGSizeZero;
 }
@@ -216,6 +253,19 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
     
     if (section == 0) {
         return CGSizeMake(ScreenW, ScreenW/3); //图片滚动的宽高
+    }
+    if (section == 1) {
+        return CGSizeMake(ScreenW, 40);
+    }
+    
+    return CGSizeZero;
+}
+
+#pragma mark - foot宽高
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+
+    if (section == 0) {
+        return CGSizeMake(ScreenW, 60); //Top头条的宽高
     }
     
     return CGSizeZero;

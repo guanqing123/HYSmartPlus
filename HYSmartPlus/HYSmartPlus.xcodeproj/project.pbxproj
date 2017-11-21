@@ -24,6 +24,14 @@
 		D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7D71F66579C00D62B89 /* SPTabBar.m */; };
 		D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */; };
 		D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */; };
+		D614E8831FC3B6BF000C8F85 /* SPTopLineFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */; };
+		D614E8891FC3B82D000C8F85 /* SPNumericalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */; };
+		D614E88C1FC40519000C8F85 /* SPCountDownHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */; };
+		D614E88F1FC40753000C8F85 /* SPZuoWenRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */; };
+		D614E8921FC41577000C8F85 /* SPGoodsCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */; };
+		D614E8951FC418AD000C8F85 /* SPRecommendItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8941FC418AD000C8F85 /* SPRecommendItem.m */; };
+		D614E8981FC41BD0000C8F85 /* SPGoodsSurplusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */; };
+		D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D614E8991FC4250F000C8F85 /* CountDownShop.plist */; };
 		D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */; };
 		D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
@@ -72,6 +80,21 @@
 		D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
 		D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExtension.h"; sourceTree = "<group>"; };
 		D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExtension.m"; sourceTree = "<group>"; };
+		D614E8811FC3B6BF000C8F85 /* SPTopLineFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTopLineFootView.h; sourceTree = "<group>"; };
+		D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTopLineFootView.m; sourceTree = "<group>"; };
+		D614E8871FC3B82D000C8F85 /* SPNumericalScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNumericalScrollView.h; sourceTree = "<group>"; };
+		D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNumericalScrollView.m; sourceTree = "<group>"; };
+		D614E88A1FC40519000C8F85 /* SPCountDownHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCountDownHeadView.h; sourceTree = "<group>"; };
+		D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCountDownHeadView.m; sourceTree = "<group>"; };
+		D614E88D1FC40753000C8F85 /* SPZuoWenRightButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPZuoWenRightButton.h; sourceTree = "<group>"; };
+		D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPZuoWenRightButton.m; sourceTree = "<group>"; };
+		D614E8901FC41577000C8F85 /* SPGoodsCountDownCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsCountDownCell.h; sourceTree = "<group>"; };
+		D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsCountDownCell.m; sourceTree = "<group>"; };
+		D614E8931FC418AD000C8F85 /* SPRecommendItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRecommendItem.h; sourceTree = "<group>"; };
+		D614E8941FC418AD000C8F85 /* SPRecommendItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRecommendItem.m; sourceTree = "<group>"; };
+		D614E8961FC41BD0000C8F85 /* SPGoodsSurplusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsSurplusCell.h; sourceTree = "<group>"; };
+		D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsSurplusCell.m; sourceTree = "<group>"; };
+		D614E8991FC4250F000C8F85 /* CountDownShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountDownShop.plist; sourceTree = "<group>"; };
 		D6177DCC1F714D9D00667BE1 /* SPSliderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderResult.h; sourceTree = "<group>"; };
 		D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSliderResult.m; sourceTree = "<group>"; };
 		D617DC9D1F67A7AC00DB6FEB /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
@@ -146,6 +169,7 @@
 		D60A69201FC2B17F007BA4F6 /* 首页Plist */ = {
 			isa = PBXGroup;
 			children = (
+				D614E8991FC4250F000C8F85 /* CountDownShop.plist */,
 				D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */,
 			);
 			path = "首页Plist";
@@ -156,6 +180,10 @@
 			children = (
 				D60A69241FC2B2DD007BA4F6 /* SPGoodsGridCell.h */,
 				D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */,
+				D614E8901FC41577000C8F85 /* SPGoodsCountDownCell.h */,
+				D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */,
+				D614E8961FC41BD0000C8F85 /* SPGoodsSurplusCell.h */,
+				D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -350,6 +378,15 @@
 			path = "Macros(宏)";
 			sourceTree = "<group>";
 		};
+		D614E8801FC3B688000C8F85 /* Foot */ = {
+			isa = PBXGroup;
+			children = (
+				D614E8811FC3B6BF000C8F85 /* SPTopLineFootView.h */,
+				D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */,
+			);
+			path = Foot;
+			sourceTree = "<group>";
+		};
 		D6177DCB1F714D4F00667BE1 /* HomeSliders */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +415,8 @@
 				D6177DCB1F714D4F00667BE1 /* HomeSliders */,
 				D60A691B1FC298CC007BA4F6 /* SPGridItem.h */,
 				D60A691C1FC298CC007BA4F6 /* SPGridItem.m */,
+				D614E8931FC418AD000C8F85 /* SPRecommendItem.h */,
+				D614E8941FC418AD000C8F85 /* SPRecommendItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +458,10 @@
 				D69B145F1F67E8CF00CB040A /* CollectionView */,
 				D6F0F4611FB9832000849796 /* SPNavSearchBarView.h */,
 				D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */,
+				D614E8871FC3B82D000C8F85 /* SPNumericalScrollView.h */,
+				D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */,
+				D614E88D1FC40753000C8F85 /* SPZuoWenRightButton.h */,
+				D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				D60A69231FC2B2AA007BA4F6 /* Cell */,
+				D614E8801FC3B688000C8F85 /* Foot */,
 				D69B14601F67E8CF00CB040A /* Head */,
 			);
 			path = CollectionView;
@@ -437,6 +481,8 @@
 			children = (
 				D69B14611F67E91A00CB040A /* SPSlideshowHeadView.h */,
 				D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */,
+				D614E88A1FC40519000C8F85 /* SPCountDownHeadView.h */,
+				D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */,
 			);
 			path = Head;
 			sourceTree = "<group>";
@@ -519,6 +565,7 @@
 			files = (
 				D613BE2A1F6193110090316D /* LaunchScreen.storyboard in Resources */,
 				D613BE271F6193110090316D /* Images.xcassets in Resources */,
+				D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 			);
@@ -580,28 +627,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */,
+				D614E88C1FC40519000C8F85 /* SPCountDownHeadView.m in Sources */,
+				D614E8891FC3B82D000C8F85 /* SPNumericalScrollView.m in Sources */,
 				D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
+				D614E8921FC41577000C8F85 /* SPGoodsCountDownCell.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
 				D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
+				D614E8951FC418AD000C8F85 /* SPRecommendItem.m in Sources */,
 				D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */,
 				D613E7CF1F66522600D62B89 /* SPSmartPlusTool.m in Sources */,
 				D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
+				D614E88F1FC40753000C8F85 /* SPZuoWenRightButton.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
 				D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D613E7C81F662F3700D62B89 /* SPAccountTool.m in Sources */,
 				D613E7C51F66229700D62B89 /* SPAccount.m in Sources */,
+				D614E8981FC41BD0000C8F85 /* SPGoodsSurplusCell.m in Sources */,
 				D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */,
 				D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */,
+				D614E8831FC3B6BF000C8F85 /* SPTopLineFootView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
