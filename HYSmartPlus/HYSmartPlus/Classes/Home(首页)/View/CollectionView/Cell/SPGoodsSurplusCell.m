@@ -62,6 +62,7 @@
     natureLabel.font = PFR10Font;
     natureLabel.textColor = [UIColor whiteColor];
     [self.goodsImageView addSubview:natureLabel];
+    self.natureLabel = natureLabel;
 }
 
 #pragma mark - 布局
@@ -73,6 +74,22 @@
         make.top.mas_equalTo(self);
         make.width.mas_equalTo(self).multipliedBy(0.8);
         make.height.mas_equalTo(self.dc_width * 0.8);
+    }];
+    
+    [self.priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [make.top.mas_equalTo(self.goodsImageView.mas_bottom) setOffset:2];
+        make.centerX.mas_equalTo(self);
+    }];
+    
+    [self.stockLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [make.top.mas_equalTo(self.priceLabel.mas_bottom) setOffset:2];
+        make.centerX.mas_equalTo(self);
+    }];
+    
+    [self.natureLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.goodsImageView.mas_bottom);
+        make.left.mas_equalTo(self.goodsImageView);
+        make.size.mas_equalTo(CGSizeMake(30, 15));
     }];
 }
 

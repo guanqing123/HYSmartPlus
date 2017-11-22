@@ -37,6 +37,14 @@
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
 		D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C45991F711BF7008B950A /* SPHomeTool.m */; };
 		D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C459C1F711C5D008B950A /* SPSliderParam.m */; };
+		D626C2471FC51F1500FFD736 /* SPExceedApplianceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */; };
+		D626C24A1FC541C900FFD736 /* SPGoodsHandheldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */; };
+		D626C24D1FC54A2900FFD736 /* SPScrollAdFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */; };
+		D626C2501FC5534E00FFD736 /* SPGoodsRecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */; };
+		D626C2531FC55ACD00FFD736 /* SPLIRLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */; };
+		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
+		D626C2581FC5750600FFD736 /* SPYouLikeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */; };
+		D626C25B1FC577D700FFD736 /* SPGoodsYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63CDBCF1FBD95CD009A607C /* SPViewController.m */; };
 		D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */; };
@@ -106,6 +114,21 @@
 		D61C45991F711BF7008B950A /* SPHomeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHomeTool.m; sourceTree = "<group>"; };
 		D61C459B1F711C5D008B950A /* SPSliderParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSliderParam.h; path = ../SPSliderParam.h; sourceTree = "<group>"; };
 		D61C459C1F711C5D008B950A /* SPSliderParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSliderParam.m; path = ../SPSliderParam.m; sourceTree = "<group>"; };
+		D626C2451FC51F1500FFD736 /* SPExceedApplianceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPExceedApplianceCell.h; sourceTree = "<group>"; };
+		D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPExceedApplianceCell.m; sourceTree = "<group>"; };
+		D626C2481FC541C900FFD736 /* SPGoodsHandheldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsHandheldCell.h; sourceTree = "<group>"; };
+		D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsHandheldCell.m; sourceTree = "<group>"; };
+		D626C24B1FC54A2900FFD736 /* SPScrollAdFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScrollAdFootView.h; sourceTree = "<group>"; };
+		D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScrollAdFootView.m; sourceTree = "<group>"; };
+		D626C24E1FC5534E00FFD736 /* SPGoodsRecommendHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsRecommendHeadView.h; sourceTree = "<group>"; };
+		D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsRecommendHeadView.m; sourceTree = "<group>"; };
+		D626C2511FC55ACD00FFD736 /* SPLIRLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLIRLButton.h; sourceTree = "<group>"; };
+		D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLIRLButton.m; sourceTree = "<group>"; };
+		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
+		D626C2561FC5750600FFD736 /* SPYouLikeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPYouLikeHeadView.h; sourceTree = "<group>"; };
+		D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPYouLikeHeadView.m; sourceTree = "<group>"; };
+		D626C2591FC577D700FFD736 /* SPGoodsYouLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsYouLikeCell.h; sourceTree = "<group>"; };
+		D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsYouLikeCell.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
 		D63CDBCE1FBD95CD009A607C /* SPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPViewController.h; sourceTree = "<group>"; };
@@ -169,6 +192,7 @@
 		D60A69201FC2B17F007BA4F6 /* 首页Plist */ = {
 			isa = PBXGroup;
 			children = (
+				D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */,
 				D614E8991FC4250F000C8F85 /* CountDownShop.plist */,
 				D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */,
 			);
@@ -184,6 +208,12 @@
 				D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */,
 				D614E8961FC41BD0000C8F85 /* SPGoodsSurplusCell.h */,
 				D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */,
+				D626C2451FC51F1500FFD736 /* SPExceedApplianceCell.h */,
+				D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */,
+				D626C2481FC541C900FFD736 /* SPGoodsHandheldCell.h */,
+				D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */,
+				D626C2591FC577D700FFD736 /* SPGoodsYouLikeCell.h */,
+				D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -383,6 +413,8 @@
 			children = (
 				D614E8811FC3B6BF000C8F85 /* SPTopLineFootView.h */,
 				D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */,
+				D626C24B1FC54A2900FFD736 /* SPScrollAdFootView.h */,
+				D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */,
 			);
 			path = Foot;
 			sourceTree = "<group>";
@@ -462,6 +494,8 @@
 				D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */,
 				D614E88D1FC40753000C8F85 /* SPZuoWenRightButton.h */,
 				D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */,
+				D626C2511FC55ACD00FFD736 /* SPLIRLButton.h */,
+				D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +517,10 @@
 				D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */,
 				D614E88A1FC40519000C8F85 /* SPCountDownHeadView.h */,
 				D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */,
+				D626C24E1FC5534E00FFD736 /* SPGoodsRecommendHeadView.h */,
+				D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */,
+				D626C2561FC5750600FFD736 /* SPYouLikeHeadView.h */,
+				D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */,
 			);
 			path = Head;
 			sourceTree = "<group>";
@@ -565,6 +603,7 @@
 			files = (
 				D613BE2A1F6193110090316D /* LaunchScreen.storyboard in Resources */,
 				D613BE271F6193110090316D /* Images.xcassets in Resources */,
+				D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */,
 				D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
@@ -633,6 +672,7 @@
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
 				D614E8921FC41577000C8F85 /* SPGoodsCountDownCell.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
+				D626C24A1FC541C900FFD736 /* SPGoodsHandheldCell.m in Sources */,
 				D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
@@ -640,18 +680,24 @@
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
 				D614E8951FC418AD000C8F85 /* SPRecommendItem.m in Sources */,
 				D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */,
+				D626C2471FC51F1500FFD736 /* SPExceedApplianceCell.m in Sources */,
 				D613E7CF1F66522600D62B89 /* SPSmartPlusTool.m in Sources */,
+				D626C2501FC5534E00FFD736 /* SPGoodsRecommendHeadView.m in Sources */,
 				D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D614E88F1FC40753000C8F85 /* SPZuoWenRightButton.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
+				D626C2581FC5750600FFD736 /* SPYouLikeHeadView.m in Sources */,
+				D626C25B1FC577D700FFD736 /* SPGoodsYouLikeCell.m in Sources */,
 				D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D613E7C81F662F3700D62B89 /* SPAccountTool.m in Sources */,
+				D626C2531FC55ACD00FFD736 /* SPLIRLButton.m in Sources */,
 				D613E7C51F66229700D62B89 /* SPAccount.m in Sources */,
+				D626C24D1FC54A2900FFD736 /* SPScrollAdFootView.m in Sources */,
 				D614E8981FC41BD0000C8F85 /* SPGoodsSurplusCell.m in Sources */,
 				D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */,
 				D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */,

@@ -87,5 +87,9 @@ static NSString *const SPGoodsSurplusCellID = @"SPGoodsSurplusCell";
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"点击了计时商品%zd",indexPath.row);
+}
 
 @end
