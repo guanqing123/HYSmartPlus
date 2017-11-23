@@ -43,7 +43,7 @@
                               MallImgKey    : @"tabr_01_up",
                               MallSelImgKey : @"tabr_01_down"},
                             
-                            @{MallClassKey  : @"SPViewController",
+                            @{MallClassKey  : @"SPCommodityViewController",
                               MallTitleKey  : @"分类",
                               MallImgKey    : @"tabr_02_up",
                               MallSelImgKey : @"tabr_02_down"},

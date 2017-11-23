@@ -20,6 +20,7 @@
 #import "SPGoodsCountDownCell.h" //倒计时商品
 #import "SPExceedApplianceCell.h" //掌上专享
 #import "SPGoodsHandheldCell.h" //精品精选
+#import "SPGoodsYouLikeCell.h" //猜你喜欢
 
 /* head */
 #import "SPSlideshowHeadView.h"  //轮播图
@@ -30,6 +31,7 @@
 /** foot */
 #import "SPTopLineFootView.h" //头条
 #import "SPScrollAdFootView.h" //掌上专享
+#import "SPOverFootView.h" //猜你喜欢
 
 /** vendor */
 #import "MJRefresh.h"
@@ -63,6 +65,7 @@ static NSString *const SPGoodsGridCellID = @"SPGoodsGridCell";
 static NSString *const SPGoodsCountDownCellID = @"SPGoodsCountDownCell";
 static NSString *const SPExceedApplianceCellID = @"SPExceedApplianceCell";
 static NSString *const SPGoodsHandheldCellID = @"SPGoodsHandheldCell";
+static NSString *const SPGoodsYouLikeCellID = @"SPGoodsYouLikeCell";
 
 /** head */
 static NSString *const SPSlideshowHeadViewID = @"SPSlideshowHeadView";
@@ -73,6 +76,7 @@ static NSString *const SPYouLikeHeadViewID = @"SPYouLikeHeadView";
 /** foot */
 static NSString *const SPTopLineFootViewID = @"SPTopLineFootView";
 static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
+static NSString *const SPOverFootViewID = @"SPOverFootView";
 
 @implementation SPHandPickViewController
 
@@ -90,9 +94,11 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
         [_collectionView registerClass:[SPGoodsCountDownCell class] forCellWithReuseIdentifier:SPGoodsCountDownCellID];
         [_collectionView registerClass:[SPExceedApplianceCell class] forCellWithReuseIdentifier:SPExceedApplianceCellID];
         [_collectionView registerClass:[SPGoodsHandheldCell class] forCellWithReuseIdentifier:SPGoodsHandheldCellID];
+        [_collectionView registerClass:[SPGoodsYouLikeCell class] forCellWithReuseIdentifier:SPGoodsYouLikeCellID];
         
         [_collectionView registerClass:[SPTopLineFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPTopLineFootViewID];
         [_collectionView registerClass:[SPScrollAdFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPScrollAdFootViewID];
+        [_collectionView registerClass:[SPOverFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPOverFootViewID];
         
         [_collectionView registerClass:[SPSlideshowHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPSlideshowHeadViewID];
         [_collectionView registerClass:[SPCountDownHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPCountDownHeadViewID];
@@ -172,10 +178,18 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
     self.navigationItem.titleView = searchBarVc;
 }
 
+- (void)richScanItemClick {
+    
+}
+
+- (void)messageItemClick {
+    
+}
+
 #pragma mark - setUpData
 - (void)setUpData {
     _gridItem = [SPGridItem mj_objectArrayWithFilename:@"GoodsGrid.plist"];
-    _youLikeItem = [SPRecommendItem mj_objectWithFilename:@"HomeHighGoods.plist"];
+    _youLikeItem = [SPRecommendItem mj_objectArrayWithFilename:@"HomeHighGoods.plist"];
 }
 
 #pragma mark - 滚回顶部
@@ -246,8 +260,11 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
         SPGoodsHandheldCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsHandheldCellID forIndexPath:indexPath];
         cell.handheldImage = GoodsHandheldImagesArray[indexPath.row];
         gridCell = cell;
+    }else if (indexPath.section == 4) { // 猜你喜欢
+        SPGoodsYouLikeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsYouLikeCellID forIndexPath:indexPath];
+        cell.youLikeItem = _youLikeItem[indexPath.row];
+        gridCell = cell;
     }
-    
     return gridCell;
 }
 
@@ -276,6 +293,9 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
         }else if (indexPath.section == 2) { //掌上专享
             SPScrollAdFootView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPScrollAdFootViewID forIndexPath:indexPath];
             reusableView = footerView;
+        }else if (indexPath.section == 4) { //猜你喜欢
+            SPOverFootView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:SPOverFootViewID forIndexPath:indexPath];
+            reusableView = footerView;
         }
     }
     
@@ -295,6 +315,9 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
     }
     if (indexPath.section == 3) { //精品精选
         return [self layoutAttributesForItemAtIndexPath:indexPath].size;
+    }
+    if (indexPath.section == 4) { //猜你喜欢
+        return CGSizeMake((ScreenW - 4)/2, (ScreenW - 4)/2 + 40);
     }
     return CGSizeZero;
 }
@@ -333,6 +356,9 @@ static NSString *const SPScrollAdFootViewID = @"SPScrollAdFootView";
     }
     if (section == 2) {
         return CGSizeMake(ScreenW, 80); //滚动广告 
+    }
+    if (section == 4) {
+        return CGSizeMake(ScreenW, 40); //结束
     }
     return CGSizeZero;
 }
