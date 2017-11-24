@@ -378,6 +378,8 @@ static NSString *const SPOverFootViewID = @"SPOverFootView";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    NSLog(@"SPStatusBarH = %f, self.navigationController.navigationBar = %@",SPStatusBarH,NSStringFromCGRect(self.navigationController.navigationBar.frame));
 }
 
 @end

@@ -53,7 +53,7 @@
                               MallImgKey    : @"tabr_04_up",
                               MallSelImgKey : @"tabr_04_down"},
                             
-                            @{MallClassKey  : @"SPViewController",
+                            @{MallClassKey  : @"SPPersonalCenterViewController",
                               MallTitleKey  : @"我的",
                               MallImgKey    : @"tabr_05_up",
                               MallSelImgKey : @"tabr_05_down"},

@@ -43,6 +43,7 @@
 - (DGActivityIndicatorView *)indicatorView {
     if (!_indicatorView) {
         _indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOut tintColor:[UIColor lightGrayColor] size:30.0f];
+        _indicatorView.alpha = 0;
     }
     return _indicatorView;
 }
@@ -111,11 +112,15 @@
 - (void)loadData {
     self.refreshView.alpha = 0;
     self.cycleScrollView.alpha = 0;
-    [self.indicatorView startAnimating];
      __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:1.0 animations:^{
+        weakSelf.indicatorView.alpha = 1;
+        [weakSelf.indicatorView startAnimating];
+    }];
     SPSliderParam *param = [SPSliderParam param:slider];
     [SPHomeTool homeSliderWithParam:param success:^(NSArray *sliderResult) {
         [weakSelf.indicatorView stopAnimating];
+        weakSelf.indicatorView.alpha = 0;
         NSMutableArray *resultArray = [NSMutableArray array];
         [sliderResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             SPSliderResult *result = obj;
@@ -127,7 +132,10 @@
         }];
     } failure:^(NSError *error) {
         [weakSelf.indicatorView stopAnimating];
-        weakSelf.refreshView.alpha = 1;
+        weakSelf.indicatorView.alpha = 0;
+        [UIView animateWithDuration:1.0 animations:^{
+            weakSelf.refreshView.alpha = 1;
+        }];
     }];
 }
 
