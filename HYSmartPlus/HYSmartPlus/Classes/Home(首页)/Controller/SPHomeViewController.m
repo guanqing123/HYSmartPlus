@@ -8,9 +8,13 @@
 
 #import "SPHomeViewController.h"
 #import <WebKit/WebKit.h>
+#import "DGActivityIndicatorView.h"
 
 @interface SPHomeViewController ()<WKUIDelegate,WKNavigationDelegate>
+/** webView */
 @property (nonatomic, weak) WKWebView  *webView;
+/** 指示器 */
+@property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
 @end
 
 @implementation SPHomeViewController
@@ -35,13 +39,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"鸿雁安+";
     // Do any additional setup after loading the view.
+    
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.hongyan.com.cn/m/index.aspx"]]];
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
     _webView = webView;
     [self.view addSubview:webView];
+    
+    [self setupIndicatorView];
+}
+
+- (void)setupIndicatorView {
+    DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:RGB(20, 200, 197) size:self.view.dc_width * 0.1];
+    _indicatorView = indicatorView;
+    [self.view addSubview:indicatorView];
+    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
 }
 
 - (void)setupNavItem {
@@ -50,7 +67,17 @@
 }
 
 #pragma mark - navigationDelegate
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [self.indicatorView stopAnimating];
+}
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    [self.indicatorView startAnimating];
+}
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self.indicatorView stopAnimating];
     if ([webView canGoBack]) {
         if (!self.navigationItem.leftBarButtonItem) {
             [self setupNavItem];
@@ -63,6 +90,7 @@
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [self.indicatorView stopAnimating];
     if ([webView canGoBack]) {
         if (!self.navigationItem.leftBarButtonItem) {
             [self setupNavItem];

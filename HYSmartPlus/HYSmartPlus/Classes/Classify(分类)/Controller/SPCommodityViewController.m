@@ -47,8 +47,8 @@ static NSString *const SPBrandSortCellID = @"SPBrandSortCell";
 #pragma mark - LifeCyle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0)) return;
-    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
+//    if (self.navigationController.navigationBar.barTintColor == RGBA(231, 23, 37, 1.0)) return;
+//    self.navigationController.navigationBar.barTintColor = RGBA(231, 23, 37, 1.0);
 }
 
 - (void)viewDidLoad {

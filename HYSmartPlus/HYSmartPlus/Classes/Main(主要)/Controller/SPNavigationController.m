@@ -38,15 +38,15 @@
     
     //设置标题文字颜色
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    //attrs[NSForegroundColorAttributeName] = RGB(20, 200, 197);
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
     [navBar setTitleTextAttributes:attrs];
     
     //设置回退箭头的颜色
-    [navBar setTintColor:[UIColor whiteColor]];
+    [navBar setTintColor:RGB(20, 200, 197)];
     
     [navBar setTranslucent:YES];
-    [navBar setBarTintColor:[UIColor colorWithRed:0.0f/255.0f green:157.0f/255.0f blue:133.0f/255.0f alpha:1]];
+    [navBar setBarTintColor:RGB(245, 245, 245)];
 }
 
 
