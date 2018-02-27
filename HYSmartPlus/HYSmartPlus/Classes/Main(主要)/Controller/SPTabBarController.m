@@ -33,30 +33,39 @@
     tabBar.backgroundColor = [UIColor whiteColor];
     //KVC把系统换成自定义
     [self setValue:tabBar forKey:@"tabBar"];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(168, 168, 168),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(20, 200, 197),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 }
 
 #pragma mark - 添加子控制器
 - (void)addSpChildViewController {
     NSArray *childArray = @[
-                            @{MallClassKey  : @"SPHandPickViewController",
+                            @{MallClassKey  : @"SPHomeViewController",
                               MallTitleKey  : @"首页",
-                              MallImgKey    : @"tabr_01_up",
-                              MallSelImgKey : @"tabr_01_down"},
+                              MallImgKey    : @"tabr_1_up",
+                              MallSelImgKey : @"tabr_1_down"},
+                            
+                            @{MallClassKey  : @"SPHandPickViewController",
+                              MallTitleKey  : @"积分商城",
+                              MallImgKey    : @"tabr_2_up",
+                              MallSelImgKey : @"tabr_2_down"},
+                            
                             
                             @{MallClassKey  : @"SPCommodityViewController",
-                              MallTitleKey  : @"分类",
-                              MallImgKey    : @"tabr_02_up",
-                              MallSelImgKey : @"tabr_02_down"},
+                              MallTitleKey  : @"工地",
+                              MallImgKey    : @"tabr_3_up",
+                              MallSelImgKey : @"tabr_3_down"},
                             
                             @{MallClassKey  : @"SPViewController",
-                              MallTitleKey  : @"购物车",
-                              MallImgKey    : @"tabr_04_up",
-                              MallSelImgKey : @"tabr_04_down"},
+                              MallTitleKey  : @"优惠卡券",
+                              MallImgKey    : @"tabr_4_up",
+                              MallSelImgKey : @"tabr_4_down"},
                             
                             @{MallClassKey  : @"SPPersonalCenterViewController",
                               MallTitleKey  : @"我的",
-                              MallImgKey    : @"tabr_05_up",
-                              MallSelImgKey : @"tabr_05_down"},
+                              MallImgKey    : @"tabr_5_up",
+                              MallSelImgKey : @"tabr_5_down"},
                             
                             ];
     [childArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -66,9 +75,10 @@
         SPNavigationController *nav = [[SPNavigationController alloc] initWithRootViewController:vc];
         UITabBarItem *item = nav.tabBarItem;
         
+        item.title = dict[MallTitleKey];
         item.image = [UIImage imageNamed:dict[MallImgKey]];
         item.selectedImage = [[UIImage imageNamed:dict[MallSelImgKey]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0); // (当只有图片的时候) 需要自动调整
+        //item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0); // (当只有图片的时候) 需要自动调整
         [self addChildViewController:nav];
     }];
 }
@@ -91,6 +101,7 @@
     
     return tabBarButton;
 }
+
 #pragma mark - 点击动画
 - (void)tabBarButtonClick:(UIControl *)tabBarButton {
     for (UIView *imageView in tabBarButton.subviews) {

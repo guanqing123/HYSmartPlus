@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
-		D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A691C1FC298CC007BA4F6 /* SPGridItem.m */; };
 		D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */; };
-		D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */; };
 		D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */; };
-		D60EC4C41FC6737B00F78F31 /* SPOverFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4C31FC6737B00F78F31 /* SPOverFootView.m */; };
 		D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CA1FC68C4900F78F31 /* SPCommodityViewController.m */; };
 		D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CD1FC695D400F78F31 /* SPClassGoodsItem.m */; };
 		D60EC4D11FC6979500F78F31 /* ClassifyTitles.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60EC4D01FC6979400F78F31 /* ClassifyTitles.plist */; };
@@ -36,27 +33,34 @@
 		D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7D71F66579C00D62B89 /* SPTabBar.m */; };
 		D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */; };
 		D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */; };
-		D614E8831FC3B6BF000C8F85 /* SPTopLineFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */; };
-		D614E8891FC3B82D000C8F85 /* SPNumericalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */; };
-		D614E88C1FC40519000C8F85 /* SPCountDownHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */; };
-		D614E88F1FC40753000C8F85 /* SPZuoWenRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */; };
-		D614E8921FC41577000C8F85 /* SPGoodsCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */; };
-		D614E8951FC418AD000C8F85 /* SPRecommendItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8941FC418AD000C8F85 /* SPRecommendItem.m */; };
-		D614E8981FC41BD0000C8F85 /* SPGoodsSurplusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */; };
 		D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D614E8991FC4250F000C8F85 /* CountDownShop.plist */; };
-		D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */; };
-		D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */; };
+		D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CF5204596D100767C00 /* SPHandPickViewController.m */; };
+		D6164D2C204596D100767C00 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CF7204596D100767C00 /* SPViewController.m */; };
+		D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CFB204596D100767C00 /* SPSliderResult.m */; };
+		D6164D2E204596D100767C00 /* SPGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CFD204596D100767C00 /* SPGridItem.m */; };
+		D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CFF204596D100767C00 /* SPRecommendItem.m */; };
+		D6164D30204596D100767C00 /* SPSliderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D01204596D100767C00 /* SPSliderParam.m */; };
+		D6164D31204596D100767C00 /* SPHomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D03204596D100767C00 /* SPHomeTool.m */; };
+		D6164D32204596D100767C00 /* SPExceedApplianceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D08204596D100767C00 /* SPExceedApplianceCell.m */; };
+		D6164D33204596D100767C00 /* SPGoodsCountDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D0A204596D100767C00 /* SPGoodsCountDownCell.m */; };
+		D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D0C204596D100767C00 /* SPGoodsGridCell.m */; };
+		D6164D35204596D100767C00 /* SPGoodsHandheldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D0E204596D100767C00 /* SPGoodsHandheldCell.m */; };
+		D6164D36204596D100767C00 /* SPGoodsSurplusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D10204596D100767C00 /* SPGoodsSurplusCell.m */; };
+		D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D12204596D100767C00 /* SPGoodsYouLikeCell.m */; };
+		D6164D38204596D200767C00 /* SPOverFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D15204596D100767C00 /* SPOverFootView.m */; };
+		D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D17204596D100767C00 /* SPScrollAdFootView.m */; };
+		D6164D3A204596D200767C00 /* SPTopLineFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D19204596D100767C00 /* SPTopLineFootView.m */; };
+		D6164D3B204596D200767C00 /* SPCountDownHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D1C204596D100767C00 /* SPCountDownHeadView.m */; };
+		D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D1E204596D100767C00 /* SPGoodsRecommendHeadView.m */; };
+		D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D20204596D100767C00 /* SPSlideshowHeadView.m */; };
+		D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D22204596D100767C00 /* SPYouLikeHeadView.m */; };
+		D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D24204596D100767C00 /* SPLIRLButton.m */; };
+		D6164D40204596D200767C00 /* SPNavSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D26204596D100767C00 /* SPNavSearchBarView.m */; };
+		D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D28204596D100767C00 /* SPNumericalScrollView.m */; };
+		D6164D42204596D200767C00 /* SPZuoWenRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */; };
+		D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D46204597A700767C00 /* SPHomeViewController.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
-		D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C45991F711BF7008B950A /* SPHomeTool.m */; };
-		D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61C459C1F711C5D008B950A /* SPSliderParam.m */; };
-		D626C2471FC51F1500FFD736 /* SPExceedApplianceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */; };
-		D626C24A1FC541C900FFD736 /* SPGoodsHandheldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */; };
-		D626C24D1FC54A2900FFD736 /* SPScrollAdFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */; };
-		D626C2501FC5534E00FFD736 /* SPGoodsRecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */; };
-		D626C2531FC55ACD00FFD736 /* SPLIRLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */; };
 		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
-		D626C2581FC5750600FFD736 /* SPYouLikeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */; };
-		D626C25B1FC577D700FFD736 /* SPGoodsYouLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D63323471FC7AFF6003511EA /* SPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323401FC7AFF6003511EA /* SPAccount.m */; };
 		D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323431FC7AFF6003511EA /* SPAccountTool.m */; };
@@ -64,25 +68,16 @@
 		D633234E1FC7BDAB003511EA /* SPHoverNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = D633234D1FC7BDAB003511EA /* SPHoverNavView.m */; };
 		D6382B781FC7F4CD00394BEA /* SPMySelfHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6382B751FC7F4CD00394BEA /* SPMySelfHeadView.m */; };
 		D6382B791FC7F4CD00394BEA /* SPMySelfHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6382B761FC7F4CD00394BEA /* SPMySelfHeadView.xib */; };
-		D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63CDBCF1FBD95CD009A607C /* SPViewController.m */; };
-		D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
-		D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
-		D60A691B1FC298CC007BA4F6 /* SPGridItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGridItem.h; sourceTree = "<group>"; };
-		D60A691C1FC298CC007BA4F6 /* SPGridItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGridItem.m; sourceTree = "<group>"; };
 		D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
-		D60A69241FC2B2DD007BA4F6 /* SPGoodsGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsGridCell.h; sourceTree = "<group>"; };
-		D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsGridCell.m; sourceTree = "<group>"; };
 		D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSpeedy.m; sourceTree = "<group>"; };
 		D60EC4C01FC66DE700F78F31 /* SPSpeedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpeedy.h; sourceTree = "<group>"; };
-		D60EC4C21FC6737B00F78F31 /* SPOverFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPOverFootView.h; sourceTree = "<group>"; };
-		D60EC4C31FC6737B00F78F31 /* SPOverFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPOverFootView.m; sourceTree = "<group>"; };
 		D60EC4C91FC68C4900F78F31 /* SPCommodityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCommodityViewController.h; sourceTree = "<group>"; };
 		D60EC4CA1FC68C4900F78F31 /* SPCommodityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCommodityViewController.m; sourceTree = "<group>"; };
 		D60EC4CC1FC695D400F78F31 /* SPClassGoodsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPClassGoodsItem.h; sourceTree = "<group>"; };
@@ -126,47 +121,61 @@
 		D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
 		D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExtension.h"; sourceTree = "<group>"; };
 		D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExtension.m"; sourceTree = "<group>"; };
-		D614E8811FC3B6BF000C8F85 /* SPTopLineFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTopLineFootView.h; sourceTree = "<group>"; };
-		D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTopLineFootView.m; sourceTree = "<group>"; };
-		D614E8871FC3B82D000C8F85 /* SPNumericalScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNumericalScrollView.h; sourceTree = "<group>"; };
-		D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNumericalScrollView.m; sourceTree = "<group>"; };
-		D614E88A1FC40519000C8F85 /* SPCountDownHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCountDownHeadView.h; sourceTree = "<group>"; };
-		D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCountDownHeadView.m; sourceTree = "<group>"; };
-		D614E88D1FC40753000C8F85 /* SPZuoWenRightButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPZuoWenRightButton.h; sourceTree = "<group>"; };
-		D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPZuoWenRightButton.m; sourceTree = "<group>"; };
-		D614E8901FC41577000C8F85 /* SPGoodsCountDownCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsCountDownCell.h; sourceTree = "<group>"; };
-		D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsCountDownCell.m; sourceTree = "<group>"; };
-		D614E8931FC418AD000C8F85 /* SPRecommendItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRecommendItem.h; sourceTree = "<group>"; };
-		D614E8941FC418AD000C8F85 /* SPRecommendItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRecommendItem.m; sourceTree = "<group>"; };
-		D614E8961FC41BD0000C8F85 /* SPGoodsSurplusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsSurplusCell.h; sourceTree = "<group>"; };
-		D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsSurplusCell.m; sourceTree = "<group>"; };
 		D614E8991FC4250F000C8F85 /* CountDownShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountDownShop.plist; sourceTree = "<group>"; };
-		D6177DCC1F714D9D00667BE1 /* SPSliderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderResult.h; sourceTree = "<group>"; };
-		D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSliderResult.m; sourceTree = "<group>"; };
-		D617DC9D1F67A7AC00DB6FEB /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
-		D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHandPickViewController.m; sourceTree = "<group>"; };
+		D6164CF4204596D100767C00 /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
+		D6164CF5204596D100767C00 /* SPHandPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHandPickViewController.m; sourceTree = "<group>"; };
+		D6164CF6204596D100767C00 /* SPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPViewController.h; sourceTree = "<group>"; };
+		D6164CF7204596D100767C00 /* SPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPViewController.m; sourceTree = "<group>"; };
+		D6164CFA204596D100767C00 /* SPSliderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderResult.h; sourceTree = "<group>"; };
+		D6164CFB204596D100767C00 /* SPSliderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSliderResult.m; sourceTree = "<group>"; };
+		D6164CFC204596D100767C00 /* SPGridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGridItem.h; sourceTree = "<group>"; };
+		D6164CFD204596D100767C00 /* SPGridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGridItem.m; sourceTree = "<group>"; };
+		D6164CFE204596D100767C00 /* SPRecommendItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRecommendItem.h; sourceTree = "<group>"; };
+		D6164CFF204596D100767C00 /* SPRecommendItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPRecommendItem.m; sourceTree = "<group>"; };
+		D6164D00204596D100767C00 /* SPSliderParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderParam.h; sourceTree = "<group>"; };
+		D6164D01204596D100767C00 /* SPSliderParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSliderParam.m; sourceTree = "<group>"; };
+		D6164D02204596D100767C00 /* SPHomeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHomeTool.h; sourceTree = "<group>"; };
+		D6164D03204596D100767C00 /* SPHomeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHomeTool.m; sourceTree = "<group>"; };
+		D6164D07204596D100767C00 /* SPExceedApplianceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPExceedApplianceCell.h; sourceTree = "<group>"; };
+		D6164D08204596D100767C00 /* SPExceedApplianceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPExceedApplianceCell.m; sourceTree = "<group>"; };
+		D6164D09204596D100767C00 /* SPGoodsCountDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsCountDownCell.h; sourceTree = "<group>"; };
+		D6164D0A204596D100767C00 /* SPGoodsCountDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsCountDownCell.m; sourceTree = "<group>"; };
+		D6164D0B204596D100767C00 /* SPGoodsGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsGridCell.h; sourceTree = "<group>"; };
+		D6164D0C204596D100767C00 /* SPGoodsGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsGridCell.m; sourceTree = "<group>"; };
+		D6164D0D204596D100767C00 /* SPGoodsHandheldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsHandheldCell.h; sourceTree = "<group>"; };
+		D6164D0E204596D100767C00 /* SPGoodsHandheldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsHandheldCell.m; sourceTree = "<group>"; };
+		D6164D0F204596D100767C00 /* SPGoodsSurplusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsSurplusCell.h; sourceTree = "<group>"; };
+		D6164D10204596D100767C00 /* SPGoodsSurplusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsSurplusCell.m; sourceTree = "<group>"; };
+		D6164D11204596D100767C00 /* SPGoodsYouLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsYouLikeCell.h; sourceTree = "<group>"; };
+		D6164D12204596D100767C00 /* SPGoodsYouLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsYouLikeCell.m; sourceTree = "<group>"; };
+		D6164D14204596D100767C00 /* SPOverFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOverFootView.h; sourceTree = "<group>"; };
+		D6164D15204596D100767C00 /* SPOverFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOverFootView.m; sourceTree = "<group>"; };
+		D6164D16204596D100767C00 /* SPScrollAdFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPScrollAdFootView.h; sourceTree = "<group>"; };
+		D6164D17204596D100767C00 /* SPScrollAdFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPScrollAdFootView.m; sourceTree = "<group>"; };
+		D6164D18204596D100767C00 /* SPTopLineFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTopLineFootView.h; sourceTree = "<group>"; };
+		D6164D19204596D100767C00 /* SPTopLineFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTopLineFootView.m; sourceTree = "<group>"; };
+		D6164D1B204596D100767C00 /* SPCountDownHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCountDownHeadView.h; sourceTree = "<group>"; };
+		D6164D1C204596D100767C00 /* SPCountDownHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCountDownHeadView.m; sourceTree = "<group>"; };
+		D6164D1D204596D100767C00 /* SPGoodsRecommendHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGoodsRecommendHeadView.h; sourceTree = "<group>"; };
+		D6164D1E204596D100767C00 /* SPGoodsRecommendHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGoodsRecommendHeadView.m; sourceTree = "<group>"; };
+		D6164D1F204596D100767C00 /* SPSlideshowHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSlideshowHeadView.h; sourceTree = "<group>"; };
+		D6164D20204596D100767C00 /* SPSlideshowHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSlideshowHeadView.m; sourceTree = "<group>"; };
+		D6164D21204596D100767C00 /* SPYouLikeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPYouLikeHeadView.h; sourceTree = "<group>"; };
+		D6164D22204596D100767C00 /* SPYouLikeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPYouLikeHeadView.m; sourceTree = "<group>"; };
+		D6164D23204596D100767C00 /* SPLIRLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLIRLButton.h; sourceTree = "<group>"; };
+		D6164D24204596D100767C00 /* SPLIRLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLIRLButton.m; sourceTree = "<group>"; };
+		D6164D25204596D100767C00 /* SPNavSearchBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavSearchBarView.h; sourceTree = "<group>"; };
+		D6164D26204596D100767C00 /* SPNavSearchBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavSearchBarView.m; sourceTree = "<group>"; };
+		D6164D27204596D100767C00 /* SPNumericalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNumericalScrollView.h; sourceTree = "<group>"; };
+		D6164D28204596D100767C00 /* SPNumericalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNumericalScrollView.m; sourceTree = "<group>"; };
+		D6164D29204596D100767C00 /* SPZuoWenRightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPZuoWenRightButton.h; sourceTree = "<group>"; };
+		D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPZuoWenRightButton.m; sourceTree = "<group>"; };
+		D6164D45204597A700767C00 /* SPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHomeViewController.h; sourceTree = "<group>"; };
+		D6164D46204597A700767C00 /* SPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHomeViewController.m; sourceTree = "<group>"; };
 		D617DCA11F67B81100DB6FEB /* SPConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConsts.h; sourceTree = "<group>"; };
 		D617DCA21F67B81100DB6FEB /* SPConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPConsts.m; sourceTree = "<group>"; };
 		D61884D41F657A6C0027F119 /* HYSmartPlus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSmartPlus.pch; sourceTree = "<group>"; };
-		D61C45981F711BF7008B950A /* SPHomeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHomeTool.h; sourceTree = "<group>"; };
-		D61C45991F711BF7008B950A /* SPHomeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHomeTool.m; sourceTree = "<group>"; };
-		D61C459B1F711C5D008B950A /* SPSliderParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSliderParam.h; path = ../SPSliderParam.h; sourceTree = "<group>"; };
-		D61C459C1F711C5D008B950A /* SPSliderParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSliderParam.m; path = ../SPSliderParam.m; sourceTree = "<group>"; };
-		D626C2451FC51F1500FFD736 /* SPExceedApplianceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPExceedApplianceCell.h; sourceTree = "<group>"; };
-		D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPExceedApplianceCell.m; sourceTree = "<group>"; };
-		D626C2481FC541C900FFD736 /* SPGoodsHandheldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsHandheldCell.h; sourceTree = "<group>"; };
-		D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsHandheldCell.m; sourceTree = "<group>"; };
-		D626C24B1FC54A2900FFD736 /* SPScrollAdFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScrollAdFootView.h; sourceTree = "<group>"; };
-		D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScrollAdFootView.m; sourceTree = "<group>"; };
-		D626C24E1FC5534E00FFD736 /* SPGoodsRecommendHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsRecommendHeadView.h; sourceTree = "<group>"; };
-		D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsRecommendHeadView.m; sourceTree = "<group>"; };
-		D626C2511FC55ACD00FFD736 /* SPLIRLButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLIRLButton.h; sourceTree = "<group>"; };
-		D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLIRLButton.m; sourceTree = "<group>"; };
 		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
-		D626C2561FC5750600FFD736 /* SPYouLikeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPYouLikeHeadView.h; sourceTree = "<group>"; };
-		D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPYouLikeHeadView.m; sourceTree = "<group>"; };
-		D626C2591FC577D700FFD736 /* SPGoodsYouLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodsYouLikeCell.h; sourceTree = "<group>"; };
-		D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodsYouLikeCell.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
 		D633233F1FC7AFF6003511EA /* SPAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAccount.h; sourceTree = "<group>"; };
@@ -180,16 +189,10 @@
 		D6382B751FC7F4CD00394BEA /* SPMySelfHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMySelfHeadView.m; sourceTree = "<group>"; };
 		D6382B761FC7F4CD00394BEA /* SPMySelfHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPMySelfHeadView.xib; sourceTree = "<group>"; };
 		D6382B771FC7F4CD00394BEA /* SPMySelfHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMySelfHeadView.h; sourceTree = "<group>"; };
-		D63CDBCE1FBD95CD009A607C /* SPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPViewController.h; sourceTree = "<group>"; };
-		D63CDBCF1FBD95CD009A607C /* SPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPViewController.m; sourceTree = "<group>"; };
-		D69B14611F67E91A00CB040A /* SPSlideshowHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSlideshowHeadView.h; sourceTree = "<group>"; };
-		D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSlideshowHeadView.m; sourceTree = "<group>"; };
 		D69B14651F67EA6400CB040A /* UIView+SPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPExtension.h"; sourceTree = "<group>"; };
 		D69B14661F67EA6400CB040A /* UIView+SPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPExtension.m"; sourceTree = "<group>"; };
 		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
-		D6F0F4611FB9832000849796 /* SPNavSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNavSearchBarView.h; sourceTree = "<group>"; };
-		D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNavSearchBarView.m; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,25 +250,6 @@
 				D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */,
 			);
 			path = "首页Plist";
-			sourceTree = "<group>";
-		};
-		D60A69231FC2B2AA007BA4F6 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				D60A69241FC2B2DD007BA4F6 /* SPGoodsGridCell.h */,
-				D60A69251FC2B2DD007BA4F6 /* SPGoodsGridCell.m */,
-				D614E8901FC41577000C8F85 /* SPGoodsCountDownCell.h */,
-				D614E8911FC41577000C8F85 /* SPGoodsCountDownCell.m */,
-				D614E8961FC41BD0000C8F85 /* SPGoodsSurplusCell.h */,
-				D614E8971FC41BD0000C8F85 /* SPGoodsSurplusCell.m */,
-				D626C2451FC51F1500FFD736 /* SPExceedApplianceCell.h */,
-				D626C2461FC51F1500FFD736 /* SPExceedApplianceCell.m */,
-				D626C2481FC541C900FFD736 /* SPGoodsHandheldCell.h */,
-				D626C2491FC541C900FFD736 /* SPGoodsHandheldCell.m */,
-				D626C2591FC577D700FFD736 /* SPGoodsYouLikeCell.h */,
-				D626C25A1FC577D700FFD736 /* SPGoodsYouLikeCell.m */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		D60EC4BE1FC66DAF00F78F31 /* Tools(工具) */ = {
@@ -423,17 +407,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D613E7B21F6621E600D62B89 /* Home(首页) */ = {
-			isa = PBXGroup;
-			children = (
-				D61C45971F711B9E008B950A /* Tool */,
-				D617DC9C1F67A74000DB6FEB /* Model */,
-				D69B145E1F67E8CF00CB040A /* View */,
-				D617DC9B1F67A74000DB6FEB /* Controller */,
-			);
-			path = "Home(首页)";
-			sourceTree = "<group>";
-		};
 		D613E7B61F6621E600D62B89 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,51 +488,140 @@
 			path = "Macros(宏)";
 			sourceTree = "<group>";
 		};
-		D614E8801FC3B688000C8F85 /* Foot */ = {
+		D6164CF2204596D100767C00 /* Mall(积分商城) */ = {
 			isa = PBXGroup;
 			children = (
-				D614E8811FC3B6BF000C8F85 /* SPTopLineFootView.h */,
-				D614E8821FC3B6BF000C8F85 /* SPTopLineFootView.m */,
-				D626C24B1FC54A2900FFD736 /* SPScrollAdFootView.h */,
-				D626C24C1FC54A2900FFD736 /* SPScrollAdFootView.m */,
-				D60EC4C21FC6737B00F78F31 /* SPOverFootView.h */,
-				D60EC4C31FC6737B00F78F31 /* SPOverFootView.m */,
+				D6164CF3204596D100767C00 /* Controller */,
+				D6164CF8204596D100767C00 /* Model */,
+				D6164D02204596D100767C00 /* SPHomeTool.h */,
+				D6164D03204596D100767C00 /* SPHomeTool.m */,
+				D6164D04204596D100767C00 /* View */,
 			);
-			path = Foot;
+			path = "Mall(积分商城)";
 			sourceTree = "<group>";
 		};
-		D6177DCB1F714D4F00667BE1 /* HomeSliders */ = {
+		D6164CF3204596D100767C00 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D61C459B1F711C5D008B950A /* SPSliderParam.h */,
-				D61C459C1F711C5D008B950A /* SPSliderParam.m */,
-				D6177DCC1F714D9D00667BE1 /* SPSliderResult.h */,
-				D6177DCD1F714D9D00667BE1 /* SPSliderResult.m */,
-			);
-			path = HomeSliders;
-			sourceTree = "<group>";
-		};
-		D617DC9B1F67A74000DB6FEB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D617DC9D1F67A7AC00DB6FEB /* SPHandPickViewController.h */,
-				D617DC9E1F67A7AC00DB6FEB /* SPHandPickViewController.m */,
-				D63CDBCE1FBD95CD009A607C /* SPViewController.h */,
-				D63CDBCF1FBD95CD009A607C /* SPViewController.m */,
+				D6164CF4204596D100767C00 /* SPHandPickViewController.h */,
+				D6164CF5204596D100767C00 /* SPHandPickViewController.m */,
+				D6164CF6204596D100767C00 /* SPViewController.h */,
+				D6164CF7204596D100767C00 /* SPViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D617DC9C1F67A74000DB6FEB /* Model */ = {
+		D6164CF8204596D100767C00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6177DCB1F714D4F00667BE1 /* HomeSliders */,
-				D60A691B1FC298CC007BA4F6 /* SPGridItem.h */,
-				D60A691C1FC298CC007BA4F6 /* SPGridItem.m */,
-				D614E8931FC418AD000C8F85 /* SPRecommendItem.h */,
-				D614E8941FC418AD000C8F85 /* SPRecommendItem.m */,
+				D6164CF9204596D100767C00 /* HomeSliders */,
+				D6164CFC204596D100767C00 /* SPGridItem.h */,
+				D6164CFD204596D100767C00 /* SPGridItem.m */,
+				D6164CFE204596D100767C00 /* SPRecommendItem.h */,
+				D6164CFF204596D100767C00 /* SPRecommendItem.m */,
+				D6164D00204596D100767C00 /* SPSliderParam.h */,
+				D6164D01204596D100767C00 /* SPSliderParam.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6164CF9204596D100767C00 /* HomeSliders */ = {
+			isa = PBXGroup;
+			children = (
+				D6164CFA204596D100767C00 /* SPSliderResult.h */,
+				D6164CFB204596D100767C00 /* SPSliderResult.m */,
+			);
+			path = HomeSliders;
+			sourceTree = "<group>";
+		};
+		D6164D04204596D100767C00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D05204596D100767C00 /* CollectionView */,
+				D6164D23204596D100767C00 /* SPLIRLButton.h */,
+				D6164D24204596D100767C00 /* SPLIRLButton.m */,
+				D6164D25204596D100767C00 /* SPNavSearchBarView.h */,
+				D6164D26204596D100767C00 /* SPNavSearchBarView.m */,
+				D6164D27204596D100767C00 /* SPNumericalScrollView.h */,
+				D6164D28204596D100767C00 /* SPNumericalScrollView.m */,
+				D6164D29204596D100767C00 /* SPZuoWenRightButton.h */,
+				D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6164D05204596D100767C00 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D06204596D100767C00 /* Cell */,
+				D6164D13204596D100767C00 /* Foot */,
+				D6164D1A204596D100767C00 /* Head */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		D6164D06204596D100767C00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D07204596D100767C00 /* SPExceedApplianceCell.h */,
+				D6164D08204596D100767C00 /* SPExceedApplianceCell.m */,
+				D6164D09204596D100767C00 /* SPGoodsCountDownCell.h */,
+				D6164D0A204596D100767C00 /* SPGoodsCountDownCell.m */,
+				D6164D0B204596D100767C00 /* SPGoodsGridCell.h */,
+				D6164D0C204596D100767C00 /* SPGoodsGridCell.m */,
+				D6164D0D204596D100767C00 /* SPGoodsHandheldCell.h */,
+				D6164D0E204596D100767C00 /* SPGoodsHandheldCell.m */,
+				D6164D0F204596D100767C00 /* SPGoodsSurplusCell.h */,
+				D6164D10204596D100767C00 /* SPGoodsSurplusCell.m */,
+				D6164D11204596D100767C00 /* SPGoodsYouLikeCell.h */,
+				D6164D12204596D100767C00 /* SPGoodsYouLikeCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D6164D13204596D100767C00 /* Foot */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D14204596D100767C00 /* SPOverFootView.h */,
+				D6164D15204596D100767C00 /* SPOverFootView.m */,
+				D6164D16204596D100767C00 /* SPScrollAdFootView.h */,
+				D6164D17204596D100767C00 /* SPScrollAdFootView.m */,
+				D6164D18204596D100767C00 /* SPTopLineFootView.h */,
+				D6164D19204596D100767C00 /* SPTopLineFootView.m */,
+			);
+			path = Foot;
+			sourceTree = "<group>";
+		};
+		D6164D1A204596D100767C00 /* Head */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D1B204596D100767C00 /* SPCountDownHeadView.h */,
+				D6164D1C204596D100767C00 /* SPCountDownHeadView.m */,
+				D6164D1D204596D100767C00 /* SPGoodsRecommendHeadView.h */,
+				D6164D1E204596D100767C00 /* SPGoodsRecommendHeadView.m */,
+				D6164D1F204596D100767C00 /* SPSlideshowHeadView.h */,
+				D6164D20204596D100767C00 /* SPSlideshowHeadView.m */,
+				D6164D21204596D100767C00 /* SPYouLikeHeadView.h */,
+				D6164D22204596D100767C00 /* SPYouLikeHeadView.m */,
+			);
+			path = Head;
+			sourceTree = "<group>";
+		};
+		D6164D432045975700767C00 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D442045977300767C00 /* Controller */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		D6164D442045977300767C00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6164D45204597A700767C00 /* SPHomeViewController.h */,
+				D6164D46204597A700767C00 /* SPHomeViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D617DCA01F67B7F100DB6FEB /* Const(常量) */ = {
@@ -575,7 +637,8 @@
 			isa = PBXGroup;
 			children = (
 				D613E7D01F66559E00D62B89 /* Main(主要) */,
-				D613E7B21F6621E600D62B89 /* Home(首页) */,
+				D6164D432045975700767C00 /* Home(首页) */,
+				D6164CF2204596D100767C00 /* Mall(积分商城) */,
 				D60EC4C51FC6770D00F78F31 /* Classify(分类) */,
 				D633233A1FC7AFF6003511EA /* PersonalCenter(个人中心) */,
 				D613E7D91F66649C00D62B89 /* Expand(扩展) */,
@@ -583,15 +646,6 @@
 				D613E7B61F6621E600D62B89 /* Other(其他) */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		D61C45971F711B9E008B950A /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				D61C45981F711BF7008B950A /* SPHomeTool.h */,
-				D61C45991F711BF7008B950A /* SPHomeTool.m */,
-			);
-			name = Tool;
 			sourceTree = "<group>";
 		};
 		D633233A1FC7AFF6003511EA /* PersonalCenter(个人中心) */ = {
@@ -674,47 +728,6 @@
 				D6382B761FC7F4CD00394BEA /* SPMySelfHeadView.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D69B145E1F67E8CF00CB040A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D69B145F1F67E8CF00CB040A /* CollectionView */,
-				D6F0F4611FB9832000849796 /* SPNavSearchBarView.h */,
-				D6F0F4621FB9832000849796 /* SPNavSearchBarView.m */,
-				D614E8871FC3B82D000C8F85 /* SPNumericalScrollView.h */,
-				D614E8881FC3B82D000C8F85 /* SPNumericalScrollView.m */,
-				D614E88D1FC40753000C8F85 /* SPZuoWenRightButton.h */,
-				D614E88E1FC40753000C8F85 /* SPZuoWenRightButton.m */,
-				D626C2511FC55ACD00FFD736 /* SPLIRLButton.h */,
-				D626C2521FC55ACD00FFD736 /* SPLIRLButton.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D69B145F1F67E8CF00CB040A /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				D60A69231FC2B2AA007BA4F6 /* Cell */,
-				D614E8801FC3B688000C8F85 /* Foot */,
-				D69B14601F67E8CF00CB040A /* Head */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		D69B14601F67E8CF00CB040A /* Head */ = {
-			isa = PBXGroup;
-			children = (
-				D69B14611F67E91A00CB040A /* SPSlideshowHeadView.h */,
-				D69B14621F67E91A00CB040A /* SPSlideshowHeadView.m */,
-				D614E88A1FC40519000C8F85 /* SPCountDownHeadView.h */,
-				D614E88B1FC40519000C8F85 /* SPCountDownHeadView.m */,
-				D626C24E1FC5534E00FFD736 /* SPGoodsRecommendHeadView.h */,
-				D626C24F1FC5534E00FFD736 /* SPGoodsRecommendHeadView.m */,
-				D626C2561FC5750600FFD736 /* SPYouLikeHeadView.h */,
-				D626C2571FC5750600FFD736 /* SPYouLikeHeadView.m */,
-			);
-			path = Head;
 			sourceTree = "<group>";
 		};
 		D69B14641F67E9F800CB040A /* Category(分类) */ = {
@@ -862,56 +875,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D617DC9F1F67A7AC00DB6FEB /* SPHandPickViewController.m in Sources */,
-				D614E88C1FC40519000C8F85 /* SPCountDownHeadView.m in Sources */,
+				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
-				D614E8891FC3B82D000C8F85 /* SPNumericalScrollView.m in Sources */,
-				D61C459D1F711C5D008B950A /* SPSliderParam.m in Sources */,
+				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
+				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
+				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
+				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
+				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
+				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
-				D614E8921FC41577000C8F85 /* SPGoodsCountDownCell.m in Sources */,
+				D6164D3B204596D200767C00 /* SPCountDownHeadView.m in Sources */,
 				D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
-				D626C24A1FC541C900FFD736 /* SPGoodsHandheldCell.m in Sources */,
-				D6177DCE1F714D9D00667BE1 /* SPSliderResult.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
-				D6F0F4631FB9832000849796 /* SPNavSearchBarView.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
+				D6164D30204596D100767C00 /* SPSliderParam.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
-				D614E8951FC418AD000C8F85 /* SPRecommendItem.m in Sources */,
+				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
 				D633234E1FC7BDAB003511EA /* SPHoverNavView.m in Sources */,
-				D60A69261FC2B2DD007BA4F6 /* SPGoodsGridCell.m in Sources */,
+				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
+				D6164D40204596D200767C00 /* SPNavSearchBarView.m in Sources */,
+				D6164D36204596D100767C00 /* SPGoodsSurplusCell.m in Sources */,
 				D60EC4EA1FC6BC8600F78F31 /* SPBrandSortCell.m in Sources */,
-				D626C2471FC51F1500FFD736 /* SPExceedApplianceCell.m in Sources */,
+				D6164D31204596D100767C00 /* SPHomeTool.m in Sources */,
 				D613E7CF1F66522600D62B89 /* SPSmartPlusTool.m in Sources */,
-				D60EC4C41FC6737B00F78F31 /* SPOverFootView.m in Sources */,
-				D626C2501FC5534E00FFD736 /* SPGoodsRecommendHeadView.m in Sources */,
-				D63CDBD01FBD95CD009A607C /* SPViewController.m in Sources */,
+				D6164D38204596D200767C00 /* SPOverFootView.m in Sources */,
+				D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
-				D61C459A1F711BF7008B950A /* SPHomeTool.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
-				D614E88F1FC40753000C8F85 /* SPZuoWenRightButton.m in Sources */,
+				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
 				D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
-				D626C2581FC5750600FFD736 /* SPYouLikeHeadView.m in Sources */,
+				D6164D33204596D100767C00 /* SPGoodsCountDownCell.m in Sources */,
 				D60EC4E41FC6AF1300F78F31 /* SPBrandSortHeadView.m in Sources */,
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
-				D626C25B1FC577D700FFD736 /* SPGoodsYouLikeCell.m in Sources */,
-				D60A691D1FC298CC007BA4F6 /* SPGridItem.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
+				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
+				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
+				D6164D32204596D100767C00 /* SPExceedApplianceCell.m in Sources */,
 				D60EC4DA1FC6A95300F78F31 /* SPClassMainItem.m in Sources */,
 				D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
-				D626C2531FC55ACD00FFD736 /* SPLIRLButton.m in Sources */,
-				D626C24D1FC54A2900FFD736 /* SPScrollAdFootView.m in Sources */,
+				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,
-				D614E8981FC41BD0000C8F85 /* SPGoodsSurplusCell.m in Sources */,
-				D69B14631F67E91A00CB040A /* SPSlideshowHeadView.m in Sources */,
+				D6164D3A204596D200767C00 /* SPTopLineFootView.m in Sources */,
 				D6382B781FC7F4CD00394BEA /* SPMySelfHeadView.m in Sources */,
 				D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */,
-				D614E8831FC3B6BF000C8F85 /* SPTopLineFootView.m in Sources */,
+				D6164D42204596D200767C00 /* SPZuoWenRightButton.m in Sources */,
+				D6164D35204596D100767C00 /* SPGoodsHandheldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +973,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1007,6 +1022,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
