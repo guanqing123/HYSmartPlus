@@ -19,5 +19,9 @@ target 'HYSmartPlus' do
   pod 'CDDPagerController', '~> 1.1.2'
   
   pod 'DGActivityIndicatorView', '~> 2.1.1'
+  
+  pod 'TZImagePickerController'
+  
+  pod 'IQKeyboardManager'
 
 end

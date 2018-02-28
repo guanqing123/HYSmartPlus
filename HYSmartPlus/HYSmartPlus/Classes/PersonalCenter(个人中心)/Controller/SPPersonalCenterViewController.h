@@ -10,6 +10,4 @@
 
 @interface SPPersonalCenterViewController : UIViewController
 
-
-
 @end

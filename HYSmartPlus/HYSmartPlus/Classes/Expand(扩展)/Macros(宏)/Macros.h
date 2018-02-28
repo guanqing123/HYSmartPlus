@@ -39,6 +39,7 @@
 
 //全局背景色
 #define SPBGColor RGB(245,245,245)
+#define SPColor RGB(46,208,183)
 
 #define PFR [[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 ? @"PingFangSC-Regular" : @"PingFang SC"
 

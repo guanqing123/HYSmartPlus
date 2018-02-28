@@ -7,9 +7,10 @@
 //
 
 #import "SPAppDelegate.h"
-#import "SPAccountTool.h"
 #import "SPAccount.h"
+#import "SPAccountTool.h"
 #import "SPSmartPlusTool.h"
+#import "SPLoginViewController.h"
 
 @interface SPAppDelegate ()
 
@@ -27,12 +28,11 @@
     // 先判断有无存储账号信息
     SPAccount *account = [SPAccountTool account];
     
-    if (account) {
+    if (account) { //之前登录成功
         [SPSmartPlusTool chooseRootController];
-    } else {
-        [SPSmartPlusTool chooseRootController];
+    } else { //之前没有登录成功
+        self.window.rootViewController = [[SPLoginViewController alloc] init];
     }
-    
     return YES;
 }
 

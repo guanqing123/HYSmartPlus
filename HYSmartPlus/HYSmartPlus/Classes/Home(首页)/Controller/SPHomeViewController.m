@@ -15,6 +15,8 @@
 @property (nonatomic, weak) WKWebView  *webView;
 /** 指示器 */
 @property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
+/** 打电话的 webView */
+@property (nonatomic, strong)  UIWebView *telWebView;
 @end
 
 @implementation SPHomeViewController
@@ -67,7 +69,6 @@
 }
 
 #pragma mark - navigationDelegate
-
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [self.indicatorView stopAnimating];
 }
@@ -100,6 +101,32 @@
             self.navigationItem.leftBarButtonItem = nil;
         }
     }
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSURL *URL = navigationAction.request.URL;
+    NSString *scheme = [URL scheme];
+    if ([scheme isEqualToString:@"tel"]) {
+        NSURL *tel = [NSURL URLWithString:[self URLDecode:[URL absoluteString]]];
+        [self.telWebView loadRequest:[NSURLRequest requestWithURL:tel]];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+- (NSString*)URLDecode:(NSString *)url {
+    NSMutableString *outputStr = [NSMutableString stringWithString:url];
+    [outputStr replaceOccurrencesOfString:@"%20" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, [outputStr length])];
+    return outputStr;
+}
+
+#pragma mark - 懒加载创建 webView
+- (UIWebView *)telWebView {
+    if (_telWebView == nil) {
+        _telWebView = [[UIWebView alloc] init];
+    }
+    return _telWebView;
 }
 
 - (void)back {

@@ -81,6 +81,16 @@
 + (NSString *)dc_EncryptionDisplayMessageWith:(NSString *)content WithFirstIndex:(NSInteger)findex;
 
 
+/**
+ 取随机数
+ 
+ @param starNum 开始值
+ @param endNum 结束值
+ @return 从开始值到结束值之间的随机数
+ */
++ (NSInteger)dc_getRandomNumber:(NSInteger)starNum to:(NSInteger)endNum;
+
+
 #pragma mark - 图片转base64编码
 + (NSString *)UIImageToBase64Str:(UIImage *) image;
 

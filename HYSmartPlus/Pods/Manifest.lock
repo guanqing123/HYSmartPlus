@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - CDDPagerController (1.1.2)
   - DGActivityIndicatorView (2.1.1)
+  - IQKeyboardManager (5.0.6)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15)
@@ -24,27 +25,32 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - TZImagePickerController (1.9.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
-  - CDDPagerController
-  - DGActivityIndicatorView
+  - CDDPagerController (~> 1.1.2)
+  - DGActivityIndicatorView (~> 2.1.1)
+  - IQKeyboardManager
   - Masonry
-  - MJExtension
-  - MJRefresh
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.15)
   - SDCycleScrollView (~> 1.66)
   - SDWebImage (~> 4.0.0)
+  - TZImagePickerController
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CDDPagerController: 88c6ebf7162b85aee1ef43948f01cf10b70ed076
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
+  IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  TZImagePickerController: 276dc7c0cc70da9ee354046474b405d87ef81c89
 
-PODFILE CHECKSUM: 08339fdedc740d991b7f2a90ca7a5e5be6e6a142
+PODFILE CHECKSUM: cad7373361f21b0cdd6fe1463f80bb782ce354ea
 
 COCOAPODS: 1.2.1

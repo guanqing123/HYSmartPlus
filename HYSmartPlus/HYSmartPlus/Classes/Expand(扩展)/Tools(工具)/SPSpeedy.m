@@ -116,6 +116,11 @@
     return [NSString stringWithFormat:@"%@***%@",[content substringToIndex:findex],[content substringFromIndex:content.length - 1]];
 }
 
+#pragma mark - 随机数
++ (NSInteger)dc_getRandomNumber:(NSInteger)starNum to:(NSInteger)endNum {
+    return  (NSInteger)(starNum + (arc4random() % ((starNum - endNum) + 1)));
+}
+
 +(NSString *)UIImageToBase64Str:(UIImage *) image
 {
     NSData *data = UIImageJPEGRepresentation(image, 1.0f);

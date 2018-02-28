@@ -7,140 +7,90 @@
 //
 
 #import "SPPersonalCenterViewController.h"
-
-/** view */
-#import "SPMySelfHeadView.h" //头部
-
-#import "SPGoodsYouLikeCell.h"
-
-#import "SPRecommendItem.h"
-
 #import "MJExtension.h"
 
-@interface SPPersonalCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate>
 
-/** collectionView */
-@property (nonatomic, strong)  UICollectionView *collectionView;
-
-/** 推荐商品属性 */
-@property (nonatomic, strong)  NSMutableArray<SPRecommendItem *> *youLikeItem;
+/** 头部背景图片 */
+@property (nonatomic, strong)  UIImageView *headerBgImageView;
+/** tableView */
+@property (nonatomic, strong)  UITableView *tableView;
 
 @end
 
-static NSString *const SPMySelfHeadViewID = @"SPMySelfHeadView";
-static NSString *const SPGoodsYouLikeCellID = @"SPGoodsYouLikeCell";
-
 @implementation SPPersonalCenterViewController
 
-#pragma mark - LifeCycle
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-//    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
-
+#pragma mark - lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setUpBase];
-    _youLikeItem = [SPRecommendItem mj_objectArrayWithFilename:@"HomeHighGoods.plist"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"contentInset = %@",NSStringFromUIEdgeInsets(self.collectionView.contentInset));
+    //NSLog(@"contentInset = %@",NSStringFromUIEdgeInsets(self.collectionView.contentInset));
     
-    NSLog(@"safeAreaInsets = %@",NSStringFromUIEdgeInsets(self.collectionView.safeAreaInsets));
+    //NSLog(@"safeAreaInsets = %@",NSStringFromUIEdgeInsets(self.collectionView.safeAreaInsets));
     
     
-    NSLog(@"adjustedContentInset = %@",NSStringFromUIEdgeInsets(self.collectionView.adjustedContentInset));
+    //NSLog(@"adjustedContentInset = %@",NSStringFromUIEdgeInsets(self.collectionView.adjustedContentInset));
 }
 
 #pragma mark - initialize
 - (void)setUpBase {
     self.view.backgroundColor = SPBGColor;
-    self.collectionView.backgroundColor = self.view.backgroundColor;
 }
 
 #pragma mark - LazyLoad
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        [self.view addSubview:_collectionView];
-        
-        _collectionView.frame = CGRectMake(0, -200, ScreenW, ScreenH + 200);
-        
-        //头部
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SPMySelfHeadView class]) bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPMySelfHeadViewID];
-        
-        [_collectionView registerClass:[SPGoodsYouLikeCell class] forCellWithReuseIdentifier:SPGoodsYouLikeCellID];
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - SPTopNavH);
+        [self.view addSubview:_tableView];
     }
-    return _collectionView;
+    return _tableView;
 }
 
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (UIImageView *)headerBgImageView {
+    if (!_headerBgImageView) {
+        _headerBgImageView = [[UIImageView alloc] init];
+        
+        NSInteger armNum = [SPSpeedy dc_getRandomNumber:1 to:9];
+        [_headerBgImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"mine_main_bg_%zd",armNum]]];
+        [_headerBgImageView setBackgroundColor:[UIColor greenColor]];
+        [_headerBgImageView setContentMode:UIViewContentModeScaleAspectFill];
+        [_headerBgImageView setClipsToBounds:YES];
+    }
+    return _headerBgImageView;
+}
+
+#pragma mark - <UITableViewDataSource>
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 4;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
-        return _youLikeItem.count;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cusCell = [UITableViewCell new];
+    if (indexPath.section == 0) {
+        //DCCenterItemCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterItemCellID forIndexPath:indexPath];
+        //cusCell = cell;
+    }else if(indexPath.section == 1){
+        //DCCenterServiceCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterServiceCellID forIndexPath:indexPath];
+        //cell.serviceItemArray = [NSMutableArray arrayWithArray:_serviceItem];
+        //cusCell = cell;
+    }else if (indexPath.section == 2){
+        //DCCenterBeaShopCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterBeaShopCellID forIndexPath:indexPath];
+        //cusCell = cell;
+    }else if (indexPath.section == 3){
+        //DCCenterBackCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterBackCellID forIndexPath:indexPath];
+        //cusCell = cell;
     }
-    return 0;
+    return cusCell;
 }
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *gridcell = nil;
-    if (indexPath.section == 0) {//猜你喜欢
-        SPGoodsYouLikeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPGoodsYouLikeCellID forIndexPath:indexPath];
-        cell.youLikeItem = _youLikeItem[indexPath.row];
-        gridcell = cell;
-    }
-    return gridcell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *reusableView = nil;
-    if (kind == UICollectionElementKindSectionHeader) {
-        if (indexPath.section == 0) {
-            SPMySelfHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SPMySelfHeadViewID forIndexPath:indexPath];
-            reusableView = headerView;
-        }
-    }
-    return reusableView;
-}
-
-#pragma mark - item宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (indexPath.section == 0) { //猜你喜欢
-        return CGSizeMake((ScreenW - 4)/2, (ScreenW - 4)/2 + 40);
-    }
-    return CGSizeZero;
-}
-
-#pragma mark - head宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return (section == 0) ? CGSizeMake(ScreenW, 380) : CGSizeZero;
-}
-
-#pragma mark - <UICollectionViewDelegateFlowLayout>
-#pragma mark - X间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return (section == 1) ? 4 : 0;
-}
-#pragma mark - Y间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return (section == 1) ? 4 : 0;
-}
-
 @end

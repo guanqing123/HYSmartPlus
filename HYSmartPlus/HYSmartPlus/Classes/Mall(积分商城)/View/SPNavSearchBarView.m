@@ -29,7 +29,7 @@
     /* 占位文字 */
     UITextField *placeholdField = [[UITextField alloc] initWithFrame:CGRectZero];
     placeholdField.font = PFR14Font;
-    placeholdField.textColor = [UIColor whiteColor];
+    //placeholdField.textColor = [UIColor whiteColor];
     placeholdField.userInteractionEnabled = NO;
     self.placeholdField = placeholdField;
     
