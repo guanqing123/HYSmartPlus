@@ -7,25 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SPPasswordLoginView;
 
-@protocol PasswordLoginViewDelegate <NSObject>
+@protocol SPPasswordLoginViewDelegate <NSObject>
+@optional
+/**
+ 点击登录按钮
 
-- (void)passwordLoginComplete;
-
+ @param passwordLoginView 当前对象
+ */
+- (void)passwordLoginViewDidSubmitButton:(SPPasswordLoginView *)passwordLoginView;
 @end
 
 @interface SPPasswordLoginView : UIView
 
-@property (nonatomic, strong) UITextField *phoneTextField;
-@property (nonatomic, strong) UITextField *codeTextField;
-@property (nonatomic, strong) UIImageView *imgView;
-@property (nonatomic, strong) UIButton *submitButton;
++ (instancetype)passwordView;
 
+@property (nonatomic, weak) id<SPPasswordLoginViewDelegate> delegate;
 
-@property (nonatomic, weak) id<PasswordLoginViewDelegate> delegate;
-
-- (void)addLoadCycle;
-
-- (void)pauseAnimation;
-
+@property (nonatomic, copy) NSString *telphone;
+@property (nonatomic, copy) NSString *password;
 @end

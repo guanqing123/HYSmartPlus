@@ -21,6 +21,8 @@
 #define SPTopNavH (SPStatusBarH + SPNaviH)
 /** 底部tab高度 */
 #define SPBottomTabH (SPStatusBarH > 20 ? 83 : 49)
+/** 弱引用 */
+#define WEAKSELF __weak typeof(self) weakSelf = self;
 
 /******************    TabBar          *************/
 #define MallClassKey   @"rootVCClassString"

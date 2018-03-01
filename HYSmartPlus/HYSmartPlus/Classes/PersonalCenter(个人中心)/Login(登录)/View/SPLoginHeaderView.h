@@ -1,0 +1,15 @@
+//
+//  SPLoginHeaderView.h
+//  HYSmartPlus
+//
+//  Created by information on 2018/2/28.
+//  Copyright © 2018年 hongyan. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SPLoginHeaderView : UIView
+
++ (instancetype)headerView;
+
+@end

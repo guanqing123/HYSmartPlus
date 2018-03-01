@@ -18,10 +18,10 @@ typedef void(^verifyHandler)(void);
 
 @interface SPCodeLoginView : UIView
 
-@property (nonatomic, strong) UITextField *phoneTextField;
-@property (nonatomic, strong) UITextField *codeTextField;
++ (instancetype)codeView;
+
+
 @property (nonatomic, copy) verifyHandler handler;
-@property (nonatomic, strong) UIButton *submitButton;
 @property (nonatomic, strong) UIImageView *imgView;
 
 @property (nonatomic, weak) id<CodeLoginViewDelegate> delegate;

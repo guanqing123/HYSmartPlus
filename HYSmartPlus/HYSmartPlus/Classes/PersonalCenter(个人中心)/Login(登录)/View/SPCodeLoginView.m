@@ -10,12 +10,23 @@
 
 @interface SPCodeLoginView () <UITextFieldDelegate>
 
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UIButton *countDownButton;
+@property (nonatomic, weak) UILabel *telLabel;
+@property (nonatomic, weak) UITextField *phoneTextField;
+@property (nonatomic, weak) UIView  *firstLine;
+
+@property (nonatomic, weak) UIButton *countDownButton;
+@property (nonatomic, weak) UITextField *codeTextField;
+@property (nonatomic, weak) UIView  *secondLine;
+
+@property (nonatomic, weak) UIButton *submitButton;
 
 @end
 
 @implementation SPCodeLoginView
+
++ (instancetype)codeView {
+    return [[self alloc] init];
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -28,100 +39,112 @@
 - (void)customView {
     self.backgroundColor = [UIColor whiteColor];
     
-    self.label = [UILabel new];
-    [self addSubview:self.label];
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel *telLabel = [[UILabel alloc] init];
+    telLabel.text = @"+86";
+    telLabel.textColor = RGB(62, 62, 62);
+    telLabel.font = [UIFont systemFontOfSize:17];
+    _telLabel = telLabel;
+    [self addSubview:self.telLabel];
+    
+    UITextField *phoneTextField = [[UITextField alloc] init];
+    phoneTextField.placeholder = @"请输入手机号";
+    [self.phoneTextField addTarget:self action:@selector(phoneEditChange) forControlEvents:UIControlEventEditingChanged];
+    _phoneTextField = phoneTextField;
+    [self addSubview:phoneTextField];
+    
+    UIView *firstLine = [[UIView alloc] init];
+    firstLine.backgroundColor = RGB(223, 223, 223);
+    _firstLine = firstLine;
+    [self addSubview:firstLine];
+    
+    UIButton *countDownButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [countDownButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+    countDownButton.backgroundColor = SPColor;
+    countDownButton.layer.cornerRadius = 7;
+    countDownButton.layer.masksToBounds = YES;
+    countDownButton.titleLabel.font = PFR14Font;
+    [countDownButton addTarget:self action:@selector(obtainVerifyCode) forControlEvents:UIControlEventTouchUpInside];
+    _countDownButton = countDownButton;
+    [self addSubview:countDownButton];
+    
+    UITextField *codeTextField = [[UITextField alloc] init];
+    codeTextField.placeholder = @"请输入验证码";
+    [codeTextField addTarget:self action:@selector(EditChanged) forControlEvents:UIControlEventEditingChanged];
+    _codeTextField = codeTextField;
+    [self addSubview:codeTextField];
+    
+    UIView *secondLine = [[UIView alloc] init];
+    secondLine.backgroundColor = RGB(223, 223, 223);
+    _secondLine = secondLine;
+    [self addSubview:secondLine];
+    
+    UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    submitButton.layer.cornerRadius = 8;
+    submitButton.layer.masksToBounds = YES;
+    submitButton.backgroundColor = RGB(207, 235, 221);
+    [submitButton setTitle:@"登录" forState:UIControlStateNormal];
+    [submitButton addTarget:self action:@selector(startRegisterButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    submitButton.userInteractionEnabled = NO;
+    _submitButton = submitButton;
+    [self addSubview:submitButton];
+    
+    /*
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getVerifyCodeSucess) name:@"getVerifyCodeSucess" object:nil];
+     */
+}
+
+- (void)updateConstraints {
+    //1.remake/update constraints here
+    [self.telLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(25);
         make.left.equalTo(self).offset(45);
         make.height.mas_equalTo(34);
     }];
-    self.label.text = @"+86";
-    self.label.textColor = RGB(62, 62, 62);
-    self.label.font = [UIFont systemFontOfSize:17];
     
-    self.phoneTextField = [UITextField new];
-    [self addSubview:self.phoneTextField];
     [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(25);
-        make.left.equalTo(self.label.mas_right).offset(15);
+        make.left.equalTo(self.telLabel.mas_right).offset(15);
         make.height.mas_equalTo(34);
         make.width.mas_equalTo(ScreenW - 45 * 2 - 31 - 15);
     }];
-    [self customTextField:self.phoneTextField title:@"请输入手机号"];
-    [self drawBottomLine:self.phoneTextField];
-    [self.phoneTextField addTarget:self action:@selector(phoneEditChange) forControlEvents:UIControlEventEditingChanged];
     
-    self.countDownButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self addSubview:self.countDownButton];
+    [self.firstLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.phoneTextField.mas_bottom);
+        make.left.equalTo(self).offset(45);
+        make.right.equalTo(self).offset(-45);
+        make.height.mas_equalTo(1);
+    }];
+    
     [self.countDownButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.phoneTextField.mas_bottom).offset(17);
         make.right.equalTo(self.phoneTextField.mas_right);
         make.height.mas_equalTo(38);
         make.width.mas_equalTo(110);
     }];
-    [self.countDownButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    self.countDownButton.backgroundColor = SPColor;
-    self.countDownButton.layer.cornerRadius = 7;
-    self.countDownButton.layer.masksToBounds = YES;
-    self.countDownButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.countDownButton addTarget:self action:@selector(obtainVerifyCode) forControlEvents:UIControlEventTouchUpInside];
-
-    self.codeTextField = [UITextField new];
-    [self addSubview:self.codeTextField];
+    
     [self.codeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.phoneTextField.mas_bottom).offset(25);
-        make.left.equalTo(self.label);
+        make.left.equalTo(self.telLabel);
         make.height.mas_equalTo(34);
-        make.width.mas_equalTo(ScreenW - 45 * 2 - 115 - 10);
+        make.right.equalTo(self.countDownButton.mas_left).offset(-20);
     }];
-    [self.codeTextField addTarget:self action:@selector(EditChanged) forControlEvents:UIControlEventEditingChanged];
-    [self customTextField:self.codeTextField title:@"请输入验证码"];
-    [self drawShortBottomLine:self.codeTextField];
     
-    self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self addSubview:self.submitButton];
-    [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.codeTextField.mas_bottom).offset(40);
-        make.width.mas_equalTo(ScreenW - 45 * 2);
-        make.height.mas_equalTo(44);
-        make.left.equalTo(self).offset(45);
-    }];
-    self.submitButton.layer.cornerRadius = 8;
-    self.submitButton.layer.masksToBounds = YES;
-    self.submitButton.backgroundColor = RGB(207, 235, 221);
-    self.submitButton.userInteractionEnabled = YES;
-    [self.submitButton setTitle:@"登录" forState:UIControlStateNormal];
-    [self.submitButton addTarget:self action:@selector(startRegisterButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    self.submitButton.userInteractionEnabled = NO;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getVerifyCodeSucess) name:@"getVerifyCodeSucess" object:nil];
-}
-
-- (void)customTextField:(UITextField *)textField title:(NSString *)titleString {
-    textField.placeholder = titleString;
-}
-
-- (void)drawBottomLine:(UITextField *)textField {
-    UIView *lineView = [UIView new];
-    [self addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(textField.mas_bottom);
-        make.left.equalTo(self).offset(45);
-        make.right.equalTo(self).offset(-45);
-        make.height.mas_equalTo(1);
-    }];
-    lineView.backgroundColor = RGB(223, 223, 223);
-}
-
-- (void)drawShortBottomLine:(UITextField *)textField {
-    UIView *lineView = [UIView new];
-    [self addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(textField.mas_bottom);
+    [self.secondLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.codeTextField.mas_bottom);
         make.left.equalTo(self).offset(45);
         make.right.equalTo(self.countDownButton.mas_left).offset(-20);
         make.height.mas_equalTo(1);
     }];
-    lineView.backgroundColor = RGB(223, 223, 223);
+    
+    [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.codeTextField.mas_bottom).offset(40);
+        make.left.equalTo(self).offset(45);
+        make.width.mas_equalTo(ScreenW - 45 * 2);
+        make.height.mas_equalTo(44);
+    }];
+    
+    //2.according to apple super should be called at end of method
+    [super updateConstraints];
 }
 
 @end

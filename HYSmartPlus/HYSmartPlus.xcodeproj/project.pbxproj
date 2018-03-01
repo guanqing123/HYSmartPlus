@@ -63,6 +63,8 @@
 		D6184AF52046D2DB00616266 /* SPCodeLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AF42046D2DB00616266 /* SPCodeLoginView.m */; };
 		D6184AF82046D91800616266 /* SPPasswordLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AF72046D91800616266 /* SPPasswordLoginView.m */; };
 		D6184B002047013100616266 /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AFF2047013100616266 /* SPLoginViewController.m */; };
+		D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B02204708AF00616266 /* SPLoginHeaderView.m */; };
+		D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B0520470D4200616266 /* SPLoginFooterView.m */; };
 		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D63323471FC7AFF6003511EA /* SPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323401FC7AFF6003511EA /* SPAccount.m */; };
@@ -181,6 +183,10 @@
 		D6184AF72046D91800616266 /* SPPasswordLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPasswordLoginView.m; sourceTree = "<group>"; };
 		D6184AFE2047013100616266 /* SPLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginViewController.h; sourceTree = "<group>"; };
 		D6184AFF2047013100616266 /* SPLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginViewController.m; sourceTree = "<group>"; };
+		D6184B01204708AF00616266 /* SPLoginHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginHeaderView.h; sourceTree = "<group>"; };
+		D6184B02204708AF00616266 /* SPLoginHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginHeaderView.m; sourceTree = "<group>"; };
+		D6184B0420470D4200616266 /* SPLoginFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginFooterView.h; sourceTree = "<group>"; };
+		D6184B0520470D4200616266 /* SPLoginFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginFooterView.m; sourceTree = "<group>"; };
 		D61884D41F657A6C0027F119 /* HYSmartPlus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSmartPlus.pch; sourceTree = "<group>"; };
 		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
@@ -719,6 +725,10 @@
 				D6184AF42046D2DB00616266 /* SPCodeLoginView.m */,
 				D6184AF62046D91800616266 /* SPPasswordLoginView.h */,
 				D6184AF72046D91800616266 /* SPPasswordLoginView.m */,
+				D6184B01204708AF00616266 /* SPLoginHeaderView.h */,
+				D6184B02204708AF00616266 /* SPLoginHeaderView.m */,
+				D6184B0420470D4200616266 /* SPLoginFooterView.h */,
+				D6184B0520470D4200616266 /* SPLoginFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -883,6 +893,7 @@
 			files = (
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
+				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
 				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
 				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
@@ -897,6 +908,7 @@
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
+				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,
 				D6164D30204596D100767C00 /* SPSliderParam.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
 				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
