@@ -7,27 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPCodeParam.h"
 
-typedef void(^verifyHandler)(void);
+@class SPCodeLoginView;
 
-@protocol CodeLoginViewDelegate <NSObject>
-
-- (void)codeLoginComplete;
+@protocol SPCodeLoginViewDelegate <NSObject>
+/**
+ 根据手机号获取验证码
+ 
+ @param codeLoginView 当前对象
+ */
+- (void)codeLoginViewDidClickObtainVerifyCodeButton:(SPCodeLoginView *)codeLoginView;
 
 @end
 
 @interface SPCodeLoginView : UIView
+/**
+ 获取验证码的参数
+ */
+@property (nonatomic, strong)  SPCodeParam *codeParam;
+
+@property (nonatomic, weak) id<SPCodeLoginViewDelegate> delegate;
 
 + (instancetype)codeView;
-
-
-@property (nonatomic, copy) verifyHandler handler;
-@property (nonatomic, strong) UIImageView *imgView;
-
-@property (nonatomic, weak) id<CodeLoginViewDelegate> delegate;
-
-- (void)addLoadCycle;
-
-- (void)pauseAnimation;
 
 @end

@@ -91,6 +91,15 @@
 + (NSInteger)dc_getRandomNumber:(NSInteger)starNum to:(NSInteger)endNum;
 
 
+/**
+ 判断是否是手机号
+
+ @param telephone 手机号
+ @return 验证结果
+ */
++ (BOOL)dc_isTelephone:(NSString *)telephone;
+
+
 #pragma mark - 图片转base64编码
 + (NSString *)UIImageToBase64Str:(UIImage *) image;
 

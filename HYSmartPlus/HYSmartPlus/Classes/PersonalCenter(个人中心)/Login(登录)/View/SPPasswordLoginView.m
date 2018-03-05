@@ -160,8 +160,8 @@
         self.submitButton.userInteractionEnabled = NO;
         self.submitButton.backgroundColor = RGB(207, 235, 221);
     }
-    self.telphone = self.phoneTextField.text;
-    self.password = self.passwordTextField.text;
+    //self.telphone = self.phoneTextField.text;
+    //self.password = self.passwordTextField.text;
 }
 
 - (void)showPassword:(UIButton *)button {

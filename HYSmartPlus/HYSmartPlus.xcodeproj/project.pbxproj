@@ -65,6 +65,10 @@
 		D6184B002047013100616266 /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AFF2047013100616266 /* SPLoginViewController.m */; };
 		D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B02204708AF00616266 /* SPLoginHeaderView.m */; };
 		D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B0520470D4200616266 /* SPLoginFooterView.m */; };
+		D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253084204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m */; };
+		D625308B204D424B006A8CB5 /* SPCodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D625308A204D424B006A8CB5 /* SPCodeParam.m */; };
+		D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D625308D204D4744006A8CB5 /* SPLoginTool.m */; };
+		D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253090204D4C28006A8CB5 /* SPCodeResult.m */; };
 		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D63323471FC7AFF6003511EA /* SPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323401FC7AFF6003511EA /* SPAccount.m */; };
@@ -188,6 +192,14 @@
 		D6184B0420470D4200616266 /* SPLoginFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginFooterView.h; sourceTree = "<group>"; };
 		D6184B0520470D4200616266 /* SPLoginFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginFooterView.m; sourceTree = "<group>"; };
 		D61884D41F657A6C0027F119 /* HYSmartPlus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSmartPlus.pch; sourceTree = "<group>"; };
+		D6253083204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+SPExtension.h"; sourceTree = "<group>"; };
+		D6253084204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+SPExtension.m"; sourceTree = "<group>"; };
+		D6253089204D424B006A8CB5 /* SPCodeParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCodeParam.h; sourceTree = "<group>"; };
+		D625308A204D424B006A8CB5 /* SPCodeParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCodeParam.m; sourceTree = "<group>"; };
+		D625308C204D4744006A8CB5 /* SPLoginTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginTool.h; sourceTree = "<group>"; };
+		D625308D204D4744006A8CB5 /* SPLoginTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginTool.m; sourceTree = "<group>"; };
+		D625308F204D4C28006A8CB5 /* SPCodeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCodeResult.h; sourceTree = "<group>"; };
+		D6253090204D4C28006A8CB5 /* SPCodeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCodeResult.m; sourceTree = "<group>"; };
 		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
@@ -705,6 +717,10 @@
 			children = (
 				D633233F1FC7AFF6003511EA /* SPAccount.h */,
 				D63323401FC7AFF6003511EA /* SPAccount.m */,
+				D6253089204D424B006A8CB5 /* SPCodeParam.h */,
+				D625308A204D424B006A8CB5 /* SPCodeParam.m */,
+				D625308F204D4C28006A8CB5 /* SPCodeResult.h */,
+				D6253090204D4C28006A8CB5 /* SPCodeResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -714,6 +730,8 @@
 			children = (
 				D63323421FC7AFF6003511EA /* SPAccountTool.h */,
 				D63323431FC7AFF6003511EA /* SPAccountTool.m */,
+				D625308C204D4744006A8CB5 /* SPLoginTool.h */,
+				D625308D204D4744006A8CB5 /* SPLoginTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -756,6 +774,8 @@
 				D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */,
 				D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */,
 				D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */,
+				D6253083204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.h */,
+				D6253084204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m */,
 			);
 			path = "Category(分类)";
 			sourceTree = "<group>";
@@ -891,12 +911,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */,
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
 				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
 				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
+				D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
 				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
@@ -923,10 +945,12 @@
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
+				D625308B204D424B006A8CB5 /* SPCodeParam.m in Sources */,
 				D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
 				D6164D33204596D100767C00 /* SPGoodsCountDownCell.m in Sources */,
 				D60EC4E41FC6AF1300F78F31 /* SPBrandSortHeadView.m in Sources */,
+				D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */,
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D6DEE9CD2046AB600012CC61 /* SPLoginViewController1.m in Sources */,

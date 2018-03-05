@@ -15,7 +15,9 @@
 
 #import "DGActivityIndicatorView.h"
 
-@interface SPLoginViewController () <UIScrollViewDelegate,SPPasswordLoginViewDelegate>
+#import "SPLoginTool.h"
+
+@interface SPLoginViewController () <UIScrollViewDelegate,SPPasswordLoginViewDelegate,SPCodeLoginViewDelegate>
 @property (nonatomic, strong) SPLoginHeaderView  *headerView;
 @property (nonatomic, strong) SPLoginFooterView  *footerView;
 
@@ -149,7 +151,7 @@
 #pragma mark - SPPasswordLoginViewDelegate
 - (void)passwordLoginViewDidSubmitButton:(SPPasswordLoginView *)passwordLoginView {
     [self.loading startAnimating];
-    NSLog(@"1 = %@,2 = %@",passwordLoginView.telphone,passwordLoginView.password);
+    //NSLog(@"1 = %@,2 = %@",passwordLoginView.telphone,passwordLoginView.password);
 }
 
 #pragma mark - 内容
@@ -179,6 +181,7 @@
     
     /** 短信登录 */
     SPCodeLoginView *codeLoginView = [SPCodeLoginView codeView];
+    codeLoginView.delegate = self;
     _codeLoginView = codeLoginView;
     [_contentView addSubview:codeLoginView];
     
@@ -187,6 +190,19 @@
         make.left.equalTo(passwordLoginView.mas_right).offset(0);
         make.height.mas_equalTo(weakSelf.contentView);
         make.width.mas_equalTo(ScreenW);
+    }];
+}
+
+#pragma mark - SPCodeLoginViewDelegate
+- (void)codeLoginViewDidClickObtainVerifyCodeButton:(SPCodeLoginView *)codeLoginView {
+    [SPLoginTool getVerifyCode:codeLoginView.codeParam success:^(SPCodeResult *codeResult) {
+        if (codeResult.error) {
+            [MBProgressHUD showError:codeResult.errorMsg];
+        }else{
+            [MBProgressHUD showSuccess:@"验证码已发送,请注意查收"];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"验证码发送失败"];
     }];
 }
 

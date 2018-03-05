@@ -38,6 +38,8 @@
 
 - (void)customView {
     self.backgroundColor = [UIColor whiteColor];
+    self.codeParam = [SPCodeParam param:APP00000];
+    self.codeParam.ztemplate = @"SMS_109740618";
     
     UILabel *telLabel = [[UILabel alloc] init];
     telLabel.text = @"+86";
@@ -48,7 +50,8 @@
     
     UITextField *phoneTextField = [[UITextField alloc] init];
     phoneTextField.placeholder = @"请输入手机号";
-    [self.phoneTextField addTarget:self action:@selector(phoneEditChange) forControlEvents:UIControlEventEditingChanged];
+    phoneTextField.keyboardType = UIKeyboardTypePhonePad;
+    [phoneTextField addTarget:self action:@selector(contentChanged) forControlEvents:UIControlEventEditingChanged];
     _phoneTextField = phoneTextField;
     [self addSubview:phoneTextField];
     
@@ -69,7 +72,8 @@
     
     UITextField *codeTextField = [[UITextField alloc] init];
     codeTextField.placeholder = @"请输入验证码";
-    [codeTextField addTarget:self action:@selector(EditChanged) forControlEvents:UIControlEventEditingChanged];
+    
+    [codeTextField addTarget:self action:@selector(contentChanged) forControlEvents:UIControlEventEditingChanged];
     _codeTextField = codeTextField;
     [self addSubview:codeTextField];
     
@@ -145,6 +149,53 @@
     
     //2.according to apple super should be called at end of method
     [super updateConstraints];
+}
+
+- (void)contentChanged {
+    if (self.phoneTextField.text.length > 0 && self.codeTextField.text.length > 0) {
+        self.submitButton.userInteractionEnabled = YES;
+        self.submitButton.backgroundColor = SPColor;
+    }else{
+        self.submitButton.userInteractionEnabled = NO;
+        self.submitButton.backgroundColor = RGB(207, 235, 221);
+    }
+    self.codeParam.num = self.phoneTextField.text;
+}
+
+- (void)obtainVerifyCode {
+    if (![SPSpeedy dc_isTelephone:self.codeParam.num]) {
+        [MBProgressHUD showMessage:@"请输入正确的手机号码!"];
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(codeLoginViewDidClickObtainVerifyCodeButton:)]) {
+        [self.delegate codeLoginViewDidClickObtainVerifyCodeButton:self];
+    }
+    __block NSInteger time = 59; //设置倒计时时间
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+    
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
+    WEAKSELF
+    dispatch_source_set_event_handler(_timer, ^{
+        if (time <= 0) { //倒计时结束,关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //设置按钮的样式
+                [weakSelf.countDownButton setTitle:@"重新发送" forState:UIControlStateNormal];
+                weakSelf.countDownButton.userInteractionEnabled = YES;
+            });
+        }else{
+            NSInteger seconds = time % 60;
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                //设置按钮显示读秒效果
+                [weakSelf.countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)seconds] forState:UIControlStateNormal];
+                weakSelf.countDownButton.userInteractionEnabled = NO;
+            });
+            time--;
+        }
+    });
+    dispatch_resume(_timer);
 }
 
 @end

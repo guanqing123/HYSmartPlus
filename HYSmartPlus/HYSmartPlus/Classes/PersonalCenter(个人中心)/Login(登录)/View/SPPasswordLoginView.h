@@ -25,6 +25,5 @@
 
 @property (nonatomic, weak) id<SPPasswordLoginViewDelegate> delegate;
 
-@property (nonatomic, copy) NSString *telphone;
-@property (nonatomic, copy) NSString *password;
+@property (nonatomic, strong)  NSDictionary *paramDict;
 @end
