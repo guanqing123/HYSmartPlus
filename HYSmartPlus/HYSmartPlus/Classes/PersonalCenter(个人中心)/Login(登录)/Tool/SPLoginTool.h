@@ -11,6 +11,8 @@
 #import "SPCodeParam.h"
 #import "SPCodeResult.h"
 
+#import "SPLoginParam.h"
+
 @interface SPLoginTool : NSObject
 
 /**
@@ -21,5 +23,7 @@
  @param failure 失败回调
  */
 + (void)getVerifyCode:(SPCodeParam *)codeParam success:(void(^)(SPCodeResult *codeResult))success failure:(void(^)(NSError *error))failure;
+
++ (void)login:(SPLoginParam *)loginParam success:(void(^)())success failure:(void(^)(NSError *error))failure;
 
 @end

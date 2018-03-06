@@ -35,4 +35,19 @@
     }];
 }
 
++ (void)login:(SPLoginParam *)loginParam success:(void (^)())success failure:(void (^)(NSError *))failure {
+    NSDictionary *headerDict = [NSDictionary dictionaryWithObjects:@[loginParam.appseq,loginParam.trcode,loginParam.trdate] forKeys:@[@"appseq",@"trcode",@"trdate"]];
+    
+    NSDictionary *dict = @{@"header" : headerDict, @"data" : loginParam.mj_keyValues};
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *parameter = @{@"content" : jsonString};
+    [SPHttpTool postWithURL:SPURL params:parameter success:^(id json) {
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

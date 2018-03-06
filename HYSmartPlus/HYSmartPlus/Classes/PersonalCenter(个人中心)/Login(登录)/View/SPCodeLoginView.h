@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SPCodeParam.h"
+#import "SPLoginParam.h"
 
 @class SPCodeLoginView;
 
@@ -19,6 +20,14 @@
  */
 - (void)codeLoginViewDidClickObtainVerifyCodeButton:(SPCodeLoginView *)codeLoginView;
 
+
+/**
+ 根据 手机号和验证码 登录
+
+ @param codeLoginView 当前对象
+ */
+- (void)codeLoginViewDidClickLoginButton:(SPCodeLoginView *)codeLoginView;
+
 @end
 
 @interface SPCodeLoginView : UIView
@@ -27,8 +36,15 @@
  */
 @property (nonatomic, strong)  SPCodeParam *codeParam;
 
+/**
+ 登录参数
+ */
+@property (nonatomic, strong)  SPLoginParam *loginParam;
+
 @property (nonatomic, weak) id<SPCodeLoginViewDelegate> delegate;
 
 + (instancetype)codeView;
+
+- (void)countDown;
 
 @end

@@ -10,6 +10,7 @@
 #import "SPAccount.h"
 #import "SPAccountTool.h"
 #import "SPSmartPlusTool.h"
+#import "SPNavigationController.h"
 #import "SPLoginViewController.h"
 
 @interface SPAppDelegate ()
@@ -17,7 +18,6 @@
 @end
 
 @implementation SPAppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -31,7 +31,7 @@
     if (account) { //之前登录成功
         [SPSmartPlusTool chooseRootController];
     } else { //之前没有登录成功
-        self.window.rootViewController = [[SPLoginViewController alloc] init];
+        self.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
     }
     return YES;
 }

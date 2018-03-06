@@ -33,6 +33,7 @@
 		D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7D71F66579C00D62B89 /* SPTabBar.m */; };
 		D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */; };
 		D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */; };
+		D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61438C9204D7CF8009C6258 /* SPLoginParam.m */; };
 		D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D614E8991FC4250F000C8F85 /* CountDownShop.plist */; };
 		D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CF5204596D100767C00 /* SPHandPickViewController.m */; };
 		D6164D2C204596D100767C00 /* SPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CF7204596D100767C00 /* SPViewController.m */; };
@@ -71,6 +72,9 @@
 		D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253090204D4C28006A8CB5 /* SPCodeResult.m */; };
 		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
+		D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */; };
+		D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */; };
+		D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCAC204E8F5E00892D6C /* SPRegisterParam.m */; };
 		D63323471FC7AFF6003511EA /* SPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323401FC7AFF6003511EA /* SPAccount.m */; };
 		D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323431FC7AFF6003511EA /* SPAccountTool.m */; };
 		D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */; };
@@ -128,6 +132,8 @@
 		D613E7DF1F666D2D00D62B89 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
 		D61405FB1FBC8C6800E50627 /* UIImage+SPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExtension.h"; sourceTree = "<group>"; };
 		D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExtension.m"; sourceTree = "<group>"; };
+		D61438C8204D7CF8009C6258 /* SPLoginParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginParam.h; sourceTree = "<group>"; };
+		D61438C9204D7CF8009C6258 /* SPLoginParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginParam.m; sourceTree = "<group>"; };
 		D614E8991FC4250F000C8F85 /* CountDownShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountDownShop.plist; sourceTree = "<group>"; };
 		D6164CF4204596D100767C00 /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
 		D6164CF5204596D100767C00 /* SPHandPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHandPickViewController.m; sourceTree = "<group>"; };
@@ -203,6 +209,11 @@
 		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
+		D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRegisterViewController.h; sourceTree = "<group>"; };
+		D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRegisterViewController.m; sourceTree = "<group>"; };
+		D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPRegisterViewController.xib; sourceTree = "<group>"; };
+		D631FCAB204E8F5E00892D6C /* SPRegisterParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRegisterParam.h; sourceTree = "<group>"; };
+		D631FCAC204E8F5E00892D6C /* SPRegisterParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRegisterParam.m; sourceTree = "<group>"; };
 		D633233F1FC7AFF6003511EA /* SPAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAccount.h; sourceTree = "<group>"; };
 		D63323401FC7AFF6003511EA /* SPAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAccount.m; sourceTree = "<group>"; };
 		D63323421FC7AFF6003511EA /* SPAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAccountTool.h; sourceTree = "<group>"; };
@@ -708,6 +719,9 @@
 				D6DEE9CC2046AB600012CC61 /* SPLoginViewController1.m */,
 				D6184AFE2047013100616266 /* SPLoginViewController.h */,
 				D6184AFF2047013100616266 /* SPLoginViewController.m */,
+				D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */,
+				D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */,
+				D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -721,6 +735,10 @@
 				D625308A204D424B006A8CB5 /* SPCodeParam.m */,
 				D625308F204D4C28006A8CB5 /* SPCodeResult.h */,
 				D6253090204D4C28006A8CB5 /* SPCodeResult.m */,
+				D61438C8204D7CF8009C6258 /* SPLoginParam.h */,
+				D61438C9204D7CF8009C6258 /* SPLoginParam.m */,
+				D631FCAB204E8F5E00892D6C /* SPRegisterParam.h */,
+				D631FCAC204E8F5E00892D6C /* SPRegisterParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -850,6 +868,7 @@
 				D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */,
 				D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
+				D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */,
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 				D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */,
 				D60EC4DF1FC6ACF300F78F31 /* ClassiftyGoods01.plist in Resources */,
@@ -916,11 +935,13 @@
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
+				D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */,
 				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
 				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
 				D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
+				D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */,
 				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
 				D6164D3B204596D200767C00 /* SPCountDownHeadView.m in Sources */,
@@ -928,6 +949,7 @@
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
+				D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
 				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,

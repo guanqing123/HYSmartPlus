@@ -75,6 +75,7 @@
         _registBtn.titleLabel.font = PFR18Font;
         [_registBtn setTitleColor:SPColor forState:UIControlStateNormal];
         [_registBtn.titleLabel sizeToFit];
+        [_registBtn addTarget:self action:@selector(registBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _registBtn;
 }
@@ -150,6 +151,15 @@
         make.right.mas_equalTo(self).offset(-20);
         make.height.mas_equalTo(1);
     }];
+}
+
+/**
+ 点击注册按钮
+ */
+- (void)registBtnClick {
+    if ([self.delegate respondsToSelector:@selector(loginFooterViewDidClickRegistBtn:)]) {
+        [self.delegate loginFooterViewDidClickRegistBtn:self];
+    }
 }
 
 @end

@@ -16,6 +16,7 @@
 #import "SPSpeedy.h" //便捷方法
 #import "UIView+SPExtension.h" // UIView分类
 #import "MBProgressHUD+SPExtension.h" //MBProgressHUD分类
+#import "UIBarButtonItem+SPBarButtonItem.h" //UIBarButtonItem 分类
 
 #import <Masonry.h>
 

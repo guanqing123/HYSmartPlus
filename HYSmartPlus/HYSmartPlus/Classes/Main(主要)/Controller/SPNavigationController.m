@@ -38,7 +38,7 @@
     
     //设置标题文字颜色
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    //attrs[NSForegroundColorAttributeName] = RGB(20, 200, 197);
+    attrs[NSForegroundColorAttributeName] = RGB(49, 49, 49);
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
     [navBar setTitleTextAttributes:attrs];
     

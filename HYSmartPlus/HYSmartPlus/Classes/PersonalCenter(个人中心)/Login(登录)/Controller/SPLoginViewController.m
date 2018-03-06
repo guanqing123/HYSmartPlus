@@ -5,7 +5,7 @@
 //  Created by information on 2018/2/28.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
-
+#import "SPRegisterViewController.h"
 #import "SPLoginViewController.h"
 #import "SPLoginHeaderView.h"
 #import "SPLoginFooterView.h"
@@ -17,7 +17,7 @@
 
 #import "SPLoginTool.h"
 
-@interface SPLoginViewController () <UIScrollViewDelegate,SPPasswordLoginViewDelegate,SPCodeLoginViewDelegate>
+@interface SPLoginViewController () <UIScrollViewDelegate,SPPasswordLoginViewDelegate,SPCodeLoginViewDelegate,SPLoginFooterViewDelegate>
 @property (nonatomic, strong) SPLoginHeaderView  *headerView;
 @property (nonatomic, strong) SPLoginFooterView  *footerView;
 
@@ -38,6 +38,16 @@
 @end
 
 @implementation SPLoginViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,6 +98,7 @@
 - (SPLoginFooterView *)footerView {
     if (!_footerView) {
         _footerView = [SPLoginFooterView footerView];
+        _footerView.delegate = self;
     }
     return _footerView;
 }
@@ -148,6 +159,12 @@
     [self setupContentView];
 }
 
+#pragma mark - SPLoginFooterViewDelegate
+- (void)loginFooterViewDidClickRegistBtn:(SPLoginFooterView *)loginFooterView {
+    SPRegisterViewController *registerVc = [[SPRegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVc animated:YES];
+}
+
 #pragma mark - SPPasswordLoginViewDelegate
 - (void)passwordLoginViewDidSubmitButton:(SPPasswordLoginView *)passwordLoginView {
     [self.loading startAnimating];
@@ -200,9 +217,18 @@
             [MBProgressHUD showError:codeResult.errorMsg];
         }else{
             [MBProgressHUD showSuccess:@"验证码已发送,请注意查收"];
+            [codeLoginView countDown];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"验证码发送失败"];
+        [MBProgressHUD showError:@"网络异常,验证码发送失败"];
+    }];
+}
+
+- (void)codeLoginViewDidClickLoginButton:(SPCodeLoginView *)codeLoginView {
+    [SPLoginTool login:codeLoginView.loginParam success:^{
+        
+    } failure:^(NSError *error) {
+        
     }];
 }
 

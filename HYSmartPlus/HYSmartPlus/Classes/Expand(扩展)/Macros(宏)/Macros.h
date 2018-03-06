@@ -75,5 +75,9 @@
 #define slider @"HYXK00019"
 //获取手机验证码
 #define APP00000 @"APP00000"
+//用户注册
+#define APP00001 @"APP00001"
+//手机号码+手机验证码或密码；用户ID+token
+#define APP00005 @"APP00005"
 
 #endif /* Macros_h */

@@ -40,6 +40,7 @@
     self.backgroundColor = [UIColor whiteColor];
     self.codeParam = [SPCodeParam param:APP00000];
     self.codeParam.ztemplate = @"SMS_109740618";
+    self.loginParam = [SPLoginParam param:APP00005];
     
     UILabel *telLabel = [[UILabel alloc] init];
     telLabel.text = @"+86";
@@ -87,7 +88,7 @@
     submitButton.layer.masksToBounds = YES;
     submitButton.backgroundColor = RGB(207, 235, 221);
     [submitButton setTitle:@"登录" forState:UIControlStateNormal];
-    [submitButton addTarget:self action:@selector(startRegisterButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [submitButton addTarget:self action:@selector(loginButtonClick) forControlEvents:UIControlEventTouchUpInside];
     submitButton.userInteractionEnabled = NO;
     _submitButton = submitButton;
     [self addSubview:submitButton];
@@ -151,6 +152,7 @@
     [super updateConstraints];
 }
 
+#pragma mark - 编辑手机号 或 验证码
 - (void)contentChanged {
     if (self.phoneTextField.text.length > 0 && self.codeTextField.text.length > 0) {
         self.submitButton.userInteractionEnabled = YES;
@@ -160,8 +162,11 @@
         self.submitButton.backgroundColor = RGB(207, 235, 221);
     }
     self.codeParam.num = self.phoneTextField.text;
+    self.loginParam.num = self.phoneTextField.text;
+    self.loginParam.code = self.codeTextField.text;
 }
 
+#pragma mark - 获取验证码
 - (void)obtainVerifyCode {
     if (![SPSpeedy dc_isTelephone:self.codeParam.num]) {
         [MBProgressHUD showMessage:@"请输入正确的手机号码!"];
@@ -170,6 +175,10 @@
     if ([self.delegate respondsToSelector:@selector(codeLoginViewDidClickObtainVerifyCodeButton:)]) {
         [self.delegate codeLoginViewDidClickObtainVerifyCodeButton:self];
     }
+}
+
+#pragma mark - 重新获取验证码倒计时
+- (void)countDown {
     __block NSInteger time = 59; //设置倒计时时间
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
     
@@ -187,7 +196,7 @@
         }else{
             NSInteger seconds = time % 60;
             dispatch_async(dispatch_get_main_queue(), ^{
-
+                
                 //设置按钮显示读秒效果
                 [weakSelf.countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)seconds] forState:UIControlStateNormal];
                 weakSelf.countDownButton.userInteractionEnabled = NO;
@@ -196,6 +205,17 @@
         }
     });
     dispatch_resume(_timer);
+}
+
+#pragma mark - 登录
+- (void)loginButtonClick {
+    if (![SPSpeedy dc_isTelephone:self.codeParam.num]) {
+        [MBProgressHUD showMessage:@"请输入正确的手机号码!"];
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(codeLoginViewDidClickLoginButton:)]) {
+        [self.delegate codeLoginViewDidClickLoginButton:self];
+    }
 }
 
 @end
