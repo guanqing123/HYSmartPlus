@@ -15,6 +15,8 @@
 
 #import "DGActivityIndicatorView.h"
 
+#import "SPAccountTool.h"
+#import "SPSmartPlusTool.h"
 #import "SPLoginTool.h"
 
 @interface SPLoginViewController () <UIScrollViewDelegate,SPPasswordLoginViewDelegate,SPCodeLoginViewDelegate,SPLoginFooterViewDelegate>
@@ -225,10 +227,22 @@
 }
 
 - (void)codeLoginViewDidClickLoginButton:(SPCodeLoginView *)codeLoginView {
-    [SPLoginTool login:codeLoginView.loginParam success:^{
-        
+    [MBProgressHUD showWaitMessage:@"登录中..." toView:self.view];
+    [SPLoginTool login:codeLoginView.loginParam success:^(SPLoginResult *loginResult) {
+        [MBProgressHUD hideHUDForView:self.view];
+        if (loginResult.error) {
+            [MBProgressHUD showError:loginResult.errorMsg toView:self.view];
+        }else{
+            [MBProgressHUD showSuccess:@"登录成功" toView:self.view];
+            // 1.存储模型数据
+            [SPAccountTool saveLoginResult:loginResult];
+            
+            // 2.新特性\去首页
+            [SPSmartPlusTool chooseRootController];
+        }
     } failure:^(NSError *error) {
-        
+        [MBProgressHUD hideHUDForView:self.view];
+        [MBProgressHUD showError:@"网络异常,登录失败" toView:self.view];
     }];
 }
 

@@ -51,6 +51,19 @@
     [hud hideAnimated:YES afterDelay:2.0];
 }
 
+#pragma mark 等待不退出
++ (void)showWaitMessage:(NSString *)message toView:(UIView *)view {
+    if (view == nil) view = [[UIApplication sharedApplication].windows lastObject];
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    
+    // Change the background view style and color.
+    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
+    
+    hud.label.text = message;
+}
+
 + (void)showSuccess:(NSString *)success
 {
     [self showSuccess:success toView:nil];

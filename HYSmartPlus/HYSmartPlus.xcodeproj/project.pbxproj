@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
 		D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */; };
+		D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */; };
+		D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */; };
+		D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */; };
+		D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */; };
 		D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */; };
 		D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CA1FC68C4900F78F31 /* SPCommodityViewController.m */; };
 		D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CD1FC695D400F78F31 /* SPClassGoodsItem.m */; };
@@ -87,6 +91,13 @@
 		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
 		D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
+		D60AD7B2204F9787009E0B25 /* SPAccountDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAccountDetail.h; sourceTree = "<group>"; };
+		D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAccountDetail.m; sourceTree = "<group>"; };
+		D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		D60AD7B7204FCED4009E0B25 /* SPLoginResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginResult.h; sourceTree = "<group>"; };
+		D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginResult.m; sourceTree = "<group>"; };
+		D60AD7BA204FDEEF009E0B25 /* SPBaseResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBaseResult.h; sourceTree = "<group>"; };
+		D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBaseResult.m; sourceTree = "<group>"; };
 		D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSpeedy.m; sourceTree = "<group>"; };
 		D60EC4C01FC66DE700F78F31 /* SPSpeedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpeedy.h; sourceTree = "<group>"; };
 		D60EC4C91FC68C4900F78F31 /* SPCommodityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCommodityViewController.h; sourceTree = "<group>"; };
@@ -397,6 +408,8 @@
 			children = (
 				D61165F41F6BBCE6008A5199 /* SPBaseParam.h */,
 				D61165F51F6BBCE6008A5199 /* SPBaseParam.m */,
+				D60AD7BA204FDEEF009E0B25 /* SPBaseResult.h */,
+				D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -731,14 +744,18 @@
 			children = (
 				D633233F1FC7AFF6003511EA /* SPAccount.h */,
 				D63323401FC7AFF6003511EA /* SPAccount.m */,
+				D60AD7B2204F9787009E0B25 /* SPAccountDetail.h */,
+				D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */,
 				D6253089204D424B006A8CB5 /* SPCodeParam.h */,
 				D625308A204D424B006A8CB5 /* SPCodeParam.m */,
 				D625308F204D4C28006A8CB5 /* SPCodeResult.h */,
 				D6253090204D4C28006A8CB5 /* SPCodeResult.m */,
-				D61438C8204D7CF8009C6258 /* SPLoginParam.h */,
-				D61438C9204D7CF8009C6258 /* SPLoginParam.m */,
 				D631FCAB204E8F5E00892D6C /* SPRegisterParam.h */,
 				D631FCAC204E8F5E00892D6C /* SPRegisterParam.m */,
+				D61438C8204D7CF8009C6258 /* SPLoginParam.h */,
+				D61438C9204D7CF8009C6258 /* SPLoginParam.m */,
+				D60AD7B7204FCED4009E0B25 /* SPLoginResult.h */,
+				D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -794,6 +811,7 @@
 				D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */,
 				D6253083204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.h */,
 				D6253084204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m */,
+				D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */,
 			);
 			path = "Category(分类)";
 			sourceTree = "<group>";
@@ -866,6 +884,7 @@
 				D60EC4EE1FC6C1BB00F78F31 /* ClassiftyGoods02.plist in Resources */,
 				D613BE271F6193110090316D /* Images.xcassets in Resources */,
 				D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */,
+				D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */,
 				D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
 				D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */,
@@ -932,12 +951,14 @@
 			files = (
 				D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */,
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
+				D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
 				D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */,
 				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
 				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
+				D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */,
 				D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
@@ -976,6 +997,7 @@
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D6DEE9CD2046AB600012CC61 /* SPLoginViewController1.m in Sources */,
+				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,

@@ -24,11 +24,11 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyWindow];
-
-    // 先判断有无存储账号信息
-    SPAccount *account = [SPAccountTool account];
     
-    if (account) { //之前登录成功
+    // 先判断有无存储账号信息
+    SPLoginResult *result = [SPAccountTool loginResult];
+    
+    if (result) { //之前登录成功
         [SPSmartPlusTool chooseRootController];
     } else { //之前没有登录成功
         self.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];

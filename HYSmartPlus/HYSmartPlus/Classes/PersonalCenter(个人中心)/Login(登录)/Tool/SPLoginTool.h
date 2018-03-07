@@ -11,7 +11,10 @@
 #import "SPCodeParam.h"
 #import "SPCodeResult.h"
 
+#import "SPRegisterParam.h"
+
 #import "SPLoginParam.h"
+#import "SPLoginResult.h"
 
 @interface SPLoginTool : NSObject
 
@@ -24,6 +27,22 @@
  */
 + (void)getVerifyCode:(SPCodeParam *)codeParam success:(void(^)(SPCodeResult *codeResult))success failure:(void(^)(NSError *error))failure;
 
-+ (void)login:(SPLoginParam *)loginParam success:(void(^)())success failure:(void(^)(NSError *error))failure;
+/**
+ 用户注册
+
+ @param registerParam 入参
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)regist:(SPRegisterParam *)registerParam success:(void(^)(SPLoginResult *loginResult))success failure:(void(^)(NSError *error))failure;
+
+/**
+ 用户登录
+
+ @param loginParam 入参
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)login:(SPLoginParam *)loginParam success:(void(^)(SPLoginResult *loginResult))success failure:(void(^)(NSError *error))failure;
 
 @end

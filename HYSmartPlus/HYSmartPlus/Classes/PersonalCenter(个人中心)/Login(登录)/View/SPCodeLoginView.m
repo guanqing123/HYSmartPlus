@@ -39,7 +39,7 @@
 - (void)customView {
     self.backgroundColor = [UIColor whiteColor];
     self.codeParam = [SPCodeParam param:APP00000];
-    self.codeParam.ztemplate = @"SMS_109740618";
+    self.codeParam.ztemplate = SPLoginTemplate;
     self.loginParam = [SPLoginParam param:APP00005];
     
     UILabel *telLabel = [[UILabel alloc] init];
