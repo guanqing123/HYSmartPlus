@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPLoginParam.h"
 @class SPPasswordLoginView;
 
 @protocol SPPasswordLoginViewDelegate <NSObject>
@@ -17,13 +18,25 @@
  @param passwordLoginView 当前对象
  */
 - (void)passwordLoginViewDidSubmitButton:(SPPasswordLoginView *)passwordLoginView;
+
+
+/**
+ 点击忘记密码按钮
+
+ @param passwordLoginView 当前对象
+ */
+- (void)passwordLoginViewforgetPwd:(SPPasswordLoginView *)passwordLoginView;
 @end
 
 @interface SPPasswordLoginView : UIView
 
-+ (instancetype)passwordView;
+/**
+ 登录参数
+ */
+@property (nonatomic, strong)  SPLoginParam *loginParam;
 
 @property (nonatomic, weak) id<SPPasswordLoginViewDelegate> delegate;
 
-@property (nonatomic, strong)  NSDictionary *paramDict;
++ (instancetype)passwordView;
+
 @end

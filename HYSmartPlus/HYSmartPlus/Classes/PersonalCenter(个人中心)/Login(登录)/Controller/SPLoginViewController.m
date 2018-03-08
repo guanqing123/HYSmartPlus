@@ -6,14 +6,13 @@
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 #import "SPRegisterViewController.h"
+#import "SPForgetPwdViewController.h"
 #import "SPLoginViewController.h"
 #import "SPLoginHeaderView.h"
 #import "SPLoginFooterView.h"
 
 #import "SPCodeLoginView.h"
 #import "SPPasswordLoginView.h"
-
-#import "DGActivityIndicatorView.h"
 
 #import "SPAccountTool.h"
 #import "SPSmartPlusTool.h"
@@ -35,8 +34,6 @@
 @property (strong , nonatomic)UIView *titleView;
 /* contentView */
 @property (strong , nonatomic)UIScrollView *contentView;
-
-@property (nonatomic, weak) DGActivityIndicatorView  *loading;
 @end
 
 @implementation SPLoginViewController
@@ -75,18 +72,6 @@
     
     // 3.设置中部View
     [self setupMiddleView];
-    
-    // 4.setupIndicatorView
-    [self setupIndicatorView];
-}
-
-- (void)setupIndicatorView {
-    DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:RGB(20, 200, 197) size:self.view.dc_width * 0.2];
-    _loading = indicatorView;
-    [self.view addSubview:indicatorView];
-    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-    }];
 }
 
 #pragma mark - lazyLoad
@@ -169,8 +154,28 @@
 
 #pragma mark - SPPasswordLoginViewDelegate
 - (void)passwordLoginViewDidSubmitButton:(SPPasswordLoginView *)passwordLoginView {
-    [self.loading startAnimating];
-    //NSLog(@"1 = %@,2 = %@",passwordLoginView.telphone,passwordLoginView.password);
+    [MBProgressHUD showWaitMessage:@"登录中..." toView:self.view];
+    [SPLoginTool login:passwordLoginView.loginParam success:^(SPLoginResult *loginResult) {
+        [MBProgressHUD hideHUDForView:self.view];
+        if (loginResult.error) {
+            [MBProgressHUD showError:loginResult.errorMsg toView:self.view];
+        }else{
+            [MBProgressHUD showSuccess:@"登录成功" toView:self.view];
+            // 1.存储模型数据
+            [SPAccountTool saveLoginResult:loginResult];
+            
+            // 2.新特性\去首页
+            [SPSmartPlusTool chooseRootController];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view];
+        [MBProgressHUD showError:@"网络异常,登录失败" toView:self.view];
+    }];
+}
+
+- (void)passwordLoginViewforgetPwd:(SPPasswordLoginView *)passwordLoginView {
+    SPForgetPwdViewController *forgetPwdVc = [[SPForgetPwdViewController alloc] init];
+    [self.navigationController pushViewController:forgetPwdVc animated:YES];
 }
 
 #pragma mark - 内容

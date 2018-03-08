@@ -1,39 +1,28 @@
 //
-//  SPRegisterViewController.m
+//  SPForgetPwdViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/3/6.
+//  Created by information on 2018/3/8.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#import "SPRegisterViewController.h"
-#import "SPUserAgreementViewController.h"
-#import "SPCodeParam.h"
-#import "SPRegisterParam.h"
+#import "SPForgetPwdViewController.h"
 #import "SPLoginTool.h"
-#import "SPAccountTool.h"
-#import "SPSmartPlusTool.h"
 
-@interface SPRegisterViewController ()
+@interface SPForgetPwdViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *telephone;
-@property (weak, nonatomic) IBOutlet UITextField *fisrtPwd;
+@property (weak, nonatomic) IBOutlet UITextField *firstPwd;
 @property (weak, nonatomic) IBOutlet UITextField *secondPwd;
 @property (weak, nonatomic) IBOutlet UITextField *code;
 @property (weak, nonatomic) IBOutlet UIButton *countDownBtn;
-@property (weak, nonatomic) IBOutlet UITextField *invite;
-@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
-- (IBAction)obtainVerifyCode:(UIButton *)sender;
-- (IBAction)contentChange;
-- (IBAction)regist;
-- (IBAction)doSelect:(UIButton *)sender;
-- (IBAction)seeUserAgreement;
 
-@property (nonatomic, strong)  SPRegisterParam *registerParam;
-@property (nonatomic, strong)  SPCodeParam *codeParam;
-@property (nonatomic, assign)  BOOL isSelect;
+- (IBAction)contentChange;
+- (IBAction)obtainVerifyCode:(UIButton *)sender;
+- (IBAction)modifyPwd:(UIButton *)sender;
+
 @end
 
-@implementation SPRegisterViewController
+@implementation SPForgetPwdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,13 +32,11 @@
 
 - (void)setupBgAndNav {
     // 0.设置标题
-    self.title = @"注册";
+    self.title = @"忘记密码";
     // 1.背景
     self.view.backgroundColor = [UIColor whiteColor];
     // 2.导航栏
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"30"] withHighLightedImage:[UIImage imageNamed:@"30"] target:self action:@selector(back)];
-    // 3.默认同意协议
-    self.isSelect = YES;
 }
 
 #pragma mark - 后退
@@ -71,23 +58,22 @@
     // Pass the selected object to the new view controller.
 }
 */
-#pragma mark - lazyLoad
-- (SPRegisterParam *)registerParam {
-    if (!_registerParam) {
-        _registerParam = [SPRegisterParam param:APP00001];
-    }
-    return _registerParam;
-}
-
 - (SPCodeParam *)codeParam {
     if (!_codeParam) {
         _codeParam = [SPCodeParam param:APP00000];
-        _codeParam.ztemplate = SPRegisterTemplate;
+        _codeParam.ztemplate = SPModifyPwdTemplate;
     }
     return _codeParam;
 }
 
 #pragma mark - Action
+- (IBAction)contentChange {
+    self.codeParam.num = self.telephone.text;
+    self.modifyPwdParam.num = self.telephone.text;
+    self.modifyPwdParam.newpwd = self.secondPwd.text;
+    self.modifyPwdParam.code = self.code.text;
+}
+
 - (IBAction)obtainVerifyCode:(UIButton *)sender {
     if (![SPSpeedy dc_isTelephone:self.telephone.text]) {
         [MBProgressHUD showMessage:@"请输入正确的手机号码!" toView:self.view];
@@ -138,46 +124,21 @@
     dispatch_resume(_timer);
 }
 
-- (IBAction)doSelect:(UIButton *)sender {
-    self.isSelect = !self.isSelect;
-    if (self.isSelect) {
-        [sender setImage:[UIImage imageNamed:@"select"] forState:UIControlStateNormal];
-        self.registerBtn.backgroundColor = SPColor;
-        self.registerBtn.userInteractionEnabled = YES;
-    }else{
-        [sender setImage:[UIImage imageNamed:@"unselect"] forState:UIControlStateNormal];
-        self.registerBtn.backgroundColor = RGB(223, 223, 223);
-        self.registerBtn.userInteractionEnabled = NO;
-    }
-}
 
-- (IBAction)seeUserAgreement {
-    SPUserAgreementViewController *userAgreementVc = [[SPUserAgreementViewController alloc] init];
-    [self.navigationController pushViewController:userAgreementVc animated:YES];
-}
-
-- (IBAction)contentChange {
-    self.registerParam.num = self.telephone.text;
-    self.codeParam.num = self.telephone.text;
-    self.registerParam.pwd = self.secondPwd.text;
-    self.registerParam.code = self.code.text;
-    self.registerParam.inviter = self.invite.text;
-}
-
-- (IBAction)regist {
+- (IBAction)modifyPwd:(UIButton *)sender {
     if(![SPSpeedy dc_isTelephone:self.telephone.text]) {
         [MBProgressHUD showMessage:@"请输入正确的手机号" toView:self.view];
         return;
     }
-    if([self.fisrtPwd.text length] < 1) {
-        [MBProgressHUD showMessage:@"请输入密码" toView:self.view];
+    if([self.firstPwd.text length] < 1) {
+        [MBProgressHUD showMessage:@"请输入新密码" toView:self.view];
         return;
     }
     if([self.secondPwd.text length] < 1) {
-        [MBProgressHUD showMessage:@"请确认密码" toView:self.view];
+        [MBProgressHUD showMessage:@"请确认新密码" toView:self.view];
         return;
     }
-    if(![self.fisrtPwd.text isEqualToString:self.secondPwd.text]) {
+    if(![self.firstPwd.text isEqualToString:self.secondPwd.text]) {
         [MBProgressHUD showMessage:@"两次输入密码不一致" toView:self.view];
         return;
     }
@@ -185,23 +146,11 @@
         [MBProgressHUD showMessage:@"验证码没有填写" toView:self.view];
         return;
     }
-    
     [MBProgressHUD showWaitMessage:@"注册中..." toView:self.view];
-    [SPLoginTool regist:self.registerParam success:^(SPLoginResult *loginResult) {
-        [MBProgressHUD hideHUDForView:self.view];
-        if (loginResult.error) {
-            [MBProgressHUD showError:loginResult.errorMsg toView:self.view];
-        }else{
-            [MBProgressHUD showSuccess:@"注册成功" toView:self.view];
-            // 1.存储模型数据
-            [SPAccountTool saveLoginResult:loginResult];
-            
-            // 2.新特性\去首页
-            [SPSmartPlusTool chooseRootController];
-        }
+    [SPLoginTool modifyPwd:self.modifyPwdParam success:^(SPModifyPwdResult *modifyPwdResult) {
+        
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        [MBProgressHUD showError:@"网络异常,注册失败" toView:self.view];
+        
     }];
 }
 @end

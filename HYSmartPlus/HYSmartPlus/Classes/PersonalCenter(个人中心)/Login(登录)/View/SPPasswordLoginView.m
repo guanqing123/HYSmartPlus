@@ -90,6 +90,7 @@
     [forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
     forgetButton.titleLabel.font = PFR14Font;
     [forgetButton setTitleColor:SPColor forState:UIControlStateNormal];
+    [forgetButton addTarget:self action:@selector(forgetPwd) forControlEvents:UIControlEventTouchUpInside];
     _forgetButton = forgetButton;
     [self addSubview:forgetButton];
 }
@@ -152,6 +153,13 @@
     [super updateConstraints];
 }
 
+- (SPLoginParam *)loginParam {
+    if (!_loginParam) {
+        _loginParam = [SPLoginParam param:APP00005];
+    }
+    return _loginParam;
+}
+
 - (void)contentChanged {
     if (self.phoneTextField.text.length > 0 && self.passwordTextField.text.length > 0) {
         self.submitButton.userInteractionEnabled = YES;
@@ -160,8 +168,8 @@
         self.submitButton.userInteractionEnabled = NO;
         self.submitButton.backgroundColor = RGB(207, 235, 221);
     }
-    //self.telphone = self.phoneTextField.text;
-    //self.password = self.passwordTextField.text;
+    self.loginParam.num = self.phoneTextField.text;
+    self.loginParam.pwd = self.passwordTextField.text;
 }
 
 - (void)showPassword:(UIButton *)button {
@@ -178,6 +186,12 @@
 - (void)submitButtonClick {
     if ([self.delegate respondsToSelector:@selector(passwordLoginViewDidSubmitButton:)]) {
         [self.delegate passwordLoginViewDidSubmitButton:self];
+    }
+}
+
+- (void)forgetPwd {
+    if ([self.delegate respondsToSelector:@selector(passwordLoginViewforgetPwd:)]) {
+        [self.delegate passwordLoginViewforgetPwd:self];
     }
 }
 

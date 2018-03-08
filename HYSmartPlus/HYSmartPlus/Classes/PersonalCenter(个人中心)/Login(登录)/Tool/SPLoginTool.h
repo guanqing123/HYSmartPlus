@@ -16,6 +16,9 @@
 #import "SPLoginParam.h"
 #import "SPLoginResult.h"
 
+#import "SPModifyPwdParam.h"
+#import "SPModifyPwdResult.h"
+
 @interface SPLoginTool : NSObject
 
 /**
@@ -44,5 +47,14 @@
  @param failure 失败回调
  */
 + (void)login:(SPLoginParam *)loginParam success:(void(^)(SPLoginResult *loginResult))success failure:(void(^)(NSError *error))failure;
+
+/**
+ 修改用户密码
+
+ @param modifyPwdParam 入参
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)modifyPwd:(SPModifyPwdParam *)modifyPwdParam success:(void(^)(SPModifyPwdResult *modifyPwdResult))success failure:(void(^)(NSError *error))failure;
 
 @end

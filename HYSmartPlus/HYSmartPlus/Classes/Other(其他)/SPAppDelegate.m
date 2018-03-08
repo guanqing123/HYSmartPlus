@@ -26,6 +26,7 @@
     [self.window makeKeyWindow];
     
     // 先判断有无存储账号信息
+    [SPAccountTool deleteLoginResult];
     SPLoginResult *result = [SPAccountTool loginResult];
     
     if (result) { //之前登录成功

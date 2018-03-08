@@ -26,6 +26,7 @@
 		D60EC4EA1FC6BC8600F78F31 /* SPBrandSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4E91FC6BC8600F78F31 /* SPBrandSortCell.m */; };
 		D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60EC4EB1FC6C1BB00F78F31 /* ClassiftyGoods03.plist */; };
 		D60EC4EE1FC6C1BB00F78F31 /* ClassiftyGoods02.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60EC4EC1FC6C1BB00F78F31 /* ClassiftyGoods02.plist */; };
+		D60FA4642050DE3D00928AB4 /* SPUserAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60FA4632050DE3D00928AB4 /* SPUserAgreementViewController.m */; };
 		D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61165F51F6BBCE6008A5199 /* SPBaseParam.m */; };
 		D613BE251F6193110090316D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D613BE231F6193110090316D /* Main.storyboard */; };
 		D613BE271F6193110090316D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D613BE261F6193110090316D /* Images.xcassets */; };
@@ -75,6 +76,11 @@
 		D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D625308D204D4744006A8CB5 /* SPLoginTool.m */; };
 		D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253090204D4C28006A8CB5 /* SPCodeResult.m */; };
 		D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */; };
+		D628163E20510F8D00892297 /* licenseagreementchines.txt in Resources */ = {isa = PBXBuildFile; fileRef = D628163D20510F8D00892297 /* licenseagreementchines.txt */; };
+		D6281642205122AF00892297 /* SPForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6281640205122AF00892297 /* SPForgetPwdViewController.m */; };
+		D6281643205122AF00892297 /* SPForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6281641205122AF00892297 /* SPForgetPwdViewController.xib */; };
+		D62816462051315600892297 /* SPModifyPwdParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816452051315600892297 /* SPModifyPwdParam.m */; };
+		D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816482051341F00892297 /* SPModifyPwdResult.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */; };
 		D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */; };
@@ -83,7 +89,6 @@
 		D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323431FC7AFF6003511EA /* SPAccountTool.m */; };
 		D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
-		D6DEE9CD2046AB600012CC61 /* SPLoginViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DEE9CC2046AB600012CC61 /* SPLoginViewController1.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +125,8 @@
 		D60EC4E91FC6BC8600F78F31 /* SPBrandSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBrandSortCell.m; sourceTree = "<group>"; };
 		D60EC4EB1FC6C1BB00F78F31 /* ClassiftyGoods03.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassiftyGoods03.plist; sourceTree = "<group>"; };
 		D60EC4EC1FC6C1BB00F78F31 /* ClassiftyGoods02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassiftyGoods02.plist; sourceTree = "<group>"; };
+		D60FA4622050DE3D00928AB4 /* SPUserAgreementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUserAgreementViewController.h; sourceTree = "<group>"; };
+		D60FA4632050DE3D00928AB4 /* SPUserAgreementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUserAgreementViewController.m; sourceTree = "<group>"; };
 		D61165F41F6BBCE6008A5199 /* SPBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseParam.h; sourceTree = "<group>"; };
 		D61165F51F6BBCE6008A5199 /* SPBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseParam.m; sourceTree = "<group>"; };
 		D613BE171F6193110090316D /* HYSmartPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYSmartPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +225,14 @@
 		D625308F204D4C28006A8CB5 /* SPCodeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCodeResult.h; sourceTree = "<group>"; };
 		D6253090204D4C28006A8CB5 /* SPCodeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCodeResult.m; sourceTree = "<group>"; };
 		D626C2541FC5742D00FFD736 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
+		D628163D20510F8D00892297 /* licenseagreementchines.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licenseagreementchines.txt; sourceTree = "<group>"; };
+		D628163F205122AF00892297 /* SPForgetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPForgetPwdViewController.h; sourceTree = "<group>"; };
+		D6281640205122AF00892297 /* SPForgetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPForgetPwdViewController.m; sourceTree = "<group>"; };
+		D6281641205122AF00892297 /* SPForgetPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPForgetPwdViewController.xib; sourceTree = "<group>"; };
+		D62816442051315600892297 /* SPModifyPwdParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPModifyPwdParam.h; sourceTree = "<group>"; };
+		D62816452051315600892297 /* SPModifyPwdParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdParam.m; sourceTree = "<group>"; };
+		D62816472051341F00892297 /* SPModifyPwdResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPModifyPwdResult.h; sourceTree = "<group>"; };
+		D62816482051341F00892297 /* SPModifyPwdResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdResult.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
 		D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRegisterViewController.h; sourceTree = "<group>"; };
@@ -233,8 +248,6 @@
 		D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPersonalCenterViewController.m; sourceTree = "<group>"; };
 		D69B14651F67EA6400CB040A /* UIView+SPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPExtension.h"; sourceTree = "<group>"; };
 		D69B14661F67EA6400CB040A /* UIView+SPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPExtension.m"; sourceTree = "<group>"; };
-		D6DEE9CB2046AB600012CC61 /* SPLoginViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginViewController1.h; sourceTree = "<group>"; };
-		D6DEE9CC2046AB600012CC61 /* SPLoginViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginViewController1.m; sourceTree = "<group>"; };
 		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -444,6 +457,7 @@
 		D613BE1A1F6193110090316D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D628163D20510F8D00892297 /* licenseagreementchines.txt */,
 				D613BE231F6193110090316D /* Main.storyboard */,
 				D613BE261F6193110090316D /* Images.xcassets */,
 				D613BE2B1F6193110090316D /* Info.plist */,
@@ -728,13 +742,16 @@
 		D633233D1FC7AFF6003511EA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6DEE9CB2046AB600012CC61 /* SPLoginViewController1.h */,
-				D6DEE9CC2046AB600012CC61 /* SPLoginViewController1.m */,
 				D6184AFE2047013100616266 /* SPLoginViewController.h */,
 				D6184AFF2047013100616266 /* SPLoginViewController.m */,
 				D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */,
 				D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */,
 				D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */,
+				D60FA4622050DE3D00928AB4 /* SPUserAgreementViewController.h */,
+				D60FA4632050DE3D00928AB4 /* SPUserAgreementViewController.m */,
+				D628163F205122AF00892297 /* SPForgetPwdViewController.h */,
+				D6281640205122AF00892297 /* SPForgetPwdViewController.m */,
+				D6281641205122AF00892297 /* SPForgetPwdViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -756,6 +773,10 @@
 				D61438C9204D7CF8009C6258 /* SPLoginParam.m */,
 				D60AD7B7204FCED4009E0B25 /* SPLoginResult.h */,
 				D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */,
+				D62816442051315600892297 /* SPModifyPwdParam.h */,
+				D62816452051315600892297 /* SPModifyPwdParam.m */,
+				D62816472051341F00892297 /* SPModifyPwdResult.h */,
+				D62816482051341F00892297 /* SPModifyPwdResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -887,6 +908,8 @@
 				D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */,
 				D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */,
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
+				D6281643205122AF00892297 /* SPForgetPwdViewController.xib in Resources */,
+				D628163E20510F8D00892297 /* licenseagreementchines.txt in Resources */,
 				D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */,
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 				D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */,
@@ -952,10 +975,12 @@
 				D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */,
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
 				D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */,
+				D60FA4642050DE3D00928AB4 /* SPUserAgreementViewController.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D6164D2C204596D100767C00 /* SPViewController.m in Sources */,
 				D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */,
+				D6281642205122AF00892297 /* SPForgetPwdViewController.m in Sources */,
 				D6164D3E204596D200767C00 /* SPYouLikeHeadView.m in Sources */,
 				D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */,
 				D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */,
@@ -970,6 +995,7 @@
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
+				D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */,
 				D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
@@ -988,6 +1014,7 @@
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
+				D62816462051315600892297 /* SPModifyPwdParam.m in Sources */,
 				D625308B204D424B006A8CB5 /* SPCodeParam.m in Sources */,
 				D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */,
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
@@ -996,7 +1023,6 @@
 				D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */,
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
-				D6DEE9CD2046AB600012CC61 /* SPLoginViewController1.m in Sources */,
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,

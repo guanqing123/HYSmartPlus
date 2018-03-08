@@ -10,8 +10,4 @@
 
 @implementation SPCodeResult
 
-+ (instancetype)result {
-    return [[self alloc] init];
-}
-
 @end

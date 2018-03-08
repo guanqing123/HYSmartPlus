@@ -64,8 +64,7 @@
 }
 
 - (void)setupNavItem {
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"30"] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
-    self.navigationItem.leftBarButtonItem = leftItem;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"30"] withHighLightedImage:[UIImage imageNamed:@"30"] target:self action:@selector(back)];
 }
 
 #pragma mark - navigationDelegate
