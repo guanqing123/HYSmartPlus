@@ -89,6 +89,9 @@
 		D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D63323431FC7AFF6003511EA /* SPAccountTool.m */; };
 		D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
+		D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */; };
+		D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */; };
+		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +251,11 @@
 		D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPersonalCenterViewController.m; sourceTree = "<group>"; };
 		D69B14651F67EA6400CB040A /* UIView+SPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPExtension.h"; sourceTree = "<group>"; };
 		D69B14661F67EA6400CB040A /* UIView+SPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPExtension.m"; sourceTree = "<group>"; };
+		D6CD663C205251DF0072A1D3 /* SPMyCenterHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMyCenterHeaderView.h; sourceTree = "<group>"; };
+		D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMyCenterHeaderView.m; sourceTree = "<group>"; };
+		D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMyCenterHeaderView.xib; sourceTree = "<group>"; };
+		D6CD6641205268350072A1D3 /* SPCenterTopToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCenterTopToolView.h; sourceTree = "<group>"; };
+		D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCenterTopToolView.m; sourceTree = "<group>"; };
 		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -817,6 +825,8 @@
 		D63323461FC7AFF6003511EA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6CD663A205251BC0072A1D3 /* CustomView */,
+				D6CD663B205251BC0072A1D3 /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -835,6 +845,25 @@
 				D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */,
 			);
 			path = "Category(分类)";
+			sourceTree = "<group>";
+		};
+		D6CD663A205251BC0072A1D3 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D6CD6641205268350072A1D3 /* SPCenterTopToolView.h */,
+				D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */,
+				D6CD663C205251DF0072A1D3 /* SPMyCenterHeaderView.h */,
+				D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */,
+				D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		D6CD663B205251BC0072A1D3 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -914,6 +943,7 @@
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 				D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */,
 				D60EC4DF1FC6ACF300F78F31 /* ClassiftyGoods01.plist in Resources */,
+				D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1032,7 @@
 				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,
 				D6164D30204596D100767C00 /* SPSliderParam.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
+				D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */,
 				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
 				D6164D40204596D200767C00 /* SPNavSearchBarView.m in Sources */,
@@ -1013,6 +1044,7 @@
 				D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
+				D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */,
 				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
 				D62816462051315600892297 /* SPModifyPwdParam.m in Sources */,
 				D625308B204D424B006A8CB5 /* SPCodeParam.m in Sources */,

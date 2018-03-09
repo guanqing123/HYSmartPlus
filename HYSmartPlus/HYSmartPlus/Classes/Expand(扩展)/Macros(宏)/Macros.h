@@ -77,6 +77,8 @@
 #define APP00000 @"APP00000"
 //用户注册
 #define APP00001 @"APP00001"
+//密码修改
+#define APP00003 @"APP00003"
 //手机号码+手机验证码或密码；用户ID+token
 #define APP00005 @"APP00005"
 

@@ -168,10 +168,6 @@
 
 #pragma mark - 获取验证码
 - (void)obtainVerifyCode {
-    if (![SPSpeedy dc_isTelephone:self.codeParam.num]) {
-        [MBProgressHUD showMessage:@"请输入正确的手机号码!"];
-        return;
-    }
     if ([self.delegate respondsToSelector:@selector(codeLoginViewDidClickObtainVerifyCodeButton:)]) {
         [self.delegate codeLoginViewDidClickObtainVerifyCodeButton:self];
     }

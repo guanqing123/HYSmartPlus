@@ -96,13 +96,13 @@
     WEAKSELF
     [SPLoginTool getVerifyCode:self.codeParam success:^(SPCodeResult *codeResult) {
         if (codeResult.error) {
-            [MBProgressHUD showError:codeResult.errorMsg];
+            [MBProgressHUD showError:codeResult.errorMsg toView:weakSelf.view];
         }else{
             [MBProgressHUD showMessage:@"验证码已发送,请注意查收" toView:weakSelf.view];
             [weakSelf counDown];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD showMessage:@"网络异常,验证码发送失败" toView:weakSelf.view];
+        [MBProgressHUD showError:@"网络异常,验证码发送失败" toView:weakSelf.view];
     }];
 }
 
@@ -204,4 +204,18 @@
         [MBProgressHUD showError:@"网络异常,注册失败" toView:self.view];
     }];
 }
+
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end

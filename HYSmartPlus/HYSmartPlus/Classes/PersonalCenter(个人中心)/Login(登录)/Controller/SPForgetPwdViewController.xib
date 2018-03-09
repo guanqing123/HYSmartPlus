@@ -91,13 +91,14 @@
                         <constraint firstAttribute="height" constant="1" id="3dX-68-1pS"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCX-XE-vRL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCX-XE-vRL">
                     <rect key="frame" x="220" y="272" width="110" height="38"/>
                     <color key="backgroundColor" red="0.1803921568627451" green="0.81568627450980391" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="110" id="6mz-VN-ayh"/>
                         <constraint firstAttribute="height" constant="38" id="sHg-FG-dVJ"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="获取验证码">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

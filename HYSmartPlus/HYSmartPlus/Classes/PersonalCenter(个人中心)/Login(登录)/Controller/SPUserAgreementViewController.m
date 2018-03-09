@@ -8,9 +8,11 @@
 
 #import "SPUserAgreementViewController.h"
 #import <WebKit/WebKit.h>
+#import "DGActivityIndicatorView.h"
 
-@interface SPUserAgreementViewController ()
+@interface SPUserAgreementViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (nonatomic, weak) WKWebView  *webView;
+@property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
 @end
 
 @implementation SPUserAgreementViewController
@@ -21,10 +23,22 @@
     [self setupBgAndNav];
     
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    webView.UIDelegate = self;
+    webView.navigationDelegate = self;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"licenseagreementchines" ofType:@"txt"];
     [webView loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:filePath]];
     _webView = webView;
     [self.view addSubview:webView];
+    [self setupIndicatorView];
+}
+
+- (void)setupIndicatorView {
+    DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:SPColor size:self.view.dc_width * 0.1];
+    _indicatorView = indicatorView;
+    [self.view addSubview:indicatorView];
+    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
 }
 
 - (void)setupBgAndNav {
@@ -38,6 +52,19 @@
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - navigationDelegate
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [self.indicatorView stopAnimating];
+}
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    [self.indicatorView startAnimating];
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self.indicatorView stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,5 +81,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 @end

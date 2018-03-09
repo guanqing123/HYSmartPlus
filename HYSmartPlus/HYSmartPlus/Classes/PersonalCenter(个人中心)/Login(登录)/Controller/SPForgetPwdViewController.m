@@ -58,12 +58,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - lazyLoad
 - (SPCodeParam *)codeParam {
     if (!_codeParam) {
         _codeParam = [SPCodeParam param:APP00000];
         _codeParam.ztemplate = SPModifyPwdTemplate;
     }
     return _codeParam;
+}
+
+- (SPModifyPwdParam *)modifyPwdParam {
+    if (!_modifyPwdParam) {
+        _modifyPwdParam = [SPModifyPwdParam param:APP00003];
+    }
+    return _modifyPwdParam;
 }
 
 #pragma mark - Action
@@ -146,11 +154,35 @@
         [MBProgressHUD showMessage:@"验证码没有填写" toView:self.view];
         return;
     }
-    [MBProgressHUD showWaitMessage:@"注册中..." toView:self.view];
+    [MBProgressHUD showWaitMessage:@"修改中..." toView:self.view];
+    WEAKSELF
     [SPLoginTool modifyPwd:self.modifyPwdParam success:^(SPModifyPwdResult *modifyPwdResult) {
-        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        if (modifyPwdResult.error) {
+            [MBProgressHUD showError:modifyPwdResult.errorMsg toView:weakSelf.view];
+        }else{
+            [MBProgressHUD showSuccess:@"修改成功,请重新登录" toView:weakSelf.view];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            });
+        }
     } failure:^(NSError *error) {
-        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [MBProgressHUD showError:@"网络异常,密码修改失败" toView:weakSelf.view];
     }];
 }
+
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end

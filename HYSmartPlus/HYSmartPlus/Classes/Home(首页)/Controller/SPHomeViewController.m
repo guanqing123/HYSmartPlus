@@ -55,7 +55,7 @@
 }
 
 - (void)setupIndicatorView {
-    DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:RGB(20, 200, 197) size:self.view.dc_width * 0.1];
+    DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:SPColor size:self.view.dc_width * 0.1];
     _indicatorView = indicatorView;
     [self.view addSubview:indicatorView];
     [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {

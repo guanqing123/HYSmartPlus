@@ -219,26 +219,33 @@
 
 #pragma mark - SPCodeLoginViewDelegate
 - (void)codeLoginViewDidClickObtainVerifyCodeButton:(SPCodeLoginView *)codeLoginView {
+    if (![SPSpeedy dc_isTelephone:codeLoginView.codeParam.num]) {
+        [MBProgressHUD showMessage:@"请输入正确的手机号码!" toView:self.view];
+        return;
+    }
+    WEAKSELF
     [SPLoginTool getVerifyCode:codeLoginView.codeParam success:^(SPCodeResult *codeResult) {
         if (codeResult.error) {
-            [MBProgressHUD showError:codeResult.errorMsg];
+            [MBProgressHUD showError:codeResult.errorMsg toView:weakSelf.view];
         }else{
-            [MBProgressHUD showSuccess:@"验证码已发送,请注意查收"];
+            [MBProgressHUD showSuccess:@"验证码已发送,请注意查收" toView:weakSelf.view];
             [codeLoginView countDown];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"网络异常,验证码发送失败"];
+        [MBProgressHUD showError:@"网络异常,验证码发送失败" toView:weakSelf.view];
     }];
 }
 
 - (void)codeLoginViewDidClickLoginButton:(SPCodeLoginView *)codeLoginView {
-    [MBProgressHUD showWaitMessage:@"登录中..." toView:self.view];
+    WEAKSELF
+    [MBProgressHUD showWaitMessage:@"登录中..." toView:weakSelf.view];
     [SPLoginTool login:codeLoginView.loginParam success:^(SPLoginResult *loginResult) {
         [MBProgressHUD hideHUDForView:self.view];
         if (loginResult.error) {
-            [MBProgressHUD showError:loginResult.errorMsg toView:self.view];
+            [MBProgressHUD showError:loginResult.errorMsg toView:weakSelf.view];
         }else{
-            [MBProgressHUD showSuccess:@"登录成功" toView:self.view];
+            [MBProgressHUD showSuccess:@"登录成功" toView:weakSelf.view];
+            
             // 1.存储模型数据
             [SPAccountTool saveLoginResult:loginResult];
             
@@ -246,8 +253,8 @@
             [SPSmartPlusTool chooseRootController];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view];
-        [MBProgressHUD showError:@"网络异常,登录失败" toView:self.view];
+        [MBProgressHUD hideHUDForView:weakSelf.view];
+        [MBProgressHUD showError:@"网络异常,登录失败" toView:weakSelf.view];
     }];
 }
 
@@ -295,14 +302,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
 }
-*/
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 @end
