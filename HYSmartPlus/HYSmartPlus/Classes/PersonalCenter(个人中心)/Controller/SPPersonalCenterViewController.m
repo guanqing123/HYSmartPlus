@@ -13,6 +13,14 @@
 #import "SPCenterTopToolView.h"
 #import "SPMyCenterHeaderView.h"
 
+//cell
+#import "SPServiceTableViewCell.h"
+#import "SPIntegralTableViewCell.h"
+#import "SPBPTableViewCell.h"
+
+//Models
+#import "SPServiceItem.h"
+
 @interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate>
 
 /* headerView */
@@ -24,7 +32,14 @@
 /* 顶部Nav */
 @property (nonatomic, strong)  SPCenterTopToolView *topToolView;
 
+/* 服务数据 */
+@property (nonatomic, strong)  NSMutableArray<SPServiceItem *> *serviceItem;
+
 @end
+
+static NSString *const SPServiceCellID = @"SPServiceCellID";
+static NSString *const SPIntegralCellID = @"SPIntegralCellID";
+static NSString *const SPBPCellID = @"SPBPCellID";
 
 @implementation SPPersonalCenterViewController
 
@@ -94,8 +109,15 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = NO;
         _tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - SPBottomTabH);
         [self.view addSubview:_tableView];
+        
+        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPServiceTableViewCell class]) bundle:nil] forCellReuseIdentifier:SPServiceCellID];
+        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPIntegralTableViewCell class]) bundle:nil] forCellReuseIdentifier:SPIntegralCellID];
+        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPBPTableViewCell class]) bundle:nil]
+            forCellReuseIdentifier:SPBPCellID];
     }
     return _tableView;
 }
@@ -103,7 +125,7 @@
 - (SPMyCenterHeaderView *)headerView {
     if (!_headerView) {
         _headerView = [SPMyCenterHeaderView headerView];
-        _headerView.frame = CGRectMake(0, 0, ScreenW, 256);
+        _headerView.frame = CGRectMake(0, 0, ScreenW, 200);
     }
     return _headerView;
 }
@@ -121,6 +143,12 @@
     return _headerBgImageView;
 }
 
+- (NSMutableArray<SPServiceItem *> *)serviceItem {
+    if (!_serviceItem) {
+        _serviceItem = [SPServiceItem mj_objectArrayWithFilename:@"MyServiceFlow.plist"];
+    }
+    return _serviceItem;
+}
 
 
 #pragma mark - <UITableViewDataSource>
@@ -138,17 +166,32 @@
         //DCCenterItemCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterItemCellID forIndexPath:indexPath];
         //cusCell = cell;
     }else if(indexPath.section == 1){
-        //DCCenterServiceCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterServiceCellID forIndexPath:indexPath];
-        //cell.serviceItemArray = [NSMutableArray arrayWithArray:_serviceItem];
-        //cusCell = cell;
+        SPServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPServiceCellID forIndexPath:indexPath];
+        cell.serviceItem = self.serviceItem;
+        cusCell = cell;
     }else if (indexPath.section == 2){
-        //DCCenterBeaShopCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterBeaShopCellID forIndexPath:indexPath];
-        //cusCell = cell;
+        SPIntegralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPIntegralCellID forIndexPath:indexPath];
+        cusCell = cell;
     }else if (indexPath.section == 3){
-        //DCCenterBackCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterBackCellID forIndexPath:indexPath];
-        //cusCell = cell;
+        SPBPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPBPCellID forIndexPath:indexPath];
+        cusCell = cell;
     }
+    cusCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cusCell;
+}
+
+#pragma mark - <UITableViewDelegate>
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.section == 0){
+        return 40;
+    }else if(indexPath.section == 1) {
+        return 120;
+    }else if (indexPath.section == 2) {
+        return 200;
+    }else if (indexPath.section == 3) {
+        return 150;
+    }
+    return 0;
 }
 
 #pragma mark -  滚动tableview 完毕之后

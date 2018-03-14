@@ -1,38 +1,33 @@
 //
-//  SPGoodsGridCell.m
+//  SPServiceCollectionViewCell.m
 //  HYSmartPlus
 //
-//  Created by information on 2017/11/20.
-//  Copyright © 2017年 hongyan. All rights reserved.
+//  Created by information on 2018/3/14.
+//  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#import "SPGoodsGridCell.h"
+#import "SPServiceCollectionViewCell.h"
+#import "SPServiceItem.h"
 
-/** model */
-#import "SPGridItem.h"
-/** vendor */
-#import "UIImageView+WebCache.h"
-
-@interface SPGoodsGridCell()
+@interface SPServiceCollectionViewCell()
 /** imageView */
 @property (nonatomic, weak) UIImageView  *imageView;
 /** titleLabel */
 @property (nonatomic, weak) UILabel  *titleLabel;
 @end
 
-@implementation SPGoodsGridCell
+@implementation SPServiceCollectionViewCell
 
 #pragma mark - initial
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        //self.backgroundColor = [UIColor redColor];
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:imageView];
         self.imageView = imageView;
         
         UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.font = PFR13Font;
+        titleLabel.font = PFR12Font;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
@@ -43,12 +38,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.top.mas_equalTo(self)setOffset:SPMargin];
-        if (iphone5) {
-            make.size.mas_equalTo(CGSizeMake(40, 40));
-        }else{
-            make.size.mas_equalTo(CGSizeMake(50, 50));
-        }
+        make.top.mas_equalTo(self).offset(SPMargin);
+        make.size.mas_equalTo(CGSizeMake(35, 35));
         make.centerX.mas_equalTo(self);
     }];
     
@@ -59,13 +50,11 @@
 }
 
 #pragma mark - Setter Getter Methods
-- (void)setGridItem:(SPGridItem *)gridItem {
-    _gridItem = gridItem;
+- (void)setServiceItem:(SPServiceItem *)serviceItem {
+    _serviceItem = serviceItem;
     /** 图片 */
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:gridItem.iconImage]];
+    [self.imageView setImage:[UIImage imageNamed:serviceItem.iconImage]];
     /** 标题 */
-    self.titleLabel.text = gridItem.gridTitle;
+    self.titleLabel.text = serviceItem.gridTitle;
 }
-
 @end
-
