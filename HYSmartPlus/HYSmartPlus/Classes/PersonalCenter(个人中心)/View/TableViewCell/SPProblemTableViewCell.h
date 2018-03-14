@@ -10,6 +10,8 @@
 
 @interface SPProblemTableViewCell : UITableViewCell
 
+@property (nonatomic, strong)  NSArray *scrollArray;
+
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

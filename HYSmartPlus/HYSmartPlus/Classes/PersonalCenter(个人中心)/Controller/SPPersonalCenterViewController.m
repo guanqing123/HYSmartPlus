@@ -14,6 +14,7 @@
 #import "SPMyCenterHeaderView.h"
 
 //cell
+#import "SPProblemTableViewCell.h"
 #import "SPServiceTableViewCell.h"
 #import "SPIntegralTableViewCell.h"
 #import "SPBPTableViewCell.h"
@@ -35,8 +36,11 @@
 /* 服务数据 */
 @property (nonatomic, strong)  NSMutableArray<SPServiceItem *> *serviceItem;
 
+@property (nonatomic, strong)  NSArray *scrollArray;
+
 @end
 
+static NSString *const SPProblemCellID = @"SPProblemCellID";
 static NSString *const SPServiceCellID = @"SPServiceCellID";
 static NSString *const SPIntegralCellID = @"SPIntegralCellID";
 static NSString *const SPBPCellID = @"SPBPCellID";
@@ -114,6 +118,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         _tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - SPBottomTabH);
         [self.view addSubview:_tableView];
         
+        [_tableView registerClass:[SPProblemTableViewCell class] forCellReuseIdentifier:SPProblemCellID];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPServiceTableViewCell class]) bundle:nil] forCellReuseIdentifier:SPServiceCellID];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPIntegralTableViewCell class]) bundle:nil] forCellReuseIdentifier:SPIntegralCellID];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SPBPTableViewCell class]) bundle:nil]
@@ -150,6 +155,12 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     return _serviceItem;
 }
 
+- (NSArray *)scrollArray {
+    if (!_scrollArray) {
+        _scrollArray = [NSArray arrayWithObjects:@"111111111",@"22222222",@"33333333", nil];
+    }
+    return _scrollArray;
+}
 
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -163,8 +174,9 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cusCell = [UITableViewCell new];
     if (indexPath.section == 0) {
-        //DCCenterItemCell *cell = [tableView dequeueReusableCellWithIdentifier:DCCenterItemCellID forIndexPath:indexPath];
-        //cusCell = cell;
+        SPProblemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPProblemCellID forIndexPath:indexPath];
+        cell.scrollArray = self.scrollArray;
+        cusCell = cell;
     }else if(indexPath.section == 1){
         SPServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPServiceCellID forIndexPath:indexPath];
         cell.serviceItem = self.serviceItem;

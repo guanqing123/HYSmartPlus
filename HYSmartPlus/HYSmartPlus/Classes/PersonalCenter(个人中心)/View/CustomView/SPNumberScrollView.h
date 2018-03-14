@@ -10,4 +10,18 @@
 
 @interface SPNumberScrollView : UIView
 
+@property (nonatomic, strong)  NSArray *scrollArray;
+
++ (instancetype)scrollView;
+
+/**
+ 定时器的循环时间
+ */
+@property (nonatomic , assign) NSInteger interval;
+
+/**
+ 创建定时器并run
+ */
+- (void)startTimer;
+
 @end

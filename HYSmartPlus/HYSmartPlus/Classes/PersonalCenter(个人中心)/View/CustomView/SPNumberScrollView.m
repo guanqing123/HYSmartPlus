@@ -8,14 +8,100 @@
 
 #import "SPNumberScrollView.h"
 
+@interface SPNumberScrollView()
+@property (nonatomic, strong)  NSMutableArray *buttonArray;
+@end
+
 @implementation SPNumberScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)scrollView {
+    return [[self alloc] init];
 }
-*/
+
+- (NSMutableArray *)buttonArray {
+    if (!_buttonArray) {
+        _buttonArray = [NSMutableArray array];
+    }
+    return _buttonArray;
+}
+
+- (void)setScrollArray:(NSArray *)scrollArray {
+    _scrollArray = scrollArray;
+    if (scrollArray.count > 0) {
+        for (int i = 0; i < scrollArray.count; i++) {
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn setTitle:scrollArray[i] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+            btn.titleLabel.font = PFR13Font;
+            
+            if (i != 0) {
+                CATransform3D trans = CATransform3DIdentity;
+                trans = CATransform3DMakeRotation(M_PI_2, 1, 0, 0);
+                trans = CATransform3DTranslate(trans, 0, - self.frame.size.height/2, -self.frame.size.height/2);
+                btn.layer.transform = trans;
+            }else{
+                CATransform3D trans = CATransform3DIdentity;
+                trans = CATransform3DMakeRotation(0, 1, 0, 0);
+                trans = CATransform3DTranslate(trans, 0, 0, - self.frame.size.height/2);
+                btn.layer.transform = trans;
+            }
+            [self addSubview:btn];
+            [self.buttonArray addObject:btn];
+            
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self);
+                make.left.equalTo(self);
+                make.bottom.equalTo(self);
+                make.right.equalTo(self);
+            }];
+        }
+    }
+}
+
+#pragma mark - 开始
+- (void)startTimer{
+    if (!self.interval) {
+        self.interval = 5;
+    }
+    NSTimer *timer = [NSTimer timerWithTimeInterval:self.interval target:self selector:@selector(timerRun) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+#pragma mark - 滚动
+- (void)timerRun{
+    
+    if (self.scrollArray.count >1) {
+        [UIView animateWithDuration:self.interval/self.interval animations:^{
+            
+            UIButton *btn = self.buttonArray[0];
+            CATransform3D trans = CATransform3DIdentity;
+            trans = CATransform3DMakeRotation(-M_PI_2, 1, 0, 0);
+            trans = CATransform3DTranslate(trans, 0, self.frame.size.height/2, - self.frame.size.height/2);
+            btn.layer.transform = trans;
+            
+            
+            UIButton *btn1 = self.buttonArray[1];
+            CATransform3D trans1 = CATransform3DIdentity;
+            trans1 = CATransform3DMakeRotation(0, 1, 0, 0);
+            trans1 = CATransform3DTranslate(trans1, 0, 0, 0);
+            btn1.layer.transform = trans1;
+            
+        } completion:^(BOOL finished) {
+            
+            if (finished == YES) {
+                UIButton *btn = self.buttonArray[0];
+                CATransform3D trans = CATransform3DIdentity;
+                trans = CATransform3DMakeRotation(M_PI_2, 1, 0, 0);
+                trans = CATransform3DTranslate(trans, 0, - self.frame.size.height/2, - self.frame.size.height/2);
+                btn.layer.transform = trans;
+                
+                [self.buttonArray addObject:btn];
+                [self.buttonArray removeObjectAtIndex:0];
+            }
+        }];
+    }
+}
+
 
 @end
