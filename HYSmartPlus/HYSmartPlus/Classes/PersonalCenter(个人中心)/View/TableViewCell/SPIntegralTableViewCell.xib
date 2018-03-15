@@ -51,7 +51,10 @@
                     <constraint firstItem="XVU-oe-ZZd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eNr-j8-fgg"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-31" y="40"/>
+            <connections>
+                <outlet property="topView" destination="XVU-oe-ZZd" id="h8h-Rd-pFr"/>
+            </connections>
+            <point key="canvasLocation" x="-221" y="51"/>
         </tableViewCell>
     </objects>
     <resources>

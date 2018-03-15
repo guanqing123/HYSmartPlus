@@ -199,7 +199,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }else if(indexPath.section == 1) {
         return 120;
     }else if (indexPath.section == 2) {
-        return 200;
+        return ScreenW * 0.7 + 45;
     }else if (indexPath.section == 3) {
         return 150;
     }

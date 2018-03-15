@@ -91,6 +91,7 @@
 		D62816462051315600892297 /* SPModifyPwdParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816452051315600892297 /* SPModifyPwdParam.m */; };
 		D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816482051341F00892297 /* SPModifyPwdResult.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
+		D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */; };
 		D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */; };
 		D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */; };
 		D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCAC204E8F5E00892D6C /* SPRegisterParam.m */; };
@@ -103,6 +104,10 @@
 		D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */; };
 		D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */; };
 		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
+		D6D8E772205A4B3700B46E75 /* HXCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D8E769205A4B3600B46E75 /* HXCircleChart.m */; };
+		D6D8E773205A4B3700B46E75 /* HXBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D8E76A205A4B3600B46E75 /* HXBarChart.m */; };
+		D6D8E774205A4B3700B46E75 /* HXGaugeChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D8E76F205A4B3700B46E75 /* HXGaugeChart.m */; };
+		D6D8E775205A4B3700B46E75 /* HXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D8E771205A4B3700B46E75 /* HXLineChart.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
@@ -263,6 +268,8 @@
 		D62816482051341F00892297 /* SPModifyPwdResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdResult.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
+		D631BB7F2059F55C00AE1781 /* CALayer+SPCustomerCALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+SPCustomerCALayer.h"; sourceTree = "<group>"; };
+		D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+SPCustomerCALayer.m"; sourceTree = "<group>"; };
 		D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRegisterViewController.h; sourceTree = "<group>"; };
 		D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRegisterViewController.m; sourceTree = "<group>"; };
 		D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPRegisterViewController.xib; sourceTree = "<group>"; };
@@ -285,6 +292,15 @@
 		D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMyCenterHeaderView.xib; sourceTree = "<group>"; };
 		D6CD6641205268350072A1D3 /* SPCenterTopToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCenterTopToolView.h; sourceTree = "<group>"; };
 		D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCenterTopToolView.m; sourceTree = "<group>"; };
+		D6D8E769205A4B3600B46E75 /* HXCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCircleChart.m; sourceTree = "<group>"; };
+		D6D8E76A205A4B3600B46E75 /* HXBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXBarChart.m; sourceTree = "<group>"; };
+		D6D8E76B205A4B3600B46E75 /* HXCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCharts.h; sourceTree = "<group>"; };
+		D6D8E76C205A4B3600B46E75 /* HXCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCircleChart.h; sourceTree = "<group>"; };
+		D6D8E76D205A4B3600B46E75 /* HXGaugeChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXGaugeChart.h; sourceTree = "<group>"; };
+		D6D8E76E205A4B3600B46E75 /* HXBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXBarChart.h; sourceTree = "<group>"; };
+		D6D8E76F205A4B3700B46E75 /* HXGaugeChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXGaugeChart.m; sourceTree = "<group>"; };
+		D6D8E770205A4B3700B46E75 /* HXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXLineChart.h; sourceTree = "<group>"; };
+		D6D8E771205A4B3700B46E75 /* HXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXLineChart.m; sourceTree = "<group>"; };
 		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -892,6 +908,8 @@
 				D6253083204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.h */,
 				D6253084204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m */,
 				D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */,
+				D631BB7F2059F55C00AE1781 /* CALayer+SPCustomerCALayer.h */,
+				D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */,
 			);
 			path = "Category(分类)";
 			sourceTree = "<group>";
@@ -913,6 +931,7 @@
 		D6CD663B205251BC0072A1D3 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D6D8E768205A4B2400B46E75 /* HYCharts */,
 				D62035012058C54700F39847 /* CollectionViewCell */,
 				D6B3940C20592661001E08AC /* SPProblemTableViewCell.h */,
 				D6B3940D20592661001E08AC /* SPProblemTableViewCell.m */,
@@ -927,6 +946,22 @@
 				D620350F2059072800F39847 /* SPBPTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D6D8E768205A4B2400B46E75 /* HYCharts */ = {
+			isa = PBXGroup;
+			children = (
+				D6D8E76E205A4B3600B46E75 /* HXBarChart.h */,
+				D6D8E76A205A4B3600B46E75 /* HXBarChart.m */,
+				D6D8E76B205A4B3600B46E75 /* HXCharts.h */,
+				D6D8E76C205A4B3600B46E75 /* HXCircleChart.h */,
+				D6D8E769205A4B3600B46E75 /* HXCircleChart.m */,
+				D6D8E76D205A4B3600B46E75 /* HXGaugeChart.h */,
+				D6D8E76F205A4B3700B46E75 /* HXGaugeChart.m */,
+				D6D8E770205A4B3700B46E75 /* HXLineChart.h */,
+				D6D8E771205A4B3700B46E75 /* HXLineChart.m */,
+			);
+			path = HYCharts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1069,8 +1104,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D8E772205A4B3700B46E75 /* HXCircleChart.m in Sources */,
 				D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */,
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
+				D6D8E774205A4B3700B46E75 /* HXGaugeChart.m in Sources */,
 				D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */,
 				D60FA4642050DE3D00928AB4 /* SPUserAgreementViewController.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
@@ -1098,11 +1135,13 @@
 				D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */,
 				D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
+				D6D8E773205A4B3700B46E75 /* HXBarChart.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
 				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,
 				D62035102059072800F39847 /* SPBPTableViewCell.m in Sources */,
 				D6164D30204596D100767C00 /* SPSliderParam.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
+				D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */,
 				D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */,
 				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
@@ -1137,6 +1176,7 @@
 				D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D62035072058C5D300F39847 /* SPServiceItem.m in Sources */,
+				D6D8E775205A4B3700B46E75 /* HXLineChart.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,
