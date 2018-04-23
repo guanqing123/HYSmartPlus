@@ -22,6 +22,10 @@
 //Models
 #import "SPServiceItem.h"
 
+#import "SPLoginResult.h"
+#import "SPAccountTool.h"
+#import "SPPersonCenterTool.h"
+
 @interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate>
 
 /* headerView */
@@ -38,6 +42,10 @@
 
 @property (nonatomic, strong)  NSArray *scrollArray;
 
+@property (nonatomic, strong)  NSArray *integral;
+
+@property (nonatomic, strong)  SPPersonScoreResult *result;
+
 @end
 
 static NSString *const SPProblemCellID = @"SPProblemCellID";
@@ -51,6 +59,21 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    SPPersonScoreParam *param = [SPPersonScoreParam param:APP00008];
+    param.uid = [SPAccountTool loginResult].userbase.uid;
+    [SPPersonCenterTool getPersonScore:param success:^(SPPersonScoreResult *result) {
+        if (result.error) {
+            [MBProgressHUD showError:result.errorMsg toView:self.view];
+        }else{
+            self.result = result;
+            /*NSArray *indexPaths = @[[NSIndexPath indexPathWithIndex:1],[NSIndexPath indexPathWithIndex:2]];
+            [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationMiddle];*/
+            [self.tableView reloadData];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
+    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -184,6 +207,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }else if (indexPath.section == 2){
         SPIntegralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPIntegralCellID forIndexPath:indexPath];
         cusCell = cell;
+        cell.result = self.result;
     }else if (indexPath.section == 3){
         SPBPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPBPCellID forIndexPath:indexPath];
         cusCell = cell;
@@ -199,7 +223,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }else if(indexPath.section == 1) {
         return 120;
     }else if (indexPath.section == 2) {
-        return ScreenW * 0.7 + 45;
+        return 245;
     }else if (indexPath.section == 3) {
         return 150;
     }
