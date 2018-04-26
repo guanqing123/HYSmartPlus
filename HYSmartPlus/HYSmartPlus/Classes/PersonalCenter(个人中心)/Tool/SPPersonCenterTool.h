@@ -11,6 +11,10 @@
 #import "SPPersonScoreParam.h"
 #import "SPPersonScoreResult.h"
 
+#import "SPProblemParam.h"
+#import "SPProblemResult.h"
+#import "SPProblem.h"
+
 @interface SPPersonCenterTool : UIView
 
 /**
@@ -21,5 +25,8 @@
  @param failure 失败回调
  */
 + (void)getPersonScore:(SPPersonScoreParam *)personScoreParam success:(void(^)(SPPersonScoreResult *result))success failure:(void(^)(NSError *error))failure;
+
+
++ (void)getProblem:(SPProblemParam *)problemParam success:(void(^)(SPProblemResult *result))success failure:(void(^)(NSError *error))failure;
 
 @end

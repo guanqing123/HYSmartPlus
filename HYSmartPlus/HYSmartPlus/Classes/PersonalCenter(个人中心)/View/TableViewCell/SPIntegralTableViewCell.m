@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gradeNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentIntegralLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nextIntegralLabel;
+@property (weak, nonatomic) IBOutlet UILabel *upgradeIntegralLabel;
 @end
 
 @implementation SPIntegralTableViewCell
@@ -30,7 +31,6 @@
     NSNumber *current = [[NSNumber alloc] init];
     NSNumber *next = [[NSNumber alloc] init];
     for (SPCurrentGradeInfo *info in result.list) {
-        NSLog(@"class = %@",NSStringFromClass([info class]));
         if ([info.khdm isEqualToString:@"00000000"]) {
             self.gradeNameLabel.text = info.gradeName;
             self.currentIntegralLabel.text = [info.currentIntegral description];
@@ -40,7 +40,8 @@
     }
     self.nextIntegralLabel.text = [result.nextGradeInfo.integral description];
     next = result.nextGradeInfo.integral;
-    CGFloat scale = next == 0 ? 0 : 0.6;//[current floatValue]/[next floatValue];
+    CGFloat scale = next == 0 ? 0 : [current floatValue]/[next floatValue];
+    self.upgradeIntegralLabel.text = [NSString stringWithFormat:@"%ld",[next integerValue] - [current integerValue]];
     [self.progress setProgress:scale animated:YES];
 }
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPPersonScoreResult.h"
 
 @interface SPBPTableViewCell : UITableViewCell
+
+@property (nonatomic, strong)  SPPersonScoreResult *result;
 
 @end

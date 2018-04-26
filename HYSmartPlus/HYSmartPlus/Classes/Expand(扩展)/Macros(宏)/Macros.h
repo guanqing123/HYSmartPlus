@@ -69,8 +69,10 @@
 
 //鸿雁销客
 #define XKURL @"http://218.75.78.166:9101/app/api"
+//常见问题
+#define HYXK00006 @"HYXK00006"
 //鸿雁安家
-#define SPURL @"http://www.sge.cn:9090/erp/app/api"
+#define SPURL @"http://www.sge.cn/erp/app/api"
 //首页滚动条
 #define slider @"HYXK00019"
 //获取手机验证码

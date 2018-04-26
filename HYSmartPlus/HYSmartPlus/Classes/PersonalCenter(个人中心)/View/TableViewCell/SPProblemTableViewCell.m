@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UILabel  *titleLabel;
 @property (nonatomic, strong) SPNumberScrollView  *numberScrollView;
 @property (nonatomic, strong)  UIButton *moreProblemBtn;
-
+@property (nonatomic, strong)  NSMutableArray *titleArray;
 @end
 
 @implementation SPProblemTableViewCell
@@ -77,10 +77,20 @@
     return _moreProblemBtn;
 }
 
-- (void)setScrollArray:(NSArray *)scrollArray {
-    _scrollArray = scrollArray;
-    [self.numberScrollView setScrollArray:scrollArray];
-    [self.numberScrollView startTimer];
+- (NSMutableArray *)titleArray {
+    if (_titleArray == nil) {
+        _titleArray = [NSMutableArray array];
+    }
+    return _titleArray;
+}
+
+- (void)setResult:(SPProblemResult *)result {
+    _result = result;
+    [self.titleArray removeAllObjects];
+    for (SPProblem *problem in result.list) {
+        [self.titleArray addObject:problem.faq_question];
+    }
+    [self.numberScrollView setScrollArray:self.titleArray];
 }
 
 - (void)layoutSubviews {
@@ -102,7 +112,7 @@
     [self.moreProblemBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.totalView).offset(-SPMargin);
         make.centerY.equalTo(self.totalView.mas_centerY);
-        make.width.mas_equalTo(80);
+        make.width.mas_equalTo(40);
     }];
     
     [self.numberScrollView mas_makeConstraints:^(MASConstraintMaker *make) {

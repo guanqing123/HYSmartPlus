@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPProblem.h"
+#import "SPProblemResult.h"
 
 @interface SPProblemTableViewCell : UITableViewCell
 
-@property (nonatomic, strong)  NSArray *scrollArray;
+@property (nonatomic, strong)  SPProblemResult *result;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

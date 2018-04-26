@@ -10,6 +10,7 @@
 
 @interface SPNumberScrollView()
 @property (nonatomic, strong)  NSMutableArray *buttonArray;
+@property (nonatomic, strong)  NSTimer *timer;
 @end
 
 @implementation SPNumberScrollView
@@ -26,10 +27,18 @@
 }
 
 - (void)setScrollArray:(NSArray *)scrollArray {
+    [self.buttonArray removeAllObjects];
+    for (UIView *child in self.subviews) {
+        if ([child isKindOfClass:[UIButton class]]) {
+            [child removeFromSuperview];
+        }
+    }
+    [self stopTimer];
     _scrollArray = scrollArray;
     if (scrollArray.count > 0) {
         for (int i = 0; i < scrollArray.count; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.titleLabel.numberOfLines = 0;
             [btn setTitle:scrollArray[i] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -56,6 +65,7 @@
                 make.right.equalTo(self);
             }];
         }
+        [self startTimer];
     }
 }
 
@@ -65,7 +75,14 @@
         self.interval = 5;
     }
     NSTimer *timer = [NSTimer timerWithTimeInterval:self.interval target:self selector:@selector(timerRun) userInfo:nil repeats:YES];
+    _timer = timer;
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+#pragma mark - 停止
+- (void)stopTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 #pragma mark - 滚动
@@ -103,5 +120,8 @@
     }
 }
 
+- (void)dealloc {
+    [self stopTimer];
+}
 
 @end

@@ -49,7 +49,7 @@
                             <constraint firstItem="7no-xQ-RrT" firstAttribute="leading" secondItem="xJa-xx-osh" secondAttribute="trailing" constant="10" id="l8y-Tc-gvF"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTl-Zx-Yeg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTl-Zx-Yeg" userLabel="积分值">
                         <rect key="frame" x="154.5" y="60" width="12" height="28"/>
                         <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
                         <color key="textColor" red="0.92156862750000001" green="0.4039215686" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,7 +97,10 @@
                     <constraint firstItem="aTl-Zx-Yeg" firstAttribute="top" secondItem="5oK-68-w2d" secondAttribute="bottom" constant="15" id="YhR-lr-2VT"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-32" y="7"/>
+            <connections>
+                <outlet property="bpIntegralLabel" destination="aTl-Zx-Yeg" id="jOp-dE-xLC"/>
+            </connections>
+            <point key="canvasLocation" x="-214" y="-9"/>
         </tableViewCell>
     </objects>
     <resources>

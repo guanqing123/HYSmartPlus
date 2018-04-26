@@ -8,6 +8,12 @@
 
 #import "SPBPTableViewCell.h"
 
+@interface SPBPTableViewCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *bpIntegralLabel;
+
+@end
+
 @implementation SPBPTableViewCell
 
 - (void)awakeFromNib {
@@ -15,10 +21,14 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setResult:(SPPersonScoreResult *)result {
+    _result = result;
+    for (SPCurrentGradeInfo *info in result.list) {
+        if (![info.khdm isEqualToString:@"00000000"]) {
+            self.bpIntegralLabel.text = [info.currentIntegral description];
+            break;
+        }
+    }
 }
 
 @end

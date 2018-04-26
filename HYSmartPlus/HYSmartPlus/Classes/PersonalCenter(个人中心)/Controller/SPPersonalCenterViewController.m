@@ -46,6 +46,8 @@
 
 @property (nonatomic, strong)  SPPersonScoreResult *result;
 
+@property (nonatomic, strong)  SPProblemResult *problemResult;
+
 @end
 
 static NSString *const SPProblemCellID = @"SPProblemCellID";
@@ -67,9 +69,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
             [MBProgressHUD showError:result.errorMsg toView:self.view];
         }else{
             self.result = result;
-            /*NSArray *indexPaths = @[[NSIndexPath indexPathWithIndex:1],[NSIndexPath indexPathWithIndex:2]];
-            [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationMiddle];*/
-            [self.tableView reloadData];
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(2, 2)] withRowAnimation:UITableViewRowAnimationFade];
         }
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"网络异常" toView:self.view];
@@ -89,6 +89,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     [self setUpNavTopView];
     
     [self setUpHeaderCenterView];
+    
+    [self setUpProblem];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -178,6 +180,21 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     return _serviceItem;
 }
 
+#pragma mark - setUpProblem
+- (void)setUpProblem {
+    SPProblemParam *param = [SPProblemParam param:HYXK00006];
+    [SPPersonCenterTool getProblem:param success:^(SPProblemResult *result) {
+        if (result.error) {
+            [MBProgressHUD showError:result.errorMsg toView:self.view];
+        }else{
+            self.problemResult = result;
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"常用问题加载异常" toView:self.view];
+    }];
+}
+
 - (NSArray *)scrollArray {
     if (!_scrollArray) {
         _scrollArray = [NSArray arrayWithObjects:@"111111111",@"22222222",@"33333333", nil];
@@ -198,7 +215,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     UITableViewCell *cusCell = [UITableViewCell new];
     if (indexPath.section == 0) {
         SPProblemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPProblemCellID forIndexPath:indexPath];
-        cell.scrollArray = self.scrollArray;
+        cell.result = self.problemResult;
         cusCell = cell;
     }else if(indexPath.section == 1){
         SPServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPServiceCellID forIndexPath:indexPath];
@@ -211,6 +228,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }else if (indexPath.section == 3){
         SPBPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPBPCellID forIndexPath:indexPath];
         cusCell = cell;
+        cell.result = self.result;
     }
     cusCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cusCell;
@@ -219,7 +237,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 #pragma mark - <UITableViewDelegate>
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 0){
-        return 40;
+        return 60;
     }else if(indexPath.section == 1) {
         return 120;
     }else if (indexPath.section == 2) {
