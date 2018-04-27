@@ -7,9 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef enum {
+    PersonCenterServiceSignIn,
+    PersonCenterServiceInviteFriend,
+    PersonCenterServiceDiscountCard,
+    PersonCenterServicePhoneModify
+} PersonCenterServiceType;
 
 @interface SPServiceItem : NSObject
 
+/** 服务类型 */
+@property (nonatomic, assign) PersonCenterServiceType serviceType;
 /** 图片 */
 @property (nonatomic, copy) NSString *iconImage;
 /** 文字 */

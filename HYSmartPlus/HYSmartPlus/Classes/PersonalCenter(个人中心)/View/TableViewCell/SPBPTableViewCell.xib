@@ -27,14 +27,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="361" height="45"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-xx-osh">
-                                <rect key="frame" x="10" y="6" width="32" height="32"/>
+                                <rect key="frame" x="10" y="9.5" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Ox7-BI-8g4"/>
-                                    <constraint firstAttribute="width" constant="32" id="hAO-L5-UXQ"/>
+                                    <constraint firstAttribute="height" constant="25" id="Ox7-BI-8g4"/>
+                                    <constraint firstAttribute="width" constant="25" id="hAO-L5-UXQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店积分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7no-xQ-RrT">
-                                <rect key="frame" x="52" y="13.5" width="61.5" height="18"/>
+                                <rect key="frame" x="45" y="13.5" width="61.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

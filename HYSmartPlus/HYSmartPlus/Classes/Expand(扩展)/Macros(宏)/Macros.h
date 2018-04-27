@@ -83,6 +83,8 @@
 #define APP00003 @"APP00003"
 //手机号码+手机验证码或密码；用户ID+token
 #define APP00005 @"APP00005"
+//每日签到
+#define APP00007 @"APP00007"
 //用户积分信息
 #define APP00008 @"APP00008"
 

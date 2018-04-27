@@ -7,10 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SPNumberScrollView;
+
+@protocol SPNumberScrollViewDelegate <NSObject>
+
+/**
+ 点击 button 触发事件
+
+ @param numberScrollView 当前view
+ */
+- (void)numberScrollViewDidButtonClick:(SPNumberScrollView *)numberScrollView;
+
+@end
 
 @interface SPNumberScrollView : UIView
 
 @property (nonatomic, strong)  NSArray *scrollArray;
+
+@property (nonatomic, weak) id<SPNumberScrollViewDelegate> delegate;
 
 + (instancetype)scrollView;
 

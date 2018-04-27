@@ -9,7 +9,7 @@
 #import "SPProblemTableViewCell.h"
 #import "SPNumberScrollView.h"
 
-@interface SPProblemTableViewCell()
+@interface SPProblemTableViewCell()<SPNumberScrollViewDelegate>
 @property (nonatomic, strong)  UIView *totalView;
 @property (nonatomic, strong) UILabel  *titleLabel;
 @property (nonatomic, strong) SPNumberScrollView  *numberScrollView;
@@ -63,6 +63,7 @@
 - (SPNumberScrollView *)numberScrollView {
     if (!_numberScrollView) {
         _numberScrollView = [SPNumberScrollView scrollView];
+        _numberScrollView.delegate = self;
     }
     return _numberScrollView;
 }
@@ -72,6 +73,7 @@
         _moreProblemBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_moreProblemBtn setTitle:@"更多" forState:UIControlStateNormal];
         [_moreProblemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_moreProblemBtn addTarget:self action:@selector(moreProblem) forControlEvents:UIControlEventTouchUpInside];
         _moreProblemBtn.titleLabel.font = PFR12Font;
     }
     return _moreProblemBtn;
@@ -122,4 +124,17 @@
     }];
 }
 
+#pragma mark - SPNumberScrollViewDelegate
+- (void)numberScrollViewDidButtonClick:(SPNumberScrollView *)numberScrollView {
+    if ([self.delegate respondsToSelector:@selector(problemTableViewCellDidMoreProblem:)]) {
+        [self.delegate problemTableViewCellDidMoreProblem:self];
+    }
+}
+
+#pragma mark - more Problem
+- (void)moreProblem {
+    if ([self.delegate respondsToSelector:@selector(problemTableViewCellDidMoreProblem:)]) {
+        [self.delegate problemTableViewCellDidMoreProblem:self];
+    }
+}
 @end

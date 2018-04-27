@@ -9,6 +9,9 @@
 #import "SPPersonalCenterViewController.h"
 #import "MJExtension.h"
 
+#import "SPProblemViewController.h"
+#import "SPInviteFriendViewController.h"
+
 //顶部和头部View
 #import "SPCenterTopToolView.h"
 #import "SPMyCenterHeaderView.h"
@@ -26,7 +29,7 @@
 #import "SPAccountTool.h"
 #import "SPPersonCenterTool.h"
 
-@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate>
 
 /* headerView */
 @property (nonatomic, strong)  SPMyCenterHeaderView *headerView;
@@ -61,19 +64,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    
-    SPPersonScoreParam *param = [SPPersonScoreParam param:APP00008];
-    param.uid = [SPAccountTool loginResult].userbase.uid;
-    [SPPersonCenterTool getPersonScore:param success:^(SPPersonScoreResult *result) {
-        if (result.error) {
-            [MBProgressHUD showError:result.errorMsg toView:self.view];
-        }else{
-            self.result = result;
-            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(2, 2)] withRowAnimation:UITableViewRowAnimationFade];
-        }
-    } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"网络异常" toView:self.view];
-    }];
+    // 刷新积分
+    [self refreshScore];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -100,6 +92,25 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     
     
     //NSLog(@"adjustedContentInset = %@",NSStringFromUIEdgeInsets(self.collectionView.adjustedContentInset));
+}
+
+#pragma mark - 刷新积分
+- (void)refreshScore {
+    [MBProgressHUD showMessage:@"刷新积分..." toView:self.view];
+    SPPersonScoreParam *param = [SPPersonScoreParam param:APP00008];
+    param.uid = [SPAccountTool loginResult].userbase.uid;
+    [SPPersonCenterTool getPersonScore:param success:^(SPPersonScoreResult *result) {
+        [MBProgressHUD hideHUDForView:self.view];
+        if (result.error) {
+            [MBProgressHUD showError:result.errorMsg toView:self.view];
+        }else{
+            self.result = result;
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(2, 2)] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view];
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
+    }];
 }
 
 #pragma mark - rewrite
@@ -215,10 +226,12 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     UITableViewCell *cusCell = [UITableViewCell new];
     if (indexPath.section == 0) {
         SPProblemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPProblemCellID forIndexPath:indexPath];
+        cell.delegate = self;
         cell.result = self.problemResult;
         cusCell = cell;
     }else if(indexPath.section == 1){
         SPServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPServiceCellID forIndexPath:indexPath];
+        cell.delegate = self;
         cell.serviceItem = self.serviceItem;
         cusCell = cell;
     }else if (indexPath.section == 2){
@@ -246,6 +259,52 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         return 150;
     }
     return 0;
+}
+
+#pragma mark - SPProblemTableViewCellDelegate
+- (void)problemTableViewCellDidMoreProblem:(SPProblemTableViewCell *)tableViewCell {
+    SPProblemViewController *problemVc = [[SPProblemViewController alloc] init];
+    problemVc.result = self.problemResult;
+    [self.navigationController pushViewController:problemVc animated:YES];
+}
+
+#pragma mark - SPServiceTableViewCellDelegate
+- (void)serviceTableViewCell:(SPServiceTableViewCell *)tableViewCell didClickCollectionViewItem:(SPServiceItem *)serviceItem {
+    switch (serviceItem.serviceType) {
+        case PersonCenterServiceSignIn:
+            [self doSignIn];
+            break;
+        case PersonCenterServiceInviteFriend:
+            [self doInviteFriend];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)doSignIn {
+    SPSignInParam *param = [SPSignInParam param:APP00007];
+    param.uid = [SPAccountTool loginResult].userbase.uid;
+    [SPPersonCenterTool doSignIn:param success:^(SPSignInResult *result) {
+        if (result.error) {
+            [MBProgressHUD showError:result.errorMsg toView:self.view];
+        }else{
+            UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"恭喜" message:@"今日签到成功" preferredStyle:UIAlertControllerStyleAlert];
+            WEAKSELF
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [weakSelf refreshScore];
+            }];
+            [alertVc addAction:sureAction];
+            [self presentViewController:alertVc animated:YES completion:nil];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"网络异常,签到失败" toView:self.view];
+    }];
+}
+
+- (void)doInviteFriend {
+    SPInviteFriendViewController *inviteFriendVc = [[SPInviteFriendViewController alloc] init];
+    [self.navigationController pushViewController:inviteFriendVc animated:YES];
 }
 
 #pragma mark -  滚动tableview 完毕之后

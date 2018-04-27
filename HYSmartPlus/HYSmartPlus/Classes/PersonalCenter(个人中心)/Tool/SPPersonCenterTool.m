@@ -62,4 +62,28 @@
     }];
 }
 
++ (void)doSignIn:(SPSignInParam *)signInParam success:(void (^)(SPSignInResult *))success failure:(void (^)(NSError *))failure {
+    NSDictionary *headerDict = [NSDictionary dictionaryWithObjects:@[signInParam.appseq,signInParam.trcode,signInParam.trdate] forKeys:@[@"appseq",@"trcode",@"trdate"]];
+    
+    NSDictionary *dict = @{@"header" : headerDict, @"data" : signInParam.mj_keyValues};
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *parameter = @{@"content" : jsonString};
+    
+    [SPHttpTool postWithURL:SPURL params:parameter success:^(id json) {
+        if ([[[json objectForKey:@"header"] objectForKey:@"succflag"] isEqualToString:@"1"]) {
+            SPSignInResult *result = [SPSignInResult mj_objectWithKeyValues:[json objectForKey:@"data"]];
+            success(result);
+        }else{
+            SPSignInResult *result = [SPSignInResult result];
+            result.error = YES;
+            result.errorMsg = [NSString stringWithFormat:@"%@",[[json objectForKey:@"header"] objectForKey:@"errorMsg"]];
+            success(result);
+        }
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end

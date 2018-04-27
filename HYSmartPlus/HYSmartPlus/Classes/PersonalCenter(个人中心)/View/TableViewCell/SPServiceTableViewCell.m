@@ -66,6 +66,14 @@ static NSString *const SPServiceCollectionViewCellID = @"SPServiceCollectionView
     return cell;
 }
 
+#pragma mark - <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SPServiceItem  *item =  _serviceItem[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(serviceTableViewCell:didClickCollectionViewItem:)]) {
+        [self.delegate serviceTableViewCell:self didClickCollectionViewItem:item];
+    }
+}
+
 #pragma mark - <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(ScreenW / 4, 75);

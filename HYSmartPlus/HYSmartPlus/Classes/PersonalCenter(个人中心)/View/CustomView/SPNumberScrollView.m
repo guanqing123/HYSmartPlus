@@ -41,7 +41,7 @@
             btn.titleLabel.numberOfLines = 0;
             [btn setTitle:scrollArray[i] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
             btn.titleLabel.font = PFR13Font;
             
             if (i != 0) {
@@ -122,6 +122,12 @@
 
 - (void)dealloc {
     [self stopTimer];
+}
+
+- (void)btnAction {
+    if ([self.delegate respondsToSelector:@selector(numberScrollViewDidButtonClick:)]) {
+        [self.delegate numberScrollViewDidButtonClick:self];
+    }
 }
 
 @end

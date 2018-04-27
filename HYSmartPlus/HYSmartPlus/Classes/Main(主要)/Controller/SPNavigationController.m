@@ -43,9 +43,11 @@
     [navBar setTitleTextAttributes:attrs];
     
     //设置回退箭头的颜色
-    [navBar setTintColor:RGB(20, 200, 197)];
+    [navBar setTintColor:RGB(49, 49, 49)];
     
+    //设置导航栏为透明
     [navBar setTranslucent:YES];
+    //设置背景色
     [navBar setBarTintColor:RGB(245, 245, 245)];
 }
 
@@ -81,6 +83,21 @@
     attributes[NSForegroundColorAttributeName] = naiColor;
     attributes[NSFontAttributeName] = PFR18Font;
     bar.titleTextAttributes = attributes;
+}
+
+#pragma mark - 通用设置
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (self.childViewControllers.count >= 1) {
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"30"] style:UIBarButtonItemStyleDone target:self action:@selector(backItemClick)];
+        viewController.navigationItem.leftBarButtonItem = leftItem;
+        viewController.view.backgroundColor = [UIColor whiteColor];
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
+}
+
+- (void)backItemClick {
+    [self popViewControllerAnimated:YES];
 }
 
 #pragma mark - 屏幕横竖屏设置

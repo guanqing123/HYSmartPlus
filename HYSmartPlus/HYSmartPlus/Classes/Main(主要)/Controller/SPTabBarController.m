@@ -46,18 +46,17 @@
                               MallImgKey    : @"tabr_1_up",
                               MallSelImgKey : @"tabr_1_down"},
                             
-                            @{MallClassKey  : @"SPHandPickViewController",
+                            @{MallClassKey  : @"SPHyMallViewController",
                               MallTitleKey  : @"积分商城",
                               MallImgKey    : @"tabr_2_up",
                               MallSelImgKey : @"tabr_2_down"},
-                            
                             
                             @{MallClassKey  : @"SPCommodityViewController",
                               MallTitleKey  : @"工地",
                               MallImgKey    : @"tabr_3_up",
                               MallSelImgKey : @"tabr_3_down"},
                             
-                            @{MallClassKey  : @"SPViewController",
+                            @{MallClassKey  : @"SPDiscountViewController",
                               MallTitleKey  : @"优惠卡券",
                               MallImgKey    : @"tabr_4_up",
                               MallSelImgKey : @"tabr_4_down"},

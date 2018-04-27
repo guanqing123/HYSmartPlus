@@ -7,24 +7,32 @@
 		<string>me_sign</string>
 		<key>gridTitle</key>
 		<string>签到</string>
+		<key>serviceType</key>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>iconImage</key>
 		<string>me_invite</string>
 		<key>gridTitle</key>
 		<string>邀请好友</string>
+		<key>serviceType</key>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>iconImage</key>
-		<string>me_weixin</string>
+		<string>me_discountCard</string>
 		<key>gridTitle</key>
-		<string>微信公众号</string>
+		<string>优惠卡券</string>
+		<key>serviceType</key>
+		<integer>2</integer>
 	</dict>
 	<dict>
 		<key>iconImage</key>
 		<string>me_modify</string>
 		<key>gridTitle</key>
 		<string>号码变更</string>
+		<key>serviceType</key>
+		<integer>3</integer>
 	</dict>
 </array>
 </plist>
