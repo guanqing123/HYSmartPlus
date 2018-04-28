@@ -6,6 +6,8 @@
 //  Copyright © 2017年 hongyan. All rights reserved.
 //
 
+#import <UMShare/UMShare.h>
+
 #import "SPAppDelegate.h"
 #import "SPAccount.h"
 #import "SPAccountTool.h"
@@ -33,7 +35,25 @@
     } else { //之前没有登录成功
         self.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
     }
+    
+    // U-Share 平台设置
+    [self configUSharePlatforms];
+    
     return YES;
+}
+
+// U-Share 平台设置
+- (void)configUSharePlatforms {
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    
+    /* 设置分享到QQ互联的appID
+     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+     */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106675071" appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    
+    /* 设置新浪的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"195789847" appSecret:@"1d3e2221a061bfdf2ee454b1d88f19d3" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
 }
 
 

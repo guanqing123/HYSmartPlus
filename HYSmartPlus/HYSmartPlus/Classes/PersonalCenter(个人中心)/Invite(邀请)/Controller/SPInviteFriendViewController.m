@@ -2,48 +2,43 @@
 //  SPInviteFriendViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/4/27.
+//  Created by information on 2018/4/28.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
 #import "SPInviteFriendViewController.h"
-#import <WebKit/WebKit.h>
+#import "SPInviteFriendView.h"
 
-@interface SPInviteFriendViewController ()
-@property (weak, nonatomic) IBOutlet UIView *prentView;
-
-@property (nonatomic, strong)  WKWebView *webView;
-
+@interface SPInviteFriendViewController () <SPInviteFriendViewDelegate>
+@property (nonatomic, weak) SPInviteFriendView  *inviteView;
 @end
 
 @implementation SPInviteFriendViewController
 
-- (void)awakeFromNib {
-    NSLog(@"aaaaaaaaa");
-    [super awakeFromNib];
-    WKWebView *webView = [[WKWebView alloc] init];
-    webView.backgroundColor = [UIColor redColor];
-    _webView = webView;
-    [self.prentView addSubview:webView];
-    
-    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.prentView);
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"bbbbbb");
-    // Do any additional setup after loading the view from its nib.
-    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = YES;
-    }
+    // Do any additional setup after loading the view.
+    SPInviteFriendView *inviteView = [SPInviteFriendView inviteView];
+    inviteView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH);
+    inviteView.delegate = self;
+    _inviteView = inviteView;
+    [self.view addSubview:inviteView];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)inviteFriendView:(SPInviteFriendView *)inviteView platFromType:(UMSocialPlatformType)platfromType {
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    messageObject.text = @"测试";
+    
+    [[UMSocialManager defaultManager] shareToPlatform:platfromType messageObject:messageObject currentViewController:self completion:^(id result, NSError *error) {
+        
+    }];
 }
 
 /*

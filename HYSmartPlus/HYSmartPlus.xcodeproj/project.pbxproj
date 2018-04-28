@@ -70,6 +70,8 @@
 		D6184B002047013100616266 /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AFF2047013100616266 /* SPLoginViewController.m */; };
 		D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B02204708AF00616266 /* SPLoginHeaderView.m */; };
 		D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B0520470D4200616266 /* SPLoginFooterView.m */; };
+		D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D618BE32209413D200648A57 /* SPInviteFriendView.m */; };
+		D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618BE34209413FB00648A57 /* SPInviteView.xib */; };
 		D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */; };
 		D62034FD2058AC5F00F39847 /* SPServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */; };
 		D62035002058B7A400F39847 /* MyServiceFlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = D62034FF2058B7A400F39847 /* MyServiceFlow.plist */; };
@@ -111,13 +113,12 @@
 		D64C4343208DD4F0000FF373 /* SPNextGradeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D64C4342208DD4F0000FF373 /* SPNextGradeInfo.m */; };
 		D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F856209314F90058C2E9 /* SPSignInParam.m */; };
 		D662F85A209315490058C2E9 /* SPSignInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F859209315490058C2E9 /* SPSignInResult.m */; };
-		D662F8602093240D0058C2E9 /* SPInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F85E2093240D0058C2E9 /* SPInviteFriendViewController.m */; };
-		D662F8612093240D0058C2E9 /* SPInviteFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D662F85F2093240D0058C2E9 /* SPInviteFriendViewController.xib */; };
 		D68B06242092E20E0000434F /* SPDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06232092E20E0000434F /* SPDiscountViewController.m */; };
 		D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06272092E8D00000434F /* SPHyMallViewController.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
 		D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B3940D20592661001E08AC /* SPProblemTableViewCell.m */; };
 		D6B3941120592FB7001E08AC /* SPNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B3941020592FB7001E08AC /* SPNumberScrollView.m */; };
+		D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6437209401C00095DBEA /* SPInviteFriendViewController.m */; };
 		D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */; };
 		D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */; };
 		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
@@ -246,6 +247,9 @@
 		D6184B0420470D4200616266 /* SPLoginFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginFooterView.h; sourceTree = "<group>"; };
 		D6184B0520470D4200616266 /* SPLoginFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginFooterView.m; sourceTree = "<group>"; };
 		D61884D41F657A6C0027F119 /* HYSmartPlus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSmartPlus.pch; sourceTree = "<group>"; };
+		D618BE31209413D200648A57 /* SPInviteFriendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPInviteFriendView.h; sourceTree = "<group>"; };
+		D618BE32209413D200648A57 /* SPInviteFriendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPInviteFriendView.m; sourceTree = "<group>"; };
+		D618BE34209413FB00648A57 /* SPInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteView.xib; sourceTree = "<group>"; };
 		D62034F92058AC5F00F39847 /* SPServiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPServiceTableViewCell.h; sourceTree = "<group>"; };
 		D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPServiceTableViewCell.m; sourceTree = "<group>"; };
 		D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPServiceTableViewCell.xib; sourceTree = "<group>"; };
@@ -319,9 +323,6 @@
 		D662F856209314F90058C2E9 /* SPSignInParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSignInParam.m; sourceTree = "<group>"; };
 		D662F858209315490058C2E9 /* SPSignInResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSignInResult.h; sourceTree = "<group>"; };
 		D662F859209315490058C2E9 /* SPSignInResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSignInResult.m; sourceTree = "<group>"; };
-		D662F85D2093240D0058C2E9 /* SPInviteFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPInviteFriendViewController.h; sourceTree = "<group>"; };
-		D662F85E2093240D0058C2E9 /* SPInviteFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPInviteFriendViewController.m; sourceTree = "<group>"; };
-		D662F85F2093240D0058C2E9 /* SPInviteFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteFriendViewController.xib; sourceTree = "<group>"; };
 		D68B06222092E20E0000434F /* SPDiscountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiscountViewController.h; sourceTree = "<group>"; };
 		D68B06232092E20E0000434F /* SPDiscountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDiscountViewController.m; sourceTree = "<group>"; };
 		D68B06262092E8D00000434F /* SPHyMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHyMallViewController.h; sourceTree = "<group>"; };
@@ -332,6 +333,8 @@
 		D6B3940D20592661001E08AC /* SPProblemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPProblemTableViewCell.m; sourceTree = "<group>"; };
 		D6B3940F20592FB7001E08AC /* SPNumberScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNumberScrollView.h; sourceTree = "<group>"; };
 		D6B3941020592FB7001E08AC /* SPNumberScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNumberScrollView.m; sourceTree = "<group>"; };
+		D6CD6436209401C00095DBEA /* SPInviteFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPInviteFriendViewController.h; sourceTree = "<group>"; };
+		D6CD6437209401C00095DBEA /* SPInviteFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPInviteFriendViewController.m; sourceTree = "<group>"; };
 		D6CD663C205251DF0072A1D3 /* SPMyCenterHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMyCenterHeaderView.h; sourceTree = "<group>"; };
 		D6CD663D205251DF0072A1D3 /* SPMyCenterHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMyCenterHeaderView.m; sourceTree = "<group>"; };
 		D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMyCenterHeaderView.xib; sourceTree = "<group>"; };
@@ -995,6 +998,7 @@
 		D662F85B2093237E0058C2E9 /* Invite(邀请) */ = {
 			isa = PBXGroup;
 			children = (
+				D6CD6439209402560095DBEA /* View */,
 				D662F85C209323A00058C2E9 /* Controller */,
 			);
 			path = "Invite(邀请)";
@@ -1003,9 +1007,8 @@
 		D662F85C209323A00058C2E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D662F85D2093240D0058C2E9 /* SPInviteFriendViewController.h */,
-				D662F85E2093240D0058C2E9 /* SPInviteFriendViewController.m */,
-				D662F85F2093240D0058C2E9 /* SPInviteFriendViewController.xib */,
+				D6CD6436209401C00095DBEA /* SPInviteFriendViewController.h */,
+				D6CD6437209401C00095DBEA /* SPInviteFriendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1052,6 +1055,16 @@
 				D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */,
 			);
 			path = "Category(分类)";
+			sourceTree = "<group>";
+		};
+		D6CD6439209402560095DBEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D618BE31209413D200648A57 /* SPInviteFriendView.h */,
+				D618BE32209413D200648A57 /* SPInviteFriendView.m */,
+				D618BE34209413FB00648A57 /* SPInviteView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D6CD663A205251BC0072A1D3 /* CustomView */ = {
@@ -1168,7 +1181,7 @@
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 				D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */,
 				D60EC4DF1FC6ACF300F78F31 /* ClassiftyGoods01.plist in Resources */,
-				D662F8612093240D0058C2E9 /* SPInviteFriendViewController.xib in Resources */,
+				D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */,
 				D620350C2058F38F00F39847 /* SPIntegralTableViewCell.xib in Resources */,
 				D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */,
 			);
@@ -1251,6 +1264,7 @@
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
 				D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */,
+				D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */,
 				D64C4343208DD4F0000FF373 /* SPNextGradeInfo.m in Sources */,
 				D68B06242092E20E0000434F /* SPDiscountViewController.m in Sources */,
 				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
@@ -1301,7 +1315,7 @@
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
-				D662F8602093240D0058C2E9 /* SPInviteFriendViewController.m in Sources */,
+				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
@@ -1444,12 +1458,16 @@
 			baseConfigurationReference = E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1458,12 +1476,16 @@
 			baseConfigurationReference = 3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

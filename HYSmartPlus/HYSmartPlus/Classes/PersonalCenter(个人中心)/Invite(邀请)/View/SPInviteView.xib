@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SPInviteFriendView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享鸿雁安+APP下载地址及邀请码，好友注册登录后即可享受积分奖励！" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-gc-2Z1">
+                    <rect key="frame" x="20" y="15" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-Mi-dx9" userLabel="prentView">
+                    <rect key="frame" x="80" y="76" width="214" height="214"/>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EJP-Mi-dx9" secondAttribute="height" multiplier="1:1" id="lBg-2h-AB7"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描二维码下载鸿雁安+APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-ES-3rq">
+                    <rect key="frame" x="92.5" y="295" width="191" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5M-pb-4Hn">
+                    <rect key="frame" x="167" y="363" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.18039215689999999" green="0.81568627449999997" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="48g-JR-Zqy"/>
+                        <constraint firstAttribute="width" constant="40" id="fxO-D8-2GJ"/>
+                    </constraints>
+                    <state key="normal" title="QQ"/>
+                    <connections>
+                        <action selector="shareQQ:" destination="iN0-l3-epB" eventType="touchUpInside" id="4LH-UA-cRQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sKe-gc-2Z1" secondAttribute="trailing" constant="20" id="AIl-gV-Nlj"/>
+                <constraint firstItem="mXa-ES-3rq" firstAttribute="top" secondItem="EJP-Mi-dx9" secondAttribute="bottom" constant="5" id="Aop-xT-bjM"/>
+                <constraint firstItem="EJP-Mi-dx9" firstAttribute="top" secondItem="sKe-gc-2Z1" secondAttribute="bottom" constant="25" id="B7b-pX-ecb"/>
+                <constraint firstItem="EJP-Mi-dx9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F6g-Ny-XM4"/>
+                <constraint firstItem="sKe-gc-2Z1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JDA-q2-UvZ"/>
+                <constraint firstItem="j5M-pb-4Hn" firstAttribute="top" secondItem="mXa-ES-3rq" secondAttribute="bottom" constant="50" id="V2k-Ra-utr"/>
+                <constraint firstItem="mXa-ES-3rq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WH3-JR-Nis"/>
+                <constraint firstItem="EJP-Mi-dx9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="bWL-zc-hbe"/>
+                <constraint firstItem="sKe-gc-2Z1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="kdt-wd-K5Y"/>
+                <constraint firstItem="j5M-pb-4Hn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rjT-GD-BLx"/>
+            </constraints>
+            <connections>
+                <outlet property="prentView" destination="EJP-Mi-dx9" id="73k-oj-BEV"/>
+            </connections>
+            <point key="canvasLocation" x="-282" y="-379"/>
+        </view>
+    </objects>
+</document>
