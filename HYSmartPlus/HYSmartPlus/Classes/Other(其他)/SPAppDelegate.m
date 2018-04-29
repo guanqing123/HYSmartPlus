@@ -6,7 +6,16 @@
 //  Copyright © 2017年 hongyan. All rights reserved.
 //
 
-#import <UMShare/UMShare.h>
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+//腾讯开放平台（对应QQ和QQ空间）SDK头文件
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+//微信SDK头文件
+#import "WXApi.h"
+//新浪微博SDK头文件<
+#import "WeiboSDK.h"
+//新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加”-ObjC”
 
 #import "SPAppDelegate.h"
 #import "SPAccount.h"
@@ -36,24 +45,56 @@
         self.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
     }
     
-    // U-Share 平台设置
-    [self configUSharePlatforms];
+    /**初始化ShareSDK应用
+     
+     @param activePlatforms
+     使用的分享平台集合
+     @param importHandler (onImport)
+     导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作
+     @param configurationHandler (onConfiguration)
+     配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
+     */
+    [ShareSDK registerActivePlatforms:@[@(SSDKPlatformTypeSinaWeibo),
+                                        @(SSDKPlatformTypeQQ),
+                                        @(SSDKPlatformTypeWechat)]
+                             onImport:^(SSDKPlatformType platformType) {
+                                            switch (platformType) {
+                                                case SSDKPlatformTypeWechat:
+                                                    [ShareSDKConnector connectWeChat:[WXApi class]];
+                                                    break;
+                                                case SSDKPlatformTypeQQ:
+                                                    [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                                                    break;
+                                                case SSDKPlatformTypeSinaWeibo:
+                                                    [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                             } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+                                 switch (platformType) {
+                                     case SSDKPlatformTypeSinaWeibo:
+                                         //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                                         [appInfo SSDKSetupSinaWeiboByAppKey:@"195789847"
+                                                                   appSecret:@"1d3e2221a061bfdf2ee454b1d88f19d3"
+                                                                 redirectUri:@"https://api.weibo.com/oauth2/default.html"
+                                                                    authType:SSDKAuthTypeBoth];
+                                         break;
+                                    case SSDKPlatformTypeWechat:
+                                         [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
+                                                               appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                                         break;
+                                    case SSDKPlatformTypeQQ:
+                                         [appInfo SSDKSetupQQByAppId:@"1106675071"
+                                                              appKey:@"81H5M4YV78m9mOcO"
+                                                            authType:SSDKAuthTypeBoth];
+                                         break;
+                                     default:
+                                         break;
+                                 }
+                             }];
     
     return YES;
-}
-
-// U-Share 平台设置
-- (void)configUSharePlatforms {
-    /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
-    
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1106675071" appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-    
-    /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"195789847" appSecret:@"1d3e2221a061bfdf2ee454b1d88f19d3" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
 }
 
 

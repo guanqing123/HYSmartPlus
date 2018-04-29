@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App需要您的同意,才能访问相册</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
@@ -27,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxdc1e388c3822c80b</string>
+				<string>wx4868b35061f87885</string>
 			</array>
 		</dict>
 		<dict>
@@ -35,15 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1105487120</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>QQ41E46510</string>
+				<string>QQ41F6857F</string>
 			</array>
 		</dict>
 		<dict>
@@ -61,53 +51,32 @@
 	<array>
 		<string>wechat</string>
 		<string>weixin</string>
-		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
+		<string>sinaweibohd</string>
 		<string>sinaweibosso</string>
+		<string>sinaweibohdsso</string>
 		<string>weibosdk</string>
 		<string>weibosdk2.5</string>
-		<string>mqqapi</string>
-		<string>mqq</string>
+		<string>mqzoneopensdk</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqzoneopensdkapi19</string>
+		<string>mqzoneopensdkapiV2</string>
 		<string>mqqOpensdkSSoLogin</string>
-		<string>mqqconnect</string>
-		<string>mqqopensdkdataline</string>
-		<string>mqqopensdkgrouptribeshare</string>
-		<string>mqqopensdkfriend</string>
-		<string>mqqopensdkapi</string>
 		<string>mqqopensdkapiV2</string>
 		<string>mqqopensdkapiV3</string>
-		<string>mqqopensdkapiV4</string>
-		<string>mqzoneopensdk</string>
-		<string>wtloginmqq</string>
 		<string>wtloginmqq2</string>
+		<string>mqqapi</string>
 		<string>mqqwpa</string>
 		<string>mqzone</string>
-		<string>mqzonev2</string>
-		<string>mqzoneshare</string>
-		<string>wtloginqzone</string>
-		<string>mqzonewx</string>
-		<string>mqzoneopensdkapiV2</string>
-		<string>mqzoneopensdkapi19</string>
-		<string>mqzoneopensdkapi</string>
-		<string>mqqbrowser</string>
-		<string>mttbrowser</string>
-		<string>tim</string>
-		<string>timapi</string>
-		<string>timopensdkfriend</string>
-		<string>timwpa</string>
-		<string>timgamebindinggroup</string>
-		<string>timapiwallet</string>
-		<string>timOpensdkSSoLogin</string>
-		<string>wtlogintim</string>
-		<string>timopensdkgrouptribeshare</string>
-		<string>timopensdkapiV4</string>
-		<string>timgamebindinggroup</string>
-		<string>timopensdkdataline</string>
-		<string>wtlogintimV1</string>
-		<string>timapiV1</string>
+		<string>mqq</string>
+		<string>mqqopensdkapiV4</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MOBAppKey</key>
+	<string>25835991c9cd8</string>
+	<key>MOBAppSecret</key>
+	<string>bab36bbb424e18d3c59884bbdfccefc3</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

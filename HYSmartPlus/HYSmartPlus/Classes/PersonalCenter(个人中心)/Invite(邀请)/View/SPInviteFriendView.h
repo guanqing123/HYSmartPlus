@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UMShare/UMShare.h>
 
 @class SPInviteFriendView;
 
 @protocol SPInviteFriendViewDelegate <NSObject>
 
-- (void)inviteFriendView:(SPInviteFriendView *)inviteView platFromType:(UMSocialPlatformType)platfromType;
+/**
+ 分享
+
+ @param inviteView 当前二维码view
+ */
+- (void)inviteFriendViewDidShare:(SPInviteFriendView *)inviteView;
 
 @end
 

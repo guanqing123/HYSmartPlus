@@ -18,7 +18,7 @@
 @property (nonatomic, strong)  WKWebView *webView;
 /** 指示器 */
 @property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
-- (IBAction)shareQQ:(id)sender;
+- (IBAction)share;
 @end
 
 @implementation SPInviteFriendView
@@ -77,9 +77,10 @@
     [self.indicatorView stopAnimating];
 }
 
-- (IBAction)shareQQ:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(inviteFriendView:platFromType:)]) {
-        [self.delegate inviteFriendView:self platFromType:UMSocialPlatformType_QQ];
+//  分享
+- (IBAction)share {
+    if ([self.delegate respondsToSelector:@selector(inviteFriendViewDidShare:)]) {
+        [self.delegate inviteFriendViewDidShare:self];
     }
 }
 @end

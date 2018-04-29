@@ -24,7 +24,6 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-Mi-dx9" userLabel="prentView">
                     <rect key="frame" x="80" y="76" width="214" height="214"/>
-                    <color key="backgroundColor" red="0.21960784310000001" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="EJP-Mi-dx9" secondAttribute="height" multiplier="1:1" id="lBg-2h-AB7"/>
                     </constraints>
@@ -35,31 +34,41 @@
                     <color key="textColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5M-pb-4Hn">
-                    <rect key="frame" x="167" y="363" width="40" height="40"/>
-                    <color key="backgroundColor" red="0.18039215689999999" green="0.81568627449999997" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="48g-JR-Zqy"/>
-                        <constraint firstAttribute="width" constant="40" id="fxO-D8-2GJ"/>
-                    </constraints>
-                    <state key="normal" title="QQ"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BO-8M-CJ3">
+                    <rect key="frame" x="50" y="343" width="275" height="32"/>
+                    <state key="normal" title="分享" image="share">
+                        <color key="titleColor" red="0.92156862750000001" green="0.4039215686" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                            <color key="value" red="0.92156862745098034" green="0.40392156862745099" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="shareQQ:" destination="iN0-l3-epB" eventType="touchUpInside" id="4LH-UA-cRQ"/>
+                        <action selector="share" destination="iN0-l3-epB" eventType="touchUpInside" id="kvS-CM-5Qc"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="9BO-8M-CJ3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6b8-CV-4Zm"/>
                 <constraint firstAttribute="trailing" secondItem="sKe-gc-2Z1" secondAttribute="trailing" constant="20" id="AIl-gV-Nlj"/>
                 <constraint firstItem="mXa-ES-3rq" firstAttribute="top" secondItem="EJP-Mi-dx9" secondAttribute="bottom" constant="5" id="Aop-xT-bjM"/>
                 <constraint firstItem="EJP-Mi-dx9" firstAttribute="top" secondItem="sKe-gc-2Z1" secondAttribute="bottom" constant="25" id="B7b-pX-ecb"/>
+                <constraint firstItem="9BO-8M-CJ3" firstAttribute="top" secondItem="mXa-ES-3rq" secondAttribute="bottom" constant="30" id="BP0-tw-DdP"/>
                 <constraint firstItem="EJP-Mi-dx9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F6g-Ny-XM4"/>
                 <constraint firstItem="sKe-gc-2Z1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JDA-q2-UvZ"/>
-                <constraint firstItem="j5M-pb-4Hn" firstAttribute="top" secondItem="mXa-ES-3rq" secondAttribute="bottom" constant="50" id="V2k-Ra-utr"/>
                 <constraint firstItem="mXa-ES-3rq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WH3-JR-Nis"/>
                 <constraint firstItem="EJP-Mi-dx9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="bWL-zc-hbe"/>
+                <constraint firstItem="9BO-8M-CJ3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="c4c-jt-lNb"/>
                 <constraint firstItem="sKe-gc-2Z1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="kdt-wd-K5Y"/>
-                <constraint firstItem="j5M-pb-4Hn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rjT-GD-BLx"/>
             </constraints>
             <connections>
                 <outlet property="prentView" destination="EJP-Mi-dx9" id="73k-oj-BEV"/>
@@ -67,4 +76,7 @@
             <point key="canvasLocation" x="-282" y="-379"/>
         </view>
     </objects>
+    <resources>
+        <image name="share" width="32" height="32"/>
+    </resources>
 </document>
