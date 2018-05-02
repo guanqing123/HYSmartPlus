@@ -10,6 +10,8 @@
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
 		D600C6B42099AE3D00D3E917 /* SPSiteCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */; };
 		D600C6B52099AE3D00D3E917 /* SPSiteCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */; };
+		D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D607BF35209A0E42007825AF /* LxGridViewFlowLayout.m */; };
+		D607BF3A209A0E79007825AF /* TZTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D607BF38209A0E79007825AF /* TZTestCell.m */; };
 		D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */; };
 		D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */; };
 		D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */; };
@@ -135,6 +137,10 @@
 		D600C6B12099AE3D00D3E917 /* SPSiteCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSiteCreateViewController.h; sourceTree = "<group>"; };
 		D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSiteCreateViewController.m; sourceTree = "<group>"; };
 		D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSiteCreateViewController.xib; sourceTree = "<group>"; };
+		D607BF35209A0E42007825AF /* LxGridViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LxGridViewFlowLayout.m; sourceTree = "<group>"; };
+		D607BF36209A0E43007825AF /* LxGridViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxGridViewFlowLayout.h; sourceTree = "<group>"; };
+		D607BF38209A0E79007825AF /* TZTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZTestCell.m; sourceTree = "<group>"; };
+		D607BF39209A0E79007825AF /* TZTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZTestCell.h; sourceTree = "<group>"; };
 		D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
 		D60AD7B2204F9787009E0B25 /* SPAccountDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAccountDetail.h; sourceTree = "<group>"; };
 		D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAccountDetail.m; sourceTree = "<group>"; };
@@ -819,6 +825,10 @@
 		D617AA882098011E009A00E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D607BF39209A0E79007825AF /* TZTestCell.h */,
+				D607BF38209A0E79007825AF /* TZTestCell.m */,
+				D607BF36209A0E43007825AF /* LxGridViewFlowLayout.h */,
+				D607BF35209A0E42007825AF /* LxGridViewFlowLayout.m */,
 				D617AA8D209806BE009A00E1 /* SPSearchBar.h */,
 				D617AA8E209806BE009A00E1 /* SPSearchBar.m */,
 			);
@@ -1312,6 +1322,7 @@
 				D62444C32091A20800A89DF4 /* SPProblemParam.m in Sources */,
 				D64C4340208DD38F000FF373 /* SPCurrentGradeInfo.m in Sources */,
 				D631FCAD204E8F5E00892D6C /* SPRegisterParam.m in Sources */,
+				D607BF3A209A0E79007825AF /* TZTestCell.m in Sources */,
 				D620350B2058F38F00F39847 /* SPIntegralTableViewCell.m in Sources */,
 				D6281642205122AF00892297 /* SPForgetPwdViewController.m in Sources */,
 				D620B5332091B8EF003ABFC4 /* SPProblem.m in Sources */,
@@ -1377,6 +1388,7 @@
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
 				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
+				D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
