@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
+		D600C6B42099AE3D00D3E917 /* SPSiteCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */; };
+		D600C6B52099AE3D00D3E917 /* SPSiteCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */; };
 		D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */; };
 		D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */; };
 		D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */; };
@@ -64,6 +66,8 @@
 		D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D28204596D100767C00 /* SPNumericalScrollView.m */; };
 		D6164D42204596D200767C00 /* SPZuoWenRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */; };
 		D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D46204597A700767C00 /* SPHomeViewController.m */; };
+		D617AA8C20980150009A00E1 /* SPConstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8B20980150009A00E1 /* SPConstructionViewController.m */; };
+		D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8E209806BE009A00E1 /* SPSearchBar.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
 		D6184AF52046D2DB00616266 /* SPCodeLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AF42046D2DB00616266 /* SPCodeLoginView.m */; };
 		D6184AF82046D91800616266 /* SPPasswordLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184AF72046D91800616266 /* SPPasswordLoginView.m */; };
@@ -128,6 +132,9 @@
 /* Begin PBXFileReference section */
 		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
+		D600C6B12099AE3D00D3E917 /* SPSiteCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSiteCreateViewController.h; sourceTree = "<group>"; };
+		D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSiteCreateViewController.m; sourceTree = "<group>"; };
+		D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSiteCreateViewController.xib; sourceTree = "<group>"; };
 		D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
 		D60AD7B2204F9787009E0B25 /* SPAccountDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAccountDetail.h; sourceTree = "<group>"; };
 		D60AD7B3204F9787009E0B25 /* SPAccountDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAccountDetail.m; sourceTree = "<group>"; };
@@ -234,6 +241,10 @@
 		D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPZuoWenRightButton.m; sourceTree = "<group>"; };
 		D6164D45204597A700767C00 /* SPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHomeViewController.h; sourceTree = "<group>"; };
 		D6164D46204597A700767C00 /* SPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHomeViewController.m; sourceTree = "<group>"; };
+		D617AA8A20980150009A00E1 /* SPConstructionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConstructionViewController.h; sourceTree = "<group>"; };
+		D617AA8B20980150009A00E1 /* SPConstructionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConstructionViewController.m; sourceTree = "<group>"; };
+		D617AA8D209806BE009A00E1 /* SPSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSearchBar.h; sourceTree = "<group>"; };
+		D617AA8E209806BE009A00E1 /* SPSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSearchBar.m; sourceTree = "<group>"; };
 		D617DCA11F67B81100DB6FEB /* SPConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConsts.h; sourceTree = "<group>"; };
 		D617DCA21F67B81100DB6FEB /* SPConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPConsts.m; sourceTree = "<group>"; };
 		D6184AF32046D2DB00616266 /* SPCodeLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCodeLoginView.h; sourceTree = "<group>"; };
@@ -775,6 +786,52 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D617AA85209800DC009A00E1 /* Construction(我的工地) */ = {
+			isa = PBXGroup;
+			children = (
+				D617AA892098011E009A00E1 /* Model */,
+				D617AA882098011E009A00E1 /* View */,
+				D617AA872098011E009A00E1 /* Tool */,
+				D617AA862098011D009A00E1 /* Controller */,
+			);
+			path = "Construction(我的工地)";
+			sourceTree = "<group>";
+		};
+		D617AA862098011D009A00E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D617AA8A20980150009A00E1 /* SPConstructionViewController.h */,
+				D617AA8B20980150009A00E1 /* SPConstructionViewController.m */,
+				D600C6B12099AE3D00D3E917 /* SPSiteCreateViewController.h */,
+				D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */,
+				D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D617AA872098011E009A00E1 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		D617AA882098011E009A00E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D617AA8D209806BE009A00E1 /* SPSearchBar.h */,
+				D617AA8E209806BE009A00E1 /* SPSearchBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D617AA892098011E009A00E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D617DCA01F67B7F100DB6FEB /* Const(常量) */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +847,7 @@
 				D613E7D01F66559E00D62B89 /* Main(主要) */,
 				D6164D432045975700767C00 /* Home(首页) */,
 				D6164CF2204596D100767C00 /* Mall(积分商城) */,
+				D617AA85209800DC009A00E1 /* Construction(我的工地) */,
 				D60EC4C51FC6770D00F78F31 /* Classify(分类) */,
 				D68B06202092E1B90000434F /* Discount(优惠分享) */,
 				D633233A1FC7AFF6003511EA /* PersonalCenter(个人中心) */,
@@ -1183,6 +1241,7 @@
 				D60EC4DF1FC6ACF300F78F31 /* ClassiftyGoods01.plist in Resources */,
 				D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */,
 				D620350C2058F38F00F39847 /* SPIntegralTableViewCell.xib in Resources */,
+				D600C6B52099AE3D00D3E917 /* SPSiteCreateViewController.xib in Resources */,
 				D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,9 +1356,11 @@
 				D6164D38204596D200767C00 /* SPOverFootView.m in Sources */,
 				D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */,
 				D63200C32092B2000057B969 /* WCCommonProblemCell.m in Sources */,
+				D617AA8C20980150009A00E1 /* SPConstructionViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */,
+				D600C6B42099AE3D00D3E917 /* SPSiteCreateViewController.m in Sources */,
 				D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */,
 				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
 				D62816462051315600892297 /* SPModifyPwdParam.m in Sources */,
@@ -1327,6 +1388,7 @@
 				D63200C52092B2000057B969 /* WCCommonProblemHeaderView.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */,
+				D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */,
 				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,
 				D6184AF82046D91800616266 /* SPPasswordLoginView.m in Sources */,
