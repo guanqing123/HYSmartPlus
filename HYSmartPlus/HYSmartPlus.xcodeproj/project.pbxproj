@@ -129,6 +129,7 @@
 		D6CD6640205251F80072A1D3 /* SPMyCenterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CD663F205251F80072A1D3 /* SPMyCenterHeaderView.xib */; };
 		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
+		D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -359,6 +360,8 @@
 		D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCenterTopToolView.m; sourceTree = "<group>"; };
 		D6F0F45E1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SPBarButtonItem.h"; sourceTree = "<group>"; };
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
+		D6F65B84209B5CF10057EC78 /* SPChooseLocationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPChooseLocationView.h; sourceTree = "<group>"; };
+		D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPChooseLocationView.m; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -831,6 +834,8 @@
 				D607BF35209A0E42007825AF /* LxGridViewFlowLayout.m */,
 				D617AA8D209806BE009A00E1 /* SPSearchBar.h */,
 				D617AA8E209806BE009A00E1 /* SPSearchBar.m */,
+				D6F65B84209B5CF10057EC78 /* SPChooseLocationView.h */,
+				D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1388,6 +1393,7 @@
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
 				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
+				D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */,
 				D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
@@ -1538,6 +1544,7 @@
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1556,6 +1563,7 @@
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

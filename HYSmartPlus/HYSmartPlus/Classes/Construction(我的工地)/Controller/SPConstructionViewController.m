@@ -33,13 +33,6 @@
 - (void)setupNavBar {
     self.view.backgroundColor = SPBGColor;
     
-    // 设置view不要延伸
-    if( ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0)) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.modalPresentationCapturesStatusBarAppearance = NO;
-    }
-    
     // rightItem
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"add"] withHighLightedImage:[UIImage imageNamed:@"add"] target:self action:@selector(add)];
 }
@@ -47,6 +40,7 @@
 #pragma mark - 创建工地
 - (void)add {
     SPSiteCreateViewController *siteVc = [[SPSiteCreateViewController alloc] init];
+    siteVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:siteVc animated:YES];
 }
 
@@ -54,7 +48,7 @@
 - (void)setupSearchBar {
     UIView *searchView = [[UIView alloc] init];
     searchView.backgroundColor = [UIColor whiteColor];
-    searchView.frame = CGRectMake(0, 0, ScreenW, searchViewH);
+    searchView.frame = CGRectMake(0, SPTopNavH, ScreenW, searchViewH);
     [self.view addSubview:searchView];
     
     SPSearchBar *searchBar = [SPSearchBar searchBar];

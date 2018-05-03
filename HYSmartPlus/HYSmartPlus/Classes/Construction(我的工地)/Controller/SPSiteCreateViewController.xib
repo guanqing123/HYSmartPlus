@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SPSiteCreateViewController">
             <connections>
+                <outlet property="headerView" destination="qN3-EC-IGP" id="I8z-gn-oXC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN3-EC-IGP">
-                    <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                     <subviews>
                         <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35s-CU-n9E" userLabel="firstLine">
                             <rect key="frame" x="15" y="44" width="360" height="1"/>
@@ -98,6 +98,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-7b-AhR" userLabel="地址点击按钮">
                             <rect key="frame" x="96.5" y="90" width="278.5" height="44"/>
+                            <connections>
+                                <action selector="selectAddress" destination="-1" eventType="touchUpInside" id="HHG-iQ-FfW"/>
+                            </connections>
                         </button>
                         <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtI-sL-hxI" userLabel="fourthLine">
                             <rect key="frame" x="15" y="179" width="360" height="1"/>
@@ -143,13 +146,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-DJ-rVt">
-                            <rect key="frame" x="15" y="249" width="360" height="1"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="8OF-HP-Ts8"/>
-                            </constraints>
-                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片上传：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geU-q8-zX6">
                             <rect key="frame" x="15" y="225" width="71.5" height="25"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -187,7 +183,6 @@
                         <constraint firstItem="TG6-so-zd0" firstAttribute="top" secondItem="KtI-sL-hxI" secondAttribute="bottom" constant="44" id="TL5-NO-zZq"/>
                         <constraint firstItem="Nfy-lZ-7bs" firstAttribute="height" secondItem="35s-CU-n9E" secondAttribute="height" id="U9t-U0-cFh"/>
                         <constraint firstItem="KtI-sL-hxI" firstAttribute="top" secondItem="dv8-DM-5Sn" secondAttribute="bottom" constant="44" id="UBQ-hH-UnR"/>
-                        <constraint firstItem="ouz-DJ-rVt" firstAttribute="leading" secondItem="qN3-EC-IGP" secondAttribute="leading" constant="15" id="WgR-hq-23U"/>
                         <constraint firstAttribute="trailing" secondItem="35s-CU-n9E" secondAttribute="trailing" id="Z7R-eh-zPw"/>
                         <constraint firstItem="scO-DE-g6i" firstAttribute="trailing" secondItem="sW0-bz-zQJ" secondAttribute="trailing" id="bV8-rD-biE"/>
                         <constraint firstItem="4MK-Lv-Buh" firstAttribute="centerY" secondItem="5j4-bE-Bnt" secondAttribute="centerY" id="bip-wl-nif"/>
@@ -208,9 +203,7 @@
                         <constraint firstItem="KtI-sL-hxI" firstAttribute="trailing" secondItem="dv8-DM-5Sn" secondAttribute="trailing" id="rF9-yW-nXf"/>
                         <constraint firstItem="Vgb-1A-7VA" firstAttribute="leading" secondItem="5j4-bE-Bnt" secondAttribute="leading" id="rRc-0G-VoN"/>
                         <constraint firstItem="scO-DE-g6i" firstAttribute="top" secondItem="35s-CU-n9E" secondAttribute="bottom" id="sKE-Qp-rHQ"/>
-                        <constraint firstItem="ouz-DJ-rVt" firstAttribute="trailing" secondItem="TG6-so-zd0" secondAttribute="trailing" id="t9Q-bH-jpJ"/>
                         <constraint firstAttribute="trailing" secondItem="4MK-Lv-Buh" secondAttribute="trailing" constant="10" id="tbV-51-llL"/>
-                        <constraint firstAttribute="bottom" secondItem="ouz-DJ-rVt" secondAttribute="bottom" id="u3f-oh-4RB"/>
                         <constraint firstItem="dv8-DM-5Sn" firstAttribute="trailing" secondItem="Nfy-lZ-7bs" secondAttribute="trailing" id="uDk-4N-QKh"/>
                         <constraint firstItem="5j4-bE-Bnt" firstAttribute="top" secondItem="Nfy-lZ-7bs" secondAttribute="bottom" id="ug3-Ck-aNG"/>
                         <constraint firstAttribute="trailing" secondItem="4Gd-7b-AhR" secondAttribute="trailing" id="uuA-ZB-JBq"/>
@@ -225,12 +218,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="qN3-EC-IGP" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="BOy-Am-wV1"/>
-                <constraint firstItem="qN3-EC-IGP" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="dxc-YG-Dcf"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="qN3-EC-IGP" secondAttribute="trailing" id="ss9-ph-CbV"/>
+                <constraint firstItem="qN3-EC-IGP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BOy-Am-wV1"/>
+                <constraint firstItem="qN3-EC-IGP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dxc-YG-Dcf"/>
+                <constraint firstAttribute="trailing" secondItem="qN3-EC-IGP" secondAttribute="trailing" id="ss9-ph-CbV"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="-77" y="38"/>
         </view>
     </objects>
 </document>
