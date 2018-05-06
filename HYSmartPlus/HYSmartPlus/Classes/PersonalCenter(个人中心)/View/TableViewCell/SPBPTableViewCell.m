@@ -25,7 +25,7 @@
     _result = result;
     for (SPCurrentGradeInfo *info in result.list) {
         if (![info.khdm isEqualToString:@"00000000"]) {
-            self.bpIntegralLabel.text = [info.currentIntegral description];
+            self.bpIntegralLabel.text = [NSString stringWithFormat:@"%d",info.currentIntegral];
             break;
         }
     }

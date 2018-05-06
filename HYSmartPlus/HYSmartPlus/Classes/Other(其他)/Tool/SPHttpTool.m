@@ -23,4 +23,28 @@
     }];
 }
 
++ (void)postWithURL:(NSString *)url params:(NSDictionary *)params formDataArray:(NSArray *)formDataArray success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        int i = 0;
+        for (UIImage *image in formDataArray) {
+            i++;
+            NSData *data = UIImageJPEGRepresentation(image, 0.1);
+            NSString *fileName = [NSString stringWithFormat:@"fileName_%d.jpg",i];
+            [formData appendPartWithFileData:data name:@"files" fileName:fileName mimeType:@"image/jpeg"];
+        }
+    } error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            failure(error);
+        }else{
+            success(responseObject);
+        }
+    }];
+    
+    [uploadTask resume];
+}
+
 @end

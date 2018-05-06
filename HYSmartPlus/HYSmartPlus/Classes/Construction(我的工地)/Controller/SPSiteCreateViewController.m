@@ -13,8 +13,12 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "LxGridViewFlowLayout.h"
 #import "SPChooseLocationView.h"
+#import "SPCitiesDataTool.h"
+#import "SPConstructionTool.h"
+#import "SPAccountTool.h"
+#import "SPLoginResult.h"
 
-@interface SPSiteCreateViewController ()<TZImagePickerControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
+@interface SPSiteCreateViewController ()<TZImagePickerControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SPChooseLocationViewDelegate,UIGestureRecognizerDelegate> {
     NSMutableArray *_selectedPhotos;
     NSMutableArray *_selectedAssets;
     BOOL _isSelectOriginalPhoto;
@@ -47,6 +51,11 @@
 //  省／市／区
 @property (nonatomic, strong)  UIView *cover;
 @property (nonatomic, strong)  SPChooseLocationView *chooseLocationView;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *userTel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UITextField *detailAddress;
+@property (weak, nonatomic) IBOutlet UITextField *comment;
 
 - (IBAction)selectAddress;
 
@@ -86,6 +95,8 @@
     [self setupNavBar];
     // 2.CollectionView
     [self setupCollectionView];
+    // 3.cover
+    [self setupCover];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -127,7 +138,44 @@
 }
 
 - (void)save{
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.userName.text length] < 1) {
+        [MBProgressHUD showMessage:@"请填写业主姓名" toView:self.view];
+        return;
+    }
+    if ([self.userTel.text length] < 1) {
+        [MBProgressHUD showMessage:@"请填写业主电话" toView:self.view];
+        return;
+    }
+    if ([self.addressLabel.text length] < 1) {
+        [MBProgressHUD showMessage:@"请选择业主地区" toView:self.view];
+        return;
+    }
+    if ([self.detailAddress.text length] < 1) {
+        [MBProgressHUD showMessage:@"请填写详细地址" toView:self.view];
+        return;
+    }
+    SPSiteCreateParam *param = [[SPSiteCreateParam alloc] init];
+    param.uid = [SPAccountTool loginResult].userbase.uid;
+    param.userName = self.userName.text;
+    param.userTel  = self.userTel.text;
+    param.address  = [NSString stringWithFormat:@"%@%@",self.addressLabel.text,self.detailAddress.text];
+    param.comment  = self.comment.text;
+    
+    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(id josn) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
+    
+    //[self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - setupCover
+- (void)setupCover {
+    // 初始化数据
+    [[SPCitiesDataTool sharedManager] requestGetData];
+    // 省市区级联
+    [self.view addSubview:self.cover];
 }
 
 #pragma mark - collectionView
@@ -154,7 +202,7 @@
     TZTestCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TZTestCell" forIndexPath:indexPath];
     cell.videoImageView.hidden = YES;
     if (indexPath.row == _selectedPhotos.count) {
-        cell.imageView.image = [UIImage imageNamed:@"AlbumAddBtn.png"];
+        cell.imageView.image = [UIImage imageNamed:@"addImage"];
         cell.deleteBtn.hidden = YES;
         cell.gifLable.hidden = YES;
     } else {
@@ -558,26 +606,56 @@
     WEAKSELF
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         weakSelf.cover.hidden = !weakSelf.cover.hidden;
+        weakSelf.chooseLocationView.hidden = weakSelf.cover.hidden;
     });
 }
 
 - (UIView *)cover {
     if (!_cover) {
         _cover = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//        _cover.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-        _cover.backgroundColor = [UIColor redColor];
+        _cover.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
         [_cover addSubview:self.chooseLocationView];
         
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCover:)];
+        [_cover addGestureRecognizer:tap];
+        tap.delegate = self;
         _cover.hidden = YES;
     }
     return _cover;
 }
 
+// 在 _chooseLocationView 内就不要隐藏cover 视图
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    
+    CGPoint point = [gestureRecognizer locationInView:gestureRecognizer.view];
+    if (CGRectContainsPoint(_chooseLocationView.frame, point)){
+        return NO;
+    }
+    return YES;
+}
+
+- (void)tapCover:(UITapGestureRecognizer *)tap{
+    
+    if ([_chooseLocationView.delegate respondsToSelector:@selector(chooseLocationView:address:)]) {
+        [_chooseLocationView.delegate chooseLocationView:_chooseLocationView address:_chooseLocationView.address];
+    }
+}
+
 - (SPChooseLocationView *)chooseLocationView {
     if (!_chooseLocationView) {
         _chooseLocationView = [[SPChooseLocationView alloc] initWithFrame:CGRectMake(0, ScreenH - 350, ScreenW, 350)];
+        _chooseLocationView.delegate = self;
     }
     return _chooseLocationView;
+}
+
+#pragma mark - SPChooseLocationViewDelegate
+- (void)chooseLocationView:(SPChooseLocationView *)chooseLocationView address:(NSString *)address {
+    WEAKSELF
+    [UIView animateWithDuration:0.25 animations:^{
+        weakSelf.addressLabel.text = address;
+        weakSelf.cover.hidden = YES;
+    }];
 }
 
 @end

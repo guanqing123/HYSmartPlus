@@ -10,13 +10,13 @@
 
 @interface SPNextGradeInfo : NSObject
 
-@property (nonatomic, assign) NSNumber *grade;
+@property (nonatomic, assign) NSInteger grade;
 @property (nonatomic, copy) NSString *gradeName;
-@property (nonatomic, assign) NSNumber *gtype;
-@property (nonatomic, assign) NSNumber *idStr;
-@property (nonatomic, assign) NSNumber *integral;
-@property (nonatomic, assign) NSNumber *isDefault;
-@property (nonatomic, assign) NSNumber *status;
+@property (nonatomic, assign) NSInteger gtype;
+@property (nonatomic, assign) NSInteger idStr;
+@property (nonatomic, assign) NSInteger integral;
+@property (nonatomic, assign) NSInteger isDefault;
+@property (nonatomic, assign) NSInteger status;
 @property (nonatomic, copy) NSString *weighing;
 
 @end

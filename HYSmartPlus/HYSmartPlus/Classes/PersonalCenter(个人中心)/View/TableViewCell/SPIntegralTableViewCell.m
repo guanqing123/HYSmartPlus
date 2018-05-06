@@ -28,20 +28,20 @@
 
 - (void)setResult:(SPPersonScoreResult *)result {
     _result = result;
-    NSNumber *current = [[NSNumber alloc] init];
-    NSNumber *next = [[NSNumber alloc] init];
+    NSInteger current = 0;
+    NSInteger next = 0;
     for (SPCurrentGradeInfo *info in result.list) {
         if ([info.khdm isEqualToString:@"00000000"]) {
             self.gradeNameLabel.text = info.gradeName;
-            self.currentIntegralLabel.text = [info.currentIntegral description];
+            self.currentIntegralLabel.text = [NSString stringWithFormat:@"%d",info.currentIntegral];
             current = info.currentIntegral;
             break;
         }
     }
-    self.nextIntegralLabel.text = [result.nextGradeInfo.integral description];
+    self.nextIntegralLabel.text = [NSString stringWithFormat:@"%d",result.nextGradeInfo.integral];
     next = result.nextGradeInfo.integral;
-    CGFloat scale = next == 0 ? 0 : [current floatValue]/[next floatValue];
-    self.upgradeIntegralLabel.text = [NSString stringWithFormat:@"%ld",[next integerValue] - [current integerValue]];
+    CGFloat scale = next == 0 ? 0 : (float) current / next;
+    self.upgradeIntegralLabel.text = [NSString stringWithFormat:@"%d",next - current];
     [self.progress setProgress:scale animated:YES];
 }
 

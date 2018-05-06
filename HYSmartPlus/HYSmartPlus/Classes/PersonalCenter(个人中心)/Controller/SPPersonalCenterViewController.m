@@ -174,10 +174,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 - (UIImageView *)headerBgImageView {
     if (!_headerBgImageView) {
         _headerBgImageView = [[UIImageView alloc] init];
-        
         NSInteger armNum = [SPSpeedy dc_getRandomNumber:1 to:9];
         [_headerBgImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"mine_main_bg_%zd",armNum]]];
-        [_headerBgImageView setBackgroundColor:[UIColor greenColor]];
         [_headerBgImageView setContentMode:UIViewContentModeScaleAspectFill];
         [_headerBgImageView setClipsToBounds:YES];
     }

@@ -11,7 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SPSiteCreateViewController">
             <connections>
+                <outlet property="addressLabel" destination="hxK-qz-6wm" id="zfq-ZL-rK2"/>
+                <outlet property="comment" destination="mwa-Ik-wZI" id="rBQ-5E-2IP"/>
+                <outlet property="detailAddress" destination="stH-PQ-FtW" id="NhQ-ou-YIJ"/>
                 <outlet property="headerView" destination="qN3-EC-IGP" id="I8z-gn-oXC"/>
+                <outlet property="userName" destination="m0O-26-f0F" id="c9K-0v-qar"/>
+                <outlet property="userTel" destination="8Kc-J0-2Vw" id="nyi-VB-xsL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

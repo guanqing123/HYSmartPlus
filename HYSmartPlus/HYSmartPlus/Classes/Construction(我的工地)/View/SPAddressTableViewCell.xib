@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SPAddressTableViewCell" id="KGk-i7-Jjw" customClass="SPAddressTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMo-jU-7G0" userLabel="Address Label">
+                        <rect key="frame" x="24" y="13.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_choose" translatesAutoresizingMaskIntoConstraints="NO" id="xI9-Sd-gwK">
+                        <rect key="frame" x="69.5" y="17" width="14" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="Auh-JO-ezC"/>
+                            <constraint firstAttribute="height" constant="10" id="wmA-XH-oHt"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dMo-jU-7G0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Iiz-gq-e8A"/>
+                    <constraint firstItem="dMo-jU-7G0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NAF-9v-vil"/>
+                    <constraint firstItem="xI9-Sd-gwK" firstAttribute="leading" secondItem="dMo-jU-7G0" secondAttribute="trailing" constant="8" id="QGM-Jd-y77"/>
+                    <constraint firstItem="xI9-Sd-gwK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SeM-Qb-2Uj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="dMo-jU-7G0" id="2A9-7v-GR4"/>
+                <outlet property="selectFlag" destination="xI9-Sd-gwK" id="rCu-c2-kBD"/>
+            </connections>
+            <point key="canvasLocation" x="-310" y="-106"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image_choose" width="15" height="15"/>
+    </resources>
+</document>
