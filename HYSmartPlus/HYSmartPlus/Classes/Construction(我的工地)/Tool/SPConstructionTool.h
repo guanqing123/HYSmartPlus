@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "SPSiteCreateParam.h"
+#import "SPSiteCreateResult.h"
 
 @interface SPConstructionTool : NSObject
 
-+ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void(^)(id josn))success fail:(void(^)(NSError *error))fail;
++ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void(^)(SPSiteCreateResult *result))success fail:(void(^)(NSError *error))failure;
 
 @end

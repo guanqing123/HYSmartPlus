@@ -12,16 +12,17 @@
 
 @implementation SPConstructionTool
 
-+ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void (^)(id))success fail:(void (^)(NSError *))fail {
++ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void (^)(SPSiteCreateResult *))success fail:(void (^)(NSError *))failure {
     
-    NSString *urlStr = @"http://wxdev.hongyancloud.com/wxDev/file/saveDropowerAndDetails";
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/saveDropowerAndDetails";
     
     NSDictionary *parameter = [param mj_keyValues];
     
     [SPHttpTool postWithURL:urlStr params:parameter formDataArray:imageArray success:^(id json) {
-        id i = json;
+        SPSiteCreateResult *result = [SPSiteCreateResult mj_objectWithKeyValues:json];
+        success(result);
     } failure:^(NSError *error) {
-        id e = error;
+        failure(error);
     }];
     
 }

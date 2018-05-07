@@ -160,14 +160,22 @@
     param.userTel  = self.userTel.text;
     param.address  = [NSString stringWithFormat:@"%@%@",self.addressLabel.text,self.detailAddress.text];
     param.comment  = self.comment.text;
-    
-    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(id josn) {
-        
+    [MBProgressHUD showWaitMessage:@"保存中,请耐心等待..." toView:self.view];
+    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(SPSiteCreateResult *result) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if ([result.code isEqualToString:@"00000"]) {
+            [MBProgressHUD showSuccess:@"保存成功" toView:self.view];
+            WEAKSELF
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            });
+        }else{
+            [MBProgressHUD showError:result.msg toView:self.view];
+        }
     } fail:^(NSError *error) {
-        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
     }];
-    
-    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - setupCover
