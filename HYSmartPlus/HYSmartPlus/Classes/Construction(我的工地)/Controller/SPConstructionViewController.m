@@ -115,8 +115,9 @@
     
     if (@available(iOS 11.0,*)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
     }
 }
 
@@ -157,6 +158,7 @@
     fenyeParam.pageSize = self.pageSize;
     [SPConstructionTool getDropowerAndDetailsFenye:fenyeParam success:^(SPDropowerFenyeResult *fenyeResult) {
         if (![fenyeResult.code isEqualToString:@"00000"]) {
+            [self.tableView.mj_footer endRefreshing];
             [MBProgressHUD showError:fenyeResult.msg toView:self.view];
         }else{
             [self.dropowerArray addObjectsFromArray:fenyeResult.dropowerFenye.list];

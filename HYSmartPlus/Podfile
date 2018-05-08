@@ -24,6 +24,9 @@ target 'HYSmartPlus' do
   
   pod 'TZImagePickerController'
   
+  #依赖 MBProgressHUD SDWebImage DACircularProgress FLAnimatedImage
+  pod 'PYPhotoBrowser'
+  
   pod 'IQKeyboardManager'
   
   # 主模块(必须)

@@ -20,10 +20,9 @@
     // Initialization code
 }
 
-
 - (void)setDropowerDetail:(SPDropowerDetail *)dropowerDetail {
     _dropowerDetail = dropowerDetail;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:dropowerDetail.fileRealPath] placeholderImage:nil];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:dropowerDetail.fileRealPath] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
 }
 
 @end

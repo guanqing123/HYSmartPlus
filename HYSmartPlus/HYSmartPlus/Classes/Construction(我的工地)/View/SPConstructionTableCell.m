@@ -10,6 +10,7 @@
 #import "SPTopTextView.h"
 #import "SPMiddleCollectionViewCell.h"
 #import "SPBottomToolBarView.h"
+#import <PYPhotoBrowser.h>
 
 @interface SPConstructionTableCell() <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) SPTopTextView  *topTextView;
 
 @property (nonatomic, strong) SPBottomToolBarView  *bottomToolBarView;
+
+@property (nonatomic, strong)  NSMutableArray *imageViews;
 
 @end
 
@@ -102,8 +105,23 @@ static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCe
     [super setFrame:frame];
 }
 
+- (NSMutableArray *)imageViews {
+    if (!_imageViews) {
+        _imageViews = [NSMutableArray array];
+    }
+    return _imageViews;
+}
+
 - (void)setDropower:(SPDropower *)dropower {
     _dropower = dropower;
+    
+    NSMutableArray *imageViews = [NSMutableArray array];
+    for (SPDropowerDetail *detail in dropower.children) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage im]];
+        [imageViews addObject:imageView];
+    }
+    [self.imageViews addObjectsFromArray:imageViews];
+    
     // 刷新头部信息
     self.topTextView.dropower = dropower;
     // 刷新图片信息
@@ -122,6 +140,16 @@ static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCe
     cell.dropowerDetail = dropowerDetail;
     
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PYPhotoBrowseView *browser = [[PYPhotoBrowseView alloc] init];
+    
+    browser.sourceImgageViews = self.imageViews;
+    browser.currentIndex = indexPath.row;
+    
+    [browser show];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

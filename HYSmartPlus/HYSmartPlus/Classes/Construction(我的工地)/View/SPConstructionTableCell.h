@@ -11,7 +11,7 @@
 
 #define column 3
 #define margin 5
-#define topTextViewH 146
+#define topTextViewH 120
 #define bottomToolBarViewH 30
 
 @interface SPConstructionTableCell : UITableViewCell
