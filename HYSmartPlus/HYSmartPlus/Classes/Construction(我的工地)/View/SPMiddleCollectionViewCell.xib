@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SPMiddleCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slideshow02" translatesAutoresizingMaskIntoConstraints="NO" id="3oF-XF-GXF">
+                        <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3oF-XF-GXF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0fZ-jQ-urT"/>
+                <constraint firstAttribute="bottom" secondItem="3oF-XF-GXF" secondAttribute="bottom" id="16o-ZP-U0p"/>
+                <constraint firstItem="3oF-XF-GXF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DLH-mh-0iW"/>
+                <constraint firstAttribute="trailing" secondItem="3oF-XF-GXF" secondAttribute="trailing" id="osl-vn-eAc"/>
+            </constraints>
+            <size key="customSize" width="107" height="105"/>
+            <connections>
+                <outlet property="imageView" destination="3oF-XF-GXF" id="w11-ER-6Zc"/>
+            </connections>
+            <point key="canvasLocation" x="-260" y="56"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="slideshow02" width="385" height="192"/>
+    </resources>
+</document>

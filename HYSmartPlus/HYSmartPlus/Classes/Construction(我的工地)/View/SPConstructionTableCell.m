@@ -6,20 +6,22 @@
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#define topColorViewH 30
-
 #import "SPConstructionTableCell.h"
-#import "SPMiddleTextView.h"
+#import "SPTopTextView.h"
+#import "SPMiddleCollectionViewCell.h"
+#import "SPBottomToolBarView.h"
 
 @interface SPConstructionTableCell() <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong)  UICollectionView *collectionView;
 
-@property (nonatomic, weak) SPMiddleTextView  *middleTextView;
+@property (nonatomic, strong) SPTopTextView  *topTextView;
+
+@property (nonatomic, strong) SPBottomToolBarView  *bottomToolBarView;
 
 @end
 
-static NSString *const SPConstructionCollectionViewCellID = @"SPConstructionCollectionViewCellID";
+static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCellID";
 
 @implementation SPConstructionTableCell
 
@@ -36,52 +38,60 @@ static NSString *const SPConstructionCollectionViewCellID = @"SPConstructionColl
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // 0.非常重要
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = RGB(226, 226, 226);
-        // 1.添加文本view
-        [self setupMiddleTextView];
+        self.backgroundColor = RGB(244, 244, 244);
         
-        [self setupContentPhotoView];
+        // 1.添加文本view
+        [self.contentView addSubview:self.topTextView];
+        
+        // 2.添加中间的collectionView
+        [self.contentView addSubview:self.collectionView];
+        
+        // 3.设置工具条
+        [self.contentView addSubview:self.bottomToolBarView];
     }
     return self;
 }
 
-- (void)setupMiddleTextView {
-    [self.contentView addSubview:self.middleTextView];
-}
-
-- (SPMiddleTextView *)middleTextView {
-    if (!_middleTextView) {
-        _middleTextView = [SPMiddleTextView middleTextView];
-        _middleTextView.backgroundColor = [UIColor whiteColor];
+- (SPTopTextView *)topTextView {
+    if (!_topTextView) {
+        _topTextView = [SPTopTextView topTextView];
     }
-    return _middleTextView;
-}
-
-- (void)setupContentPhotoView {
-    [self.contentView addSubview:self.collectionView];
+    return _topTextView;
 }
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.minimumLineSpacing = layout.minimumInteritemSpacing = 0;
+        layout.minimumLineSpacing = layout.minimumInteritemSpacing = margin;
+        layout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = RGB(226, 226, 226);
+        _collectionView.backgroundColor = [UIColor whiteColor];
         
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:SPConstructionCollectionViewCellID];
+        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SPMiddleCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:SPMiddleCollectionViewCellID];
     }
     return _collectionView;
+}
+
+- (SPBottomToolBarView *)bottomToolBarView {
+    if (!_bottomToolBarView) {
+        _bottomToolBarView = [[SPBottomToolBarView alloc] init];
+    }
+    return _bottomToolBarView;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     CGFloat parentW = self.frame.size.width;
-    self.middleTextView.frame = CGRectMake(0, 0, parentW, 114);
+    self.topTextView.frame = CGRectMake(0, 0, parentW, topTextViewH);
+    
+    self.collectionView.frame = CGRectMake(0, self.topTextView.dc_bottom, parentW, (parentW - (column + 1) * margin)/column + 2 * margin);
+    
+    self.bottomToolBarView.frame = CGRectMake(0, self.collectionView.dc_bottom + 2, parentW, bottomToolBarViewH);
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -92,28 +102,31 @@ static NSString *const SPConstructionCollectionViewCellID = @"SPConstructionColl
     [super setFrame:frame];
 }
 
+- (void)setDropower:(SPDropower *)dropower {
+    _dropower = dropower;
+    // 刷新头部信息
+    self.topTextView.dropower = dropower;
+    // 刷新图片信息
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.dropower.children.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPConstructionCollectionViewCellID forIndexPath:indexPath];
-
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, 50, 30);
-    [cell addSubview:label];
-    cell.backgroundColor = [UIColor whiteColor];
+    SPMiddleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPMiddleCollectionViewCellID forIndexPath:indexPath];
     
-    label.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    SPDropowerDetail *dropowerDetail = self.dropower.children[indexPath.row];
+    cell.dropowerDetail = dropowerDetail;
     
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((ScreenW - (column + 1) * margin)/column, (ScreenW - (column + 1) * margin)/column);
+    return CGSizeMake((ScreenW - (column + 3) * margin)/column, (ScreenW - (column + 3) * margin)/column);
 }
 
 @end

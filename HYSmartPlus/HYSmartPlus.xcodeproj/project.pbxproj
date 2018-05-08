@@ -129,8 +129,8 @@
 		D662F85A209315490058C2E9 /* SPSignInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F859209315490058C2E9 /* SPSignInResult.m */; };
 		D6659ECA209FE2ED00846576 /* SPSiteCreateResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */; };
 		D6659ECD20A00E8300846576 /* SPConstructionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */; };
-		D6659ED320A03BA600846576 /* SPMiddleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ED220A03BA600846576 /* SPMiddleTextView.m */; };
-		D6659ED520A03BBC00846576 /* SPMiddleTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6659ED420A03BBC00846576 /* SPMiddleTextView.xib */; };
+		D6659ED320A03BA600846576 /* SPTopTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ED220A03BA600846576 /* SPTopTextView.m */; };
+		D6659ED520A03BBC00846576 /* SPTopTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6659ED420A03BBC00846576 /* SPTopTextView.xib */; };
 		D68B06242092E20E0000434F /* SPDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06232092E20E0000434F /* SPDiscountViewController.m */; };
 		D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06272092E8D00000434F /* SPHyMallViewController.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
@@ -142,6 +142,14 @@
 		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
 		D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */; };
+		D6FF34BA20A12D44001B0070 /* SPMiddleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34B820A12D44001B0070 /* SPMiddleCollectionViewCell.m */; };
+		D6FF34BB20A12D44001B0070 /* SPMiddleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF34B920A12D44001B0070 /* SPMiddleCollectionViewCell.xib */; };
+		D6FF34BE20A139A1001B0070 /* SPBottomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34BD20A139A1001B0070 /* SPBottomToolBarView.m */; };
+		D6FF34C120A15272001B0070 /* SPDropower.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34C020A15272001B0070 /* SPDropower.m */; };
+		D6FF34C420A15521001B0070 /* SPDropowerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34C320A15521001B0070 /* SPDropowerDetail.m */; };
+		D6FF34CA20A164CE001B0070 /* SPDropowerFenye.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34C920A164CE001B0070 /* SPDropowerFenye.m */; };
+		D6FF34CD20A1666E001B0070 /* SPDropowerFenyeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34CC20A1666E001B0070 /* SPDropowerFenyeParam.m */; };
+		D6FF34D020A16693001B0070 /* SPDropowerFenyeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34CF20A16693001B0070 /* SPDropowerFenyeResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,9 +379,9 @@
 		D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSiteCreateResult.m; sourceTree = "<group>"; };
 		D6659ECB20A00E8300846576 /* SPConstructionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConstructionTableCell.h; sourceTree = "<group>"; };
 		D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConstructionTableCell.m; sourceTree = "<group>"; };
-		D6659ED120A03BA600846576 /* SPMiddleTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMiddleTextView.h; sourceTree = "<group>"; };
-		D6659ED220A03BA600846576 /* SPMiddleTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMiddleTextView.m; sourceTree = "<group>"; };
-		D6659ED420A03BBC00846576 /* SPMiddleTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMiddleTextView.xib; sourceTree = "<group>"; };
+		D6659ED120A03BA600846576 /* SPTopTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTopTextView.h; sourceTree = "<group>"; };
+		D6659ED220A03BA600846576 /* SPTopTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTopTextView.m; sourceTree = "<group>"; };
+		D6659ED420A03BBC00846576 /* SPTopTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPTopTextView.xib; sourceTree = "<group>"; };
 		D68B06222092E20E0000434F /* SPDiscountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDiscountViewController.h; sourceTree = "<group>"; };
 		D68B06232092E20E0000434F /* SPDiscountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDiscountViewController.m; sourceTree = "<group>"; };
 		D68B06262092E8D00000434F /* SPHyMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHyMallViewController.h; sourceTree = "<group>"; };
@@ -395,6 +403,21 @@
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
 		D6F65B84209B5CF10057EC78 /* SPChooseLocationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPChooseLocationView.h; sourceTree = "<group>"; };
 		D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPChooseLocationView.m; sourceTree = "<group>"; };
+		D6FF34B720A12D44001B0070 /* SPMiddleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMiddleCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FF34B820A12D44001B0070 /* SPMiddleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMiddleCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FF34B920A12D44001B0070 /* SPMiddleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMiddleCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FF34BC20A139A1001B0070 /* SPBottomToolBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBottomToolBarView.h; sourceTree = "<group>"; };
+		D6FF34BD20A139A1001B0070 /* SPBottomToolBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBottomToolBarView.m; sourceTree = "<group>"; };
+		D6FF34BF20A15272001B0070 /* SPDropower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDropower.h; sourceTree = "<group>"; };
+		D6FF34C020A15272001B0070 /* SPDropower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDropower.m; sourceTree = "<group>"; };
+		D6FF34C220A15521001B0070 /* SPDropowerDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDropowerDetail.h; sourceTree = "<group>"; };
+		D6FF34C320A15521001B0070 /* SPDropowerDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDropowerDetail.m; sourceTree = "<group>"; };
+		D6FF34C820A164CE001B0070 /* SPDropowerFenye.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDropowerFenye.h; sourceTree = "<group>"; };
+		D6FF34C920A164CE001B0070 /* SPDropowerFenye.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDropowerFenye.m; sourceTree = "<group>"; };
+		D6FF34CB20A1666E001B0070 /* SPDropowerFenyeParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDropowerFenyeParam.h; sourceTree = "<group>"; };
+		D6FF34CC20A1666E001B0070 /* SPDropowerFenyeParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDropowerFenyeParam.m; sourceTree = "<group>"; };
+		D6FF34CE20A16693001B0070 /* SPDropowerFenyeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDropowerFenyeResult.h; sourceTree = "<group>"; };
+		D6FF34CF20A16693001B0070 /* SPDropowerFenyeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDropowerFenyeResult.m; sourceTree = "<group>"; };
 		E18D2825A90F3277B4BBB90B /* Pods-HYSmartPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -880,9 +903,14 @@
 				D64E4303209C3FD80080A9E3 /* SPAddressTableViewCell.xib */,
 				D6659ECB20A00E8300846576 /* SPConstructionTableCell.h */,
 				D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */,
-				D6659ED120A03BA600846576 /* SPMiddleTextView.h */,
-				D6659ED220A03BA600846576 /* SPMiddleTextView.m */,
-				D6659ED420A03BBC00846576 /* SPMiddleTextView.xib */,
+				D6659ED120A03BA600846576 /* SPTopTextView.h */,
+				D6659ED220A03BA600846576 /* SPTopTextView.m */,
+				D6659ED420A03BBC00846576 /* SPTopTextView.xib */,
+				D6FF34B720A12D44001B0070 /* SPMiddleCollectionViewCell.h */,
+				D6FF34B820A12D44001B0070 /* SPMiddleCollectionViewCell.m */,
+				D6FF34B920A12D44001B0070 /* SPMiddleCollectionViewCell.xib */,
+				D6FF34BC20A139A1001B0070 /* SPBottomToolBarView.h */,
+				D6FF34BD20A139A1001B0070 /* SPBottomToolBarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -897,6 +925,16 @@
 				D61049DA209F2C1F009E7BB1 /* SPSiteCreateParam.m */,
 				D6659EC8209FE2ED00846576 /* SPSiteCreateResult.h */,
 				D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */,
+				D6FF34BF20A15272001B0070 /* SPDropower.h */,
+				D6FF34C020A15272001B0070 /* SPDropower.m */,
+				D6FF34C220A15521001B0070 /* SPDropowerDetail.h */,
+				D6FF34C320A15521001B0070 /* SPDropowerDetail.m */,
+				D6FF34C820A164CE001B0070 /* SPDropowerFenye.h */,
+				D6FF34C920A164CE001B0070 /* SPDropowerFenye.m */,
+				D6FF34CB20A1666E001B0070 /* SPDropowerFenyeParam.h */,
+				D6FF34CC20A1666E001B0070 /* SPDropowerFenyeParam.m */,
+				D6FF34CE20A16693001B0070 /* SPDropowerFenyeResult.h */,
+				D6FF34CF20A16693001B0070 /* SPDropowerFenyeResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1302,6 +1340,7 @@
 				D613BE251F6193110090316D /* Main.storyboard in Resources */,
 				D6281643205122AF00892297 /* SPForgetPwdViewController.xib in Resources */,
 				D628163E20510F8D00892297 /* licenseagreementchines.txt in Resources */,
+				D6FF34BB20A12D44001B0070 /* SPMiddleCollectionViewCell.xib in Resources */,
 				D64E430A209C42C10080A9E3 /* Cities.json in Resources */,
 				D62035112059072800F39847 /* SPBPTableViewCell.xib in Resources */,
 				D64E4305209C3FD80080A9E3 /* SPAddressTableViewCell.xib in Resources */,
@@ -1309,7 +1348,7 @@
 				D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */,
 				D60A69221FC2B18E007BA4F6 /* GoodsGrid.plist in Resources */,
 				D60EC4ED1FC6C1BB00F78F31 /* ClassiftyGoods03.plist in Resources */,
-				D6659ED520A03BBC00846576 /* SPMiddleTextView.xib in Resources */,
+				D6659ED520A03BBC00846576 /* SPTopTextView.xib in Resources */,
 				D60EC4DF1FC6ACF300F78F31 /* ClassiftyGoods01.plist in Resources */,
 				D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */,
 				D620350C2058F38F00F39847 /* SPIntegralTableViewCell.xib in Resources */,
@@ -1396,6 +1435,7 @@
 				D64C4337208DCA13000FF373 /* SPPersonCenterTool.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
+				D6FF34BE20A139A1001B0070 /* SPBottomToolBarView.m in Sources */,
 				D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */,
 				D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */,
 				D64C4343208DD4F0000FF373 /* SPNextGradeInfo.m in Sources */,
@@ -1422,6 +1462,7 @@
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
 				D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */,
 				D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */,
+				D6FF34CD20A1666E001B0070 /* SPDropowerFenyeParam.m in Sources */,
 				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
 				D64E4300209C07B40080A9E3 /* SPAddressView.m in Sources */,
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
@@ -1436,11 +1477,12 @@
 				D63200C32092B2000057B969 /* WCCommonProblemCell.m in Sources */,
 				D617AA8C20980150009A00E1 /* SPConstructionViewController.m in Sources */,
 				D61165F61F6BBCE6008A5199 /* SPBaseParam.m in Sources */,
+				D6FF34D020A16693001B0070 /* SPDropowerFenyeResult.m in Sources */,
 				D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */,
 				D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */,
 				D600C6B42099AE3D00D3E917 /* SPSiteCreateViewController.m in Sources */,
 				D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */,
-				D6659ED320A03BA600846576 /* SPMiddleTextView.m in Sources */,
+				D6659ED320A03BA600846576 /* SPTopTextView.m in Sources */,
 				D6164D37204596D200767C00 /* SPGoodsYouLikeCell.m in Sources */,
 				D62816462051315600892297 /* SPModifyPwdParam.m in Sources */,
 				D625308B204D424B006A8CB5 /* SPCodeParam.m in Sources */,
@@ -1448,6 +1490,7 @@
 				D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */,
 				D6164D33204596D100767C00 /* SPGoodsCountDownCell.m in Sources */,
 				D62444C62091A6A500A89DF4 /* SPProblemResult.m in Sources */,
+				D6FF34C120A15272001B0070 /* SPDropower.m in Sources */,
 				D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */,
 				D60EC4E41FC6AF1300F78F31 /* SPBrandSortHeadView.m in Sources */,
 				D64E430D209C45050080A9E3 /* SPCitiesDataTool.m in Sources */,
@@ -1466,9 +1509,12 @@
 				D6164D32204596D100767C00 /* SPExceedApplianceCell.m in Sources */,
 				D60EC4DA1FC6A95300F78F31 /* SPClassMainItem.m in Sources */,
 				D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */,
+				D6FF34C420A15521001B0070 /* SPDropowerDetail.m in Sources */,
 				D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */,
 				D62035072058C5D300F39847 /* SPServiceItem.m in Sources */,
+				D6FF34CA20A164CE001B0070 /* SPDropowerFenye.m in Sources */,
 				D63200C52092B2000057B969 /* WCCommonProblemHeaderView.m in Sources */,
+				D6FF34BA20A12D44001B0070 /* SPMiddleCollectionViewCell.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */,
 				D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */,

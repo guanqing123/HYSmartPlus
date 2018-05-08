@@ -12,12 +12,23 @@
 #import "SPSiteCreateViewController.h"
 #import "SPSearchBar.h"
 #import "SPConstructionTableCell.h"
+#import "MJRefresh.h"
+#import "SPConstructionTool.h"
+#import "SPAccountTool.h"
+#import "SPLoginResult.h"
 
-@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 // 搜索条
 @property (nonatomic, weak)  UIView *searchView;
+// 搜索内容
+@property (nonatomic, copy) NSString *searchText;
 // tableView
 @property (nonatomic, weak) UITableView  *tableView;
+
+@property (nonatomic, assign) NSInteger pageNum;
+@property (nonatomic, assign) NSInteger pageSize;
+
+@property (nonatomic, strong)  NSMutableArray *dropowerArray;
 
 @end
 
@@ -71,39 +82,124 @@
     [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(searchView).with.insets(UIEdgeInsetsMake(SPMargin*0.5, SPMargin, SPMargin*0.5, SPMargin));
     }];
+    searchBar.delegate = self;
+    [searchBar addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+#pragma mark - 搜索框文本变化
+- (void)textFieldDidChange:(UITextField *)textField {
+    self.searchText = textField.text;
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - setupTableView
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] init];
-    tableView.frame = CGRectMake(0, self.searchView.dc_bottom, ScreenW, ScreenH - self.searchView.dc_bottom);
+    tableView.frame = CGRectMake(0, self.searchView.dc_bottom, ScreenW, ScreenH - self.searchView.dc_bottom - SPBottomTabH);
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    self.tableView.backgroundColor = RGB(226, 226, 226);
+    self.tableView.backgroundColor = RGB(244, 244, 244);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    [self.tableView.mj_header beginRefreshing];
+    self.pageNum = 1;
+    self.pageSize = 2;
+    
+    if (@available(iOS 11.0,*)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)headerRefreshing {
+    _pageNum = 1;
+    SPDropowerFenyeParam *fenyeParam = [[SPDropowerFenyeParam alloc] init];
+    fenyeParam.uid = [SPAccountTool loginResult].userbase.uid;
+    fenyeParam.pageNum = self.pageNum;
+    fenyeParam.pageSize = self.pageSize;
+    [SPConstructionTool getDropowerAndDetailsFenye:fenyeParam success:^(SPDropowerFenyeResult *fenyeResult) {
+        if (![fenyeResult.code isEqualToString:@"00000"]) {
+            [self.tableView.mj_header endRefreshing];
+            [MBProgressHUD showError:fenyeResult.msg toView:self.view];
+        }else{
+            [self.dropowerArray removeAllObjects];
+            [self.dropowerArray addObjectsFromArray:fenyeResult.dropowerFenye.list];
+            if (fenyeResult.dropowerFenye.pages > 1) {
+                _pageNum ++;
+                [self setupFooterRefreshing];
+            }
+            [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+        }
+    } failure:^(NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
+    }];
+}
+
+- (void)setupFooterRefreshing {
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefreshing)];
+}
+
+- (void)footerRefreshing {
+    SPDropowerFenyeParam *fenyeParam = [[SPDropowerFenyeParam alloc] init];
+    fenyeParam.uid = [SPAccountTool loginResult].userbase.uid;
+    fenyeParam.pageNum = self.pageNum;
+    fenyeParam.pageSize = self.pageSize;
+    [SPConstructionTool getDropowerAndDetailsFenye:fenyeParam success:^(SPDropowerFenyeResult *fenyeResult) {
+        if (![fenyeResult.code isEqualToString:@"00000"]) {
+            [MBProgressHUD showError:fenyeResult.msg toView:self.view];
+        }else{
+            [self.dropowerArray addObjectsFromArray:fenyeResult.dropowerFenye.list];
+            [self.tableView reloadData];
+            _pageNum ++;
+            NSInteger totalPage = fenyeResult.dropowerFenye.pages;
+            if (_pageNum > totalPage) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }else{
+                [self.tableView.mj_footer endRefreshing];
+            }
+        }
+    } failure:^(NSError *error) {
+        [self.tableView.mj_footer endRefreshing];
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
+    }];
+}
+
+#pragma mark lazyLoad
+- (NSMutableArray *)dropowerArray {
+    if (!_dropowerArray) {
+        _dropowerArray = [NSMutableArray array];
+    }
+    return _dropowerArray;
 }
 
 #pragma mark - UITableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dropowerArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SPConstructionTableCell *cell = [SPConstructionTableCell cellWithTableView:tableView];
+    
+    SPDropower *dropower = self.dropowerArray[indexPath.row];
+    cell.dropower = dropower;
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return (ScreenW - (column + 1) * margin) / column + 144.0f;
+    return (ScreenW - (column + 1) * margin)/column + topTextViewH + bottomToolBarViewH + 4 * margin;
 }
 
 @end

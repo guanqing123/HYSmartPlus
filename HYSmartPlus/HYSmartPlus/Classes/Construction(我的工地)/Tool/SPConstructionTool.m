@@ -12,6 +12,22 @@
 
 @implementation SPConstructionTool
 
+
++ (void)getDropowerAndDetailsFenye:(SPDropowerFenyeParam *)fenyeParam success:(void (^)(SPDropowerFenyeResult *))success failure:(void (^)(NSError *))failure {
+    
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/getDropowerAndDetailsFenye";
+    
+    NSDictionary *parameter = [fenyeParam mj_keyValues];
+    
+    [SPHttpTool getWithURL:urlStr params:parameter success:^(id json) {
+        SPDropowerFenyeResult *result = [SPDropowerFenyeResult mj_objectWithKeyValues:json];
+        success(result);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+
 + (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void (^)(SPSiteCreateResult *))success fail:(void (^)(NSError *))failure {
     
     NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/saveDropowerAndDetails";
