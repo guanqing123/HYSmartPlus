@@ -16,7 +16,7 @@ target 'HYSmartPlus' do
   pod 'SDCycleScrollView','~> 1.66'
   
   pod 'SDWebImage', '~> 4.0.0'
-  
+
   pod 'AFNetworking', '~> 3.1.0'
   pod 'CDDPagerController', '~> 1.1.2'
   
@@ -24,8 +24,7 @@ target 'HYSmartPlus' do
   
   pod 'TZImagePickerController'
   
-  #依赖 MBProgressHUD SDWebImage DACircularProgress FLAnimatedImage
-  pod 'PYPhotoBrowser'
+  pod 'XLPhotoBrowser+CoderXL'
   
   pod 'IQKeyboardManager'
   

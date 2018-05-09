@@ -161,7 +161,7 @@
     param.address  = [NSString stringWithFormat:@"%@%@",self.addressLabel.text,self.detailAddress.text];
     param.comment  = self.comment.text;
     [MBProgressHUD showWaitMessage:@"保存中,请耐心等待..." toView:self.view];
-    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(SPSiteCreateResult *result) {
+    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(SPCommonResult *result) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if ([result.code isEqualToString:@"00000"]) {
             [MBProgressHUD showSuccess:@"保存成功" toView:self.view];

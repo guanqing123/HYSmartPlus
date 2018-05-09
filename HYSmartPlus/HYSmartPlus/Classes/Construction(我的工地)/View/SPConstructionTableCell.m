@@ -9,10 +9,9 @@
 #import "SPConstructionTableCell.h"
 #import "SPTopTextView.h"
 #import "SPMiddleCollectionViewCell.h"
-#import "SPBottomToolBarView.h"
-#import <PYPhotoBrowser.h>
+#import "XLPhotoBrowser.h"
 
-@interface SPConstructionTableCell() <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface SPConstructionTableCell() <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,XLPhotoBrowserDelegate,SPBottomToolBarViewDelegate>
 
 @property (nonatomic, strong)  UICollectionView *collectionView;
 
@@ -20,7 +19,7 @@
 
 @property (nonatomic, strong) SPBottomToolBarView  *bottomToolBarView;
 
-@property (nonatomic, strong)  NSMutableArray *imageViews;
+@property (nonatomic, strong)  NSArray *imageUrls;
 
 @end
 
@@ -55,6 +54,26 @@ static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCe
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat parentW = self.frame.size.width;
+    self.topTextView.frame = CGRectMake(0, 0, parentW, topTextViewH);
+    
+    self.collectionView.frame = CGRectMake(0, self.topTextView.dc_bottom, parentW, (parentW - (column + 1) * margin)/column + 2 * margin);
+    
+    self.bottomToolBarView.frame = CGRectMake(0, self.collectionView.dc_bottom + 2, parentW, bottomToolBarViewH);
+}
+
+- (void)setFrame:(CGRect)frame {
+    frame.origin.x = margin;
+    frame.origin.y += margin;
+    frame.size.width -= 2 * margin;
+    frame.size.height -= margin;
+    [super setFrame:frame];
+}
+
+#pragma mark - lazyLoad
 - (SPTopTextView *)topTextView {
     if (!_topTextView) {
         _topTextView = [SPTopTextView topTextView];
@@ -82,45 +101,27 @@ static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCe
 - (SPBottomToolBarView *)bottomToolBarView {
     if (!_bottomToolBarView) {
         _bottomToolBarView = [[SPBottomToolBarView alloc] init];
+        _bottomToolBarView.delegate = self;
     }
     return _bottomToolBarView;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    CGFloat parentW = self.frame.size.width;
-    self.topTextView.frame = CGRectMake(0, 0, parentW, topTextViewH);
-    
-    self.collectionView.frame = CGRectMake(0, self.topTextView.dc_bottom, parentW, (parentW - (column + 1) * margin)/column + 2 * margin);
-    
-    self.bottomToolBarView.frame = CGRectMake(0, self.collectionView.dc_bottom + 2, parentW, bottomToolBarViewH);
-}
-
-- (void)setFrame:(CGRect)frame {
-    frame.origin.x = margin;
-    frame.origin.y += margin;
-    frame.size.width -= 2 * margin;
-    frame.size.height -= margin;
-    [super setFrame:frame];
-}
-
-- (NSMutableArray *)imageViews {
-    if (!_imageViews) {
-        _imageViews = [NSMutableArray array];
+#pragma mark - SPBottomToolBarViewDelegate
+- (void)bottomToolBar:(SPBottomToolBarView *)toolBar buttonType:(ToolBarButtonType)buttonType {
+    if([self.delegate respondsToSelector:@selector(constructionTableCell:dropower:buttonType:)]) {
+        [self.delegate constructionTableCell:self dropower:self.dropower buttonType:buttonType];
     }
-    return _imageViews;
 }
 
+#pragma mark - setDropower
 - (void)setDropower:(SPDropower *)dropower {
     _dropower = dropower;
     
-    NSMutableArray *imageViews = [NSMutableArray array];
+    NSMutableArray *imageUrls = [NSMutableArray array];
     for (SPDropowerDetail *detail in dropower.children) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage im]];
-        [imageViews addObject:imageView];
+        [imageUrls addObject:detail.fileRealPath];
     }
-    [self.imageViews addObjectsFromArray:imageViews];
+    self.imageUrls = imageUrls;
     
     // 刷新头部信息
     self.topTextView.dropower = dropower;
@@ -144,12 +145,37 @@ static NSString *const SPMiddleCollectionViewCellID = @"SPMiddleCollectionViewCe
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    PYPhotoBrowseView *browser = [[PYPhotoBrowseView alloc] init];
+    XLPhotoBrowser *browser = [XLPhotoBrowser showPhotoBrowserWithImages:self.imageUrls currentImageIndex:indexPath.row];
+    browser.browserStyle = XLPhotoBrowserStyleIndexLabel;
     
-    browser.sourceImgageViews = self.imageViews;
-    browser.currentIndex = indexPath.row;
-    
-    [browser show];
+    // 设置长按手势弹出的地步ActionSheet数据,不实现此方法则没有长按手势
+    [browser setActionSheetWithTitle:@"请选择您的操作" delegate:self cancelButtonTitle:@"取消" deleteButtonTitle:@"删除" otherButtonTitles:@"保存", nil];
+}
+
+#pragma mark - XLPhotoBrowserDelegate
+- (void)photoBrowser:(XLPhotoBrowser *)browser clickActionSheetIndex:(NSInteger)actionSheetindex currentImageIndex:(NSInteger)currentImageIndex {
+    switch (actionSheetindex) {
+            case 0: // 保存
+            {
+                [browser saveCurrentShowImage];
+            }
+            break;
+            case 1: // 删除
+            {
+                [browser dismiss];
+                [self deleteDropowerDetail:currentImageIndex];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)deleteDropowerDetail:(NSInteger)currentImageIndex {
+    SPDropowerDetail *detail = self.dropower.children[currentImageIndex];
+    if([self.delegate respondsToSelector:@selector(constructionTableCell:deleteDropowerDetail:)]) {
+        [self.delegate constructionTableCell:self deleteDropowerDetail:detail];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

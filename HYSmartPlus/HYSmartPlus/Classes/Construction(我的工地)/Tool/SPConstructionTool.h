@@ -12,11 +12,31 @@
 #import "SPDropowerFenyeResult.h"
 
 #import "SPSiteCreateParam.h"
-#import "SPSiteCreateResult.h"
+#import "SPCommonResult.h"
+
+#import "SPDeleteDropowerDetailParam.h"
 
 @interface SPConstructionTool : NSObject
 
 
++ (void)deleteDropowerAndDetails:(SPDeleteDropowerDetailParam *)deleteParam success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
+
+/**
+ 删除水电图明细
+
+ @param deleteParam 删除参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)deleteDropowerDetail:(SPDeleteDropowerDetailParam *)deleteParam success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
+
+/**
+ 获取水电图分页
+
+ @param fenyeParam 分页参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
 + (void)getDropowerAndDetailsFenye:(SPDropowerFenyeParam *)fenyeParam success:(void(^)(SPDropowerFenyeResult *fenyeResult))success failure:(void(^)(NSError *error))failure;
 
 /**
@@ -27,6 +47,6 @@
  @param success 成功回调
  @param failure 失败回调
  */
-+ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void(^)(SPSiteCreateResult *result))success fail:(void(^)(NSError *error))failure;
++ (void)constructionSiteCreate:(SPSiteCreateParam *)param imageArray:(NSArray *)imageArray success:(void(^)(SPCommonResult *result))success fail:(void(^)(NSError *error))failure;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface SPDropower : NSObject
 
-@property (nonatomic, assign) NSInteger idNum;
+@property (nonatomic, copy) NSString *idNum;
 
 @property (nonatomic, copy) NSString *openId;
 

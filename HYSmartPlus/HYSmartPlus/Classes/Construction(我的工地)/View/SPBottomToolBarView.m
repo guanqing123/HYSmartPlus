@@ -49,6 +49,7 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:13];
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
     btn.adjustsImageWhenHighlighted = NO;
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
     
     // 添加按钮到数组
@@ -56,6 +57,19 @@
     
     return btn;
 }
+
+
+/**
+ 按钮点击事件
+
+ @param button 按钮
+ */
+- (void)btnClick:(UIButton *)button {
+    if([self.delegate respondsToSelector:@selector(bottomToolBar:buttonType:)]) {
+        [self.delegate bottomToolBar:self buttonType:(int)button.tag];
+    }
+}
+
 
 /**
  *  初始化分割线

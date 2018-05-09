@@ -80,6 +80,7 @@
 		D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B0520470D4200616266 /* SPLoginFooterView.m */; };
 		D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D618BE32209413D200648A57 /* SPInviteFriendView.m */; };
 		D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618BE34209413FB00648A57 /* SPInviteView.xib */; };
+		D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */; };
 		D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */; };
 		D62034FD2058AC5F00F39847 /* SPServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */; };
 		D62035002058B7A400F39847 /* MyServiceFlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = D62034FF2058B7A400F39847 /* MyServiceFlow.plist */; };
@@ -127,7 +128,7 @@
 		D64E430D209C45050080A9E3 /* SPCitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D64E430C209C45050080A9E3 /* SPCitiesDataTool.m */; };
 		D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F856209314F90058C2E9 /* SPSignInParam.m */; };
 		D662F85A209315490058C2E9 /* SPSignInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F859209315490058C2E9 /* SPSignInResult.m */; };
-		D6659ECA209FE2ED00846576 /* SPSiteCreateResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */; };
+		D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659EC9209FE2ED00846576 /* SPCommonResult.m */; };
 		D6659ECD20A00E8300846576 /* SPConstructionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */; };
 		D6659ED320A03BA600846576 /* SPTopTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ED220A03BA600846576 /* SPTopTextView.m */; };
 		D6659ED520A03BBC00846576 /* SPTopTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6659ED420A03BBC00846576 /* SPTopTextView.xib */; };
@@ -292,6 +293,8 @@
 		D618BE31209413D200648A57 /* SPInviteFriendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPInviteFriendView.h; sourceTree = "<group>"; };
 		D618BE32209413D200648A57 /* SPInviteFriendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPInviteFriendView.m; sourceTree = "<group>"; };
 		D618BE34209413FB00648A57 /* SPInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteView.xib; sourceTree = "<group>"; };
+		D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDeleteDropowerDetailParam.h; sourceTree = "<group>"; };
+		D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDeleteDropowerDetailParam.m; sourceTree = "<group>"; };
 		D62034F92058AC5F00F39847 /* SPServiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPServiceTableViewCell.h; sourceTree = "<group>"; };
 		D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPServiceTableViewCell.m; sourceTree = "<group>"; };
 		D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPServiceTableViewCell.xib; sourceTree = "<group>"; };
@@ -375,8 +378,8 @@
 		D662F856209314F90058C2E9 /* SPSignInParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSignInParam.m; sourceTree = "<group>"; };
 		D662F858209315490058C2E9 /* SPSignInResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSignInResult.h; sourceTree = "<group>"; };
 		D662F859209315490058C2E9 /* SPSignInResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSignInResult.m; sourceTree = "<group>"; };
-		D6659EC8209FE2ED00846576 /* SPSiteCreateResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSiteCreateResult.h; sourceTree = "<group>"; };
-		D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSiteCreateResult.m; sourceTree = "<group>"; };
+		D6659EC8209FE2ED00846576 /* SPCommonResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCommonResult.h; sourceTree = "<group>"; };
+		D6659EC9209FE2ED00846576 /* SPCommonResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCommonResult.m; sourceTree = "<group>"; };
 		D6659ECB20A00E8300846576 /* SPConstructionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConstructionTableCell.h; sourceTree = "<group>"; };
 		D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConstructionTableCell.m; sourceTree = "<group>"; };
 		D6659ED120A03BA600846576 /* SPTopTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTopTextView.h; sourceTree = "<group>"; };
@@ -923,8 +926,8 @@
 				D64E4307209C42870080A9E3 /* SPAddressItem.m */,
 				D61049D9209F2C1F009E7BB1 /* SPSiteCreateParam.h */,
 				D61049DA209F2C1F009E7BB1 /* SPSiteCreateParam.m */,
-				D6659EC8209FE2ED00846576 /* SPSiteCreateResult.h */,
-				D6659EC9209FE2ED00846576 /* SPSiteCreateResult.m */,
+				D6659EC8209FE2ED00846576 /* SPCommonResult.h */,
+				D6659EC9209FE2ED00846576 /* SPCommonResult.m */,
 				D6FF34BF20A15272001B0070 /* SPDropower.h */,
 				D6FF34C020A15272001B0070 /* SPDropower.m */,
 				D6FF34C220A15521001B0070 /* SPDropowerDetail.h */,
@@ -935,6 +938,8 @@
 				D6FF34CC20A1666E001B0070 /* SPDropowerFenyeParam.m */,
 				D6FF34CE20A16693001B0070 /* SPDropowerFenyeResult.h */,
 				D6FF34CF20A16693001B0070 /* SPDropowerFenyeResult.m */,
+				D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */,
+				D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1443,6 +1448,7 @@
 				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
 				D6164D3B204596D200767C00 /* SPCountDownHeadView.m in Sources */,
+				D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */,
 				D62035042058C56B00F39847 /* SPServiceCollectionViewCell.m in Sources */,
 				D63200BC2092AC310057B969 /* SPProblemViewController.m in Sources */,
 				D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */,
@@ -1500,7 +1506,7 @@
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
 				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
-				D6659ECA209FE2ED00846576 /* SPSiteCreateResult.m in Sources */,
+				D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */,
 				D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */,
 				D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,

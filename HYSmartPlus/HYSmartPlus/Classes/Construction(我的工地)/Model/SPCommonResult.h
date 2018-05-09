@@ -1,5 +1,5 @@
 //
-//  SPSiteCreateResult.h
+//  SPCommonResult.h
 //  HYSmartPlus
 //
 //  Created by information on 2018/5/7.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SPSiteCreateResult : NSObject
+@interface SPCommonResult : NSObject
 
 @property (nonatomic, copy) NSString *code;
 

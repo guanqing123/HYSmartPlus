@@ -17,7 +17,7 @@
 #import "SPAccountTool.h"
 #import "SPLoginResult.h"
 
-@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate>
 // 搜索条
 @property (nonatomic, weak)  UIView *searchView;
 // 搜索内容
@@ -192,11 +192,78 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SPConstructionTableCell *cell = [SPConstructionTableCell cellWithTableView:tableView];
+    cell.delegate = self;
     
     SPDropower *dropower = self.dropowerArray[indexPath.row];
     cell.dropower = dropower;
     
     return cell;
+}
+
+#pragma mark - SPConstructionTableCellDelegate
+- (void)constructionTableCell:(SPConstructionTableCell *)tableViewCell deleteDropowerDetail:(SPDropowerDetail *)dropDetail {
+    SPDeleteDropowerDetailParam *deleteParam = [[SPDeleteDropowerDetailParam alloc] init];
+    deleteParam.uid = [SPAccountTool loginResult].userbase.uid;
+    deleteParam.idStr = dropDetail.idStr;
+    [MBProgressHUD showWaitMessage:@"删除中..." toView:self.view];
+    [SPConstructionTool deleteDropowerDetail:deleteParam success:^(SPCommonResult *result) {
+        [MBProgressHUD hideHUDForView:self.view];
+        if(![result.code isEqualToString:@"00000"]) {
+            [MBProgressHUD showError:result.msg toView:self.view];
+        }else{
+            [MBProgressHUD showSuccess:@"删除成功" toView:self.view];
+            [self.tableView.mj_header beginRefreshing];
+        }
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view];
+        [MBProgressHUD showError:@"网络异常" toView:self.view];
+    }];
+}
+
+- (void)constructionTableCell:(SPConstructionTableCell *)tableViewCell dropower:(SPDropower *)dropower buttonType:(ToolBarButtonType)buttonType {
+    switch (buttonType) {
+            case ToolBarButtonTypeCamera:
+            
+            break;
+            case ToolBarButtonTypeDelete:{
+                [self deleteDropowerAndDetails:dropower];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)deleteDropowerAndDetails:(SPDropower *)dropower {
+    //删除提示框
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"警告" message:@"确定要删除?" preferredStyle:UIAlertControllerStyleActionSheet];
+    WEAKSELF
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        SPDeleteDropowerDetailParam *deleteParam = [[SPDeleteDropowerDetailParam alloc] init];
+        deleteParam.uid = [SPAccountTool loginResult].userbase.uid;
+        deleteParam.idStr = dropower.idNum;
+        [MBProgressHUD showWaitMessage:@"删除中..." toView:weakSelf.view];
+        [SPConstructionTool deleteDropowerAndDetails:deleteParam success:^(SPCommonResult *result) {
+            [MBProgressHUD hideHUDForView:weakSelf.view];
+            if(![result.code isEqualToString:@"00000"]) {
+                [MBProgressHUD showError:result.msg toView:weakSelf.view];
+            }else{
+                [MBProgressHUD showSuccess:@"删除成功" toView:weakSelf.view];
+                [weakSelf.tableView.mj_header beginRefreshing];
+            }
+        } failure:^(NSError *error) {
+            [MBProgressHUD hideHUDForView:weakSelf.view];
+            [MBProgressHUD showError:@"网络异常" toView:weakSelf.view];
+        }];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    //添加按钮
+    [alertVc addAction:sureAction];
+    [alertVc addAction:cancelAction];
+    
+    //显示控制器
+    [self presentViewController:alertVc animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate

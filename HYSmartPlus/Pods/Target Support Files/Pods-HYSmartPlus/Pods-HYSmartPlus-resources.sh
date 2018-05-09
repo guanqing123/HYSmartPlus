@@ -82,7 +82,6 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "PYPhotoBrowser/PYPhotoBrowser/PYPhotosView.bundle"
   install_resource "TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
@@ -91,7 +90,6 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "PYPhotoBrowser/PYPhotoBrowser/PYPhotosView.bundle"
   install_resource "TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
