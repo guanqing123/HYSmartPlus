@@ -10,6 +10,7 @@
 
 #import "SPConstructionViewController.h"
 #import "SPSiteCreateViewController.h"
+#import "SPUploadPhotoCollectionViewController.h"
 #import "SPSearchBar.h"
 #import "SPConstructionTableCell.h"
 #import "MJRefresh.h"
@@ -222,8 +223,9 @@
 
 - (void)constructionTableCell:(SPConstructionTableCell *)tableViewCell dropower:(SPDropower *)dropower buttonType:(ToolBarButtonType)buttonType {
     switch (buttonType) {
-            case ToolBarButtonTypeCamera:
-            
+            case ToolBarButtonTypeCamera:{
+                [self uploadPhotos:dropower];
+            }
             break;
             case ToolBarButtonTypeDelete:{
                 [self deleteDropowerAndDetails:dropower];
@@ -232,6 +234,11 @@
         default:
             break;
     }
+}
+
+- (void)uploadPhotos:(SPDropower *)dropower {
+    SPUploadPhotoCollectionViewController *uploadPhotoVc = [[SPUploadPhotoCollectionViewController alloc] init];
+    [self.navigationController pushViewController:uploadPhotoVc animated:YES];
 }
 
 - (void)deleteDropowerAndDetails:(SPDropower *)dropower {

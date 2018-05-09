@@ -81,6 +81,7 @@
 		D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D618BE32209413D200648A57 /* SPInviteFriendView.m */; };
 		D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618BE34209413FB00648A57 /* SPInviteView.xib */; };
 		D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */; };
+		D61D12E720A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */; };
 		D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */; };
 		D62034FD2058AC5F00F39847 /* SPServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */; };
 		D62035002058B7A400F39847 /* MyServiceFlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = D62034FF2058B7A400F39847 /* MyServiceFlow.plist */; };
@@ -295,6 +296,8 @@
 		D618BE34209413FB00648A57 /* SPInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteView.xib; sourceTree = "<group>"; };
 		D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDeleteDropowerDetailParam.h; sourceTree = "<group>"; };
 		D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDeleteDropowerDetailParam.m; sourceTree = "<group>"; };
+		D61D12E520A2EE2300A48962 /* SPUploadPhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUploadPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUploadPhotoCollectionViewController.m; sourceTree = "<group>"; };
 		D62034F92058AC5F00F39847 /* SPServiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPServiceTableViewCell.h; sourceTree = "<group>"; };
 		D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPServiceTableViewCell.m; sourceTree = "<group>"; };
 		D62034FB2058AC5F00F39847 /* SPServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPServiceTableViewCell.xib; sourceTree = "<group>"; };
@@ -873,6 +876,8 @@
 				D600C6B12099AE3D00D3E917 /* SPSiteCreateViewController.h */,
 				D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */,
 				D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */,
+				D61D12E520A2EE2300A48962 /* SPUploadPhotoCollectionViewController.h */,
+				D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1474,6 +1479,7 @@
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
 				D6164D40204596D200767C00 /* SPNavSearchBarView.m in Sources */,
 				D6164D36204596D100767C00 /* SPGoodsSurplusCell.m in Sources */,
+				D61D12E720A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m in Sources */,
 				D60EC4EA1FC6BC8600F78F31 /* SPBrandSortCell.m in Sources */,
 				D6164D31204596D100767C00 /* SPHomeTool.m in Sources */,
 				D662F85A209315490058C2E9 /* SPSignInResult.m in Sources */,
