@@ -32,19 +32,27 @@
     
     _leftItemButton = ({
         UIButton * button = [UIButton new];
+        button.tag = 0;
         [button setImage:[UIImage imageNamed:@"group_home_scan"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(leftButtonItemClick) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
     
     _rightItemButton = ({
         UIButton * button = [UIButton new];
+        button.tag = 1;
         [button setImage:[UIImage imageNamed:@"mine_whitesetting"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(rightButtonItemClick) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
     [self addSubview:_rightItemButton];
     [self addSubview:_leftItemButton];
+}
+
+- (void)buttonClick:(UIButton *)button {
+    if ([self.delegate respondsToSelector:@selector(centerTopToolView:buttonType:)]) {
+        [self.delegate centerTopToolView:self buttonType:(int)button.tag];
+    }
 }
 
 #pragma mark - 布局

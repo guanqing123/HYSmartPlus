@@ -17,6 +17,13 @@
 		D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */; };
 		D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */; };
 		D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */; };
+		D60D302B20A56AC30083594B /* SPBindBossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D302A20A56AC30083594B /* SPBindBossViewController.m */; };
+		D60D303820A56F120083594B /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D302F20A56F120083594B /* UIActionSheet+LBXAlertAction.m */; };
+		D60D303920A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303120A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m */; };
+		D60D303A20A56F120083594B /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303320A56F120083594B /* UIAlertView+LBXAlertAction.m */; };
+		D60D303B20A56F120083594B /* UIWindow+LBXHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303520A56F120083594B /* UIWindow+LBXHierarchy.m */; };
+		D60D303C20A56F120083594B /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303720A56F120083594B /* LBXAlertAction.m */; };
+		D60D303F20A575D70083594B /* SPScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303E20A575D70083594B /* SPScanResultViewController.m */; };
 		D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */; };
 		D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CA1FC68C4900F78F31 /* SPCommodityViewController.m */; };
 		D60EC4CE1FC695D400F78F31 /* SPClassGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EC4CD1FC695D400F78F31 /* SPClassGoodsItem.m */; };
@@ -70,6 +77,7 @@
 		D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D28204596D100767C00 /* SPNumericalScrollView.m */; };
 		D6164D42204596D200767C00 /* SPZuoWenRightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */; };
 		D6164D47204597A700767C00 /* SPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164D46204597A700767C00 /* SPHomeViewController.m */; };
+		D616A21220A44B96006854E3 /* SPStyleDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = D616A21120A44B96006854E3 /* SPStyleDIY.m */; };
 		D617AA8C20980150009A00E1 /* SPConstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8B20980150009A00E1 /* SPConstructionViewController.m */; };
 		D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8E209806BE009A00E1 /* SPSearchBar.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
@@ -80,6 +88,7 @@
 		D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6184B0520470D4200616266 /* SPLoginFooterView.m */; };
 		D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D618BE32209413D200648A57 /* SPInviteFriendView.m */; };
 		D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618BE34209413FB00648A57 /* SPInviteView.xib */; };
+		D618C86120A5910C00667EC0 /* SPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D618C86020A5910C00667EC0 /* SPSettingViewController.m */; };
 		D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */; };
 		D61D12E720A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */; };
 		D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */; };
@@ -135,6 +144,7 @@
 		D6659ED520A03BBC00846576 /* SPTopTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6659ED420A03BBC00846576 /* SPTopTextView.xib */; };
 		D68B06242092E20E0000434F /* SPDiscountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06232092E20E0000434F /* SPDiscountViewController.m */; };
 		D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06272092E8D00000434F /* SPHyMallViewController.m */; };
+		D68CCD2020A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D68CCD1F20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
 		D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B3940D20592661001E08AC /* SPProblemTableViewCell.m */; };
 		D6B3941120592FB7001E08AC /* SPNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B3941020592FB7001E08AC /* SPNumberScrollView.m */; };
@@ -172,6 +182,20 @@
 		D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginResult.m; sourceTree = "<group>"; };
 		D60AD7BA204FDEEF009E0B25 /* SPBaseResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBaseResult.h; sourceTree = "<group>"; };
 		D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBaseResult.m; sourceTree = "<group>"; };
+		D60D302920A56AC30083594B /* SPBindBossViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBindBossViewController.h; sourceTree = "<group>"; };
+		D60D302A20A56AC30083594B /* SPBindBossViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBindBossViewController.m; sourceTree = "<group>"; };
+		D60D302E20A56F120083594B /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
+		D60D302F20A56F120083594B /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
+		D60D303020A56F120083594B /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		D60D303120A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
+		D60D303220A56F120083594B /* UIAlertView+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+LBXAlertAction.h"; sourceTree = "<group>"; };
+		D60D303320A56F120083594B /* UIAlertView+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+LBXAlertAction.m"; sourceTree = "<group>"; };
+		D60D303420A56F120083594B /* UIWindow+LBXHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LBXHierarchy.h"; sourceTree = "<group>"; };
+		D60D303520A56F120083594B /* UIWindow+LBXHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LBXHierarchy.m"; sourceTree = "<group>"; };
+		D60D303620A56F120083594B /* LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXAlertAction.h; sourceTree = "<group>"; };
+		D60D303720A56F120083594B /* LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXAlertAction.m; sourceTree = "<group>"; };
+		D60D303D20A575D70083594B /* SPScanResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScanResultViewController.h; sourceTree = "<group>"; };
+		D60D303E20A575D70083594B /* SPScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScanResultViewController.m; sourceTree = "<group>"; };
 		D60EC4BF1FC66DE700F78F31 /* SPSpeedy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSpeedy.m; sourceTree = "<group>"; };
 		D60EC4C01FC66DE700F78F31 /* SPSpeedy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpeedy.h; sourceTree = "<group>"; };
 		D60EC4C91FC68C4900F78F31 /* SPCommodityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCommodityViewController.h; sourceTree = "<group>"; };
@@ -274,6 +298,8 @@
 		D6164D2A204596D100767C00 /* SPZuoWenRightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPZuoWenRightButton.m; sourceTree = "<group>"; };
 		D6164D45204597A700767C00 /* SPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHomeViewController.h; sourceTree = "<group>"; };
 		D6164D46204597A700767C00 /* SPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHomeViewController.m; sourceTree = "<group>"; };
+		D616A21020A44B96006854E3 /* SPStyleDIY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPStyleDIY.h; sourceTree = "<group>"; };
+		D616A21120A44B96006854E3 /* SPStyleDIY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPStyleDIY.m; sourceTree = "<group>"; };
 		D617AA8A20980150009A00E1 /* SPConstructionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConstructionViewController.h; sourceTree = "<group>"; };
 		D617AA8B20980150009A00E1 /* SPConstructionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConstructionViewController.m; sourceTree = "<group>"; };
 		D617AA8D209806BE009A00E1 /* SPSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSearchBar.h; sourceTree = "<group>"; };
@@ -294,6 +320,8 @@
 		D618BE31209413D200648A57 /* SPInviteFriendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPInviteFriendView.h; sourceTree = "<group>"; };
 		D618BE32209413D200648A57 /* SPInviteFriendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPInviteFriendView.m; sourceTree = "<group>"; };
 		D618BE34209413FB00648A57 /* SPInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteView.xib; sourceTree = "<group>"; };
+		D618C85F20A5910C00667EC0 /* SPSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSettingViewController.h; sourceTree = "<group>"; };
+		D618C86020A5910C00667EC0 /* SPSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSettingViewController.m; sourceTree = "<group>"; };
 		D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDeleteDropowerDetailParam.h; sourceTree = "<group>"; };
 		D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDeleteDropowerDetailParam.m; sourceTree = "<group>"; };
 		D61D12E520A2EE2300A48962 /* SPUploadPhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUploadPhotoCollectionViewController.h; sourceTree = "<group>"; };
@@ -392,6 +420,8 @@
 		D68B06232092E20E0000434F /* SPDiscountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDiscountViewController.m; sourceTree = "<group>"; };
 		D68B06262092E8D00000434F /* SPHyMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHyMallViewController.h; sourceTree = "<group>"; };
 		D68B06272092E8D00000434F /* SPHyMallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHyMallViewController.m; sourceTree = "<group>"; };
+		D68CCD1E20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSaveDropowerDetailsParam.h; sourceTree = "<group>"; };
+		D68CCD1F20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSaveDropowerDetailsParam.m; sourceTree = "<group>"; };
 		D69B14651F67EA6400CB040A /* UIView+SPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPExtension.h"; sourceTree = "<group>"; };
 		D69B14661F67EA6400CB040A /* UIView+SPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPExtension.m"; sourceTree = "<group>"; };
 		D6B3940C20592661001E08AC /* SPProblemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPProblemTableViewCell.h; sourceTree = "<group>"; };
@@ -481,6 +511,33 @@
 				D60A69211FC2B18E007BA4F6 /* GoodsGrid.plist */,
 			);
 			path = "首页Plist";
+			sourceTree = "<group>";
+		};
+		D60D302C20A56F120083594B /* LBXAlertAction */ = {
+			isa = PBXGroup;
+			children = (
+				D60D302D20A56F120083594B /* Class */,
+				D60D303620A56F120083594B /* LBXAlertAction.h */,
+				D60D303720A56F120083594B /* LBXAlertAction.m */,
+				D60D303D20A575D70083594B /* SPScanResultViewController.h */,
+				D60D303E20A575D70083594B /* SPScanResultViewController.m */,
+			);
+			path = LBXAlertAction;
+			sourceTree = "<group>";
+		};
+		D60D302D20A56F120083594B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				D60D302E20A56F120083594B /* UIActionSheet+LBXAlertAction.h */,
+				D60D302F20A56F120083594B /* UIActionSheet+LBXAlertAction.m */,
+				D60D303020A56F120083594B /* UIAlertController+supportedInterfaceOrientations.h */,
+				D60D303120A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m */,
+				D60D303220A56F120083594B /* UIAlertView+LBXAlertAction.h */,
+				D60D303320A56F120083594B /* UIAlertView+LBXAlertAction.m */,
+				D60D303420A56F120083594B /* UIWindow+LBXHierarchy.h */,
+				D60D303520A56F120083594B /* UIWindow+LBXHierarchy.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		D60EC4BE1FC66DAF00F78F31 /* Tools(工具) */ = {
@@ -857,6 +914,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D616A20720A44716006854E3 /* BindBoss(绑定经销商) */ = {
+			isa = PBXGroup;
+			children = (
+				D616A20E20A44B75006854E3 /* Controller */,
+				D616A20F20A44B75006854E3 /* Model */,
+			);
+			path = "BindBoss(绑定经销商)";
+			sourceTree = "<group>";
+		};
+		D616A20E20A44B75006854E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D60D302920A56AC30083594B /* SPBindBossViewController.h */,
+				D60D302A20A56AC30083594B /* SPBindBossViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D616A20F20A44B75006854E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D616A21020A44B96006854E3 /* SPStyleDIY.h */,
+				D616A21120A44B96006854E3 /* SPStyleDIY.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D617AA85209800DC009A00E1 /* Construction(我的工地) */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,6 +1029,8 @@
 				D6FF34CF20A16693001B0070 /* SPDropowerFenyeResult.m */,
 				D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */,
 				D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */,
+				D68CCD1E20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.h */,
+				D68CCD1F20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -973,6 +1059,23 @@
 				D613E7B61F6621E600D62B89 /* Other(其他) */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		D618C85D20A590CE00667EC0 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				D618C85E20A590FC00667EC0 /* Controller */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		D618C85E20A590FC00667EC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D618C85F20A5910C00667EC0 /* SPSettingViewController.h */,
+				D618C86020A5910C00667EC0 /* SPSettingViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D62034FE2058B79500F39847 /* Resource */ = {
@@ -1026,9 +1129,12 @@
 			isa = PBXGroup;
 			children = (
 				D62034FE2058B79500F39847 /* Resource */,
+				D60D302C20A56F120083594B /* LBXAlertAction */,
+				D618C85D20A590CE00667EC0 /* Setting(设置) */,
 				D633233C1FC7AFF6003511EA /* Login(登录) */,
 				D63200B82092ABB10057B969 /* Problem(问题) */,
 				D662F85B2093237E0058C2E9 /* Invite(邀请) */,
+				D616A20720A44716006854E3 /* BindBoss(绑定经销商) */,
 				D63323451FC7AFF6003511EA /* Model */,
 				D64C4334208DC959000FF373 /* Tool */,
 				D63323461FC7AFF6003511EA /* View */,
@@ -1429,6 +1535,7 @@
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D64C433A208DCB41000FF373 /* SPPersonScoreParam.m in Sources */,
+				D60D303A20A56F120083594B /* UIAlertView+LBXAlertAction.m in Sources */,
 				D6B3941120592FB7001E08AC /* SPNumberScrollView.m in Sources */,
 				D62444C32091A20800A89DF4 /* SPProblemParam.m in Sources */,
 				D64C4340208DD38F000FF373 /* SPCurrentGradeInfo.m in Sources */,
@@ -1457,23 +1564,29 @@
 				D62035042058C56B00F39847 /* SPServiceCollectionViewCell.m in Sources */,
 				D63200BC2092AC310057B969 /* SPProblemViewController.m in Sources */,
 				D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */,
+				D60D303F20A575D70083594B /* SPScanResultViewController.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
 				D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */,
 				D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */,
+				D68CCD2020A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m in Sources */,
 				D6659ECD20A00E8300846576 /* SPConstructionTableCell.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D61049D8209F2B9C009E7BB1 /* SPConstructionTool.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
+				D60D303820A56F120083594B /* UIActionSheet+LBXAlertAction.m in Sources */,
 				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,
 				D62035102059072800F39847 /* SPBPTableViewCell.m in Sources */,
 				D61049DB209F2C1F009E7BB1 /* SPSiteCreateParam.m in Sources */,
 				D6164D30204596D100767C00 /* SPSliderParam.m in Sources */,
 				D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */,
+				D60D302B20A56AC30083594B /* SPBindBossViewController.m in Sources */,
+				D616A21220A44B96006854E3 /* SPStyleDIY.m in Sources */,
 				D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */,
 				D6CD663E205251DF0072A1D3 /* SPMyCenterHeaderView.m in Sources */,
 				D6FF34CD20A1666E001B0070 /* SPDropowerFenyeParam.m in Sources */,
+				D60D303B20A56F120083594B /* UIWindow+LBXHierarchy.m in Sources */,
 				D6164D2E204596D100767C00 /* SPGridItem.m in Sources */,
 				D64E4300209C07B40080A9E3 /* SPAddressView.m in Sources */,
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
@@ -1510,6 +1623,7 @@
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
+				D60D303920A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
 				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
 				D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */,
@@ -1518,6 +1632,7 @@
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
+				D60D303C20A56F120083594B /* LBXAlertAction.m in Sources */,
 				D6164D32204596D100767C00 /* SPExceedApplianceCell.m in Sources */,
 				D60EC4DA1FC6A95300F78F31 /* SPClassMainItem.m in Sources */,
 				D60EC4CB1FC68C4900F78F31 /* SPCommodityViewController.m in Sources */,
@@ -1529,6 +1644,7 @@
 				D6FF34BA20A12D44001B0070 /* SPMiddleCollectionViewCell.m in Sources */,
 				D613E7D81F66579C00D62B89 /* SPTabBar.m in Sources */,
 				D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */,
+				D618C86120A5910C00667EC0 /* SPSettingViewController.m in Sources */,
 				D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */,
 				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,

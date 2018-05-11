@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"邀请好友";
     // Do any additional setup after loading the view.
     SPInviteFriendView *inviteView = [SPInviteFriendView inviteView];
     inviteView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH);
@@ -68,13 +69,6 @@
                                    [self presentViewController:alertVc animated:YES completion:nil];
                                    break;
                                }
-                            case SSDKResponseStateCancel:
-                                {
-                                    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"遗憾" message:@"取消分享" preferredStyle:UIAlertControllerStyleAlert];
-                                    [alertVc addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-                                    [self presentViewController:alertVc animated:YES completion:nil];
-                                    break;
-                                }
                            default:
                                break;
                        }

@@ -9,8 +9,13 @@
 #import "SPPersonalCenterViewController.h"
 #import "MJExtension.h"
 
+#import "SPSettingViewController.h"
+
 #import "SPProblemViewController.h"
 #import "SPInviteFriendViewController.h"
+
+#import "SPStyleDIY.h"
+#import "SPBindBossViewController.h"
 
 //顶部和头部View
 #import "SPCenterTopToolView.h"
@@ -29,7 +34,7 @@
 #import "SPAccountTool.h"
 #import "SPPersonCenterTool.h"
 
-@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate>
+@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate,SPCenterTopToolViewDelegate>
 
 /* headerView */
 @property (nonatomic, strong)  SPMyCenterHeaderView *headerView;
@@ -43,13 +48,13 @@
 /* 服务数据 */
 @property (nonatomic, strong)  NSMutableArray<SPServiceItem *> *serviceItem;
 
-@property (nonatomic, strong)  NSArray *scrollArray;
-
 @property (nonatomic, strong)  NSArray *integral;
 
 @property (nonatomic, strong)  SPPersonScoreResult *result;
 
 @property (nonatomic, strong)  SPProblemResult *problemResult;
+
+@property (nonatomic, strong)  SPBindBossViewController *scanVc;
 
 @end
 
@@ -134,6 +139,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 
 - (void)setUpNavTopView {
     _topToolView = [[SPCenterTopToolView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 64)];
+    _topToolView.delegate = self;
     [self.view addSubview:_topToolView];
 }
 
@@ -141,6 +147,24 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     self.tableView.tableHeaderView = self.headerView;
     self.headerBgImageView.frame = self.headerView.bounds;
     [self.headerView insertSubview:self.headerBgImageView atIndex:0]; //将背景图片放到最底层
+}
+
+#pragma mark - SPCenterTopToolViewDelegate
+- (void)centerTopToolView:(SPCenterTopToolView *)topToolView buttonType:(TopToolBarButtonType)buttonType {
+    switch (buttonType) {
+        case TopToolBarButtonTypeScan:
+            [self openScanVCWithStyle:[SPStyleDIY ZhiFuBaoStyle]];
+            break;
+        case TopToolBarButtonTypeSetting:
+            [self openSettingVc];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)openSettingVc {
+    
 }
 
 #pragma mark - LazyLoad
@@ -202,13 +226,6 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"常用问题加载异常" toView:self.view];
     }];
-}
-
-- (NSArray *)scrollArray {
-    if (!_scrollArray) {
-        _scrollArray = [NSArray arrayWithObjects:@"111111111",@"22222222",@"33333333", nil];
-    }
-    return _scrollArray;
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -275,10 +292,29 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         case PersonCenterServiceInviteFriend:
             [self doInviteFriend];
             break;
+        case PersonCenterServiceBindBoss:
+            [self openScanVCWithStyle:[SPStyleDIY InnerStyle]];
+            break;
         default:
             break;
     }
 }
+
+- (SPBindBossViewController *)scanVc {
+    if (!_scanVc) {
+        _scanVc = [[SPBindBossViewController alloc] init];
+        _scanVc.isOpenInterestRect = YES;
+        _scanVc.libraryType = SLT_Native;
+        _scanVc.scanCodeType = SCT_QRCode;
+    }
+    return _scanVc;
+}
+
+- (void)openScanVCWithStyle:(LBXScanViewStyle *)style {
+    self.scanVc.style = style;
+    [self.navigationController pushViewController:self.scanVc animated:YES];
+}
+
 
 - (void)doSignIn {
     SPSignInParam *param = [SPSignInParam param:APP00007];
@@ -304,6 +340,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     SPInviteFriendViewController *inviteFriendVc = [[SPInviteFriendViewController alloc] init];
     [self.navigationController pushViewController:inviteFriendVc animated:YES];
 }
+
+
 
 #pragma mark -  滚动tableview 完毕之后
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

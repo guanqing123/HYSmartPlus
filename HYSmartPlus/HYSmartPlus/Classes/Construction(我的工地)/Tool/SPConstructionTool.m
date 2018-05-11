@@ -12,6 +12,20 @@
 
 @implementation SPConstructionTool
 
++ (void)saveDropowerDetails:(SPSaveDropowerDetailsParam *)saveDetailsParam imageArray:(NSArray *)imageArray success:(void (^)(SPCommonResult *))success failure:(void (^)(NSError *))failure {
+    
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/saveDropowerDetails";
+    
+    NSDictionary *parameter = [saveDetailsParam mj_keyValues];
+    
+    [SPHttpTool postWithURL:urlStr params:parameter formDataArray:imageArray success:^(id json) {
+        SPCommonResult *result = [SPCommonResult mj_objectWithKeyValues:json];
+        success(result);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 + (void)deleteDropowerAndDetails:(SPDeleteDropowerDetailParam *)deleteParam success:(void (^)(SPCommonResult *))success failure:(void (^)(NSError *))failure {
     
     NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/deleteDropowerAndDetails";

@@ -17,8 +17,9 @@
 #import "SPConstructionTool.h"
 #import "SPAccountTool.h"
 #import "SPLoginResult.h"
+#import "IQKeyboardManager.h"
 
-@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate>
+@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate,SPSiteCreateViewControllerDelegate>
 // 搜索条
 @property (nonatomic, weak)  UIView *searchView;
 // 搜索内容
@@ -59,8 +60,13 @@
 #pragma mark - 创建工地
 - (void)add {
     SPSiteCreateViewController *siteVc = [[SPSiteCreateViewController alloc] init];
-    siteVc.hidesBottomBarWhenPushed = YES;
+    siteVc.delegate = self;
     [self.navigationController pushViewController:siteVc animated:YES];
+}
+
+#pragma mark - SPSiteCreateViewControllerDelegate
+- (void)siteCreateVcFinishSave:(SPSiteCreateViewController *)siteCreateVc {
+    [self.tableView.mj_header beginRefreshing];
 }
 
 #pragma mark - 设置搜索框
@@ -85,6 +91,8 @@
     }];
     searchBar.delegate = self;
     [searchBar addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    searchBar.inputAccessoryView = [[UIView alloc] init];
+    searchBar.returnKeyType = UIReturnKeySearch;
 }
 
 #pragma mark - 搜索框文本变化
@@ -95,6 +103,7 @@
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self.tableView.mj_header beginRefreshing];
     return YES;
 }
 
@@ -128,6 +137,7 @@
     fenyeParam.uid = [SPAccountTool loginResult].userbase.uid;
     fenyeParam.pageNum = self.pageNum;
     fenyeParam.pageSize = self.pageSize;
+    fenyeParam.content = self.searchText;
     [SPConstructionTool getDropowerAndDetailsFenye:fenyeParam success:^(SPDropowerFenyeResult *fenyeResult) {
         if (![fenyeResult.code isEqualToString:@"00000"]) {
             [self.tableView.mj_header endRefreshing];
@@ -157,6 +167,7 @@
     fenyeParam.uid = [SPAccountTool loginResult].userbase.uid;
     fenyeParam.pageNum = self.pageNum;
     fenyeParam.pageSize = self.pageSize;
+    fenyeParam.content = self.searchText;
     [SPConstructionTool getDropowerAndDetailsFenye:fenyeParam success:^(SPDropowerFenyeResult *fenyeResult) {
         if (![fenyeResult.code isEqualToString:@"00000"]) {
             [self.tableView.mj_footer endRefreshing];
@@ -238,6 +249,11 @@
 
 - (void)uploadPhotos:(SPDropower *)dropower {
     SPUploadPhotoCollectionViewController *uploadPhotoVc = [[SPUploadPhotoCollectionViewController alloc] init];
+    uploadPhotoVc.dropower = dropower;
+    WEAKSELF
+    uploadPhotoVc.finishPhotoUpload = ^{
+        [weakSelf.tableView.mj_header beginRefreshing];
+    };
     [self.navigationController pushViewController:uploadPhotoVc animated:YES];
 }
 

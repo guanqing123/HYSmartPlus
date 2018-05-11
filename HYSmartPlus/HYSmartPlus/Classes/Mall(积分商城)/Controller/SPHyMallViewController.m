@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH - SPBottomTabH)];
     webView.scrollView.showsVerticalScrollIndicator = YES;
     NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hymall/work/lists.html?userid=%@",[SPAccountTool loginResult].userbase.uid];
     webView.UIDelegate = self;

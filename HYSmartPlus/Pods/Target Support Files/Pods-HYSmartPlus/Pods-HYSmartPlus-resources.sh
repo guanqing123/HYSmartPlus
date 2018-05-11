@@ -81,16 +81,26 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "LBXScan/LBXScan/UI/CodeScan.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle"
+  install_resource "ZBarSDK/iphone/res/zbar-back.png"
+  install_resource "ZBarSDK/iphone/res/zbar-help.html"
+  install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
+  install_resource "ZBarSDK/iphone/res/zbar-samples.png"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "LBXScan/LBXScan/UI/CodeScan.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle"
+  install_resource "ZBarSDK/iphone/res/zbar-back.png"
+  install_resource "ZBarSDK/iphone/res/zbar-help.html"
+  install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
+  install_resource "ZBarSDK/iphone/res/zbar-samples.png"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "mob_sharesdk/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"

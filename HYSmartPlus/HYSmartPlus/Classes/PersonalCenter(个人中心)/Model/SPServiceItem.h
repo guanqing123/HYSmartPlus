@@ -10,7 +10,7 @@
 typedef enum {
     PersonCenterServiceSignIn,
     PersonCenterServiceInviteFriend,
-    PersonCenterServiceDiscountCard,
+    PersonCenterServiceBindBoss,
     PersonCenterServicePhoneModify
 } PersonCenterServiceType;
 

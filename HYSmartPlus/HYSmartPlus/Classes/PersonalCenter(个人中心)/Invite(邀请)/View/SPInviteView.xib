@@ -22,20 +22,14 @@
                     <color key="textColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-Mi-dx9" userLabel="prentView">
-                    <rect key="frame" x="80" y="76" width="214" height="214"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="EJP-Mi-dx9" secondAttribute="height" multiplier="1:1" id="lBg-2h-AB7"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描二维码下载鸿雁安+APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-ES-3rq">
-                    <rect key="frame" x="92.5" y="295" width="191" height="18"/>
+                    <rect key="frame" x="92.5" y="296" width="191" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BO-8M-CJ3">
-                    <rect key="frame" x="50" y="343" width="275" height="32"/>
+                    <rect key="frame" x="50" y="344" width="275" height="32"/>
                     <state key="normal" title="分享" image="share">
                         <color key="titleColor" red="0.92156862750000001" green="0.4039215686" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -55,25 +49,32 @@
                         <action selector="share" destination="iN0-l3-epB" eventType="touchUpInside" id="kvS-CM-5Qc"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7dE-qa-wQJ">
+                    <rect key="frame" x="80" y="76" width="215" height="215"/>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="7dE-qa-wQJ" secondAttribute="height" multiplier="1:1" id="Ubt-0n-s0q"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9BO-8M-CJ3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6b8-CV-4Zm"/>
                 <constraint firstAttribute="trailing" secondItem="sKe-gc-2Z1" secondAttribute="trailing" constant="20" id="AIl-gV-Nlj"/>
-                <constraint firstItem="mXa-ES-3rq" firstAttribute="top" secondItem="EJP-Mi-dx9" secondAttribute="bottom" constant="5" id="Aop-xT-bjM"/>
-                <constraint firstItem="EJP-Mi-dx9" firstAttribute="top" secondItem="sKe-gc-2Z1" secondAttribute="bottom" constant="25" id="B7b-pX-ecb"/>
                 <constraint firstItem="9BO-8M-CJ3" firstAttribute="top" secondItem="mXa-ES-3rq" secondAttribute="bottom" constant="30" id="BP0-tw-DdP"/>
-                <constraint firstItem="EJP-Mi-dx9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F6g-Ny-XM4"/>
+                <constraint firstItem="mXa-ES-3rq" firstAttribute="top" secondItem="7dE-qa-wQJ" secondAttribute="bottom" constant="5" id="E4i-BL-CHd"/>
                 <constraint firstItem="sKe-gc-2Z1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JDA-q2-UvZ"/>
+                <constraint firstItem="7dE-qa-wQJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="PQf-kF-BPN"/>
                 <constraint firstItem="mXa-ES-3rq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WH3-JR-Nis"/>
-                <constraint firstItem="EJP-Mi-dx9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="bWL-zc-hbe"/>
+                <constraint firstItem="7dE-qa-wQJ" firstAttribute="top" secondItem="sKe-gc-2Z1" secondAttribute="bottom" constant="25" id="Xr8-4G-N9u"/>
                 <constraint firstItem="9BO-8M-CJ3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="c4c-jt-lNb"/>
+                <constraint firstItem="7dE-qa-wQJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="coj-YU-9RO"/>
                 <constraint firstItem="sKe-gc-2Z1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="kdt-wd-K5Y"/>
             </constraints>
             <connections>
-                <outlet property="prentView" destination="EJP-Mi-dx9" id="73k-oj-BEV"/>
+                <outlet property="prentView" destination="7dE-qa-wQJ" id="Cze-vw-3Au"/>
             </connections>
-            <point key="canvasLocation" x="-282" y="-379"/>
+            <point key="canvasLocation" x="-526" y="-418"/>
         </view>
     </objects>
     <resources>

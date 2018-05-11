@@ -166,10 +166,13 @@
         if ([result.code isEqualToString:@"00000"]) {
             [MBProgressHUD showSuccess:@"保存成功" toView:self.view];
             WEAKSELF
+            if ([weakSelf.delegate respondsToSelector:@selector(siteCreateVcFinishSave:)]) {
+                [weakSelf.delegate siteCreateVcFinishSave:weakSelf];
+            }
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             });
-        }else{
+        } else {
             [MBProgressHUD showError:result.msg toView:self.view];
         }
     } fail:^(NSError *error) {

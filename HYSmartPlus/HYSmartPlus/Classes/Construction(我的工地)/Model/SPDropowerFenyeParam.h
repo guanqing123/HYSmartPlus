@@ -16,4 +16,6 @@
 
 @property (nonatomic, assign) NSInteger pageSize;
 
+@property (nonatomic, copy) NSString *content;
+
 @end

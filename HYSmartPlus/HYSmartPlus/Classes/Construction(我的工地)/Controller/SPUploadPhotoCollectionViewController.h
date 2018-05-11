@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPDropower.h"
 
 @interface SPUploadPhotoCollectionViewController : UICollectionViewController
+
+@property (nonatomic, copy) dispatch_block_t finishPhotoUpload;
+
+@property (nonatomic, strong)  SPDropower *dropower;
 
 @end

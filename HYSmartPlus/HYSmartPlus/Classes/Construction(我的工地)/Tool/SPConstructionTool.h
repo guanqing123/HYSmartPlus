@@ -16,9 +16,19 @@
 
 #import "SPDeleteDropowerDetailParam.h"
 
+#import "SPSaveDropowerDetailsParam.h"
+
 @interface SPConstructionTool : NSObject
 
++ (void)saveDropowerDetails:(SPSaveDropowerDetailsParam *)saveDetailsParam imageArray:(NSArray *)imageArray success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
 
+/**
+ 删除水电图主单和明细
+
+ @param deleteParam 删除参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
 + (void)deleteDropowerAndDetails:(SPDeleteDropowerDetailParam *)deleteParam success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
 
 /**

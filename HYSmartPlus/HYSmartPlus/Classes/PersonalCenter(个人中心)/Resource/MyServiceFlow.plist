@@ -20,9 +20,9 @@
 	</dict>
 	<dict>
 		<key>iconImage</key>
-		<string>me_discountCard</string>
+		<string>me_bindBoss</string>
 		<key>gridTitle</key>
-		<string>优惠卡券</string>
+		<string>绑定经销商</string>
 		<key>serviceType</key>
 		<integer>2</integer>
 	</dict>
