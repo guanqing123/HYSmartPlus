@@ -164,7 +164,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 }
 
 - (void)openSettingVc {
-    
+    SPSettingViewController *settingVc = [[SPSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVc animated:YES];
 }
 
 #pragma mark - LazyLoad

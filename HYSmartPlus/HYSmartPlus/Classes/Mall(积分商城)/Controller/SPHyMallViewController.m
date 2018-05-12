@@ -40,12 +40,23 @@
 }
 
 - (void)setupRightNavItem {
-    UIBarButtonItem *shopCar = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"shopCar"] withHighLightedImage:[UIImage imageNamed:@"shopCar"] target:self action:@selector(goShopCar)];
-    self.navigationItem.rightBarButtonItem = shopCar;
+    UIBarButtonItem *shopCar = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"car"] withHighLightedImage:[UIImage imageNamed:@"car"] target:self action:@selector(goShopCar)];
+    
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] init];
+    flex.width = 25;
+    
+    UIBarButtonItem *order = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"order"] withSelected:[UIImage imageNamed:@"order"] target:self action:@selector(order)];
+    
+    self.navigationItem.rightBarButtonItems = @[order,flex,shopCar];
 }
 
 - (void)goShopCar {
     NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hymall/work/buycar.html?userid=%@",[SPAccountTool loginResult].userbase.uid];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
+}
+
+- (void)order {
+    NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hymall/work/order.html?userid=%@",[SPAccountTool loginResult].userbase.uid];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
 }
 

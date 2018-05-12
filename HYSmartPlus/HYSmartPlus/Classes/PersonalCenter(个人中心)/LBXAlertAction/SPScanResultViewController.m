@@ -1,48 +1,43 @@
 //
-//  SPDiscountViewController.m
+//  SPScanResultViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/4/27.
+//  Created by information on 2018/5/11.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#import "SPDiscountViewController.h"
 #import <WebKit/WebKit.h>
+#import "SPScanResultViewController.h"
 #import "DGActivityIndicatorView.h"
 
-#import "SPAccountTool.h"
-#import "SPLoginResult.h"
+@interface SPScanResultViewController () <WKUIDelegate,WKNavigationDelegate>
 
-@interface SPDiscountViewController () <WKUIDelegate,WKNavigationDelegate>
-/** webView */
 @property (nonatomic, weak) WKWebView  *webView;
 /** 指示器 */
 @property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
 @end
 
-@implementation SPDiscountViewController
+@implementation SPScanResultViewController
+
+- (instancetype)initWithUrlStr:(NSString *)urlStr {
+    if (self = [super init]) {
+        _urlStr = urlStr;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    /*WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/honyar/templates/code/sdCode.html?userid=%@",[SPAccountTool loginResult].userbase.uid];*/
-    NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/wxDev/qrcode/getQrcode?type=1&uid=%@",[SPAccountTool loginResult].userbase.uid];
-    
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:webView];
+    self.title = @"扫码结果";
+    WKWebView *webView = [[WKWebView alloc] init];
+    webView.frame = self.view.bounds;
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
     _webView = webView;
-    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:webView];
     
-    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.height.mas_equalTo(@(280));
-        make.width.equalTo(@(280));
-    }];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
     
     [self setupIndicatorView];
 }
@@ -77,5 +72,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

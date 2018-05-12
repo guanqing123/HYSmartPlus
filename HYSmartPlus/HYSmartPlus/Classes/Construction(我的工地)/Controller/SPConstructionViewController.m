@@ -18,6 +18,7 @@
 #import "SPAccountTool.h"
 #import "SPLoginResult.h"
 #import "IQKeyboardManager.h"
+#import "SPAppiontmentViewController.h"
 
 @interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate,SPSiteCreateViewControllerDelegate>
 // 搜索条
@@ -53,8 +54,16 @@
 - (void)setupNavBar {
     self.view.backgroundColor = SPBGColor;
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"预约" style:UIBarButtonItemStyleDone target:self action:@selector(appiontment)];
+    
     // rightItem
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"add"] withHighLightedImage:[UIImage imageNamed:@"add"] target:self action:@selector(add)];
+}
+
+#pragma mark - appiontment
+- (void)appiontment {
+    SPAppiontmentViewController *appiontmentVc = [[SPAppiontmentViewController alloc] init];
+    [self.navigationController pushViewController:appiontmentVc animated:YES];
 }
 
 #pragma mark - 创建工地
