@@ -10,12 +10,8 @@
 
 @implementation SPSettingTopView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)topView {
+    return [[[NSBundle mainBundle] loadNibNamed:@"SPSettingTopView" owner:nil options:nil] lastObject];
 }
-*/
 
 @end

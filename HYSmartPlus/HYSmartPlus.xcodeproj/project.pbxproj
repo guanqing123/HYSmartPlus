@@ -157,6 +157,9 @@
 		D6CD6643205268350072A1D3 /* SPCenterTopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CD6642205268350072A1D3 /* SPCenterTopToolView.m */; };
 		D6F0F4601FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */; };
 		D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */; };
+		D6F7B5D320A869F7006C025D /* SPUpDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F7B5D220A869F7006C025D /* SPUpDownButton.m */; };
+		D6F7B5D720A86D49006C025D /* SPSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F7B5D520A86D49006C025D /* SPSettingTableViewCell.m */; };
+		D6F7B5D820A86D49006C025D /* SPSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6F7B5D620A86D49006C025D /* SPSettingTableViewCell.xib */; };
 		D6FF34BA20A12D44001B0070 /* SPMiddleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34B820A12D44001B0070 /* SPMiddleCollectionViewCell.m */; };
 		D6FF34BB20A12D44001B0070 /* SPMiddleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF34B920A12D44001B0070 /* SPMiddleCollectionViewCell.xib */; };
 		D6FF34BE20A139A1001B0070 /* SPBottomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF34BD20A139A1001B0070 /* SPBottomToolBarView.m */; };
@@ -447,6 +450,11 @@
 		D6F0F45F1FB9746500849796 /* UIBarButtonItem+SPBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SPBarButtonItem.m"; sourceTree = "<group>"; };
 		D6F65B84209B5CF10057EC78 /* SPChooseLocationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPChooseLocationView.h; sourceTree = "<group>"; };
 		D6F65B85209B5CF10057EC78 /* SPChooseLocationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPChooseLocationView.m; sourceTree = "<group>"; };
+		D6F7B5D120A869F7006C025D /* SPUpDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUpDownButton.h; sourceTree = "<group>"; };
+		D6F7B5D220A869F7006C025D /* SPUpDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUpDownButton.m; sourceTree = "<group>"; };
+		D6F7B5D420A86D49006C025D /* SPSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSettingTableViewCell.h; sourceTree = "<group>"; };
+		D6F7B5D520A86D49006C025D /* SPSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSettingTableViewCell.m; sourceTree = "<group>"; };
+		D6F7B5D620A86D49006C025D /* SPSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSettingTableViewCell.xib; sourceTree = "<group>"; };
 		D6FF34B720A12D44001B0070 /* SPMiddleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMiddleCollectionViewCell.h; sourceTree = "<group>"; };
 		D6FF34B820A12D44001B0070 /* SPMiddleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMiddleCollectionViewCell.m; sourceTree = "<group>"; };
 		D6FF34B920A12D44001B0070 /* SPMiddleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPMiddleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -563,6 +571,11 @@
 				D60D540E20A7287F00A0D629 /* SPSettingTopView.h */,
 				D60D540F20A7287F00A0D629 /* SPSettingTopView.m */,
 				D60D541120A7289800A0D629 /* SPSettingTopView.xib */,
+				D6F7B5D120A869F7006C025D /* SPUpDownButton.h */,
+				D6F7B5D220A869F7006C025D /* SPUpDownButton.m */,
+				D6F7B5D420A86D49006C025D /* SPSettingTableViewCell.h */,
+				D6F7B5D520A86D49006C025D /* SPSettingTableViewCell.m */,
+				D6F7B5D620A86D49006C025D /* SPSettingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1488,6 +1501,7 @@
 				D6FF34BB20A12D44001B0070 /* SPMiddleCollectionViewCell.xib in Resources */,
 				D64E430A209C42C10080A9E3 /* Cities.json in Resources */,
 				D62035112059072800F39847 /* SPBPTableViewCell.xib in Resources */,
+				D6F7B5D820A86D49006C025D /* SPSettingTableViewCell.xib in Resources */,
 				D64E4305209C3FD80080A9E3 /* SPAddressTableViewCell.xib in Resources */,
 				D62035002058B7A400F39847 /* MyServiceFlow.plist in Resources */,
 				D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */,
@@ -1656,6 +1670,7 @@
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D60D303920A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				D6F7B5D320A869F7006C025D /* SPUpDownButton.m in Sources */,
 				D6B3940E20592661001E08AC /* SPProblemTableViewCell.m in Sources */,
 				D6CD6438209401C00095DBEA /* SPInviteFriendViewController.m in Sources */,
 				D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */,
@@ -1664,6 +1679,7 @@
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
+				D6F7B5D720A86D49006C025D /* SPSettingTableViewCell.m in Sources */,
 				D60D303C20A56F120083594B /* LBXAlertAction.m in Sources */,
 				D6164D32204596D100767C00 /* SPExceedApplianceCell.m in Sources */,
 				D60EC4DA1FC6A95300F78F31 /* SPClassMainItem.m in Sources */,

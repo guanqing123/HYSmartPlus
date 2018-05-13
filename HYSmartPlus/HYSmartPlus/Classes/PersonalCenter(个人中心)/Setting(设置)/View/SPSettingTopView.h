@@ -10,4 +10,6 @@
 
 @interface SPSettingTopView : UIView
 
++ (instancetype)topView;
+
 @end
