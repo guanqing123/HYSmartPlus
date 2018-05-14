@@ -19,7 +19,7 @@
 
 //顶部和头部View
 #import "SPCenterTopToolView.h"
-#import "SPMyCenterHeaderView.h"
+#import "SPPersonCenterHeaderView.h"
 
 //cell
 #import "SPProblemTableViewCell.h"
@@ -37,7 +37,10 @@
 @interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate,SPCenterTopToolViewDelegate>
 
 /* headerView */
-@property (nonatomic, strong)  SPMyCenterHeaderView *headerView;
+//@property (nonatomic, strong)  SPMyCenterHeaderView *headerView;
+
+@property (nonatomic, strong)  SPPersonCenterHeaderView *headerView;
+
 /** 头部背景图片 */
 @property (nonatomic, strong)  UIImageView *headerBgImageView;
 /** tableView */
@@ -144,11 +147,17 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 }
 
 - (void)setUpHeaderCenterView {
-    self.tableView.tableHeaderView = self.headerView;
-    self.headerBgImageView.frame = self.headerView.bounds;
-    [self.headerView insertSubview:self.headerBgImageView atIndex:0]; //将背景图片放到最底层
-    
-    [self.headerView setData];
+    SPPersonCenterHeaderView *headerView = [SPPersonCenterHeaderView headerView];
+    WEAKSELF
+    headerView.headImageBlock = ^{
+        [weakSelf openSettingVc];
+    };
+    headerView.frame = (CGRect){CGPointZero,CGSizeMake(ScreenW, 200)};
+    _headerView = headerView;
+    [headerView setData];
+    self.tableView.tableHeaderView = headerView;
+    self.headerBgImageView.frame = headerView.bounds;
+    [self.headerView insertSubview:self.headerBgImageView atIndex:0]; //将背景图片放到最底层*/
 }
 
 #pragma mark - SPCenterTopToolViewDelegate
@@ -192,14 +201,6 @@ static NSString *const SPBPCellID = @"SPBPCellID";
             forCellReuseIdentifier:SPBPCellID];
     }
     return _tableView;
-}
-
-- (SPMyCenterHeaderView *)headerView {
-    if (!_headerView) {
-        _headerView = [SPMyCenterHeaderView headerView];
-        _headerView.frame = CGRectMake(0, 0, ScreenW, 200);
-    }
-    return _headerView;
 }
 
 - (UIImageView *)headerBgImageView {
