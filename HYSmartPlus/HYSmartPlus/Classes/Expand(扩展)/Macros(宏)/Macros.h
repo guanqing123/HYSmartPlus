@@ -35,6 +35,8 @@
 #define iphone5 (ScreenH == 568)
 #define iphone4 (ScreenH == 480)
 
+#define SPHeadImagePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"headImage.png"]
+
 //色值
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define RGB(r,g,b) RGBA(r,g,b,1.0f)

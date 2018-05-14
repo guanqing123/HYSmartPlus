@@ -32,7 +32,7 @@
                             </constraints>
                             <state key="normal" image="icon"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15857125375" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw3-oY-h90">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw3-oY-h90">
                             <rect key="frame" x="99" y="10" width="248" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="FE2-5a-A2e"/>
@@ -64,8 +64,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="myIconBtn" destination="xEw-ba-ZEO" id="RiS-zC-MoM"/>
+                <outlet property="telephoneLabel" destination="nw3-oY-h90" id="MG5-Ue-vEW"/>
             </connections>
-            <point key="canvasLocation" x="-273" y="-193"/>
+            <point key="canvasLocation" x="-2085" y="-209"/>
         </view>
     </objects>
     <resources>

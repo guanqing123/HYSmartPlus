@@ -74,7 +74,7 @@
             <connections>
                 <outlet property="prentView" destination="7dE-qa-wQJ" id="Cze-vw-3Au"/>
             </connections>
-            <point key="canvasLocation" x="-526" y="-418"/>
+            <point key="canvasLocation" x="-691" y="-417"/>
         </view>
     </objects>
     <resources>

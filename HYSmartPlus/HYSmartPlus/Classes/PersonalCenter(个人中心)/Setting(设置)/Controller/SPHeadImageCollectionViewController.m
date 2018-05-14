@@ -1,24 +1,21 @@
 //
-//  SPSiteCreateViewController.m
+//  SPHeadImageCollectionViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/5/2.
+//  Created by information on 2018/5/14.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#import "SPSiteCreateViewController.h"
+#import "SPHeadImageCollectionViewController.h"
 #import "TZImagePickerController.h"
 #import "UIView+Layout.h"
 #import "TZTestCell.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "LxGridViewFlowLayout.h"
-#import "SPChooseLocationView.h"
-#import "SPCitiesDataTool.h"
 #import "SPConstructionTool.h"
-#import "SPAccountTool.h"
-#import "SPLoginResult.h"
 
-@interface SPSiteCreateViewController ()<TZImagePickerControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SPChooseLocationViewDelegate,UIGestureRecognizerDelegate> {
+@interface SPHeadImageCollectionViewController ()
+<UIActionSheetDelegate,TZImagePickerControllerDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
     NSMutableArray *_selectedPhotos;
     NSMutableArray *_selectedAssets;
     BOOL _isSelectOriginalPhoto;
@@ -27,11 +24,8 @@
     CGFloat _margin;
 }
 @property (nonatomic, strong)  UIImagePickerController *imagePickerVc;
-@property (nonatomic, strong)  UICollectionView *collectionView;
 @property (nonatomic, strong)  LxGridViewFlowLayout *layout;
-@property (strong, nonatomic) CLLocation *location;
-
-@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic)  CLLocation *location;
 
 //配置项
 
@@ -47,21 +41,11 @@
 
 @property (nonatomic, assign) BOOL allowPickingOriginalPhoto;
 @property (nonatomic, assign) BOOL allowPickingMuitlpleVideo;
-
-//  省／市／区
-@property (nonatomic, strong)  UIView *cover;
-@property (nonatomic, strong)  SPChooseLocationView *chooseLocationView;
-@property (weak, nonatomic) IBOutlet UITextField *userName;
-@property (weak, nonatomic) IBOutlet UITextField *userTel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UITextField *detailAddress;
-@property (weak, nonatomic) IBOutlet UITextField *comment;
-
-- (IBAction)selectAddress;
-
 @end
 
-@implementation SPSiteCreateViewController
+@implementation SPHeadImageCollectionViewController
+
+static NSString * const reuseIdentifier = @"TZTestCell";
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -88,44 +72,38 @@
     return _imagePickerVc;
 }
 
+- (instancetype)init {
+    // 如不需要长按排序效果，将LxGridViewFlowLayout类改成UICollectionViewFlowLayout即可
+    LxGridViewFlowLayout *layout = [[LxGridViewFlowLayout alloc] init];
+    _margin = 4;
+    _itemWH = (ScreenW - 2 * _margin - 4) / 3 - _margin;
+    layout.itemSize = CGSizeMake(_itemWH, _itemWH);
+    layout.minimumInteritemSpacing = _margin;
+    layout.minimumLineSpacing = _margin;
+    
+    return [super initWithCollectionViewLayout:layout];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = NO;
     // 1.导航栏等初始化
     [self setupNavBar];
-    // 2.CollectionView
+    
+    // 2.设置collectionView
     [self setupCollectionView];
-    // 3.cover
-    [self setupCover];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    CGRect tempRect = self.headerView.frame;
-    tempRect.origin.y = SPTopNavH;
-    self.headerView.frame = tempRect;
-    
-    _margin = 4;
-    _itemWH = (self.view.tz_width - 2 * _margin - 4) / 3 - _margin;
-    _layout.itemSize = CGSizeMake(_itemWH, _itemWH);
-    _layout.minimumInteritemSpacing = _margin;
-    _layout.minimumLineSpacing = _margin;
-    [self.collectionView setCollectionViewLayout:_layout];
-    CGFloat collectionViewY = CGRectGetMaxY(self.headerView.frame);
-    self.collectionView.frame = CGRectMake(0, collectionViewY, self.view.tz_width, self.view.tz_height - collectionViewY);
-}
-
-#pragma mark - setupNavBar
 - (void)setupNavBar {
-    self.title = @"工地信息";
+    self.title = @"头像设置";
     
     _selectedPhotos = [NSMutableArray array];
     _selectedAssets = [NSMutableArray array];
     
     _allowPickingGif = NO;
     _showSheet = YES;  //／< 显示一个sheet,把拍照按钮放在外面
-    _maxCountTF = 9; ///< 照片最大可选张数，设置为1即为单选模式
+    _maxCountTF = 1; ///< 照片最大可选张数，设置为1即为单选模式
     _columnNumberTF = 4;
     _sortAscending = YES;
     _allowCrop = NO;
@@ -133,77 +111,35 @@
     _allowPickingOriginalPhoto = YES;
     _allowPickingMuitlpleVideo = NO;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"save"] withHighLightedImage:[UIImage imageNamed:@"save"] target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"headImage"] withHighLightedImage:[UIImage imageNamed:@"headImage"] target:self action:@selector(uploadPhoto)];
 }
 
-- (void)save{
-    if ([self.userName.text length] < 1) {
-        [MBProgressHUD showMessage:@"请填写业主姓名" toView:self.view];
+- (void)uploadPhoto {
+    if (_selectedPhotos.count < 1) {
+        [MBProgressHUD showError:@"请选择图片" toView:self.view];
         return;
     }
-    if ([self.userTel.text length] < 1) {
-        [MBProgressHUD showMessage:@"请填写业主电话" toView:self.view];
-        return;
+   BOOL result = [UIImagePNGRepresentation([_selectedPhotos objectAtIndex:0]) writeToFile:SPHeadImagePath atomically:YES];
+    if (result == YES) {
+        NSLog(@"保存成功");
+        !_headImgeBlock ? : _headImgeBlock();
     }
-    if ([self.addressLabel.text length] < 1) {
-        [MBProgressHUD showMessage:@"请选择业主地区" toView:self.view];
-        return;
-    }
-    if ([self.detailAddress.text length] < 1) {
-        [MBProgressHUD showMessage:@"请填写详细地址" toView:self.view];
-        return;
-    }
-    SPSiteCreateParam *param = [[SPSiteCreateParam alloc] init];
-    param.uid = [SPAccountTool loginResult].userbase.uid;
-    param.userName = self.userName.text;
-    param.userTel  = self.userTel.text;
-    param.address  = [NSString stringWithFormat:@"%@%@",self.addressLabel.text,self.detailAddress.text];
-    param.comment  = self.comment.text;
-    [MBProgressHUD showWaitMessage:@"保存中,请耐心等待..." toView:self.view];
-    [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(SPCommonResult *result) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if ([result.code isEqualToString:@"00000"]) {
-            [MBProgressHUD showSuccess:@"保存成功" toView:self.view];
-            WEAKSELF
-            if ([weakSelf.delegate respondsToSelector:@selector(siteCreateVcFinishSave:)]) {
-                [weakSelf.delegate siteCreateVcFinishSave:weakSelf];
-            }
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.navigationController popViewControllerAnimated:YES];
-            });
-        } else {
-            [MBProgressHUD showError:result.msg toView:self.view];
-        }
-    } fail:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [MBProgressHUD showError:@"网络异常" toView:self.view];
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - setupCover
-- (void)setupCover {
-    // 初始化数据
-    [[SPCitiesDataTool sharedManager] requestGetData];
-    // 省市区级联
-    [self.view addSubview:self.cover];
-}
-
-#pragma mark - collectionView
 - (void)setupCollectionView {
-    // 如不需要长按排序效果，将LxGridViewFlowLayout类改成UICollectionViewFlowLayout即可
-    _layout = [[LxGridViewFlowLayout alloc] init];
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_layout];
-    _collectionView.alwaysBounceVertical = YES;
-    _collectionView.backgroundColor = RGB(244, 244, 244);
-    _collectionView.contentInset = UIEdgeInsetsMake(4, 4, 4, 4);
-    _collectionView.dataSource = self;
-    _collectionView.delegate = self;
-    _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    [self.view addSubview:_collectionView];
-    [_collectionView registerClass:[TZTestCell class] forCellWithReuseIdentifier:@"TZTestCell"];
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.backgroundColor = RGB(244, 244, 244);
+    self.collectionView.contentInset = UIEdgeInsetsMake(4, 4, 4, 4);
+    self.collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self.collectionView registerClass:[TZTestCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 #pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _selectedPhotos.count + 1;
 }
@@ -233,11 +169,11 @@
     [_selectedPhotos removeObjectAtIndex:sender.tag];
     [_selectedAssets removeObjectAtIndex:sender.tag];
     
-    [_collectionView performBatchUpdates:^{
+    [self.collectionView performBatchUpdates:^{
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-        [self->_collectionView deleteItemsAtIndexPaths:@[indexPath]];
+        [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
     } completion:^(BOOL finished) {
-        [self->_collectionView reloadData];
+        [self.collectionView reloadData];
     }];
 }
 
@@ -251,7 +187,7 @@
         }else{
             [self pushTZImagePickerController];
         }
-    } else { // preview photos or video / 预览照片或者视频
+    }else { // preview photos or video / 预览照片或者视频
         id asset = _selectedAssets[indexPath.row];
         BOOL isVideo = NO;
         if ([asset isKindOfClass:[PHAsset class]]) {
@@ -282,8 +218,8 @@
                 self->_selectedPhotos = [NSMutableArray arrayWithArray:photos];
                 self->_selectedAssets = [NSMutableArray arrayWithArray:assets];
                 self->_isSelectOriginalPhoto = isSelectOriginalPhoto;
-                [self->_collectionView reloadData];
-                self->_collectionView.contentSize = CGSizeMake(0, ((self->_selectedPhotos.count + 2) / 3 ) * (self->_margin + self->_itemWH));
+                [self.collectionView reloadData];
+                self.collectionView.contentSize = CGSizeMake(0, ((self->_selectedPhotos.count + 2) / 3 ) * (self->_margin + self->_itemWH));
             }];
             [self presentViewController:imagePickerVc animated:YES completion:nil];
         }
@@ -343,7 +279,6 @@
 }
 
 #pragma mark - UIAlertViewDelegate
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) { // 去设置界面，开启相机访问权限
         if (iOS8Later) {
@@ -421,7 +356,7 @@
 - (void)refreshCollectionViewWithAddedAsset:(id)asset image:(UIImage *)image {
     [_selectedAssets addObject:asset];
     [_selectedPhotos addObject:image];
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
     
     if ([asset isKindOfClass:[PHAsset class]]) {
         PHAsset *phAsset = asset;
@@ -515,7 +450,7 @@
     _selectedPhotos = [NSMutableArray arrayWithArray:photos];
     _selectedAssets = [NSMutableArray arrayWithArray:assets];
     _isSelectOriginalPhoto = isSelectOriginalPhoto;
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
     // _collectionView.contentSize = CGSizeMake(0, ((_selectedPhotos.count + 2) / 3 ) * (_margin + _itemWH));
     
     // 1.打印图片名字
@@ -543,7 +478,7 @@
     } failure:^(NSString *errorMessage, NSError *error) {
         NSLog(@"视频导出失败:%@,error:%@",errorMessage, error);
     }];
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
     // _collectionView.contentSize = CGSizeMake(0, ((_selectedPhotos.count + 2) / 3 ) * (_margin + _itemWH));
 }
 
@@ -552,7 +487,7 @@
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingGifImage:(UIImage *)animatedImage sourceAssets:(id)asset {
     _selectedPhotos = [NSMutableArray arrayWithArray:@[animatedImage]];
     _selectedAssets = [NSMutableArray arrayWithArray:@[asset]];
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
 }
 
 // Decide album show or not't
@@ -602,70 +537,7 @@
     [_selectedAssets removeObjectAtIndex:sourceIndexPath.item];
     [_selectedAssets insertObject:asset atIndex:destinationIndexPath.item];
     
-    [_collectionView reloadData];
-}
-
-#pragma mark - touchesBegan
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-
-#pragma mark  - 省市区
-- (IBAction)selectAddress {
-    [self.view endEditing:YES];
-    WEAKSELF
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        weakSelf.cover.hidden = !weakSelf.cover.hidden;
-        weakSelf.chooseLocationView.hidden = weakSelf.cover.hidden;
-    });
-}
-
-- (UIView *)cover {
-    if (!_cover) {
-        _cover = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _cover.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-        [_cover addSubview:self.chooseLocationView];
-        
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCover:)];
-        [_cover addGestureRecognizer:tap];
-        tap.delegate = self;
-        _cover.hidden = YES;
-    }
-    return _cover;
-}
-
-// 在 _chooseLocationView 内就不要隐藏cover 视图
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    
-    CGPoint point = [gestureRecognizer locationInView:gestureRecognizer.view];
-    if (CGRectContainsPoint(_chooseLocationView.frame, point)){
-        return NO;
-    }
-    return YES;
-}
-
-- (void)tapCover:(UITapGestureRecognizer *)tap{
-    
-    if ([_chooseLocationView.delegate respondsToSelector:@selector(chooseLocationView:address:)]) {
-        [_chooseLocationView.delegate chooseLocationView:_chooseLocationView address:_chooseLocationView.address];
-    }
-}
-
-- (SPChooseLocationView *)chooseLocationView {
-    if (!_chooseLocationView) {
-        _chooseLocationView = [[SPChooseLocationView alloc] initWithFrame:CGRectMake(0, ScreenH - 350, ScreenW, 350)];
-        _chooseLocationView.delegate = self;
-    }
-    return _chooseLocationView;
-}
-
-#pragma mark - SPChooseLocationViewDelegate
-- (void)chooseLocationView:(SPChooseLocationView *)chooseLocationView address:(NSString *)address {
-    WEAKSELF
-    [UIView animateWithDuration:0.25 animations:^{
-        weakSelf.addressLabel.text = address;
-        weakSelf.cover.hidden = YES;
-    }];
+    [self.collectionView reloadData];
 }
 
 @end

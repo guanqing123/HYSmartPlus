@@ -10,6 +10,10 @@
 
 @interface SPMyCenterHeaderView : UIView
 
+@property (nonatomic, copy) dispatch_block_t myIconBtnClick;
+
 + (instancetype)headerView;
+
+- (void)setData;
 
 @end

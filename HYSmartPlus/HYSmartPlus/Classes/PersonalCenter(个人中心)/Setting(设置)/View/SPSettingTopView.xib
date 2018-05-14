@@ -26,6 +26,9 @@
                                 <constraint firstAttribute="height" constant="46" id="oWm-sf-khd"/>
                             </constraints>
                             <state key="normal" title="Button" image="icon"/>
+                            <connections>
+                                <action selector="rightClick" destination="iN0-l3-epB" eventType="touchUpInside" id="RGu-2Z-eud"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15857125375" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-ac-aT5">
                             <rect key="frame" x="71" y="17" width="94" height="18"/>
@@ -46,6 +49,9 @@
                                 <constraint firstAttribute="width" constant="21" id="M51-BD-ptp"/>
                             </constraints>
                             <state key="normal" title="Button" image="icon_jiantou"/>
+                            <connections>
+                                <action selector="rightClick" destination="iN0-l3-epB" eventType="touchUpInside" id="wSS-q6-mA6"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,13 +80,19 @@
                     <state key="normal" title="微信公众号" image="icon_wx">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="wxClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3N5-CZ-hds"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf9-Hn-9WA" customClass="SPUpDownButton">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf9-Hn-9WA" customClass="SPUpDownButton">
                     <rect key="frame" x="188" y="81" width="188" height="121"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="邀请水电工" image="icon_sdg">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="sdgClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Unq-Tf-3GR"/>
+                    </connections>
                 </button>
                 <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="033-Og-TUs" userLabel="bottomView">
                     <rect key="frame" x="0.0" y="202" width="376" height="10"/>
@@ -111,7 +123,13 @@
                 <constraint firstItem="Kvj-TV-s4q" firstAttribute="top" secondItem="eyX-H3-tjt" secondAttribute="bottom" id="zai-Ig-PKa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-321" y="-331"/>
+            <connections>
+                <outlet property="detailLabel" destination="W4M-aq-JRp" id="ciu-ag-leA"/>
+                <outlet property="headImage" destination="HSD-1A-hEr" id="ucf-pQ-vf4"/>
+                <outlet property="headerView" destination="eyX-H3-tjt" id="nlj-aw-Hwx"/>
+                <outlet property="telLabel" destination="2bd-ac-aT5" id="jzx-02-BFX"/>
+            </connections>
+            <point key="canvasLocation" x="-1179" y="-1078"/>
         </view>
     </objects>
     <resources>

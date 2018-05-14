@@ -10,4 +10,6 @@
 
 @interface SPSettingViewController : UIViewController
 
+@property (nonatomic, copy) dispatch_block_t settingVcBlock;
+
 @end

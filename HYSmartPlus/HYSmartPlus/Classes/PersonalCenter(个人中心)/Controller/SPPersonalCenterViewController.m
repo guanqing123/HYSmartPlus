@@ -147,6 +147,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     self.tableView.tableHeaderView = self.headerView;
     self.headerBgImageView.frame = self.headerView.bounds;
     [self.headerView insertSubview:self.headerBgImageView atIndex:0]; //将背景图片放到最底层
+    
+    [self.headerView setData];
 }
 
 #pragma mark - SPCenterTopToolViewDelegate
@@ -165,6 +167,10 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 
 - (void)openSettingVc {
     SPSettingViewController *settingVc = [[SPSettingViewController alloc] init];
+    WEAKSELF
+    settingVc.settingVcBlock = ^{
+        [weakSelf.headerView setData];
+    };
     [self.navigationController pushViewController:settingVc animated:YES];
 }
 
