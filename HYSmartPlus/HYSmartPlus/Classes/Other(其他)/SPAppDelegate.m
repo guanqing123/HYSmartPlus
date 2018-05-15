@@ -24,6 +24,8 @@
 #import "SPNavigationController.h"
 #import "SPLoginViewController.h"
 
+#import "ATAppUpdater.h"
+
 @interface SPAppDelegate ()
 
 @end
@@ -32,6 +34,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[ATAppUpdater sharedUpdater] showUpdateWithConfirmation];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyWindow];
