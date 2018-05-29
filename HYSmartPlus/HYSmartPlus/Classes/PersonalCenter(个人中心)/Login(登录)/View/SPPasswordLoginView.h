@@ -26,6 +26,15 @@
  @param passwordLoginView 当前对象
  */
 - (void)passwordLoginViewforgetPwd:(SPPasswordLoginView *)passwordLoginView;
+
+
+/**
+ 点击注册按钮
+
+ @param passwordLoginView 当前对象
+ */
+- (void)passwordLoginViewRegistUser:(SPPasswordLoginView *)passwordLoginView;
+
 @end
 
 @interface SPPasswordLoginView : UIView

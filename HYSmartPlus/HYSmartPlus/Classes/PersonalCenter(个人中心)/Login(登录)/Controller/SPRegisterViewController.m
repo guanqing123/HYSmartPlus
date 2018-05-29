@@ -27,6 +27,7 @@
 - (IBAction)regist;
 - (IBAction)doSelect:(UIButton *)sender;
 - (IBAction)seeUserAgreement;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @property (nonatomic, strong)  SPRegisterParam *registerParam;
 @property (nonatomic, strong)  SPCodeParam *codeParam;
@@ -158,6 +159,7 @@
 
 - (IBAction)contentChange {
     self.registerParam.num = self.telephone.text;
+    self.registerParam.name = self.userName.text;
     self.codeParam.num = self.telephone.text;
     self.registerParam.pwd = self.secondPwd.text;
     self.registerParam.code = self.code.text;
@@ -167,6 +169,10 @@
 - (IBAction)regist {
     if(![SPSpeedy dc_isTelephone:self.telephone.text]) {
         [MBProgressHUD showMessage:@"请输入正确的手机号" toView:self.view];
+        return;
+    }
+    if ([self.userName.text length] < 1) {
+        [MBProgressHUD showMessage:@"请输入用户名" toView:self.view];
         return;
     }
     if([self.fisrtPwd.text length] < 1) {

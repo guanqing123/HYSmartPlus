@@ -975,8 +975,8 @@
 		D616A20720A44716006854E3 /* BindBoss(绑定经销商) */ = {
 			isa = PBXGroup;
 			children = (
-				D616A20E20A44B75006854E3 /* Controller */,
 				D616A20F20A44B75006854E3 /* Model */,
+				D616A20E20A44B75006854E3 /* Controller */,
 			);
 			path = "BindBoss(绑定经销商)";
 			sourceTree = "<group>";

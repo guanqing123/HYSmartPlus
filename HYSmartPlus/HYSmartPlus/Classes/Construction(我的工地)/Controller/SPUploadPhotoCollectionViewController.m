@@ -43,6 +43,8 @@
 @property (nonatomic, assign) BOOL allowPickingOriginalPhoto;
 @property (nonatomic, assign) BOOL allowPickingMuitlpleVideo;
 
+@property (nonatomic, assign) BOOL waiting;
+
 @end
 
 @implementation SPUploadPhotoCollectionViewController
@@ -121,6 +123,7 @@ static NSString * const reuseIdentifier = @"TZTestCell";
 }
 
 - (void)uploadPhoto {
+    if (self.waiting) return;
     if (_selectedPhotos.count < 1) {
         [MBProgressHUD showError:@"请选择图片" toView:self.view];
         return;
@@ -129,6 +132,8 @@ static NSString * const reuseIdentifier = @"TZTestCell";
     saveDetailsParam.uid = [SPAccountTool loginResult].userbase.uid;
     saveDetailsParam.idStr = self.dropower.idNum;
     [MBProgressHUD showWaitMessage:@"正在上传..." toView:self.view];
+    self.waiting = YES;
+    WEAKSELF
     [SPConstructionTool saveDropowerDetails:saveDetailsParam imageArray:_selectedPhotos success:^(SPCommonResult *result) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if ([result.code isEqualToString:@"00000"]) {
@@ -141,9 +146,11 @@ static NSString * const reuseIdentifier = @"TZTestCell";
         }else{
             [MBProgressHUD showError:result.msg toView:self.view];
         }
+        weakSelf.waiting = false;
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [MBProgressHUD showError:@"网络异常" toView:self.view];
+        weakSelf.waiting = false;
     }];
 }
 

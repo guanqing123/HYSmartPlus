@@ -21,6 +21,8 @@
 @property (nonatomic, weak) UIButton *submitButton;
 @property (nonatomic, weak) UIButton *forgetButton;
 
+@property (nonatomic, weak) UIButton *registButton;
+
 @end
 
 @implementation SPPasswordLoginView
@@ -86,6 +88,14 @@
     _submitButton = submitButton;
     [self addSubview:submitButton];
     
+    UIButton *registButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [registButton setTitle:@"注册" forState:UIControlStateNormal];
+    registButton.titleLabel.font = PFR14Font;
+    [registButton setTitleColor:SPColor forState:UIControlStateNormal];
+    [registButton addTarget:self action:@selector(registUser) forControlEvents:UIControlEventTouchUpInside];
+    _registButton = registButton;
+    [self addSubview:registButton];
+    
     UIButton *forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
     forgetButton.titleLabel.font = PFR14Font;
@@ -143,8 +153,14 @@
         make.left.equalTo(self).offset(45);
     }];
     
-    [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.registButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(45);
+        make.top.equalTo(self.submitButton.mas_bottom).offset(15);
+        make.size.mas_equalTo(CGSizeMake(58, 17));
+    }];
+    
+    [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-45);
         make.top.equalTo(self.submitButton.mas_bottom).offset(15);
         make.size.mas_equalTo(CGSizeMake(58, 17));
     }];
@@ -192,6 +208,12 @@
 - (void)forgetPwd {
     if ([self.delegate respondsToSelector:@selector(passwordLoginViewforgetPwd:)]) {
         [self.delegate passwordLoginViewforgetPwd:self];
+    }
+}
+
+- (void)registUser {
+    if ([self.delegate respondsToSelector:@selector(passwordLoginViewRegistUser:)]) {
+        [self.delegate passwordLoginViewRegistUser:self];
     }
 }
 

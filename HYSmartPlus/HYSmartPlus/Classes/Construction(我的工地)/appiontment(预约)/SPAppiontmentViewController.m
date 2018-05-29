@@ -36,6 +36,20 @@
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
     
     [self setupIndicatorView];
+    
+    [self setupNavBar];
+}
+
+- (void)setupNavBar{
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"30"] withSelected:[UIImage imageNamed:@"30"] target:self action:@selector(back)];
+}
+
+- (void)back{
+    if ([self.webView canGoBack]) {
+        [self.webView goBack];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)setupIndicatorView {

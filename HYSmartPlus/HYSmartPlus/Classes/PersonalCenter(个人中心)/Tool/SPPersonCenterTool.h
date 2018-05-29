@@ -18,7 +18,7 @@
 #import "SPSignInParam.h"
 #import "SPSignInResult.h"
 
-@interface SPPersonCenterTool : UIView
+@interface SPPersonCenterTool : NSObject
 
 /**
  根据参数获取积分相关信息

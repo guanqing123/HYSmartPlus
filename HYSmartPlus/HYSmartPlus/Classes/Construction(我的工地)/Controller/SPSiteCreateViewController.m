@@ -30,6 +30,7 @@
 @property (nonatomic, strong)  UICollectionView *collectionView;
 @property (nonatomic, strong)  LxGridViewFlowLayout *layout;
 @property (strong, nonatomic) CLLocation *location;
+@property (nonatomic, assign) BOOL waiting;
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 
@@ -137,12 +138,13 @@
 }
 
 - (void)save{
+    if (self.waiting) return;
     if ([self.userName.text length] < 1) {
         [MBProgressHUD showMessage:@"请填写业主姓名" toView:self.view];
         return;
     }
-    if ([self.userTel.text length] < 1) {
-        [MBProgressHUD showMessage:@"请填写业主电话" toView:self.view];
+    if(![SPSpeedy dc_isTelephone:self.userTel.text]) {
+        [MBProgressHUD showMessage:@"请输入正确格式的业主电话" toView:self.view];
         return;
     }
     if ([self.addressLabel.text length] < 1) {
@@ -160,23 +162,27 @@
     param.address  = [NSString stringWithFormat:@"%@%@",self.addressLabel.text,self.detailAddress.text];
     param.comment  = self.comment.text;
     [MBProgressHUD showWaitMessage:@"保存中,请耐心等待..." toView:self.view];
+    self.waiting = YES;
+    WEAKSELF
     [SPConstructionTool constructionSiteCreate:param imageArray:_selectedPhotos success:^(SPCommonResult *result) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if ([result.code isEqualToString:@"00000"]) {
             [MBProgressHUD showSuccess:@"保存成功" toView:self.view];
-            WEAKSELF
             if ([weakSelf.delegate respondsToSelector:@selector(siteCreateVcFinishSave:)]) {
                 [weakSelf.delegate siteCreateVcFinishSave:weakSelf];
             }
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             });
+            
         } else {
             [MBProgressHUD showError:result.msg toView:self.view];
         }
+        weakSelf.waiting = false;
     } fail:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [MBProgressHUD showError:@"网络异常" toView:self.view];
+        weakSelf.waiting = false;
     }];
 }
 

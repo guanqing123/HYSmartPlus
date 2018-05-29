@@ -22,6 +22,14 @@
 
 @implementation SPHyMallViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    //[self.webView.backForwardList performSelector:NSSelectorFromString(@"_removeAllItems")];
+    #pragma clang diagnostic pop
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -30,8 +38,8 @@
     NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hymall/work/lists.html?userid=%@",[SPAccountTool loginResult].userbase.uid];
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
     _webView = webView;
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
     [self.view addSubview:webView];
     
     [self setupRightNavItem];

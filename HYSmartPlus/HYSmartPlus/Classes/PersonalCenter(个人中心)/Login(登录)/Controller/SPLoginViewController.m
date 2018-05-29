@@ -178,6 +178,11 @@
     [self.navigationController pushViewController:forgetPwdVc animated:YES];
 }
 
+- (void)passwordLoginViewRegistUser:(SPPasswordLoginView *)passwordLoginView {
+    SPRegisterViewController *registerVc = [[SPRegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVc animated:YES];
+}
+
 #pragma mark - 内容
 - (void)setupContentView {
     
