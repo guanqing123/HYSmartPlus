@@ -19,6 +19,9 @@
 		D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D60AD7B5204FB934009E0B25 /* MBProgressHUD.bundle */; };
 		D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */; };
 		D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */; };
+		D60C448C20CE699200F60814 /* ATAppUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C448B20CE699100F60814 /* ATAppUpdater.m */; };
+		D60C448F20CE734200F60814 /* SPIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C448E20CE734200F60814 /* SPIndexViewController.m */; };
+		D60C449320CE792200F60814 /* SPSliderHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C449220CE792200F60814 /* SPSliderHeadView.m */; };
 		D60D302B20A56AC30083594B /* SPBindBossViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D302A20A56AC30083594B /* SPBindBossViewController.m */; };
 		D60D303820A56F120083594B /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D302F20A56F120083594B /* UIActionSheet+LBXAlertAction.m */; };
 		D60D303920A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = D60D303120A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m */; };
@@ -194,6 +197,12 @@
 		D60AD7B8204FCED4009E0B25 /* SPLoginResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginResult.m; sourceTree = "<group>"; };
 		D60AD7BA204FDEEF009E0B25 /* SPBaseResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBaseResult.h; sourceTree = "<group>"; };
 		D60AD7BB204FDEEF009E0B25 /* SPBaseResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBaseResult.m; sourceTree = "<group>"; };
+		D60C448A20CE699100F60814 /* ATAppUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATAppUpdater.h; sourceTree = "<group>"; };
+		D60C448B20CE699100F60814 /* ATAppUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAppUpdater.m; sourceTree = "<group>"; };
+		D60C448D20CE734200F60814 /* SPIndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPIndexViewController.h; sourceTree = "<group>"; };
+		D60C448E20CE734200F60814 /* SPIndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPIndexViewController.m; sourceTree = "<group>"; };
+		D60C449120CE792200F60814 /* SPSliderHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSliderHeadView.h; sourceTree = "<group>"; };
+		D60C449220CE792200F60814 /* SPSliderHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSliderHeadView.m; sourceTree = "<group>"; };
 		D60D302920A56AC30083594B /* SPBindBossViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBindBossViewController.h; sourceTree = "<group>"; };
 		D60D302A20A56AC30083594B /* SPBindBossViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBindBossViewController.m; sourceTree = "<group>"; };
 		D60D302E20A56F120083594B /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
@@ -547,6 +556,24 @@
 			path = "首页Plist";
 			sourceTree = "<group>";
 		};
+		D60C448920CE698400F60814 /* ATAppUpdater(更新) */ = {
+			isa = PBXGroup;
+			children = (
+				D60C448A20CE699100F60814 /* ATAppUpdater.h */,
+				D60C448B20CE699100F60814 /* ATAppUpdater.m */,
+			);
+			path = "ATAppUpdater(更新)";
+			sourceTree = "<group>";
+		};
+		D60C449020CE78FA00F60814 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D60C449120CE792200F60814 /* SPSliderHeadView.h */,
+				D60C449220CE792200F60814 /* SPSliderHeadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D60D302C20A56F120083594B /* LBXAlertAction */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,6 +839,7 @@
 		D613E7D91F66649C00D62B89 /* Expand(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				D60C448920CE698400F60814 /* ATAppUpdater(更新) */,
 				D69B14641F67E9F800CB040A /* Category(分类) */,
 				D617DCA01F67B7F100DB6FEB /* Const(常量) */,
 				D613E7DA1F6664D300D62B89 /* Headers(头文件) */,
@@ -958,6 +986,7 @@
 		D6164D432045975700767C00 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				D60C449020CE78FA00F60814 /* View */,
 				D6164D442045977300767C00 /* Controller */,
 			);
 			path = "Home(首页)";
@@ -968,6 +997,8 @@
 			children = (
 				D6164D45204597A700767C00 /* SPHomeViewController.h */,
 				D6164D46204597A700767C00 /* SPHomeViewController.m */,
+				D60C448D20CE734200F60814 /* SPIndexViewController.h */,
+				D60C448E20CE734200F60814 /* SPIndexViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1642,6 +1673,7 @@
 				D6659ECD20A00E8300846576 /* SPConstructionTableCell.m in Sources */,
 				D613E7D51F66561800D62B89 /* SPTabBarController.m in Sources */,
 				D61049D8209F2B9C009E7BB1 /* SPConstructionTool.m in Sources */,
+				D60C449320CE792200F60814 /* SPSliderHeadView.m in Sources */,
 				D60EC4D71FC6981900F78F31 /* SPClassCategoryCell.m in Sources */,
 				D60D303820A56F120083594B /* UIActionSheet+LBXAlertAction.m in Sources */,
 				D6184B0620470D4200616266 /* SPLoginFooterView.m in Sources */,
@@ -1658,6 +1690,7 @@
 				D64E4300209C07B40080A9E3 /* SPAddressView.m in Sources */,
 				D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */,
 				D6164D40204596D200767C00 /* SPNavSearchBarView.m in Sources */,
+				D60C448C20CE699200F60814 /* ATAppUpdater.m in Sources */,
 				D6164D36204596D100767C00 /* SPGoodsSurplusCell.m in Sources */,
 				D61D12E720A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m in Sources */,
 				D60EC4EA1FC6BC8600F78F31 /* SPBrandSortCell.m in Sources */,
@@ -1717,6 +1750,7 @@
 				D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */,
 				D618C86120A5910C00667EC0 /* SPSettingViewController.m in Sources */,
 				D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */,
+				D60C448F20CE734200F60814 /* SPIndexViewController.m in Sources */,
 				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,
 				D6184AF82046D91800616266 /* SPPasswordLoginView.m in Sources */,

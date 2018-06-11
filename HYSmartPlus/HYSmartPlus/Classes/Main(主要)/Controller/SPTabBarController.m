@@ -41,7 +41,7 @@
 #pragma mark - 添加子控制器
 - (void)addSpChildViewController {
     NSArray *childArray = @[
-                            @{MallClassKey  : @"SPHomeViewController",
+                            @{MallClassKey  : @"SPIndexViewController",
                               MallTitleKey  : @"首页",
                               MallImgKey    : @"tabr_1_up",
                               MallSelImgKey : @"tabr_1_down"},

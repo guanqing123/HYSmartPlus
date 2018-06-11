@@ -28,8 +28,8 @@ target 'HYSmartPlus' do
   
   pod 'IQKeyboardManager'
   
-  pod 'ATAppUpdater'
-  
+#  pod 'ATAppUpdater'
+
   # 主模块(必须)
   pod 'mob_sharesdk'
   
