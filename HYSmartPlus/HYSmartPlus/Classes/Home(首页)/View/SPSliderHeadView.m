@@ -9,8 +9,7 @@
 #import "SPSliderHeadView.h"
 #import "DGActivityIndicatorView.h"
 #import <SDCycleScrollView.h>
-
-#import "SPHomeTool.h"
+#import "SPIndexTool.h"
 
 @interface SPSliderHeadView()<SDCycleScrollViewDelegate>
 /* 指示器 */
@@ -19,6 +18,8 @@
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 /* 刷新页面 */
 @property (nonatomic, strong)  UIView *refreshView;
+
+@property (nonatomic, strong)  NSArray *homePageList;
 @end
 
 @implementation SPSliderHeadView
@@ -45,7 +46,6 @@
 - (DGActivityIndicatorView *)indicatorView {
     if (!_indicatorView) {
         _indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOut tintColor:[UIColor lightGrayColor] size:30.0f];
-        _indicatorView.alpha = 0;
     }
     return _indicatorView;
 }
@@ -115,25 +115,30 @@
     self.cycleScrollView.alpha = 0;
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:1.0 animations:^{
-        weakSelf.indicatorView.alpha = 1;
         [weakSelf.indicatorView startAnimating];
     }];
-    SPSliderParam *param = [SPSliderParam param:slider];
-    [SPHomeTool homeSliderWithParam:param success:^(NSArray *sliderResult) {
+    
+    [SPIndexTool getHomePageListSuccess:^(SPHomePageResult *result) {
         [weakSelf.indicatorView stopAnimating];
-        weakSelf.indicatorView.alpha = 0;
-        NSMutableArray *resultArray = [NSMutableArray array];
-        [sliderResult enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            SPSliderResult *result = obj;
-            [resultArray addObject:result.path];
-        }];
-        weakSelf.cycleScrollView.imageURLStringsGroup = resultArray;
-        [UIView animateWithDuration:2.0 animations:^{
-            weakSelf.cycleScrollView.alpha = 1;
-        }];
+        if (![result.code isEqualToString:@"00000"]) {
+            [MBProgressHUD showError:result.msg toView:weakSelf];
+            [UIView animateWithDuration:2.0 animations:^{
+                weakSelf.refreshView.alpha = 1;
+            }];
+        }else{
+            _homePageList = result.data;
+            NSMutableArray *imageURLArray = [NSMutableArray array];
+            [result.data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                SPHomePage *homepage = obj;
+                [imageURLArray addObject:homepage.fileRealPath];
+            }];
+            weakSelf.cycleScrollView.imageURLStringsGroup = imageURLArray;
+            [UIView animateWithDuration:2.0 animations:^{
+                weakSelf.cycleScrollView.alpha = 1;
+            }];
+        }
     } failure:^(NSError *error) {
         [weakSelf.indicatorView stopAnimating];
-        weakSelf.indicatorView.alpha = 0;
         [UIView animateWithDuration:1.0 animations:^{
             weakSelf.refreshView.alpha = 1;
         }];
@@ -142,6 +147,12 @@
 
 - (void)refreshBtnClick {
     [self loadData];
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    SPHomePage *homePage = [self.homePageList objectAtIndex:index];
+    !_imageClickBlock ? : _imageClickBlock(homePage);
 }
 
 @end

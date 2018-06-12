@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SPHomePage;
+
+typedef void(^imageClick) (SPHomePage *homePage);
 
 @interface SPSliderHeadView : UIView
+
+@property (nonatomic, copy) imageClick imageClickBlock;
 
 + (instancetype)headerView;
 

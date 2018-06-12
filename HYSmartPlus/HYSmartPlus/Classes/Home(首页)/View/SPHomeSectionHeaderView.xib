@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="teA-tK-Ce1" customClass="SPHomeSectionHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azI-3X-8Mc" userLabel="topView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="8"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="ttA-KN-t2C"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ep-iP-vfO" userLabel="leftView">
+                    <rect key="frame" x="0.0" y="8" width="5" height="40"/>
+                    <color key="backgroundColor" red="0.078431372549019607" green="0.78431372549019607" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="5" id="X2z-0y-Csl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安家帮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMc-h2-oAg">
+                    <rect key="frame" x="15" y="8" width="49" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hH-0K-Lej" customClass="SPMoreButton">
+                    <rect key="frame" x="312" y="8" width="53" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="更多" image="more">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="azI-3X-8Mc" firstAttribute="top" secondItem="teA-tK-Ce1" secondAttribute="top" id="8Xa-Td-nlv"/>
+                <constraint firstItem="4hH-0K-Lej" firstAttribute="top" secondItem="azI-3X-8Mc" secondAttribute="bottom" id="G3J-6y-xOI"/>
+                <constraint firstAttribute="bottom" secondItem="gMc-h2-oAg" secondAttribute="bottom" id="GI8-4y-dIc"/>
+                <constraint firstAttribute="bottom" secondItem="4hH-0K-Lej" secondAttribute="bottom" id="PPM-Ae-lT2"/>
+                <constraint firstItem="gMc-h2-oAg" firstAttribute="top" secondItem="azI-3X-8Mc" secondAttribute="bottom" id="PlN-qq-UlK"/>
+                <constraint firstItem="8ep-iP-vfO" firstAttribute="top" secondItem="azI-3X-8Mc" secondAttribute="bottom" id="R9H-4h-oDi"/>
+                <constraint firstAttribute="bottom" secondItem="8ep-iP-vfO" secondAttribute="bottom" id="Voq-tr-NIp"/>
+                <constraint firstAttribute="trailing" secondItem="4hH-0K-Lej" secondAttribute="trailing" constant="10" id="YX0-UG-G4a"/>
+                <constraint firstItem="azI-3X-8Mc" firstAttribute="leading" secondItem="teA-tK-Ce1" secondAttribute="leading" id="afD-5q-u4F"/>
+                <constraint firstAttribute="trailing" secondItem="azI-3X-8Mc" secondAttribute="trailing" id="nla-aF-cdS"/>
+                <constraint firstItem="gMc-h2-oAg" firstAttribute="leading" secondItem="8ep-iP-vfO" secondAttribute="trailing" constant="10" id="vLY-Dm-1N9"/>
+                <constraint firstItem="8ep-iP-vfO" firstAttribute="leading" secondItem="teA-tK-Ce1" secondAttribute="leading" id="zUe-S0-AR5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-143.5" y="-13.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="more" width="20" height="20"/>
+    </resources>
+</document>

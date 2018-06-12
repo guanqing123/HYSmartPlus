@@ -20,6 +20,14 @@
 
 @interface SPConstructionTool : NSObject
 
+/**
+ 保存明细图
+
+ @param saveDetailsParam 明细参数
+ @param imageArray 图片数组
+ @param success 成功回调
+ @param failure 失败回调
+ */
 + (void)saveDropowerDetails:(SPSaveDropowerDetailsParam *)saveDetailsParam imageArray:(NSArray *)imageArray success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
 
 /**
