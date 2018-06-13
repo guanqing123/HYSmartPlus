@@ -36,11 +36,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hH-0K-Lej" customClass="SPMoreButton">
-                    <rect key="frame" x="312" y="8" width="53" height="40"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <rect key="frame" x="321" y="8" width="44" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="更多" image="more">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="moreButtonClick" destination="teA-tK-Ce1" eventType="touchUpInside" id="vq3-Tu-MwS"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,10 +62,10 @@
                 <constraint firstItem="8ep-iP-vfO" firstAttribute="leading" secondItem="teA-tK-Ce1" secondAttribute="leading" id="zUe-S0-AR5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-143.5" y="-13.5"/>
+            <point key="canvasLocation" x="-406" y="-68"/>
         </view>
     </objects>
     <resources>
-        <image name="more" width="20" height="20"/>
+        <image name="more" width="15" height="15"/>
     </resources>
 </document>

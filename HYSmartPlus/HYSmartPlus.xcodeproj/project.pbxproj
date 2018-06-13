@@ -92,6 +92,7 @@
 		D617613920CF5949007286E8 /* SPIndexTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D617613820CF5949007286E8 /* SPIndexTool.m */; };
 		D617613C20CF59E1007286E8 /* SPHomePageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D617613B20CF59E1007286E8 /* SPHomePageResult.m */; };
 		D617613F20CF63CD007286E8 /* SPHomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = D617613E20CF63CD007286E8 /* SPHomePage.m */; };
+		D6179FDB20D0A12000494863 /* SPLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6179FDA20D0A12000494863 /* SPLoadingView.m */; };
 		D617AA8C20980150009A00E1 /* SPConstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8B20980150009A00E1 /* SPConstructionViewController.m */; };
 		D617AA8F209806BE009A00E1 /* SPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D617AA8E209806BE009A00E1 /* SPSearchBar.m */; };
 		D617DCA31F67B81100DB6FEB /* SPConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = D617DCA21F67B81100DB6FEB /* SPConsts.m */; };
@@ -103,6 +104,12 @@
 		D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D618BE32209413D200648A57 /* SPInviteFriendView.m */; };
 		D618BE35209413FB00648A57 /* SPInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618BE34209413FB00648A57 /* SPInviteView.xib */; };
 		D618C86120A5910C00667EC0 /* SPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D618C86020A5910C00667EC0 /* SPSettingViewController.m */; };
+		D618CD8E20D0D7B800FCB88B /* SPSellActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D618CD8C20D0D7B800FCB88B /* SPSellActivityDetailViewController.m */; };
+		D618CD8F20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D618CD8D20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib */; };
+		D618CD9220D0E16800FCB88B /* SPSellActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D618CD9120D0E16800FCB88B /* SPSellActivityListViewController.m */; };
+		D618CD9520D0E77900FCB88B /* SPSellActivityFenyeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D618CD9420D0E77900FCB88B /* SPSellActivityFenyeParam.m */; };
+		D618CD9820D0E7FC00FCB88B /* SPSellActivityFenyeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D618CD9720D0E7FC00FCB88B /* SPSellActivityFenyeResult.m */; };
+		D618CD9B20D0E82400FCB88B /* SPSellActivityFenye.m in Sources */ = {isa = PBXBuildFile; fileRef = D618CD9A20D0E82400FCB88B /* SPSellActivityFenye.m */; };
 		D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */; };
 		D61D12E720A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */; };
 		D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62034FA2058AC5F00F39847 /* SPServiceTableViewCell.m */; };
@@ -352,6 +359,8 @@
 		D617613B20CF59E1007286E8 /* SPHomePageResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHomePageResult.m; sourceTree = "<group>"; };
 		D617613D20CF63CD007286E8 /* SPHomePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHomePage.h; sourceTree = "<group>"; };
 		D617613E20CF63CD007286E8 /* SPHomePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHomePage.m; sourceTree = "<group>"; };
+		D6179FD920D0A12000494863 /* SPLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoadingView.h; sourceTree = "<group>"; };
+		D6179FDA20D0A12000494863 /* SPLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoadingView.m; sourceTree = "<group>"; };
 		D617AA8A20980150009A00E1 /* SPConstructionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConstructionViewController.h; sourceTree = "<group>"; };
 		D617AA8B20980150009A00E1 /* SPConstructionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConstructionViewController.m; sourceTree = "<group>"; };
 		D617AA8D209806BE009A00E1 /* SPSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSearchBar.h; sourceTree = "<group>"; };
@@ -374,6 +383,17 @@
 		D618BE34209413FB00648A57 /* SPInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPInviteView.xib; sourceTree = "<group>"; };
 		D618C85F20A5910C00667EC0 /* SPSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSettingViewController.h; sourceTree = "<group>"; };
 		D618C86020A5910C00667EC0 /* SPSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSettingViewController.m; sourceTree = "<group>"; };
+		D618CD8B20D0D7B800FCB88B /* SPSellActivityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityDetailViewController.h; sourceTree = "<group>"; };
+		D618CD8C20D0D7B800FCB88B /* SPSellActivityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityDetailViewController.m; sourceTree = "<group>"; };
+		D618CD8D20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSellActivityDetailViewController.xib; sourceTree = "<group>"; };
+		D618CD9020D0E16800FCB88B /* SPSellActivityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityListViewController.h; sourceTree = "<group>"; };
+		D618CD9120D0E16800FCB88B /* SPSellActivityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityListViewController.m; sourceTree = "<group>"; };
+		D618CD9320D0E77900FCB88B /* SPSellActivityFenyeParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityFenyeParam.h; sourceTree = "<group>"; };
+		D618CD9420D0E77900FCB88B /* SPSellActivityFenyeParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityFenyeParam.m; sourceTree = "<group>"; };
+		D618CD9620D0E7FC00FCB88B /* SPSellActivityFenyeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityFenyeResult.h; sourceTree = "<group>"; };
+		D618CD9720D0E7FC00FCB88B /* SPSellActivityFenyeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityFenyeResult.m; sourceTree = "<group>"; };
+		D618CD9920D0E82400FCB88B /* SPSellActivityFenye.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityFenye.h; sourceTree = "<group>"; };
+		D618CD9A20D0E82400FCB88B /* SPSellActivityFenye.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityFenye.m; sourceTree = "<group>"; };
 		D61D12E220A2B16800A48962 /* SPDeleteDropowerDetailParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDeleteDropowerDetailParam.h; sourceTree = "<group>"; };
 		D61D12E320A2B16800A48962 /* SPDeleteDropowerDetailParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDeleteDropowerDetailParam.m; sourceTree = "<group>"; };
 		D61D12E520A2EE2300A48962 /* SPUploadPhotoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUploadPhotoCollectionViewController.h; sourceTree = "<group>"; };
@@ -622,6 +642,8 @@
 				D6FE8E8520CFAC7D007C697A /* SPNonTopTableViewCell.xib */,
 				D6FE8E9120CFCE4C007C697A /* SPMoreButton.h */,
 				D6FE8E9220CFCE4C007C697A /* SPMoreButton.m */,
+				D6179FD920D0A12000494863 /* SPLoadingView.h */,
+				D6179FDA20D0A12000494863 /* SPLoadingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1056,6 +1078,11 @@
 				D6FE8E7420CF6DBA007C697A /* SPImageDetailViewController.h */,
 				D6FE8E7520CF6DBA007C697A /* SPImageDetailViewController.m */,
 				D6FE8E7620CF6DBA007C697A /* SPImageDetailViewController.xib */,
+				D618CD8B20D0D7B800FCB88B /* SPSellActivityDetailViewController.h */,
+				D618CD8C20D0D7B800FCB88B /* SPSellActivityDetailViewController.m */,
+				D618CD8D20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib */,
+				D618CD9020D0E16800FCB88B /* SPSellActivityListViewController.h */,
+				D618CD9120D0E16800FCB88B /* SPSellActivityListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1109,6 +1136,12 @@
 				D6FE8E8C20CFB666007C697A /* SPSellActivity.m */,
 				D6FE8E8E20CFB6E3007C697A /* SPSellActivityResult.h */,
 				D6FE8E8F20CFB6E3007C697A /* SPSellActivityResult.m */,
+				D618CD9320D0E77900FCB88B /* SPSellActivityFenyeParam.h */,
+				D618CD9420D0E77900FCB88B /* SPSellActivityFenyeParam.m */,
+				D618CD9620D0E7FC00FCB88B /* SPSellActivityFenyeResult.h */,
+				D618CD9720D0E7FC00FCB88B /* SPSellActivityFenyeResult.m */,
+				D618CD9920D0E82400FCB88B /* SPSellActivityFenye.h */,
+				D618CD9A20D0E82400FCB88B /* SPSellActivityFenye.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1594,7 +1627,7 @@
 					D613BE161F6193110090316D = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8Y6S2469TB;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1624,6 +1657,7 @@
 				D6FE8E8220CFA4B2007C697A /* SPTopTableViewCell.xib in Resources */,
 				D613BE2A1F6193110090316D /* LaunchScreen.storyboard in Resources */,
 				D60EC4D11FC6979500F78F31 /* ClassifyTitles.plist in Resources */,
+				D618CD8F20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib in Resources */,
 				D60E923920A98AD4003D139A /* SPPersonCenterHeaderView.xib in Resources */,
 				D62034FD2058AC5F00F39847 /* SPServiceTableViewCell.xib in Resources */,
 				D60EC4EE1FC6C1BB00F78F31 /* ClassiftyGoods02.plist in Resources */,
@@ -1720,6 +1754,8 @@
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D64C433A208DCB41000FF373 /* SPPersonScoreParam.m in Sources */,
 				D60D303A20A56F120083594B /* UIAlertView+LBXAlertAction.m in Sources */,
+				D618CD9820D0E7FC00FCB88B /* SPSellActivityFenyeResult.m in Sources */,
+				D618CD9220D0E16800FCB88B /* SPSellActivityListViewController.m in Sources */,
 				D6B3941120592FB7001E08AC /* SPNumberScrollView.m in Sources */,
 				D62444C32091A20800A89DF4 /* SPProblemParam.m in Sources */,
 				D64C4340208DD38F000FF373 /* SPCurrentGradeInfo.m in Sources */,
@@ -1741,11 +1777,13 @@
 				D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */,
 				D618BE33209413D200648A57 /* SPInviteFriendView.m in Sources */,
 				D64C4343208DD4F0000FF373 /* SPNextGradeInfo.m in Sources */,
+				D6179FDB20D0A12000494863 /* SPLoadingView.m in Sources */,
 				D68B06242092E20E0000434F /* SPDiscountViewController.m in Sources */,
 				D6164D39204596D200767C00 /* SPScrollAdFootView.m in Sources */,
 				D613E7BC1F6621E600D62B89 /* main.m in Sources */,
 				D6164D3B204596D200767C00 /* SPCountDownHeadView.m in Sources */,
 				D61D12E420A2B16800A48962 /* SPDeleteDropowerDetailParam.m in Sources */,
+				D618CD8E20D0D7B800FCB88B /* SPSellActivityDetailViewController.m in Sources */,
 				D62035042058C56B00F39847 /* SPServiceCollectionViewCell.m in Sources */,
 				D63200BC2092AC310057B969 /* SPProblemViewController.m in Sources */,
 				D60EC4C11FC66DE700F78F31 /* SPSpeedy.m in Sources */,
@@ -1826,6 +1864,7 @@
 				D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */,
 				D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
+				D618CD9520D0E77900FCB88B /* SPSellActivityFenyeParam.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
 				D6164D3C204596D200767C00 /* SPGoodsRecommendHeadView.m in Sources */,
 				D6F7B5D720A86D49006C025D /* SPSettingTableViewCell.m in Sources */,
@@ -1860,6 +1899,7 @@
 				D6184AF52046D2DB00616266 /* SPCodeLoginView.m in Sources */,
 				D6164D35204596D100767C00 /* SPGoodsHandheldCell.m in Sources */,
 				D60E923720A98AB0003D139A /* SPPersonCenterHeaderView.m in Sources */,
+				D618CD9B20D0E82400FCB88B /* SPSellActivityFenye.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1983,17 +2023,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8Y6S2469TB;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = hySmartPlus;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2003,17 +2043,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8Y6S2469TB;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = hySmartPlus;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

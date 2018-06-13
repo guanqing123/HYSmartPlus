@@ -56,7 +56,7 @@
                         <constraint firstAttribute="height" constant="1" id="ZET-az-0Ii"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5RG-U4-h3r">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5RG-U4-h3r">
                     <rect key="frame" x="45" y="160" width="285" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="kQT-nI-RqI"/>
@@ -276,7 +276,7 @@
                 <constraint firstAttribute="trailing" secondItem="vxG-BV-Atw" secondAttribute="trailing" constant="45" id="wv5-w1-nJ2"/>
                 <constraint firstItem="918-jI-fdL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="xOy-PP-Nh8"/>
             </constraints>
-            <point key="canvasLocation" x="-1236" y="-394"/>
+            <point key="canvasLocation" x="-1431" y="-398"/>
         </view>
     </objects>
     <resources>

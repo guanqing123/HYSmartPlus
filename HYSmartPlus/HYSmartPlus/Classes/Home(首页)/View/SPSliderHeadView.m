@@ -30,7 +30,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = RGB(230, 230, 230);
         // 1.指示器
         [self addSubview:self.indicatorView];
         // 2.滚动页
@@ -69,7 +68,7 @@
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.text = @"世界上最遥远的距离就是断网";
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textColor = RGB(85, 85, 85);
         titleLabel.font = PFR12Font;
         [_refreshView addSubview:titleLabel];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

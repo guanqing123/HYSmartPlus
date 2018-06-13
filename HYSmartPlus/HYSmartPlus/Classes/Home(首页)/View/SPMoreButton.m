@@ -26,7 +26,7 @@
     [self.titleLabel sizeToFit];
     
     /** 设置图片位置 */
-    self.imageView.dc_x = CGRectGetMaxX(self.titleLabel.frame) + 5;
+    self.imageView.dc_x = CGRectGetMaxX(self.titleLabel.frame);
     [self.imageView sizeToFit];
 }
 

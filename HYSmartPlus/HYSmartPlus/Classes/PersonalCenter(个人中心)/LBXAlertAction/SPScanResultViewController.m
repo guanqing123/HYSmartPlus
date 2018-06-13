@@ -9,12 +9,16 @@
 #import <WebKit/WebKit.h>
 #import "SPScanResultViewController.h"
 #import "DGActivityIndicatorView.h"
+#import "WebViewJavascriptBridge.h"
 
 @interface SPScanResultViewController () <WKUIDelegate,WKNavigationDelegate>
 
 @property (nonatomic, weak) WKWebView  *webView;
 /** 指示器 */
 @property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
+
+@property (nonatomic, strong)  WebViewJavascriptBridge *bridge;
+
 @end
 
 @implementation SPScanResultViewController
@@ -37,18 +41,31 @@
     _webView = webView;
     [self.view addSubview:webView];
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
-    
     [self setupIndicatorView];
+    
+    // JavascriptBridge
+    self.bridge = [WebViewJavascriptBridge bridgeForWebView:webView];
+    
+    WEAKSELF
+    [self.bridge registerHandler:@"openCamera" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [weakSelf pop];
+    }];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]]];
+}
+
+- (void)pop {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)setupIndicatorView {
     DGActivityIndicatorView *indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:SPColor size:self.view.dc_width * 0.1];
     _indicatorView = indicatorView;
     [self.view addSubview:indicatorView];
-    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.indicatorView.center = CGPointMake(ScreenW * 0.5, ScreenH * 0.5);
+    /*[indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
-    }];
+    }];*/
 }
 
 #pragma mark - navigationDelegate

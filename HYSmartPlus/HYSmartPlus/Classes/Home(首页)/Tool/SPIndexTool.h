@@ -13,6 +13,9 @@
 #import "SPSellActivityParam.h"
 #import "SPSellActivityResult.h"
 
+#import "SPSellActivityFenyeParam.h"
+#import "SPSellActivityFenyeResult.h"
+
 @interface SPIndexTool : NSObject
 
 /**
@@ -32,5 +35,15 @@
  @param failure 失败回调
  */
 + (void)getSellingActivityTopFive:(SPSellActivityParam *)sellActivityParam success:(void(^)(SPSellActivityResult *result))success failure:(void(^)(NSError *error))failure;
+
+
+/**
+ 获取营销活动 list 分页(安家APP)
+
+ @param sellActivityFenyeParam 请求参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)getSellingActivityFenye:(SPSellActivityFenyeParam *)sellActivityFenyeParam success:(void(^)(SPSellActivityFenyeResult *result))success failure:(void(^)(NSError *error))failure;
 
 @end

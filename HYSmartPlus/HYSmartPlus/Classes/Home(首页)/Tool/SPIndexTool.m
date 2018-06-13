@@ -14,7 +14,7 @@
 
 + (void)getHomePageListSuccess:(void (^)(SPHomePageResult *))success failure:(void (^)(NSError *))failure {
     
-    NSString *urlStr = @"http://wxdev.hongyancloud.com/wxDev/homepage/getHomePageList";
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/homepage/getHomePageList";
     
     [SPHttpTool getWithURL:urlStr params:nil success:^(id json) {
         SPHomePageResult *result = [SPHomePageResult mj_objectWithKeyValues:json];
@@ -26,7 +26,7 @@
 
 + (void)getSellingActivityTopFive:(SPSellActivityParam *)sellActivityParam success:(void (^)(SPSellActivityResult *))success failure:(void (^)(NSError *))failure {
     
-    NSString *urlStr = @"http://wxdev.hongyancloud.com/wxDev/sellactivity/getSellingActivityTopFive";
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/sellactivity/getSellingActivityTopFive";
     
     NSDictionary *parameter = [sellActivityParam mj_keyValues];
     
@@ -36,6 +36,21 @@
     } failure:^(NSError *error) {
         failure(error);
     }];
+}
+
++ (void)getSellingActivityFenye:(SPSellActivityFenyeParam *)sellActivityFenyeParam success:(void (^)(SPSellActivityFenyeResult *))success failure:(void (^)(NSError *))failure {
+    
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/sellactivity/getSellingActivityFenye";
+    
+    NSDictionary *parameter = [sellActivityFenyeParam mj_keyValues];
+    
+    [SPHttpTool getWithURL:urlStr params:parameter success:^(id json) {
+        SPSellActivityFenyeResult *result = [SPSellActivityFenyeResult mj_objectWithKeyValues:json];
+        success(result);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
 }
 
 @end

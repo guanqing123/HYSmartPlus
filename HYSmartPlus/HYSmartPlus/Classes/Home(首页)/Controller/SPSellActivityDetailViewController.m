@@ -1,27 +1,27 @@
 //
-//  SPImageDetailViewController.m
+//  SPSellActivityDetailViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/6/12.
+//  Created by information on 2018/6/13.
 //  Copyright © 2018年 hongyan. All rights reserved.
 //
 
-#import "SPImageDetailViewController.h"
+#import "SPSellActivityDetailViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface SPImageDetailViewController ()
+@interface SPSellActivityDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *parentView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) WKWebView  *webView;
-
 @end
 
-@implementation SPImageDetailViewController
+@implementation SPSellActivityDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"轮播详情";
+    self.title = @"安家帮详情";
     
     // 客户端添加meta标签eg
     NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);var imgs = document.getElementsByTagName('img');for (var i in imgs){imgs[i].style.maxWidth='100%';imgs[i].style.height='auto';}";
@@ -52,19 +52,25 @@
     self.parentView.frame = tempRect;
     
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.timeLabel.mas_bottom).offset(10);
         make.left.mas_equalTo(self.parentView.mas_left);
         make.right.mas_equalTo(self.parentView.mas_right);
         make.bottom.mas_equalTo(self.parentView.mas_bottom).offset(-SPTopNavH);
     }];
 }
 
-- (void)setHomePage:(SPHomePage *)homePage {
-    _homePage = homePage;
+- (void)setSellActivity:(SPSellActivity *)sellActivity {
+    _sellActivity = sellActivity;
     
-    self.titleLabel.text = homePage.title;
+    self.titleLabel.text = sellActivity.title;
     
-    [self.webView loadHTMLString:homePage.content baseURL:nil];
+    if ([sellActivity.startDate length] > 0) {
+        self.timeLabel.text = [NSString stringWithFormat:@"活动日期: %@ - %@",sellActivity.startDate, sellActivity.endDate];
+    }else{
+        self.timeLabel.text = sellActivity.createDate;
+    }
+    
+    [self.webView loadHTMLString:sellActivity.content baseURL:nil];
 }
 
 @end

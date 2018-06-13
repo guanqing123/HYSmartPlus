@@ -61,6 +61,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - TZImagePickerController (2.1.0.2)
+  - WebViewJavascriptBridge (6.0.3)
   - XLPhotoBrowser+CoderXL (1.2.0):
     - SDWebImage (~> 4.0.0)
   - ZBarSDK (1.3.1)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.66)
   - SDWebImage (~> 4.0.0)
   - TZImagePickerController
+  - WebViewJavascriptBridge (~> 6.0)
   - XLPhotoBrowser+CoderXL
 
 SPEC CHECKSUMS:
@@ -106,9 +108,10 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   TZImagePickerController: 3aedbd39653a3db37408f0f78a9c4131b273d7bd
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   XLPhotoBrowser+CoderXL: 2bf4036e2af4611b24bde1681e24c64ed01fbe98
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: c7f308b7b1d029a642ad58e3bea23a6d26c2161e
+PODFILE CHECKSUM: d23bfe6ebd7b9a3a53661929484d7bae88ff1b35
 
 COCOAPODS: 1.2.1

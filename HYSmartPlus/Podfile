@@ -29,6 +29,7 @@ target 'HYSmartPlus' do
   pod 'IQKeyboardManager'
   
 #  pod 'ATAppUpdater'
+  pod 'WebViewJavascriptBridge', '~> 6.0'
 
   # 主模块(必须)
   pod 'mob_sharesdk'

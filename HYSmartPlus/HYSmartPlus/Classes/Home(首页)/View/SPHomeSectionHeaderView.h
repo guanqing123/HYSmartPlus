@@ -10,6 +10,8 @@
 
 @interface SPHomeSectionHeaderView : UIView
 
+@property (nonatomic, copy) dispatch_block_t moreButtonClickBlock;
+
 + (instancetype)sectionHeaderView;
 
 @end
