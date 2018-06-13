@@ -157,6 +157,8 @@
             if (fenyeResult.dropowerFenye.pages > 1) {
                 _pageNum ++;
                 [self setupFooterRefreshing];
+            }else{
+                self.tableView.mj_footer = nil;
             }
             [self.tableView reloadData];
             [self.tableView.mj_header endRefreshing];
