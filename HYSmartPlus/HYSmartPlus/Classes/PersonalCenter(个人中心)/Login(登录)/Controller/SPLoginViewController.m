@@ -86,6 +86,10 @@
     if (!_footerView) {
         _footerView = [SPLoginFooterView footerView];
         _footerView.delegate = self;
+        WEAKSELF
+        _footerView.btnBlock = ^{
+            [MBProgressHUD showSuccess:@"暂不支持第三方登录" toView:weakSelf.view];
+        };
     }
     return _footerView;
 }

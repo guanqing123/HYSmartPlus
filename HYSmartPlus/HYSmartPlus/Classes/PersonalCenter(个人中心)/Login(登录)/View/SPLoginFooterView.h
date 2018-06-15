@@ -25,6 +25,8 @@
 
 @property (nonatomic, weak) id<SPLoginFooterViewDelegate> delegate;
 
+@property (nonatomic, copy) dispatch_block_t btnBlock;
+
 + (instancetype)footerView;
 
 @end

@@ -567,4 +567,17 @@ static NSString * const reuseIdentifier = @"TZTestCell";
     [self.collectionView reloadData];
 }
 
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end

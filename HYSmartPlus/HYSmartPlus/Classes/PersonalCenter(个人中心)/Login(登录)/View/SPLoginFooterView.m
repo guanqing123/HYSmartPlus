@@ -48,6 +48,7 @@
     if (!_qqBtn) {
         _qqBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_qqBtn setImage:[UIImage imageNamed:@"logon_qq"] forState:UIControlStateNormal];
+        [_qqBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _qqBtn;
 }
@@ -56,8 +57,13 @@
     if (!_wxBtn) {
         _wxBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_wxBtn setImage:[UIImage imageNamed:@"logon_wechat"] forState:UIControlStateNormal];
+        [_wxBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _wxBtn;
+}
+
+- (void)btnClick {
+    !_btnBlock ? : _btnBlock();
 }
 
 - (UIView *)splitLine {
