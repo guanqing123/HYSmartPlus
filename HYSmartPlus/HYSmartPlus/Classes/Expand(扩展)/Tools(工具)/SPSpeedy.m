@@ -123,7 +123,8 @@
 
 #pragma mark - 判断是否是手机号
 + (BOOL)dc_isTelephone:(NSString *)telephone {
-    NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0678])\\d{8}$";
+//    NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0678])\\d{8}$";
+    NSString *MOBILE = @"\\d{11}$";
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     return [regextestmobile evaluateWithObject:telephone];
 }

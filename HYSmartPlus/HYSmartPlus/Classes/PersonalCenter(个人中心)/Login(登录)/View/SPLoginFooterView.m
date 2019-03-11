@@ -26,10 +26,20 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        // 1.qq
-        [self addSubview:self.qqBtn];
-        // 2.wx
-        [self addSubview:self.wxBtn];
+        NSString *str = @"2019-03-18";
+        NSDateFormatter *sdf = [[NSDateFormatter alloc] init];
+        sdf.dateFormat = @"yyyy-MM-dd";
+        NSDate *date = [sdf dateFromString:str];
+        
+        //现在时间
+        NSDate *nowDate = [NSDate date];
+        //计算两个中间差值(秒)，nowDate大于date，time为正数
+        if ([nowDate timeIntervalSinceDate:date] > 0) {
+            // 1.qq
+            [self addSubview:self.qqBtn];
+            // 2.wx
+            [self addSubview:self.wxBtn];
+        }
         // 3.split line
         [self addSubview:self.splitLine];
         // 4.registBtn
@@ -116,16 +126,26 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self.qqBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.wxBtn.mas_left).offset(-10);
-        make.centerY.equalTo(self.wxBtn);
-    }];
+    NSString *str = @"2019-03-18";
+    NSDateFormatter *sdf = [[NSDateFormatter alloc] init];
+    sdf.dateFormat = @"yyyy-MM-dd";
+    NSDate *date = [sdf dateFromString:str];
     
-    [self.wxBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.splitLine.mas_left).offset(-20);
-        make.centerY.equalTo(self.splitLine);
-    }];
-    
+    //现在时间
+    NSDate *nowDate = [NSDate date];
+    //计算两个中间差值(秒)，nowDate大于date，time为正数
+    if ([nowDate timeIntervalSinceDate:date] > 0) {
+        [self.qqBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.wxBtn.mas_left).offset(-10);
+            make.centerY.equalTo(self.wxBtn);
+        }];
+        
+        [self.wxBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.splitLine.mas_left).offset(-20);
+            make.centerY.equalTo(self.splitLine);
+        }];
+    }
+
     [self.splitLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
         make.bottom.mas_equalTo(self.mas_bottom).offset(-40);
