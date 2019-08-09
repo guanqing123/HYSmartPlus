@@ -9,6 +9,7 @@
 #import "SPTabBarController.h"
 #import "SPNavigationController.h"
 #import "SPTabBar.h"
+#import "AFNetworking.h"
 
 @interface SPTabBarController ()<UITabBarControllerDelegate>
 

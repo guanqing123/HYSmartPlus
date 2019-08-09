@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentIntegralLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nextIntegralLabel;
 @property (weak, nonatomic) IBOutlet UILabel *upgradeIntegralLabel;
+- (IBAction)integralBtnClick;
+
 @end
 
 @implementation SPIntegralTableViewCell
@@ -33,16 +35,21 @@
     for (SPCurrentGradeInfo *info in result.list) {
         if ([info.khdm isEqualToString:@"00000000"]) {
             self.gradeNameLabel.text = info.gradeName;
-            self.currentIntegralLabel.text = [NSString stringWithFormat:@"%d",info.currentIntegral];
+            self.currentIntegralLabel.text = [NSString stringWithFormat:@"%ld",info.currentIntegral];
             current = info.currentIntegral;
             break;
         }
     }
-    self.nextIntegralLabel.text = [NSString stringWithFormat:@"%d",result.nextGradeInfo.integral];
+    self.nextIntegralLabel.text = [NSString stringWithFormat:@"%ld",result.nextGradeInfo.integral];
     next = result.nextGradeInfo.integral;
     CGFloat scale = next == 0 ? 0 : (float) current / next;
-    self.upgradeIntegralLabel.text = [NSString stringWithFormat:@"%d",next - current];
+    self.upgradeIntegralLabel.text = [NSString stringWithFormat:@"%ld",next - current];
     [self.progress setProgress:scale animated:YES];
 }
 
+- (IBAction)integralBtnClick {
+    if ([self.delegate respondsToSelector:@selector(integralTableViewCellDidClickIntegralBtn:)]){
+        [self.delegate integralTableViewCellDidClickIntegralBtn:self];
+    }
+}
 @end

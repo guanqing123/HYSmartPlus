@@ -135,6 +135,7 @@
 		D62816462051315600892297 /* SPModifyPwdParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816452051315600892297 /* SPModifyPwdParam.m */; };
 		D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816482051341F00892297 /* SPModifyPwdResult.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
+		D62F56C622FAAA0B0054CCC9 /* SPScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62F56C522FAAA0B0054CCC9 /* SPScoreViewController.m */; };
 		D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */; };
 		D631FCA9204E6B4100892D6C /* SPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D631FCA7204E6B4100892D6C /* SPRegisterViewController.m */; };
 		D631FCAA204E6B4100892D6C /* SPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D631FCA8204E6B4100892D6C /* SPRegisterViewController.xib */; };
@@ -437,6 +438,8 @@
 		D62816482051341F00892297 /* SPModifyPwdResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdResult.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
+		D62F56C422FAAA0B0054CCC9 /* SPScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScoreViewController.h; sourceTree = "<group>"; };
+		D62F56C522FAAA0B0054CCC9 /* SPScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScoreViewController.m; sourceTree = "<group>"; };
 		D631BB7F2059F55C00AE1781 /* CALayer+SPCustomerCALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+SPCustomerCALayer.h"; sourceTree = "<group>"; };
 		D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+SPCustomerCALayer.m"; sourceTree = "<group>"; };
 		D631FCA6204E6B4100892D6C /* SPRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRegisterViewController.h; sourceTree = "<group>"; };
@@ -1358,6 +1361,8 @@
 			children = (
 				D63323491FC7B049003511EA /* SPPersonalCenterViewController.h */,
 				D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */,
+				D62F56C422FAAA0B0054CCC9 /* SPScoreViewController.h */,
+				D62F56C522FAAA0B0054CCC9 /* SPScoreViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1627,7 +1632,7 @@
 					D613BE161F6193110090316D = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8Y6S2469TB;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1770,6 +1775,7 @@
 				D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */,
 				D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */,
 				D64C4337208DCA13000FF373 /* SPPersonCenterTool.m in Sources */,
+				D62F56C622FAAA0B0054CCC9 /* SPScoreViewController.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6164D3D204596D200767C00 /* SPSlideshowHeadView.m in Sources */,
 				D6FF34BE20A139A1001B0070 /* SPBottomToolBarView.m in Sources */,
@@ -2023,9 +2029,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8Y6S2469TB;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2033,7 +2040,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = hySmartPlus;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2043,9 +2050,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8Y6S2469TB;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2053,7 +2061,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = hySmartPlus;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

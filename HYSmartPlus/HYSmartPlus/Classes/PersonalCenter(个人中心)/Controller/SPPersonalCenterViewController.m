@@ -17,6 +17,8 @@
 #import "SPStyleDIY.h"
 #import "SPBindBossViewController.h"
 
+#import "SPScoreViewController.h"
+
 //顶部和头部View
 #import "SPCenterTopToolView.h"
 #import "SPPersonCenterHeaderView.h"
@@ -34,7 +36,7 @@
 #import "SPAccountTool.h"
 #import "SPPersonCenterTool.h"
 
-@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate,SPCenterTopToolViewDelegate>
+@interface SPPersonalCenterViewController () <UITableViewDataSource,UITableViewDelegate,SPProblemTableViewCellDelegate,SPServiceTableViewCellDelegate,SPCenterTopToolViewDelegate,SPIntegralTableViewCellDelegate,SPBPTableViewCellDelegate>
 
 /* headerView */
 //@property (nonatomic, strong)  SPMyCenterHeaderView *headerView;
@@ -261,10 +263,12 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         SPIntegralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPIntegralCellID forIndexPath:indexPath];
         cusCell = cell;
         cell.result = self.result;
+        cell.delegate = self;
     }else if (indexPath.section == 3){
         SPBPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SPBPCellID forIndexPath:indexPath];
         cusCell = cell;
         cell.result = self.result;
+        cell.delegate = self;
     }
     cusCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cusCell;
@@ -282,6 +286,20 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         return 150;
     }
     return 0;
+}
+
+#pragma mark - SPIntegralTableViewCellDelegate
+- (void)integralTableViewCellDidClickIntegralBtn:(SPIntegralTableViewCell *)integralTableViewCell {
+    NSString *urlPath = [[NSString alloc] initWithFormat:@"http://sge.cn/web/jifen/integralList?userid=%@&khdm=%@",[SPAccountTool loginResult].userbase.uid,@"00000000"];
+    SPScoreViewController *scoreVc = [[SPScoreViewController alloc] initWithUrlPath:urlPath title:@"品牌积分"];
+    [self.navigationController pushViewController:scoreVc animated:YES];
+}
+
+#pragma mark - SPBPTableViewCellDelegate
+- (void)bpTableViewCell:(SPBPTableViewCell *)tabelViewCell bpBtnClick:(NSString *)khdm {
+    NSString *urlPath = [[NSString alloc] initWithFormat:@"http://sge.cn/web/jifen/integralList?userid=%@&khdm=%@",[SPAccountTool loginResult].userbase.uid,khdm];
+    SPScoreViewController *scoreVc = [[SPScoreViewController alloc] initWithUrlPath:urlPath title:@"门店积分"];
+    [self.navigationController pushViewController:scoreVc animated:YES];
 }
 
 #pragma mark - SPProblemTableViewCellDelegate

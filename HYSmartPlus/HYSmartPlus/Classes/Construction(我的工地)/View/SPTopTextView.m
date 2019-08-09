@@ -9,6 +9,7 @@
 #import "SPTopTextView.h"
 
 @interface SPTopTextView()
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *userTel;
 @property (weak, nonatomic) IBOutlet UITextView *detailAddress;
@@ -34,6 +35,7 @@
 
 - (void)setDropower:(SPDropower *)dropower {
     _dropower = dropower;
+    self.idLabel.text = dropower.idNum;
     self.userName.text = dropower.userName;
     self.userTel.text = dropower.userTel;
     self.detailAddress.text = dropower.address;

@@ -8,9 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "SPPersonScoreResult.h"
+@class SPIntegralTableViewCell;
+
+@protocol SPIntegralTableViewCellDelegate <NSObject>
+@optional
+/**
+ 查看品牌积分
+
+ @param integralTableViewCell 当前品牌对象
+ */
+- (void)integralTableViewCellDidClickIntegralBtn:(SPIntegralTableViewCell *)integralTableViewCell;
+@end
 
 @interface SPIntegralTableViewCell : UITableViewCell
 
 @property (nonatomic, strong)  SPPersonScoreResult *result;
+
+@property (nonatomic, weak) id<SPIntegralTableViewCellDelegate> delegate;
 
 @end

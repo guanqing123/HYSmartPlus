@@ -249,6 +249,10 @@
                 [self uploadPhotos:dropower];
             }
             break;
+            case ToolBarButtonTypePressure:{
+                [self pressureConstruction:dropower];
+            }
+            break;
             case ToolBarButtonTypeDelete:{
                 [self deleteDropowerAndDetails:dropower];
             }
@@ -266,6 +270,20 @@
         [weakSelf.tableView.mj_header beginRefreshing];
     };
     [self.navigationController pushViewController:uploadPhotoVc animated:YES];
+}
+
+- (void)pressureConstruction:(SPDropower *)dropower {
+    NSString *urlStr = [NSString stringWithFormat:@"smart://pressure?dh=%@&username=%@&usertel=%@&address=%@",dropower.idNum,dropower.userName,dropower.userTel,dropower.address];
+    NSString *encoding = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:encoding]]) {
+        if (@available(iOS 10.0,*)) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encoding] options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encoding]];
+        }
+    } else {
+       [MBProgressHUD showMessage:@"请先安装试压APP" toView:self.view];
+   }
 }
 
 - (void)deleteDropowerAndDetails:(SPDropower *)dropower {

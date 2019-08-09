@@ -24,10 +24,13 @@
         // 2.添加按钮
         self.cameraBtn = [self setupBtnWithTitle:@"照片" image:@"cameraBtn"];
         self.cameraBtn.tag = ToolBarButtonTypeCamera;
+        self.pressureBtn = [self setupBtnWithTitle:@"试压" image:@"pressureBtn"];
+        self.pressureBtn.tag = ToolBarButtonTypePressure;
         self.deleteBtn = [self setupBtnWithTitle:@"删除" image:@"deleteBtn"];
         self.deleteBtn.tag = ToolBarButtonTypeDelete;
         
         // 3.添加分割线
+        [self setupDivider];
         [self setupDivider];
     }
     return self;

@@ -11,6 +11,7 @@
 
 typedef enum {
     ToolBarButtonTypeCamera,
+    ToolBarButtonTypePressure,
     ToolBarButtonTypeDelete
 }ToolBarButtonType;
 
@@ -29,6 +30,7 @@ typedef enum {
 @interface SPBottomToolBarView : UIImageView
 
 @property (nonatomic, weak) UIButton  *cameraBtn;
+@property (nonatomic, weak) UIButton  *pressureBtn;
 @property (nonatomic, weak) UIButton  *deleteBtn;
 
 @property (nonatomic, weak) id<SPBottomToolBarViewDelegate>  delegate;

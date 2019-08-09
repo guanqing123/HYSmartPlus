@@ -127,5 +127,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    if ([[url absoluteString] containsString:@"hongyar://anjia"]) {
+        [SPSmartPlusTool pressureChooseRootController];
+        return YES;
+    }
+    return NO;
+}
+#else
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[url absoluteString] containsString:@"hongyar://anjia"]) {
+        [SPSmartPlusTool pressureChooseRootController];
+        return YES;
+    }
+    return NO;
+}
+#endif
 @end

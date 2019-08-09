@@ -15,4 +15,10 @@
  */
 + (void)chooseRootController;
 
+
+/**
+ 试压app调用安家
+ */
++ (void)pressureChooseRootController;
+
 @end

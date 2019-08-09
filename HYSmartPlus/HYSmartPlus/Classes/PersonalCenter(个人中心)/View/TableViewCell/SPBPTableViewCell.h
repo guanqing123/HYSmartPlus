@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "SPPersonScoreResult.h"
+@class SPBPTableViewCell;
+
+@protocol SPBPTableViewCellDelegate <NSObject>
+@optional
+
+/**
+ 查询业务积分
+
+ @param tabelViewCell 当前tableView
+ */
+- (void)bpTableViewCell:(SPBPTableViewCell *)tabelViewCell bpBtnClick:(NSString *)khdm;
+
+@end
 
 @interface SPBPTableViewCell : UITableViewCell
 
 @property (nonatomic, strong)  SPPersonScoreResult *result;
+
+@property (nonatomic, weak) id<SPBPTableViewCellDelegate> delegate;
 
 @end

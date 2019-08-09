@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -42,6 +42,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wb195789847</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>hongyar</string>
 			</array>
 		</dict>
 	</array>
@@ -72,6 +82,7 @@
 		<string>mqzone</string>
 		<string>mqq</string>
 		<string>mqqopensdkapiV4</string>
+		<string>smart</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

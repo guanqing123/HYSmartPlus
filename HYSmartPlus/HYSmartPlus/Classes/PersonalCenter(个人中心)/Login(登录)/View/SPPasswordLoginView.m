@@ -200,6 +200,8 @@
 }
 
 - (void)submitButtonClick {
+    [self.phoneTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(passwordLoginViewDidSubmitButton:)]) {
         [self.delegate passwordLoginViewDidSubmitButton:self];
     }

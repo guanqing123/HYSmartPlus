@@ -209,6 +209,8 @@
         [MBProgressHUD showMessage:@"请输入正确的手机号码!"];
         return;
     }
+    [self.phoneTextField resignFirstResponder];
+    [self.codeTextField resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(codeLoginViewDidClickLoginButton:)]) {
         [self.delegate codeLoginViewDidClickLoginButton:self];
     }

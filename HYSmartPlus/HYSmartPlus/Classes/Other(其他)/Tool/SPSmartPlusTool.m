@@ -31,4 +31,8 @@
     }
 }
 
++ (void)pressureChooseRootController {
+    [(SPTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController setSelectedIndex:2];
+}
+
 @end
