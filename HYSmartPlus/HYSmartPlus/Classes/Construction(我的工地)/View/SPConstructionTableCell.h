@@ -12,7 +12,7 @@
 
 #define column 3
 #define margin 5
-#define topTextViewH 120
+#define topTextViewH 216
 #define bottomToolBarViewH 30
 @class SPConstructionTableCell;
 

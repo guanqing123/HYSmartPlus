@@ -21,6 +21,22 @@
 
 @property (nonatomic, copy) NSString *userTel;
 
+@property (nonatomic, copy) NSString *sysj;
+
+@property (nonatomic, copy) NSString *bysj;
+
+@property (nonatomic, copy) NSString *ksyl;
+
+@property (nonatomic, copy) NSString *jsyl;
+
+@property (nonatomic, copy) NSString *yj;
+
+@property (nonatomic, copy) NSString *jg;
+
+@property (nonatomic, copy) NSString *validate;
+
+@property (nonatomic, copy) NSString *validateDate;
+
 @property (nonatomic, copy) NSString *address;
 
 @property (nonatomic, copy) NSString *comment;
