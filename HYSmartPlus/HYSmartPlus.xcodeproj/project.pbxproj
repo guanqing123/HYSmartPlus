@@ -134,6 +134,7 @@
 		D6281643205122AF00892297 /* SPForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6281641205122AF00892297 /* SPForgetPwdViewController.xib */; };
 		D62816462051315600892297 /* SPModifyPwdParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816452051315600892297 /* SPModifyPwdParam.m */; };
 		D62816492051341F00892297 /* SPModifyPwdResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D62816482051341F00892297 /* SPModifyPwdResult.m */; };
+		D628D1DE230264DD00FE883D /* SPSellActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D628D1DD230264DD00FE883D /* SPSellActivityViewController.m */; };
 		D629435B1F692BE2000287FF /* SPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D629435A1F692BE2000287FF /* SPHttpTool.m */; };
 		D62F56C622FAAA0B0054CCC9 /* SPScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62F56C522FAAA0B0054CCC9 /* SPScoreViewController.m */; };
 		D631BB812059F55C00AE1781 /* CALayer+SPCustomerCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D631BB802059F55C00AE1781 /* CALayer+SPCustomerCALayer.m */; };
@@ -436,6 +437,8 @@
 		D62816452051315600892297 /* SPModifyPwdParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdParam.m; sourceTree = "<group>"; };
 		D62816472051341F00892297 /* SPModifyPwdResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPModifyPwdResult.h; sourceTree = "<group>"; };
 		D62816482051341F00892297 /* SPModifyPwdResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPModifyPwdResult.m; sourceTree = "<group>"; };
+		D628D1DC230264DD00FE883D /* SPSellActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSellActivityViewController.h; sourceTree = "<group>"; };
+		D628D1DD230264DD00FE883D /* SPSellActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSellActivityViewController.m; sourceTree = "<group>"; };
 		D62943591F692BE2000287FF /* SPHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpTool.h; sourceTree = "<group>"; };
 		D629435A1F692BE2000287FF /* SPHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpTool.m; sourceTree = "<group>"; };
 		D62F56C422FAAA0B0054CCC9 /* SPScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScoreViewController.h; sourceTree = "<group>"; };
@@ -1086,6 +1089,8 @@
 				D618CD8D20D0D7B800FCB88B /* SPSellActivityDetailViewController.xib */,
 				D618CD9020D0E16800FCB88B /* SPSellActivityListViewController.h */,
 				D618CD9120D0E16800FCB88B /* SPSellActivityListViewController.m */,
+				D628D1DC230264DD00FE883D /* SPSellActivityViewController.h */,
+				D628D1DD230264DD00FE883D /* SPSellActivityViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1632,7 +1637,7 @@
 					D613BE161F6193110090316D = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8Y6S2469TB;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1903,6 +1908,7 @@
 				D613E7E01F666D2D00D62B89 /* SPNavigationController.m in Sources */,
 				D6164D42204596D200767C00 /* SPZuoWenRightButton.m in Sources */,
 				D6184AF52046D2DB00616266 /* SPCodeLoginView.m in Sources */,
+				D628D1DE230264DD00FE883D /* SPSellActivityViewController.m in Sources */,
 				D6164D35204596D100767C00 /* SPGoodsHandheldCell.m in Sources */,
 				D60E923720A98AB0003D139A /* SPPersonCenterHeaderView.m in Sources */,
 				D618CD9B20D0E82400FCB88B /* SPSellActivityFenye.m in Sources */,
@@ -2029,10 +2035,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2040,7 +2046,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = hysmartplus;
 			};
 			name = Debug;
 		};
@@ -2050,10 +2056,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HANGZHOU HONYAR ELECTRICAL CO.,LTD (8Y6S2469TB)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2061,7 +2067,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = hysmartplus;
 			};
 			name = Release;
 		};

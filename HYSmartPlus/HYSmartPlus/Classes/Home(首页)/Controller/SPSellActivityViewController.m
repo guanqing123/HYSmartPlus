@@ -1,50 +1,54 @@
 //
-//  SPAppiontmentViewController.m
+//  SPSellActivityViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2018/5/12.
-//  Copyright © 2018年 hongyan. All rights reserved.
+//  Created by information on 2019/8/13.
+//  Copyright © 2019年 hongyan. All rights reserved.
 //
 
-#import "SPAppiontmentViewController.h"
-#import <WebKit/WebKit.h>
-#import "SPAccountTool.h"
-#import "SPLoginResult.h"
+#import "SPSellActivityViewController.h"
 #import "DGActivityIndicatorView.h"
 
-@interface SPAppiontmentViewController ()<WKUIDelegate,WKNavigationDelegate>
-/** webView */
+@interface SPSellActivityViewController ()<WKUIDelegate,WKNavigationDelegate>
+@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, copy) NSString *idStr;
 @property (nonatomic, weak) WKWebView  *webView;
 /** 指示器 */
 @property (nonatomic, weak) DGActivityIndicatorView  *indicatorView;
 @end
 
-@implementation SPAppiontmentViewController
+@implementation SPSellActivityViewController
+
+- (instancetype)initWithUid:(NSString *)uid idStr:(NSString *)idStr {
+    if (self = [super init]) {
+        _uid = uid;
+        _idStr = idStr;
+        self.title = @"安家帮详情";
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"预约服务";
-    WKWebView *webView = [[WKWebView alloc] init];
-    webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH);
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
     _webView = webView;
     [self.view addSubview:webView];
-    
-    NSString *urlStr = [NSString stringWithFormat:@"https://wx.hongyancloud.com/honyar/templates/sjappiontment/appiontmentMap.html?uid=%@",[SPAccountTool loginResult].userbase.uid];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
+    NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hynews/ajDetail.html?id=%@&uid=%@", _idStr, _uid];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
     
     [self setupIndicatorView];
     
-    [self setupNavBar];
+    [self setupNavItem];
 }
 
-- (void)setupNavBar{
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"30"] withSelected:[UIImage imageNamed:@"30"] target:self action:@selector(back)];
+- (void)setupNavItem {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"30"] withHighLightedImage:[UIImage imageNamed:@"30"] target:self action:@selector(back)];
 }
 
-- (void)back{
+- (void)back {
     if ([self.webView canGoBack]) {
         [self.webView goBack];
     }else{
@@ -76,6 +80,19 @@
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [self.indicatorView stopAnimating];
+}
+
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

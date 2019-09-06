@@ -14,6 +14,7 @@
 #import "SPImageDetailViewController.h"
 #import "SPSellActivityListViewController.h"
 #import "SPSellActivityDetailViewController.h"
+#import "SPSellActivityViewController.h"
 
 #import "SPHomeSectionHeaderView.h"
 #import "SPTopTableViewCell.h"
@@ -127,11 +128,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SPSellActivityDetailViewController *sellActivityDetailVc = [[SPSellActivityDetailViewController alloc] init];
+    /*SPSellActivityDetailViewController *sellActivityDetailVc = [[SPSellActivityDetailViewController alloc] init];
     sellActivityDetailVc.view.backgroundColor = SPBGColor;
     SPSellActivity *sellActivity = [self.sellActivityList objectAtIndex:indexPath.row];
     sellActivityDetailVc.sellActivity = sellActivity;
-    [self.navigationController pushViewController:sellActivityDetailVc animated:YES];
+    [self.navigationController pushViewController:sellActivityDetailVc animated:YES];*/
+    
+    SPSellActivity *sellActivity = [self.sellActivityList objectAtIndex:indexPath.row];
+    SPSellActivityViewController *sellActivityVc = [[SPSellActivityViewController alloc] initWithUid:[SPAccountTool loginResult].userbase.uid idStr:sellActivity.idStr];
+    [self.navigationController pushViewController:sellActivityVc animated:YES];
 }
 
 #pragma mark - setupHeaderView
