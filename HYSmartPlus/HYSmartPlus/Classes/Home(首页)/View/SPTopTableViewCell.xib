@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slideshow02" translatesAutoresizingMaskIntoConstraints="NO" id="aew-Rh-6Fg">
-                        <rect key="frame" x="114" y="5" width="235" height="130"/>
+                        <rect key="frame" x="115" y="5" width="234" height="129.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aew-Rh-6Fg" secondAttribute="height" multiplier="47:26" id="pD7-pB-DoV"/>
                         </constraints>
@@ -37,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是标题标题标题标题标题标题标题标题标题标题标题" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSa-AD-7fX" userLabel="titleLabel">
-                        <rect key="frame" x="10" y="53.5" width="89" height="33.5"/>
+                        <rect key="frame" x="10" y="53" width="90" height="33.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -48,6 +47,14 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c89-b3-nLi">
+                        <rect key="frame" x="85" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Z00-fE-8C4"/>
+                            <constraint firstAttribute="width" constant="30" id="tEY-Qx-eOj"/>
+                        </constraints>
+                        <state key="normal" image="jingpin"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
@@ -55,23 +62,27 @@
                     <constraint firstItem="Pcp-SA-0LS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5LZ-PT-dIm"/>
                     <constraint firstItem="Pcp-SA-0LS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9D4-Hl-AKZ"/>
                     <constraint firstItem="rSa-AD-7fX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DWG-ds-WxH"/>
+                    <constraint firstItem="aew-Rh-6Fg" firstAttribute="leading" secondItem="c89-b3-nLi" secondAttribute="trailing" id="Ms5-Kh-fwE"/>
                     <constraint firstItem="aew-Rh-6Fg" firstAttribute="leading" secondItem="rSa-AD-7fX" secondAttribute="trailing" constant="15" id="Mxy-yG-l7Y"/>
                     <constraint firstAttribute="bottom" secondItem="Uz9-lc-2hQ" secondAttribute="bottom" constant="5" id="QIZ-VI-e79"/>
                     <constraint firstAttribute="bottom" secondItem="aew-Rh-6Fg" secondAttribute="bottom" constant="5" id="RTK-Bn-lXt"/>
                     <constraint firstItem="Uz9-lc-2hQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="b7n-1l-np2"/>
                     <constraint firstAttribute="trailing" secondItem="aew-Rh-6Fg" secondAttribute="trailing" constant="5" id="cfa-vA-jRQ"/>
                     <constraint firstItem="rSa-AD-7fX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="mGT-tq-zCk"/>
+                    <constraint firstItem="c89-b3-nLi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sgt-Vh-dcN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="jingpinBtn" destination="c89-b3-nLi" id="WUh-Zj-ele"/>
                 <outlet property="topDateLabel" destination="Uz9-lc-2hQ" id="Gm0-ie-og0"/>
                 <outlet property="topImageView" destination="aew-Rh-6Fg" id="6uT-Xc-Nkx"/>
                 <outlet property="topTitleLabel" destination="rSa-AD-7fX" id="kXP-cs-Jlv"/>
             </connections>
-            <point key="canvasLocation" x="-243" y="11"/>
+            <point key="canvasLocation" x="-518" y="31"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="jingpin" width="30" height="30"/>
         <image name="slideshow02" width="385" height="192"/>
     </resources>
 </document>

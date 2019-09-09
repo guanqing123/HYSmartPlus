@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *topDateLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *jingpinBtn;
 
 @end
 
@@ -40,6 +41,12 @@ static NSString *SPTopTableViewCellID = @"SPTopTableViewCell";
     self.topTitleLabel.text = sellActivity.title;
     
     self.topDateLabel.text = sellActivity.createDate;
+    
+    if (sellActivity.jingpin > 0) {
+        self.jingpinBtn.hidden = NO;
+    }else{
+        self.jingpinBtn.hidden = YES;
+    }
 }
 
 - (void)awakeFromNib {

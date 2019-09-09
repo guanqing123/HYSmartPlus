@@ -26,7 +26,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        NSString *str = @"2019-08-18";
+        NSString *str = @"2019-09-15";
         NSDateFormatter *sdf = [[NSDateFormatter alloc] init];
         sdf.dateFormat = @"yyyy-MM-dd";
         NSDate *date = [sdf dateFromString:str];
@@ -126,7 +126,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSString *str = @"2019-08-18";
+    NSString *str = @"2019-09-15";
     NSDateFormatter *sdf = [[NSDateFormatter alloc] init];
     sdf.dateFormat = @"yyyy-MM-dd";
     NSDate *date = [sdf dateFromString:str];

@@ -74,7 +74,7 @@
                 <outlet property="nonTopTimeLabel" destination="5LS-7f-hfG" id="xyy-c7-gJP"/>
                 <outlet property="nonTopTitleLabel" destination="Dkx-3K-IBC" id="U5E-dJ-bUa"/>
             </connections>
-            <point key="canvasLocation" x="-556" y="33"/>
+            <point key="canvasLocation" x="-833" y="40"/>
         </tableViewCell>
     </objects>
     <resources>

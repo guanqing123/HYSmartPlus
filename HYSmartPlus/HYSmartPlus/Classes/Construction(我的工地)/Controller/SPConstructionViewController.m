@@ -282,8 +282,30 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encoding]];
         }
     } else {
-       [MBProgressHUD showMessage:@"请先安装试压APP" toView:self.view];
+        // 1.实例化UIAlertController
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"提示" message:@"试压APP没有安装" preferredStyle:UIAlertControllerStyleAlert];
+        
+        // 2.实例化UIAlertAction
+        WEAKSELF
+        UIAlertAction *installAction = [UIAlertAction actionWithTitle:@"现在安装" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [weakSelf install];
+        }];
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertVc addAction:installAction];
+        [alertVc addAction:cancleAction];
+        // 3.显示UIAlertController
+        [self presentViewController:alertVc animated:YES completion:nil];
    }
+}
+
+- (void)install {
+    NSString *urlStr = [NSString stringWithFormat:@"https://apps.apple.com/cn/app/鸿雁试压/id1477032242"];
+    NSString *encoding = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    if (@available(iOS 10.0,*)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encoding] options:@{} completionHandler:nil];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encoding]];
+    }
 }
 
 - (void)deleteDropowerAndDetails:(SPDropower *)dropower {

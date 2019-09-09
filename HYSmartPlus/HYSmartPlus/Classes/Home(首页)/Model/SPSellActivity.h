@@ -40,6 +40,6 @@
 
 @property (nonatomic, copy) NSString *updateDate;
 
-@property (nonatomic, assign) NSInteger *jingpin;
+@property (nonatomic, assign) NSInteger jingpin;
 
 @end

@@ -20,6 +20,7 @@
 #import "SPAppDelegate.h"
 #import "SPAccount.h"
 #import "SPAccountTool.h"
+#import "SPLoginTool.h"
 #import "SPSmartPlusTool.h"
 #import "SPNavigationController.h"
 #import "SPLoginViewController.h"
@@ -43,6 +44,25 @@
     SPLoginResult *result = [SPAccountTool loginResult];
     
     if (result) { //之前登录成功
+        SPLoginParam *param = [SPLoginParam param:APP00005];
+        param.uid = result.userbase.uid;
+        param.token = result.token;
+        WEAKSELF
+        [SPLoginTool login:param success:^(SPLoginResult *loginResult) {
+            if (loginResult.error) {
+                // 1.实例化UIAlertController
+                UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"警告" message:loginResult.errorMsg preferredStyle:UIAlertControllerStyleAlert];
+                // 2.实例化UIAlertAction
+                UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [SPAccountTool deleteLoginResult];
+                    weakSelf.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
+                }];
+                [alertVc addAction:sureAction];
+                // 3.显示UIAlertController
+                [weakSelf.window.rootViewController presentViewController:alertVc animated:YES completion:nil];
+            }
+        } failure:^(NSError *error) {
+        }];
         [SPSmartPlusTool chooseRootController];
     } else { //之前没有登录成功
         self.window.rootViewController = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
