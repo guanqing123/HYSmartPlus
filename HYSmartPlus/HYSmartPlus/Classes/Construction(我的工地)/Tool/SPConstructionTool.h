@@ -30,6 +30,15 @@
  */
 + (void)saveDropowerDetails:(SPSaveDropowerDetailsParam *)saveDetailsParam imageArray:(NSArray *)imageArray success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
 
+
+/**
+ 修改注释
+ @param params 请求参数
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)modifyComment:(NSDictionary *)params success:(void(^)(SPCommonResult *result))success failure:(void(^)(NSError *error))failure;
+
 /**
  删除水电图主单和明细
 

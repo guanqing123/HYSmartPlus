@@ -10,6 +10,7 @@
 
 #import "SPConstructionViewController.h"
 #import "SPSiteCreateViewController.h"
+#import "SPCommentViewController.h"
 #import "SPUploadPhotoCollectionViewController.h"
 #import "SPSearchBar.h"
 #import "SPConstructionTableCell.h"
@@ -20,7 +21,7 @@
 #import "IQKeyboardManager.h"
 #import "SPAppiontmentViewController.h"
 
-@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate,SPSiteCreateViewControllerDelegate>
+@interface SPConstructionViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,SPConstructionTableCellDelegate,SPSiteCreateViewControllerDelegate,SPCommentViewControllerDelegate>
 // 搜索条
 @property (nonatomic, weak)  UIView *searchView;
 // 搜索内容
@@ -130,7 +131,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
     [self.tableView.mj_header beginRefreshing];
     self.pageNum = 1;
-    self.pageSize = 2;
+    self.pageSize = 5;
     
     if (@available(iOS 11.0,*)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -221,6 +222,19 @@
     cell.dropower = dropower;
     
     return cell;
+}
+
+#pragma mark - UITableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SPDropower *dropower = self.dropowerArray[indexPath.row];
+    SPCommentViewController *commentVc = [[SPCommentViewController alloc] initWithDropower:dropower];
+    commentVc.delegate = self;
+    [self.navigationController pushViewController:commentVc animated:YES];
+}
+
+#pragma mark -SPCommentViewController Delegate
+- (void)commentViewController:(SPCommentViewController *)commentVc {
+    [self.tableView.mj_header beginRefreshing];
 }
 
 #pragma mark - SPConstructionTableCellDelegate

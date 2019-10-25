@@ -64,6 +64,8 @@
 		D61405FD1FBC8C6800E50627 /* UIImage+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D61405FC1FBC8C6800E50627 /* UIImage+SPExtension.m */; };
 		D61438CA204D7CF8009C6258 /* SPLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D61438C9204D7CF8009C6258 /* SPLoginParam.m */; };
 		D614E89A1FC42510000C8F85 /* CountDownShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D614E8991FC4250F000C8F85 /* CountDownShop.plist */; };
+		D61501352362DDAB0085AD0A /* SPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61501332362DDAB0085AD0A /* SPCommentViewController.m */; };
+		D61501362362DDAB0085AD0A /* SPCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61501342362DDAB0085AD0A /* SPCommentViewController.xib */; };
 		D6164D2B204596D100767C00 /* SPHandPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CF5204596D100767C00 /* SPHandPickViewController.m */; };
 		D6164D2D204596D100767C00 /* SPSliderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CFB204596D100767C00 /* SPSliderResult.m */; };
 		D6164D2E204596D100767C00 /* SPGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6164CFD204596D100767C00 /* SPGridItem.m */; };
@@ -305,6 +307,9 @@
 		D61438C8204D7CF8009C6258 /* SPLoginParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLoginParam.h; sourceTree = "<group>"; };
 		D61438C9204D7CF8009C6258 /* SPLoginParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLoginParam.m; sourceTree = "<group>"; };
 		D614E8991FC4250F000C8F85 /* CountDownShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountDownShop.plist; sourceTree = "<group>"; };
+		D61501322362DDAB0085AD0A /* SPCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCommentViewController.h; sourceTree = "<group>"; };
+		D61501332362DDAB0085AD0A /* SPCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCommentViewController.m; sourceTree = "<group>"; };
+		D61501342362DDAB0085AD0A /* SPCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPCommentViewController.xib; sourceTree = "<group>"; };
 		D6164CF4204596D100767C00 /* SPHandPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHandPickViewController.h; sourceTree = "<group>"; };
 		D6164CF5204596D100767C00 /* SPHandPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHandPickViewController.m; sourceTree = "<group>"; };
 		D6164CFA204596D100767C00 /* SPSliderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliderResult.h; sourceTree = "<group>"; };
@@ -1176,6 +1181,9 @@
 				D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */,
 				D61D12E520A2EE2300A48962 /* SPUploadPhotoCollectionViewController.h */,
 				D61D12E620A2EE2300A48962 /* SPUploadPhotoCollectionViewController.m */,
+				D61501322362DDAB0085AD0A /* SPCommentViewController.h */,
+				D61501332362DDAB0085AD0A /* SPCommentViewController.m */,
+				D61501342362DDAB0085AD0A /* SPCommentViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1646,6 +1654,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1672,6 +1681,7 @@
 				D62034FD2058AC5F00F39847 /* SPServiceTableViewCell.xib in Resources */,
 				D60EC4EE1FC6C1BB00F78F31 /* ClassiftyGoods02.plist in Resources */,
 				D63200C42092B2000057B969 /* WCCommonProblemCell.xib in Resources */,
+				D61501362362DDAB0085AD0A /* SPCommentViewController.xib in Resources */,
 				D613BE271F6193110090316D /* Images.xcassets in Resources */,
 				D626C2551FC5742D00FFD736 /* HomeHighGoods.plist in Resources */,
 				D60AD7B6204FB934009E0B25 /* MBProgressHUD.bundle in Resources */,
@@ -1764,6 +1774,7 @@
 				D6184B03204708AF00616266 /* SPLoginHeaderView.m in Sources */,
 				D64C433A208DCB41000FF373 /* SPPersonScoreParam.m in Sources */,
 				D60D303A20A56F120083594B /* UIAlertView+LBXAlertAction.m in Sources */,
+				D61501352362DDAB0085AD0A /* SPCommentViewController.m in Sources */,
 				D618CD9820D0E7FC00FCB88B /* SPSellActivityFenyeResult.m in Sources */,
 				D618CD9220D0E16800FCB88B /* SPSellActivityListViewController.m in Sources */,
 				D6B3941120592FB7001E08AC /* SPNumberScrollView.m in Sources */,
@@ -2043,6 +2054,7 @@
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
@@ -2064,6 +2076,7 @@
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";

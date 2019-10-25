@@ -26,6 +26,19 @@
     }];
 }
 
++ (void)modifyComment:(NSDictionary *)params success:(void (^)(SPCommonResult *))success failure:(void (^)(NSError *))failure {
+    
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/dropower/modifyComment";
+    
+    [SPHttpTool postWithURL:urlStr params:params success:^(id json) {
+        SPCommonResult *result = [SPCommonResult mj_objectWithKeyValues:json];
+        success(result);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+
 + (void)deleteDropowerAndDetails:(SPDeleteDropowerDetailParam *)deleteParam success:(void (^)(SPCommonResult *))success failure:(void (^)(NSError *))failure {
     
     NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/file/deleteDropowerAndDetails";

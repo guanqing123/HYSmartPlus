@@ -21,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.delegate = self;
+    if (@available(iOS 13.0,*)) {} else{
+        self.delegate = self;
+    }
     
     [self setUpTabBar];
     
@@ -30,11 +32,13 @@
 
 #pragma mark - 更换系统tabbar
 - (void)setUpTabBar {
-    SPTabBar *tabBar = [[SPTabBar alloc] init];
-    tabBar.backgroundColor = [UIColor whiteColor];
-    //KVC把系统换成自定义
-    [self setValue:tabBar forKey:@"tabBar"];
-    
+    if (@available(iOS 13.0,*)) {}else{
+        SPTabBar *tabBar = [[SPTabBar alloc] init];
+        tabBar.backgroundColor = [UIColor whiteColor];
+        //KVC把系统换成自定义
+        [self setValue:tabBar forKey:@"tabBar"];
+    }
+
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(168, 168, 168),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(20, 200, 197),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 }
@@ -104,6 +108,7 @@
 
 #pragma mark - 点击动画
 - (void)tabBarButtonClick:(UIControl *)tabBarButton {
+    
     for (UIView *imageView in tabBarButton.subviews) {
         if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
             //需要实现的帧动画,这里根据自己需求改动

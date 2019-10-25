@@ -152,6 +152,7 @@ static NSString *const SPSettingTableViewCellID = @"SPSettingTableViewCellID";
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [SPAccountTool deleteLoginResult];
         SPNavigationController *nav = [[SPNavigationController alloc] initWithRootViewController:[[SPLoginViewController alloc] init]];
+        nav.modalPresentationStyle = UIModalPresentationFullScreen;
         [weakSelf presentViewController:nav animated:YES completion:nil];
     }];
     
