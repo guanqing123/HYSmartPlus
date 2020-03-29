@@ -14,6 +14,8 @@
 #import "SPProblemViewController.h"
 #import "SPInviteFriendViewController.h"
 
+#import "SPDiscountViewController.h"
+
 #import "SPStyleDIY.h"
 #import "SPBindBossViewController.h"
 
@@ -318,6 +320,9 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         case PersonCenterServiceInviteFriend:
             [self doInviteFriend];
             break;
+        case PersonCenterServiceDiscount:
+            [self doDiscount];
+            break;
         case PersonCenterServiceBindBoss:
             [self openScanVCWithStyle:[SPStyleDIY InnerStyle]];
             break;
@@ -367,6 +372,10 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     [self.navigationController pushViewController:inviteFriendVc animated:YES];
 }
 
+- (void)doDiscount {
+    SPDiscountViewController *discountVc = [[SPDiscountViewController alloc] init];
+    [self.navigationController pushViewController:discountVc animated:YES];
+}
 
 
 #pragma mark -  滚动tableview 完毕之后

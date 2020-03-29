@@ -61,8 +61,8 @@
                               MallImgKey    : @"tabr_3_up",
                               MallSelImgKey : @"tabr_3_down"},
                             
-                            @{MallClassKey  : @"SPDiscountViewController",
-                              MallTitleKey  : @"优惠卡券",
+                            @{MallClassKey  : @"SPHyShopViewController",
+                              MallTitleKey  : @"鸿雁商城",
                               MallImgKey    : @"tabr_4_up",
                               MallSelImgKey : @"tabr_4_down"},
                             
