@@ -21,9 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /*
+    2021.3.23
     if (@available(iOS 13.0,*)) {} else{
         self.delegate = self;
     }
+    */
     
     [self setUpTabBar];
     
@@ -32,21 +35,32 @@
 
 #pragma mark - 更换系统tabbar
 - (void)setUpTabBar {
+    /*
+     2021.3.23
     if (@available(iOS 13.0,*)) {}else{
         SPTabBar *tabBar = [[SPTabBar alloc] init];
         tabBar.backgroundColor = [UIColor whiteColor];
         //KVC把系统换成自定义
         [self setValue:tabBar forKey:@"tabBar"];
+    }*/
+    
+    if (@available(iOS 13.0, *)) {
+        // iOS 13以上
+        self.tabBar.tintColor = RGB(20, 200, 197);
+        self.tabBar.unselectedItemTintColor = RGB(168, 168, 168);
+        UITabBarItem *item = [UITabBarItem appearance];
+        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(168, 168, 168),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(20, 200, 197),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    } else {
+          [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(168, 168, 168),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(20, 200, 197),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     }
-
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(168, 168, 168),NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(20, 200, 197),NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 }
 
 #pragma mark - 添加子控制器
 - (void)addSpChildViewController {
     NSArray *childArray = @[
-                            @{MallClassKey  : @"SPIndexViewController",
+                            @{MallClassKey  : @"SPNewIndexViewController",
                               MallTitleKey  : @"首页",
                               MallImgKey    : @"tabr_1_up",
                               MallSelImgKey : @"tabr_1_down"},
@@ -56,8 +70,8 @@
                               MallImgKey    : @"tabr_2_up",
                               MallSelImgKey : @"tabr_2_down"},
                             
-                            @{MallClassKey  : @"SPConstructionViewController",
-                              MallTitleKey  : @"工地",
+                            @{MallClassKey  : @"SPServiceViewController",
+                              MallTitleKey  : @"服务",
                               MallImgKey    : @"tabr_3_up",
                               MallSelImgKey : @"tabr_3_down"},
                             

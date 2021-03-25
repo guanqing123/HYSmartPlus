@@ -86,4 +86,21 @@
     }];
 }
 
++ (void)getCertificate:(NSDictionary *)certificateParam success:(void (^)(NSInteger))success failure:(void (^)(NSError *))failure {
+    
+    NSString *urlStr = @"http://wx.hongyancloud.com/wxDev/certification";
+    
+    [SPHttpTool postWithURL:urlStr params:certificateParam success:^(id json) {
+       NSDictionary *result = [json objectForKey:@"data"];
+       if ([result isEqual:[NSNull null]]) {
+           success(0);
+       } else {
+           success([result[@"state"] integerValue]);
+       }
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+
 @end

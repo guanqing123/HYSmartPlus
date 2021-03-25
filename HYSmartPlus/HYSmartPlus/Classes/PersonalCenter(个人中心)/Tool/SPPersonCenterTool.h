@@ -49,4 +49,11 @@
  */
 + (void)doSignIn:(SPSignInParam *)signInParam success:(void(^)(SPSignInResult *result))success failure:(void(^)(NSError *error))failure;
 
+
+/// 获取认证状态
+/// @param certificateParam 请求参数
+/// @param success 成功回调
+/// @param failure 失败回调
++ (void)getCertificate:(NSDictionary *)certificateParam success:(void(^)(NSInteger state))success failure:(void(^)(NSError *error))failure;
+
 @end

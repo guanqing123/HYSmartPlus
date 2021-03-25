@@ -4,6 +4,22 @@
 <array>
 	<dict>
 		<key>iconImage</key>
+		<string>me_order</string>
+		<key>gridTitle</key>
+		<string>我的订单</string>
+		<key>serviceType</key>
+		<integer>5</integer>
+	</dict>
+	<dict>
+		<key>iconImage</key>
+		<string>me_construction</string>
+		<key>gridTitle</key>
+		<string>我的工地</string>
+		<key>serviceType</key>
+		<integer>4</integer>
+	</dict>
+	<dict>
+		<key>iconImage</key>
 		<string>me_sign</string>
 		<key>gridTitle</key>
 		<string>签到</string>

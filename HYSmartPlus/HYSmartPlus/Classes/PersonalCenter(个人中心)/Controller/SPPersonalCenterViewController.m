@@ -10,6 +10,7 @@
 #import "MJExtension.h"
 
 #import "SPSettingViewController.h"
+#import "SPCertificateViewController.h"
 
 #import "SPProblemViewController.h"
 #import "SPInviteFriendViewController.h"
@@ -20,6 +21,10 @@
 #import "SPBindBossViewController.h"
 
 #import "SPScoreViewController.h"
+
+#import "SPConstructionViewController.h"
+
+#import "SPH5BrowseViewController.h"
 
 //顶部和头部View
 #import "SPCenterTopToolView.h"
@@ -95,6 +100,8 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     [self setUpHeaderCenterView];
     
     [self setUpProblem];
+    
+    [self getCertication];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -145,7 +152,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 }
 
 - (void)setUpNavTopView {
-    _topToolView = [[SPCenterTopToolView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 64)];
+    _topToolView = [[SPCenterTopToolView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, SPStatusBarH>20?74:SPTopNavH)];
     _topToolView.delegate = self;
     [self.view addSubview:_topToolView];
 }
@@ -155,6 +162,9 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     WEAKSELF
     headerView.headImageBlock = ^{
         [weakSelf openSettingVc];
+    };
+    headerView.certificateBlock = ^{
+        [weakSelf openCertificateVc];
     };
     headerView.frame = (CGRect){CGPointZero,CGSizeMake(ScreenW, 200)};
     _headerView = headerView;
@@ -185,6 +195,15 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         [weakSelf.headerView setData];
     };
     [self.navigationController pushViewController:settingVc animated:YES];
+}
+
+- (void)openCertificateVc {
+    SPCertificateViewController *certificateVc = [[SPCertificateViewController alloc] init];
+    WEAKSELF
+    certificateVc.certificateVcBlock = ^{
+        [weakSelf getCertication];
+    };
+    [self.navigationController pushViewController:certificateVc animated:YES];
 }
 
 #pragma mark - LazyLoad
@@ -240,6 +259,15 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }];
 }
 
+#pragma mark - getCertication
+- (void)getCertication {
+    NSDictionary *certificateParam = @{@"uid":[SPAccountTool loginResult].userbase.uid};
+    [SPPersonCenterTool getCertificate:certificateParam success:^(NSInteger state) {
+        [self.headerView setState:state];
+    } failure:^(NSError *error) {
+    }];
+}
+
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
@@ -281,7 +309,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     if(indexPath.section == 0){
         return 60;
     }else if(indexPath.section == 1) {
-        return 120;
+        return 195;
     }else if (indexPath.section == 2) {
         return 245;
     }else if (indexPath.section == 3) {
@@ -326,11 +354,18 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         case PersonCenterServiceBindBoss:
             [self openScanVCWithStyle:[SPStyleDIY InnerStyle]];
             break;
+        case PersonCenterServiceConstruction:
+            [self doConstruction];
+            break;
+        case PersonCenterServiceOrder:
+            [self doOrder];
+            break;
         default:
             break;
     }
 }
 
+// 绑定客户
 - (SPBindBossViewController *)scanVc {
     if (!_scanVc) {
         _scanVc = [[SPBindBossViewController alloc] init];
@@ -347,6 +382,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 }
 
 
+// 签到
 - (void)doSignIn {
     SPSignInParam *param = [SPSignInParam param:APP00007];
     param.uid = [SPAccountTool loginResult].userbase.uid;
@@ -367,16 +403,30 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     }];
 }
 
+// 邀请朋友
 - (void)doInviteFriend {
     SPInviteFriendViewController *inviteFriendVc = [[SPInviteFriendViewController alloc] init];
     [self.navigationController pushViewController:inviteFriendVc animated:YES];
 }
 
+// 优惠打折
 - (void)doDiscount {
     SPDiscountViewController *discountVc = [[SPDiscountViewController alloc] init];
     [self.navigationController pushViewController:discountVc animated:YES];
 }
 
+// 我的工地
+- (void)doConstruction {
+    SPConstructionViewController *constructionVc = [[SPConstructionViewController alloc] init];
+    [self.navigationController pushViewController:constructionVc animated:YES];
+}
+
+// 我的订单
+- (void)doOrder {
+    SPH5BrowseViewController *h5BrowseVc = [[SPH5BrowseViewController alloc] initWithUrl:[AJURL stringByAppendingString:@"/gmyorder/gmyorderlist.html"]];
+    h5BrowseVc.title = @"我的订单";
+    [self.navigationController pushViewController:h5BrowseVc animated:YES];
+}
 
 #pragma mark -  滚动tableview 完毕之后
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

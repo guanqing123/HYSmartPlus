@@ -13,6 +13,8 @@
 @interface SPPersonCenterHeaderView()
 @property (weak, nonatomic) IBOutlet UIButton *headImageBtn;
 @property (weak, nonatomic) IBOutlet UILabel *telephoneLabel;
+@property (weak, nonatomic) IBOutlet UIButton *certificateBtn;
+- (IBAction)certificate;
 
 - (IBAction)headImageClick;
 
@@ -24,6 +26,7 @@
     [super awakeFromNib];
     
     [SPSpeedy dc_setUpBezierPathCircularLayerWith:self.headImageBtn size:CGSizeMake(self.headImageBtn.dc_width * 0.5, self.headImageBtn.dc_height * 0.5)];
+    [SPSpeedy dc_chageControlCircularWith:_certificateBtn AndSetCornerRadius:5 SetBorderWidth:1 SetBorderColor:[UIColor clearColor] canMasksToBounds:YES];
 }
 
 + (instancetype)headerView {
@@ -40,7 +43,34 @@
     self.telephoneLabel.text = [SPAccountTool loginResult].userbase.phone;
 }
 
+- (void)setState:(NSInteger)state {
+    switch (state) {
+        case 0: {
+            [self.certificateBtn setTitle:@"未认证" forState:UIControlStateNormal];
+            break;
+        }
+        case 1: {
+            [self.certificateBtn setTitle:@"等待审核" forState:UIControlStateNormal];
+            break;
+        }
+        case 2: {
+            [self.certificateBtn setTitle:@"已认证" forState:UIControlStateNormal];
+            break;
+        }
+        case 3: {
+            [self.certificateBtn setTitle:@"认证被拒" forState:UIControlStateNormal];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 - (IBAction)headImageClick {
     !_headImageBlock ? : _headImageBlock();
+}
+
+- (IBAction)certificate {
+    !_certificateBlock ? : _certificateBlock();
 }
 @end

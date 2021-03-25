@@ -53,13 +53,25 @@
 
 #pragma mark - 设置导航与背景
 - (void)setupNavBar {
+    // 0.我的工地
+    self.title = @"我的工地";
+    
+    // 1.背景色
     self.view.backgroundColor = SPBGColor;
+        
+    // 2.左
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"30"] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"预约" style:UIBarButtonItemStyleDone target:self action:@selector(appiontment)];
-    
-    // rightItem
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"add"] withHighLightedImage:[UIImage imageNamed:@"add"] target:self action:@selector(add)];
+    // 3.右
+    UIBarButtonItem *yue = [[UIBarButtonItem alloc] initWithTitle:@"预约" style:UIBarButtonItemStyleDone target:self action:@selector(appiontment)];
+    UIBarButtonItem *add = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"add"] withHighLightedImage:[UIImage imageNamed:@"add"] target:self action:@selector(add)];
+    self.navigationItem.rightBarButtonItems = @[add, yue];
 }
+
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 #pragma mark - appiontment
 - (void)appiontment {
@@ -120,7 +132,7 @@
 #pragma mark - setupTableView
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] init];
-    tableView.frame = CGRectMake(0, self.searchView.dc_bottom, ScreenW, ScreenH - self.searchView.dc_bottom - SPBottomTabH);
+    tableView.frame = CGRectMake(0, self.searchView.dc_bottom, ScreenW, ScreenH - self.searchView.dc_bottom);
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];

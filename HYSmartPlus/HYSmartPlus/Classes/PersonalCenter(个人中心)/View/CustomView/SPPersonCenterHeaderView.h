@@ -12,8 +12,12 @@
 
 @property (nonatomic, copy) dispatch_block_t headImageBlock;
 
+@property (nonatomic, copy) dispatch_block_t certificateBlock;
+
 + (instancetype)headerView;
 
 - (void)setData;
+
+- (void)setState:(NSInteger)state;
 
 @end

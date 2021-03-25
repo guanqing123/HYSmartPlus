@@ -167,6 +167,12 @@
 		D6659ECD20A00E8300846576 /* SPConstructionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ECC20A00E8300846576 /* SPConstructionTableCell.m */; };
 		D6659ED320A03BA600846576 /* SPTopTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659ED220A03BA600846576 /* SPTopTextView.m */; };
 		D6659ED520A03BBC00846576 /* SPTopTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6659ED420A03BBC00846576 /* SPTopTextView.xib */; };
+		D66A7FD2260B2490006E75DE /* SPCertificateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66A7FD1260B2490006E75DE /* SPCertificateViewController.m */; };
+		D66BCB3C2609E1E800387698 /* SPNewIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66BCB3B2609E1E800387698 /* SPNewIndexViewController.m */; };
+		D66CEEAB260C836F00FC8F04 /* SPH5BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66CEEAA260C836F00FC8F04 /* SPH5BrowseViewController.m */; };
+		D66FD843260C3BDA00BA05E8 /* SPServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FD842260C3BDA00BA05E8 /* SPServiceViewController.m */; };
+		D66FD849260C3C8300BA05E8 /* MyBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FD845260C3C8300BA05E8 /* MyBase64.m */; };
+		D66FD84A260C3C8300BA05E8 /* DES3EncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FD848260C3C8300BA05E8 /* DES3EncryptUtil.m */; };
 		D68B06282092E8D00000434F /* SPHyMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68B06272092E8D00000434F /* SPHyMallViewController.m */; };
 		D68CCD2020A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D68CCD1F20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.m */; };
 		D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D69B14661F67EA6400CB040A /* UIView+SPExtension.m */; };
@@ -501,6 +507,18 @@
 		D6659ED120A03BA600846576 /* SPTopTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTopTextView.h; sourceTree = "<group>"; };
 		D6659ED220A03BA600846576 /* SPTopTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTopTextView.m; sourceTree = "<group>"; };
 		D6659ED420A03BBC00846576 /* SPTopTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPTopTextView.xib; sourceTree = "<group>"; };
+		D66A7FD0260B2490006E75DE /* SPCertificateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCertificateViewController.h; sourceTree = "<group>"; };
+		D66A7FD1260B2490006E75DE /* SPCertificateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCertificateViewController.m; sourceTree = "<group>"; };
+		D66BCB3A2609E1E800387698 /* SPNewIndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPNewIndexViewController.h; sourceTree = "<group>"; };
+		D66BCB3B2609E1E800387698 /* SPNewIndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPNewIndexViewController.m; sourceTree = "<group>"; };
+		D66CEEA9260C836F00FC8F04 /* SPH5BrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPH5BrowseViewController.h; sourceTree = "<group>"; };
+		D66CEEAA260C836F00FC8F04 /* SPH5BrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPH5BrowseViewController.m; sourceTree = "<group>"; };
+		D66FD841260C3BDA00BA05E8 /* SPServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPServiceViewController.h; sourceTree = "<group>"; };
+		D66FD842260C3BDA00BA05E8 /* SPServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPServiceViewController.m; sourceTree = "<group>"; };
+		D66FD845260C3C8300BA05E8 /* MyBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBase64.m; sourceTree = "<group>"; };
+		D66FD846260C3C8300BA05E8 /* MyBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBase64.h; sourceTree = "<group>"; };
+		D66FD847260C3C8300BA05E8 /* DES3EncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3EncryptUtil.h; sourceTree = "<group>"; };
+		D66FD848260C3C8300BA05E8 /* DES3EncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3EncryptUtil.m; sourceTree = "<group>"; };
 		D68B06262092E8D00000434F /* SPHyMallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPHyMallViewController.h; sourceTree = "<group>"; };
 		D68B06272092E8D00000434F /* SPHyMallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPHyMallViewController.m; sourceTree = "<group>"; };
 		D68CCD1E20A3ED46008CFAC9 /* SPSaveDropowerDetailsParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSaveDropowerDetailsParam.h; sourceTree = "<group>"; };
@@ -1102,6 +1120,8 @@
 				D618CD9120D0E16800FCB88B /* SPSellActivityListViewController.m */,
 				D628D1DC230264DD00FE883D /* SPSellActivityViewController.h */,
 				D628D1DD230264DD00FE883D /* SPSellActivityViewController.m */,
+				D66BCB3A2609E1E800387698 /* SPNewIndexViewController.h */,
+				D66BCB3B2609E1E800387698 /* SPNewIndexViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1278,6 +1298,7 @@
 				D613E7D01F66559E00D62B89 /* Main(主要) */,
 				D6164D432045975700767C00 /* Home(首页) */,
 				D6164CF2204596D100767C00 /* Mall(积分商城) */,
+				D66FD83F260C3B8900BA05E8 /* Service(服务) */,
 				D617AA85209800DC009A00E1 /* Construction(我的工地) */,
 				D6FEC03D242DD0510043EBF1 /* HyShop(鸿雁商城) */,
 				D60EC4C51FC6770D00F78F31 /* Classify(分类) */,
@@ -1365,6 +1386,7 @@
 				D60A539E20A920F3006854A7 /* AboutMe(关于我们) */,
 				D633233C1FC7AFF6003511EA /* Login(登录) */,
 				D63200B82092ABB10057B969 /* Problem(问题) */,
+				D66CEEA7260C82C500FC8F04 /* H5Browse(H5浏览) */,
 				D662F85B2093237E0058C2E9 /* Invite(邀请) */,
 				D6FEC038242DCFEC0043EBF1 /* Discount(优惠分享) */,
 				D616A20720A44716006854E3 /* BindBoss(绑定经销商) */,
@@ -1383,6 +1405,8 @@
 				D633234A1FC7B049003511EA /* SPPersonalCenterViewController.m */,
 				D62F56C422FAAA0B0054CCC9 /* SPScoreViewController.h */,
 				D62F56C522FAAA0B0054CCC9 /* SPScoreViewController.m */,
+				D66A7FD0260B2490006E75DE /* SPCertificateViewController.h */,
+				D66A7FD1260B2490006E75DE /* SPCertificateViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1527,6 +1551,52 @@
 				D6CD6437209401C00095DBEA /* SPInviteFriendViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D66CEEA7260C82C500FC8F04 /* H5Browse(H5浏览) */ = {
+			isa = PBXGroup;
+			children = (
+				D66CEEA8260C82F600FC8F04 /* Controller */,
+			);
+			path = "H5Browse(H5浏览)";
+			sourceTree = "<group>";
+		};
+		D66CEEA8260C82F600FC8F04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D66CEEA9260C836F00FC8F04 /* SPH5BrowseViewController.h */,
+				D66CEEAA260C836F00FC8F04 /* SPH5BrowseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D66FD83F260C3B8900BA05E8 /* Service(服务) */ = {
+			isa = PBXGroup;
+			children = (
+				D66FD844260C3C5F00BA05E8 /* Tool */,
+				D66FD840260C3BA700BA05E8 /* Controller */,
+			);
+			path = "Service(服务)";
+			sourceTree = "<group>";
+		};
+		D66FD840260C3BA700BA05E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D66FD841260C3BDA00BA05E8 /* SPServiceViewController.h */,
+				D66FD842260C3BDA00BA05E8 /* SPServiceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D66FD844260C3C5F00BA05E8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D66FD847260C3C8300BA05E8 /* DES3EncryptUtil.h */,
+				D66FD848260C3C8300BA05E8 /* DES3EncryptUtil.m */,
+				D66FD846260C3C8300BA05E8 /* MyBase64.h */,
+				D66FD845260C3C8300BA05E8 /* MyBase64.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		D68B06252092E8950000434F /* Tool */ = {
@@ -1803,6 +1873,7 @@
 				D625308E204D4744006A8CB5 /* SPLoginTool.m in Sources */,
 				D6164D3F204596D200767C00 /* SPLIRLButton.m in Sources */,
 				D60AD7B9204FCED4009E0B25 /* SPLoginResult.m in Sources */,
+				D66FD843260C3BDA00BA05E8 /* SPServiceViewController.m in Sources */,
 				D60FA4642050DE3D00928AB4 /* SPUserAgreementViewController.m in Sources */,
 				D6FEC03C242DCFEC0043EBF1 /* SPDiscountViewController.m in Sources */,
 				D63323471FC7AFF6003511EA /* SPAccount.m in Sources */,
@@ -1826,6 +1897,7 @@
 				D60AD7BC204FDEEF009E0B25 /* SPBaseResult.m in Sources */,
 				D6253085204D2A2B006A8CB5 /* MBProgressHUD+SPExtension.m in Sources */,
 				D64C4337208DCA13000FF373 /* SPPersonCenterTool.m in Sources */,
+				D66CEEAB260C836F00FC8F04 /* SPH5BrowseViewController.m in Sources */,
 				D62F56C622FAAA0B0054CCC9 /* SPScoreViewController.m in Sources */,
 				D6164D41204596D200767C00 /* SPNumericalScrollView.m in Sources */,
 				D6FEC045242DD1C90043EBF1 /* SPHyShopTool.m in Sources */,
@@ -1847,6 +1919,7 @@
 				D60D541020A7287F00A0D629 /* SPSettingTopView.m in Sources */,
 				D60D303F20A575D70083594B /* SPScanResultViewController.m in Sources */,
 				D613E7BD1F6621E600D62B89 /* SPAppDelegate.m in Sources */,
+				D66FD849260C3C8300BA05E8 /* MyBase64.m in Sources */,
 				D69B14671F67EA6400CB040A /* UIView+SPExtension.m in Sources */,
 				D617613920CF5949007286E8 /* SPIndexTool.m in Sources */,
 				D60EC4E71FC6B49A00F78F31 /* SPGoodsSortCell.m in Sources */,
@@ -1911,6 +1984,7 @@
 				D64E430D209C45050080A9E3 /* SPCitiesDataTool.m in Sources */,
 				D6253091204D4C28006A8CB5 /* SPCodeResult.m in Sources */,
 				D60EC4DD1FC6A98600F78F31 /* SPClassSubItem.m in Sources */,
+				D66A7FD2260B2490006E75DE /* SPCertificateViewController.m in Sources */,
 				D6184B002047013100616266 /* SPLoginViewController.m in Sources */,
 				D60AD7B4204F9787009E0B25 /* SPAccountDetail.m in Sources */,
 				D60D303920A56F120083594B /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
@@ -1921,6 +1995,7 @@
 				D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */,
 				D6F65B86209B5CF10057EC78 /* SPChooseLocationView.m in Sources */,
 				D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */,
+				D66BCB3C2609E1E800387698 /* SPNewIndexViewController.m in Sources */,
 				D633234B1FC7B049003511EA /* SPPersonalCenterViewController.m in Sources */,
 				D618CD9520D0E77900FCB88B /* SPSellActivityFenyeParam.m in Sources */,
 				D6164D34204596D100767C00 /* SPGoodsGridCell.m in Sources */,
@@ -1946,6 +2021,7 @@
 				D60C448F20CE734200F60814 /* SPIndexViewController.m in Sources */,
 				D6FE8E8A20CFB5DE007C697A /* SPSellActivityParam.m in Sources */,
 				D6164D2F204596D100767C00 /* SPRecommendItem.m in Sources */,
+				D66FD84A260C3C8300BA05E8 /* DES3EncryptUtil.m in Sources */,
 				D6FE8E9020CFB6E3007C697A /* SPSellActivityResult.m in Sources */,
 				D63323481FC7AFF6003511EA /* SPAccountTool.m in Sources */,
 				D6184AF82046D91800616266 /* SPPasswordLoginView.m in Sources */,

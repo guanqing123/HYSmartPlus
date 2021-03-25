@@ -11,7 +11,9 @@ typedef enum {
     PersonCenterServiceSignIn,
     PersonCenterServiceInviteFriend,
     PersonCenterServiceDiscount,
-    PersonCenterServiceBindBoss
+    PersonCenterServiceBindBoss,
+    PersonCenterServiceConstruction,
+    PersonCenterServiceOrder
 } PersonCenterServiceType;
 
 @interface SPServiceItem : NSObject

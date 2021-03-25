@@ -38,7 +38,7 @@
     if (scrollArray.count > 0) {
         for (int i = 0; i < scrollArray.count; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.titleLabel.numberOfLines = 0;
+            btn.titleLabel.numberOfLines = 1;
             [btn setTitle:scrollArray[i] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];

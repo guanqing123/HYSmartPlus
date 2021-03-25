@@ -90,4 +90,7 @@
 //用户积分信息
 #define APP00008 @"APP00008"
 
+//鸿雁安家
+#define AJURL @"http://wx.hongyancloud.com/hyaj"
+
 #endif /* Macros_h */

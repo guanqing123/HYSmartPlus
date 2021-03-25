@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,32 +25,49 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPw-sL-HsX" userLabel="telephoneLabel">
-                    <rect key="frame" x="99" y="88" width="177" height="32"/>
+                    <rect key="frame" x="99" y="94" width="177" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="fGY-dl-MBS"/>
+                        <constraint firstAttribute="height" constant="21" id="fGY-dl-MBS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsN-Mf-1Y0" userLabel="certificate">
+                    <rect key="frame" x="99" y="115" width="80" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="5K8-DL-GLL"/>
+                        <constraint firstAttribute="height" constant="22" id="xoh-Op-aKi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="cer"/>
+                    <connections>
+                        <action selector="certificate" destination="iN0-l3-epB" eventType="touchUpInside" id="H9x-zs-LwZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Xe2-AQ-Xut" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="88" id="1kF-eS-miz"/>
-                <constraint firstItem="KPw-sL-HsX" firstAttribute="top" secondItem="Xe2-AQ-Xut" secondAttribute="top" id="8LK-qx-KOl"/>
+                <constraint firstItem="bsN-Mf-1Y0" firstAttribute="top" secondItem="Xe2-AQ-Xut" secondAttribute="centerY" id="8eN-eQ-heQ"/>
                 <constraint firstItem="KPw-sL-HsX" firstAttribute="leading" secondItem="Xe2-AQ-Xut" secondAttribute="trailing" constant="20" id="Eh4-2o-qrV"/>
+                <constraint firstItem="KPw-sL-HsX" firstAttribute="bottom" secondItem="Xe2-AQ-Xut" secondAttribute="centerY" id="Es6-1F-wM0"/>
                 <constraint firstItem="Xe2-AQ-Xut" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="VWH-4H-chZ"/>
+                <constraint firstItem="bsN-Mf-1Y0" firstAttribute="leading" secondItem="Xe2-AQ-Xut" secondAttribute="trailing" constant="20" id="gdA-xO-D4M"/>
                 <constraint firstAttribute="trailing" secondItem="KPw-sL-HsX" secondAttribute="trailing" constant="20" id="h2B-8G-Z9F"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="certificateBtn" destination="bsN-Mf-1Y0" id="9fE-wP-ZVL"/>
                 <outlet property="headImageBtn" destination="Xe2-AQ-Xut" id="xMP-Pt-0eJ"/>
                 <outlet property="telephoneLabel" destination="KPw-sL-HsX" id="J49-Tj-Y9d"/>
             </connections>
-            <point key="canvasLocation" x="-657" y="-197"/>
+            <point key="canvasLocation" x="-931.20000000000005" y="-163.71814092953525"/>
         </view>
     </objects>
     <resources>
+        <image name="cer" width="20" height="20"/>
         <image name="icon" width="55" height="55"/>
     </resources>
 </document>

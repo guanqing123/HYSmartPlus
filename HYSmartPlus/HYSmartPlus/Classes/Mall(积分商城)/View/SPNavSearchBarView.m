@@ -19,6 +19,9 @@
     return self;
 }
 
+- (void)searchClick{
+    
+}
 
 /**
  初始化组件
@@ -48,6 +51,10 @@
     
     [self addSubview:placeholdField];
     [self addSubview:voiceImageBtn];
+}
+
+- (void)voiceButtonClick {
+    
 }
 
 - (void)layoutSubviews {

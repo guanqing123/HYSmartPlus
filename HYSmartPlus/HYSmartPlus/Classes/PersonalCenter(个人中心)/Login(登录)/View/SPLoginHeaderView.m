@@ -30,7 +30,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+        
     [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.mas_bottom).offset(-10);
         make.centerX.equalTo(self.mas_centerX);
