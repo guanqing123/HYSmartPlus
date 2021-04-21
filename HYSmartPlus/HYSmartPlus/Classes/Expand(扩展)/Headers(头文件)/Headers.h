@@ -18,6 +18,8 @@
 #import "MBProgressHUD+SPExtension.h" //MBProgressHUD分类
 #import "UIBarButtonItem+SPBarButtonItem.h" //UIBarButtonItem 分类
 
+#import "SVProgressHUD.h" // loading
+
 #import <Masonry.h>
 
 #endif /* Headers_h */

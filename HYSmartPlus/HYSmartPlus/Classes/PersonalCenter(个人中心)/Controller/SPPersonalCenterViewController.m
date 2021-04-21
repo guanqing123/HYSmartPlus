@@ -26,6 +26,8 @@
 
 #import "SPH5BrowseViewController.h"
 
+#import "SPHyMallViewController.h"
+
 //顶部和头部View
 #import "SPCenterTopToolView.h"
 #import "SPPersonCenterHeaderView.h"
@@ -360,6 +362,12 @@ static NSString *const SPBPCellID = @"SPBPCellID";
         case PersonCenterServiceOrder:
             [self doOrder];
             break;
+        case PersonCenterServietScoreMall:
+            [self doScoreMall];
+            break;
+        case PersonCenterServiceCertificate:
+            [self doCertificate];
+            break;
         default:
             break;
     }
@@ -384,11 +392,13 @@ static NSString *const SPBPCellID = @"SPBPCellID";
 
 // 签到
 - (void)doSignIn {
+    [SVProgressHUD show];
     SPSignInParam *param = [SPSignInParam param:APP00007];
     param.uid = [SPAccountTool loginResult].userbase.uid;
     [SPPersonCenterTool doSignIn:param success:^(SPSignInResult *result) {
+        [SVProgressHUD dismiss];
         if (result.error) {
-            [MBProgressHUD showError:result.errorMsg toView:self.view];
+            [SVProgressHUD showErrorWithStatus:result.errorMsg];
         }else{
             UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"恭喜" message:@"今日签到成功" preferredStyle:UIAlertControllerStyleAlert];
             WEAKSELF
@@ -399,7 +409,7 @@ static NSString *const SPBPCellID = @"SPBPCellID";
             [self presentViewController:alertVc animated:YES completion:nil];
         }
     } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"网络异常,签到失败" toView:self.view];
+        [SVProgressHUD showErrorWithStatus:@"网络异常,签到失败"];
     }];
 }
 
@@ -426,6 +436,20 @@ static NSString *const SPBPCellID = @"SPBPCellID";
     SPH5BrowseViewController *h5BrowseVc = [[SPH5BrowseViewController alloc] initWithUrl:[AJURL stringByAppendingString:@"/gmyorder/gmyorderlist.html"]];
     h5BrowseVc.title = @"我的订单";
     [self.navigationController pushViewController:h5BrowseVc animated:YES];
+}
+
+// 积分商城
+- (void)doScoreMall {
+    SPHyMallViewController *scoreMall = [[SPHyMallViewController alloc] init];
+    scoreMall.title = @"积分商城";
+    [self.navigationController pushViewController:scoreMall animated:YES];
+}
+
+// 资质认证
+- (void)doCertificate {
+    SPH5BrowseViewController *h5Vc = [[SPH5BrowseViewController alloc] initWithUrl:CERT];
+    h5Vc.title = @"资质认证";
+    [self.navigationController pushViewController:h5Vc animated:YES];
 }
 
 #pragma mark -  滚动tableview 完毕之后

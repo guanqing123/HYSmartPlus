@@ -93,4 +93,7 @@
 //鸿雁安家
 #define AJURL @"http://wx.hongyancloud.com/hyaj"
 
+//上海物联网
+#define CERT @"https://www.everylinked.com/lesson-groups/31FE94F9-35E3-F2FE-CAD2-3AE74F287906_course/coursePeriod?organization=%E6%9D%AD%E5%B7%9E%E9%B8%BF%E9%9B%81"
+
 #endif /* Macros_h */

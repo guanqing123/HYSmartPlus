@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */; };
+		A02731051AF068E6C681E0E3 /* libPods-HYSmartPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A23C5C1545CFF0A482B99A /* libPods-HYSmartPlus.a */; };
 		D600C6B42099AE3D00D3E917 /* SPSiteCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */; };
 		D600C6B52099AE3D00D3E917 /* SPSiteCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */; };
 		D607BF37209A0E43007825AF /* LxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D607BF35209A0E42007825AF /* LxGridViewFlowLayout.m */; };
@@ -161,6 +161,7 @@
 		D64E4308209C42870080A9E3 /* SPAddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D64E4307209C42870080A9E3 /* SPAddressItem.m */; };
 		D64E430A209C42C10080A9E3 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = D64E4309209C42C10080A9E3 /* Cities.json */; };
 		D64E430D209C45050080A9E3 /* SPCitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D64E430C209C45050080A9E3 /* SPCitiesDataTool.m */; };
+		D6629F7226303AA200BDC6CB /* SPDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6629F7126303AA200BDC6CB /* SPDesignViewController.m */; };
 		D662F857209314F90058C2E9 /* SPSignInParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F856209314F90058C2E9 /* SPSignInParam.m */; };
 		D662F85A209315490058C2E9 /* SPSignInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D662F859209315490058C2E9 /* SPSignInResult.m */; };
 		D6659ECA209FE2ED00846576 /* SPCommonResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6659EC9209FE2ED00846576 /* SPCommonResult.m */; };
@@ -211,8 +212,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D651C6E73B5442BE15A02C2 /* Pods-HYSmartPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYSmartPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus.release.xcconfig"; sourceTree = "<group>"; };
+		C9A23C5C1545CFF0A482B99A /* libPods-HYSmartPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYSmartPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D600C6B12099AE3D00D3E917 /* SPSiteCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSiteCreateViewController.h; sourceTree = "<group>"; };
 		D600C6B22099AE3D00D3E917 /* SPSiteCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSiteCreateViewController.m; sourceTree = "<group>"; };
 		D600C6B32099AE3D00D3E917 /* SPSiteCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSiteCreateViewController.xib; sourceTree = "<group>"; };
@@ -496,6 +497,8 @@
 		D64E4309209C42C10080A9E3 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		D64E430B209C45050080A9E3 /* SPCitiesDataTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCitiesDataTool.h; sourceTree = "<group>"; };
 		D64E430C209C45050080A9E3 /* SPCitiesDataTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCitiesDataTool.m; sourceTree = "<group>"; };
+		D6629F7026303AA200BDC6CB /* SPDesignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDesignViewController.h; sourceTree = "<group>"; };
+		D6629F7126303AA200BDC6CB /* SPDesignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDesignViewController.m; sourceTree = "<group>"; };
 		D662F855209314F90058C2E9 /* SPSignInParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSignInParam.h; sourceTree = "<group>"; };
 		D662F856209314F90058C2E9 /* SPSignInParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSignInParam.m; sourceTree = "<group>"; };
 		D662F858209315490058C2E9 /* SPSignInResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSignInResult.h; sourceTree = "<group>"; };
@@ -591,7 +594,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0AB7593694FC2B34F489A2 /* libPods-HYSmartPlus.a in Frameworks */,
+				A02731051AF068E6C681E0E3 /* libPods-HYSmartPlus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +604,7 @@
 		10E564AF0253CBD3A3F1466A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E516427D7835A9299751D20 /* libPods-HYSmartPlus.a */,
+				C9A23C5C1545CFF0A482B99A /* libPods-HYSmartPlus.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1297,6 +1300,7 @@
 			children = (
 				D613E7D01F66559E00D62B89 /* Main(主要) */,
 				D6164D432045975700767C00 /* Home(首页) */,
+				D66F6E2E26301ED4002D9E51 /* Design(设计) */,
 				D6164CF2204596D100767C00 /* Mall(积分商城) */,
 				D66FD83F260C3B8900BA05E8 /* Service(服务) */,
 				D617AA85209800DC009A00E1 /* Construction(我的工地) */,
@@ -1570,6 +1574,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D66F6E2E26301ED4002D9E51 /* Design(设计) */ = {
+			isa = PBXGroup;
+			children = (
+				D66F6E2F26301ED4002D9E51 /* Controller */,
+			);
+			path = "Design(设计)";
+			sourceTree = "<group>";
+		};
+		D66F6E2F26301ED4002D9E51 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6629F7026303AA200BDC6CB /* SPDesignViewController.h */,
+				D6629F7126303AA200BDC6CB /* SPDesignViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D66FD83F260C3B8900BA05E8 /* Service(服务) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1724,7 +1745,6 @@
 				D613BE131F6193110090316D /* Sources */,
 				D613BE141F6193110090316D /* Frameworks */,
 				D613BE151F6193110090316D /* Resources */,
-				E70C493B80368955319CEB30 /* [CP] Embed Pods Frameworks */,
 				52CC25CD4F8809DB0BA10B33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1749,7 +1769,7 @@
 					D613BE161F6193110090316D = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8Y6S2469TB;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1824,13 +1844,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
+				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
+				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html",
+				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png",
+				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-samples.png",
+				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CodeScan.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-back.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-help.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-helpicons.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-samples.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDKUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE8BB966955DB51284CE5D86 /* [CP] Check Pods Manifest.lock */ = {
@@ -1839,28 +1884,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HYSmartPlus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E70C493B80368955319CEB30 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYSmartPlus/Pods-HYSmartPlus-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1979,6 +2012,7 @@
 				D62444C62091A6A500A89DF4 /* SPProblemResult.m in Sources */,
 				D6FE8E7B20CF9BFE007C697A /* SPHomeSectionHeaderView.m in Sources */,
 				D6FF34C120A15272001B0070 /* SPDropower.m in Sources */,
+				D6629F7226303AA200BDC6CB /* SPDesignViewController.m in Sources */,
 				D62034FC2058AC5F00F39847 /* SPServiceTableViewCell.m in Sources */,
 				D60EC4E41FC6AF1300F78F31 /* SPBrandSortHeadView.m in Sources */,
 				D64E430D209C45050080A9E3 /* SPCitiesDataTool.m in Sources */,
@@ -2082,8 +2116,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2131,8 +2165,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2158,19 +2192,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = hysmart;
 			};
 			name = Debug;
 		};
@@ -2180,19 +2218,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8Y6S2469TB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HYSmartPlus/HYSmartPlus.pch";
 				INFOPLIST_FILE = HYSmartPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hongyan.HYSmartPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "05c76a71-d6a2-43db-b636-ac9885749da2";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = hysmart;
 			};
 			name = Release;
 		};

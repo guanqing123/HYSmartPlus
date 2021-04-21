@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH - SPBottomTabH)];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH)];
     webView.scrollView.showsVerticalScrollIndicator = YES;
     NSString *urlStr = [NSString stringWithFormat:@"http://wx.hongyancloud.com/hymall/work/lists.html?userid=%@",[SPAccountTool loginResult].userbase.uid];
     webView.UIDelegate = self;
@@ -85,6 +85,8 @@
 - (void)back {
     if ([self.webView canGoBack]) {
         [self.webView goBack];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -99,7 +101,7 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self.indicatorView stopAnimating];
-    if ([webView canGoBack]) {
+    /*if ([webView canGoBack]) {
         if (!self.navigationItem.leftBarButtonItem) {
             [self setupNavItem];
         }
@@ -107,12 +109,12 @@
         if (self.navigationItem.leftBarButtonItem) {
             self.navigationItem.leftBarButtonItem = nil;
         }
-    }
+    }*/
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [self.indicatorView stopAnimating];
-    if ([webView canGoBack]) {
+    /*if ([webView canGoBack]) {
         if (!self.navigationItem.leftBarButtonItem) {
             [self setupNavItem];
         }
@@ -120,7 +122,7 @@
         if (self.navigationItem.leftBarButtonItem) {
             self.navigationItem.leftBarButtonItem = nil;
         }
-    }
+    }*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -137,5 +139,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - 屏幕横竖屏设置
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 @end

@@ -28,6 +28,22 @@
 	</dict>
 	<dict>
 		<key>iconImage</key>
+		<string>me_mall</string>
+		<key>gridTitle</key>
+		<string>积分商城</string>
+		<key>serviceType</key>
+		<string>6</string>
+	</dict>
+	<dict>
+		<key>iconImage</key>
+		<string>me_renzheng</string>
+		<key>gridTitle</key>
+		<string>资质认证</string>
+		<key>serviceType</key>
+		<integer>7</integer>
+	</dict>
+	<dict>
+		<key>iconImage</key>
 		<string>me_invite</string>
 		<key>gridTitle</key>
 		<string>邀请好友</string>

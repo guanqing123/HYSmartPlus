@@ -1,13 +1,12 @@
 //
-//  SPNewIndexViewController.m
+//  SPDesignViewController.m
 //  HYSmartPlus
 //
-//  Created by information on 2021/3/23.
+//  Created by information on 2021/4/21.
 //  Copyright © 2021 hongyan. All rights reserved.
 //
 
-#import "SPNewIndexViewController.h"
-//浏览客服
+#import "SPDesignViewController.h"
 #import "SPH5BrowseViewController.h"
 
 #import "SPAccountTool.h"
@@ -16,7 +15,7 @@
 #import <WebKit/WebKit.h>
 #import "WKWebViewJavascriptBridge.h"
 
-@interface SPNewIndexViewController ()<WKUIDelegate, WKNavigationDelegate>
+@interface SPDesignViewController ()<WKUIDelegate, WKNavigationDelegate>
 // webView
 @property (nonatomic, weak) WKWebView  *webView;
 /** UI */
@@ -25,7 +24,7 @@
 @property (nonatomic, strong)  WKWebViewJavascriptBridge *bridge;
 @end
 
-@implementation SPNewIndexViewController
+@implementation SPDesignViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,20 +40,9 @@
     // 1.背景色
     self.view.backgroundColor = [UIColor whiteColor];
     
-    // 3.右
-    UIBarButtonItem *kefu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"kefu"] style:UIBarButtonItemStyleDone target:self action:@selector(kefu)];
-    
     UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
     
-    self.navigationItem.rightBarButtonItems = @[refresh, kefu];
-}
-
-- (void)kefu {
-    NSString *kefu = [NSString stringWithFormat:@"https://hzhydqyxgs.qiyukf.com/client?k=85cdffbd3ba211a68e2896899167ee3c&wp=1&u=%@&n=%@&m=%@&t=%@",
-                      [SPAccountTool loginResult].userbase.uid,[SPAccountTool loginResult].userbase.email,[SPAccountTool loginResult].userbase.phone,
-                      CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)@"客家", NULL, NULL, kCFStringEncodingUTF8))];
-    SPH5BrowseViewController *h5Vc = [[SPH5BrowseViewController alloc] initWithUrl:kefu];
-    [self.navigationController pushViewController:h5Vc animated:YES];
+    self.navigationItem.rightBarButtonItem = refresh;
 }
 
 - (void)refresh {
@@ -64,16 +52,13 @@
 - (void)setWebView {
     WKWebView *webView = [[WKWebView alloc] init];
     webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH - SPBottomTabH);
-//    webView.frame = self.view.bounds;
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
     [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     _webView = webView;
                             //http://dev.sge.cn/hykj/ghome/ghome.html
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[AJURL stringByAppendingString:
-                                        [NSString stringWithFormat:@"/ghome/ghome.html?uid=%@",[SPAccountTool loginResult].userbase.uid]
-                                                                            ]
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://wx.hongyancloud.com/hyaj/gdesign/gdesign.html?uid=%@",[SPAccountTool loginResult].userbase.uid]
                                                        ]
                           ]
      ];
@@ -144,14 +129,14 @@
         if (!self.navigationItem.leftBarButtonItem) {
             [self setupNavItem];
         }
-//        self.tabBarController.tabBar.hidden = YES;
-//        self.webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH);
+        self.tabBarController.tabBar.hidden = YES;
+        self.webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH);
     }else{
         if (self.navigationItem.leftBarButtonItem) {
             self.navigationItem.leftBarButtonItem = nil;
         }
-//        self.tabBarController.tabBar.hidden = NO;
-//        self.webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH - SPBottomTabH);
+        self.tabBarController.tabBar.hidden = NO;
+        self.webView.frame = CGRectMake(0, SPTopNavH, ScreenW, ScreenH - SPTopNavH - SPBottomTabH);
     }
 }
 
@@ -242,3 +227,4 @@
 
 
 @end
+

@@ -79,8 +79,13 @@
     [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     _webView = webView;
-                           
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?uid=%@",_url,[SPAccountTool loginResult].userbase.uid]]]];
+    
+    if ([_url rangeOfString:@"?"].location != NSNotFound) {
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@&uid=%@",_url,[SPAccountTool loginResult].userbase.uid]]]];
+    } else {
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?uid=%@",_url,[SPAccountTool loginResult].userbase.uid]]]];
+    }
+    
     [self.view addSubview:webView];
     [self.view addSubview:self.myProgressView];
     

@@ -52,4 +52,7 @@ target 'HYSmartPlus' do
   pod 'LBXScan/LBXZBar','~> 2.3'
   pod 'LBXScan/UI','~> 2.3'
   
+  #loading
+  pod 'SVProgressHUD'
+  
 end
